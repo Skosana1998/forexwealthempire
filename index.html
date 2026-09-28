@@ -7,6 +7,8 @@
 
 <title>Forex Wealth Empire | Liquidity Displacement Methodology™</title>
 
+<meta name="description" content="Forex Wealth Empire — Liquidity Displacement Methodology™. Proprietary trading education focused on structured market analysis, discipline and execution.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -24,6 +26,7 @@
 --gold2:#fff0bd;
 --red:#ff2020;
 --darkred:#720000;
+--discord:#5865f2;
 --radius:24px;
 --max:1220px;
 }
@@ -119,7 +122,7 @@ color:var(--muted);
 nav{
 display:flex;
 align-items:center;
-gap:20px;
+gap:18px;
 }
 
 nav a{
@@ -139,6 +142,14 @@ padding:12px 20px;
 border-radius:999px;
 background:linear-gradient(135deg,var(--gold),var(--gold2));
 color:#000!important;
+font-weight:900;
+}
+
+.nav-discord{
+padding:12px 18px;
+border-radius:999px;
+background:var(--discord);
+color:white!important;
 font-weight:900;
 }
 
@@ -313,6 +324,12 @@ border:1px solid rgba(255,255,255,.1);
 color:white;
 }
 
+.btn-discord{
+background:var(--discord);
+color:white;
+box-shadow:0 0 30px rgba(88,101,242,.2);
+}
+
 /* ================= HERO VISUAL ================= */
 
 .visual{
@@ -472,7 +489,7 @@ color:#cfc3b2;
 /* ================= METHODOLOGY ================= */
 
 .methodology{
-padding:30px;
+padding:35px;
 border-radius:30px;
 background:
 linear-gradient(
@@ -484,36 +501,41 @@ rgba(255,255,255,.025);
 border:1px solid rgba(255,255,255,.08);
 }
 
-.steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-margin-top:28px;
-}
-
-.step{
-padding:20px;
-border-radius:20px;
-background:rgba(0,0,0,.35);
-border:1px solid rgba(255,255,255,.06);
-}
-
-.step span{
-font-family:'Orbitron',sans-serif;
-color:var(--gold);
-font-size:11px;
+.proprietary-badge{
+display:inline-block;
+padding:8px 13px;
+border-radius:999px;
+background:rgba(255,30,30,.10);
+border:1px solid rgba(255,30,30,.2);
+color:#ff7777;
+font-size:10px;
 font-weight:900;
+letter-spacing:.14em;
+text-transform:uppercase;
+margin-bottom:18px;
 }
 
-.step h3{
-margin:13px 0 9px;
-font-size:16px;
+.methodology h3{
+font-family:'Orbitron',sans-serif;
+font-size:22px;
+margin-bottom:15px;
 }
 
-.step p{
-font-size:13px;
-line-height:1.7;
-color:#bdb2a1;
+.methodology-text{
+color:#cfc3b2;
+font-size:14px;
+line-height:1.9;
+max-width:850px;
+}
+
+.methodology-note{
+margin-top:22px;
+padding:18px;
+border-left:3px solid var(--gold);
+background:rgba(0,0,0,.25);
+color:#a99d8a;
+font-size:12px;
+line-height:1.8;
 }
 
 /* ================= OFFER ================= */
@@ -603,6 +625,188 @@ font-weight:900;
 margin-right:9px;
 }
 
+/* ================= DISCORD ================= */
+
+.discord-section{
+padding:85px 0;
+background:
+radial-gradient(circle at 15% 50%,rgba(88,101,242,.12),transparent 35%),
+#050505;
+border-top:1px solid rgba(255,255,255,.06);
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.discord-box{
+padding:42px;
+border-radius:30px;
+border:1px solid rgba(88,101,242,.28);
+background:
+linear-gradient(135deg,rgba(88,101,242,.08),rgba(255,255,255,.025)),
+rgba(255,255,255,.02);
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:35px;
+}
+
+.discord-content{
+max-width:760px;
+}
+
+.discord-badge{
+display:inline-block;
+padding:8px 13px;
+border-radius:999px;
+background:rgba(88,101,242,.12);
+border:1px solid rgba(88,101,242,.3);
+color:#929cff;
+font-size:10px;
+font-weight:900;
+letter-spacing:.14em;
+text-transform:uppercase;
+margin-bottom:17px;
+}
+
+.discord-box h2{
+font-family:'Orbitron',sans-serif;
+font-size:clamp(2rem,5vw,3.3rem);
+margin-bottom:15px;
+}
+
+.discord-box h2 span{
+color:#7280ff;
+}
+
+.discord-box p{
+color:#aaa092;
+font-size:14px;
+line-height:1.85;
+}
+
+/* ================= REVIEWS ================= */
+
+.reviews-section{
+padding:85px 0;
+overflow:hidden;
+background:
+radial-gradient(circle at 80% 50%,rgba(240,201,111,.06),transparent 30%),
+#030303;
+}
+
+.reviews-heading{
+text-align:center;
+max-width:720px;
+margin:0 auto 42px;
+}
+
+.reviews-heading h2{
+font-family:'Orbitron',sans-serif;
+font-size:clamp(2rem,5vw,3.2rem);
+margin-bottom:13px;
+}
+
+.reviews-heading p{
+color:var(--muted);
+line-height:1.8;
+font-size:14px;
+}
+
+.review-marquee{
+width:100%;
+overflow:hidden;
+border-top:1px solid rgba(255,255,255,.06);
+border-bottom:1px solid rgba(255,255,255,.06);
+background:#080808;
+margin-bottom:45px;
+}
+
+.review-track{
+display:flex;
+width:max-content;
+animation:reviewScroll 35s linear infinite;
+}
+
+.review-highlight{
+flex-shrink:0;
+padding:18px 38px;
+border-right:1px solid rgba(255,255,255,.06);
+font-size:13px;
+color:#aaa092;
+white-space:nowrap;
+}
+
+.review-highlight strong{
+color:white;
+font-family:'Orbitron',sans-serif;
+font-size:11px;
+}
+
+.stars{
+color:var(--gold);
+letter-spacing:2px;
+margin-right:10px;
+}
+
+@keyframes reviewScroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
+
+.reviews-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.review-card{
+padding:27px;
+border-radius:22px;
+background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+border:1px solid rgba(255,255,255,.07);
+transition:.35s;
+}
+
+.review-card:hover{
+transform:translateY(-6px);
+border-color:rgba(240,201,111,.25);
+}
+
+.review-stars{
+color:var(--gold);
+font-size:18px;
+letter-spacing:3px;
+margin-bottom:20px;
+}
+
+.review-card p{
+color:#aaa092;
+font-size:13px;
+line-height:1.85;
+margin-bottom:23px;
+}
+
+.reviewer{
+font-family:'Orbitron',sans-serif;
+font-size:12px;
+font-weight:900;
+letter-spacing:.08em;
+color:white;
+}
+
+.reviewer span{
+display:block;
+font-family:'Inter',sans-serif;
+font-size:10px;
+font-weight:500;
+letter-spacing:0;
+color:#6f675d;
+margin-top:5px;
+}
+
 /* ================= DISCLAIMER ================= */
 
 .disclaimer{
@@ -631,6 +835,15 @@ gap:20px;
 flex-wrap:wrap;
 }
 
+.footer a{
+color:#817668;
+text-decoration:none;
+}
+
+.footer a:hover{
+color:white;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:1050px){
@@ -642,12 +855,17 @@ grid-template-columns:1fr;
 
 .grid-4,
 .grid-3,
-.steps{
+.reviews-grid{
 grid-template-columns:1fr 1fr;
 }
 
-nav a:not(.nav-buy){
+nav a:not(.nav-buy):not(.nav-discord){
 display:none;
+}
+
+.discord-box{
+flex-direction:column;
+align-items:flex-start;
 }
 
 }
@@ -664,7 +882,7 @@ gap:30px;
 
 .grid-4,
 .grid-3,
-.steps{
+.reviews-grid{
 grid-template-columns:1fr;
 }
 
@@ -676,7 +894,13 @@ min-height:430px;
 padding:23px;
 }
 
-.section{
+.discord-box{
+padding:27px;
+}
+
+.section,
+.discord-section,
+.reviews-section{
 padding:65px 0;
 }
 
@@ -688,12 +912,26 @@ font-size:clamp(2.6rem,13vw,4.2rem);
 width:100%;
 }
 
+.nav-discord{
+display:none;
+}
+
+.brand-text strong{
+font-size:10px;
+}
+
+.brand-mark{
+width:43px;
+height:43px;
+}
+
 }
 
 </style>
 </head>
 
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -706,20 +944,43 @@ width:100%;
 <div class="brand-mark">FW</div>
 
 <div class="brand-text">
+
 <strong>FOREX WEALTH EMPIRE</strong>
-<span>LIQUIDITY • DISPLACEMENT • EXECUTION</span>
+
+<span>
+PROPRIETARY TRADING EDUCATION
+</span>
+
 </div>
 
 </a>
 
 <nav>
 
-<a href="#methodology">Methodology</a>
-<a href="#features">Features</a>
-<a href="#mentorship">Mentorship</a>
+<a href="#methodology">
+Methodology
+</a>
+
+<a href="#features">
+Features
+</a>
+
+<a href="#mentorship">
+Mentorship
+</a>
 
 <a
-href="https://whop.com/forex-wealth-empire-pty-ltd/products/forex-wealth-empire-pty-ltd/"target="_blank"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer"
+class="nav-discord">
+DISCORD
+</a>
+
+<a
+href="https://whop.com/forex-wealth-empire-pty-ltd"
+target="_blank"
+rel="noopener noreferrer"
 class="nav-buy">
 BUY NOW
 </a>
@@ -741,17 +1002,19 @@ BUY NOW
 <span>DISPLACEMENT</span>
 <span>PRECISION</span>
 <span>DISCIPLINE</span>
-<span>WAIT FOR CONFIRMATION</span>
-<span>EXECUTE THE MODEL</span>
-<span>PROTECT THE CAPITAL</span>
+<span>PATIENT EXECUTION</span>
+<span>PROPRIETARY METHODOLOGY</span>
+<span>MARKET STRUCTURE</span>
+<span>RISK MANAGEMENT</span>
 
 <span>LIQUIDITY</span>
 <span>DISPLACEMENT</span>
 <span>PRECISION</span>
 <span>DISCIPLINE</span>
-<span>WAIT FOR CONFIRMATION</span>
-<span>EXECUTE THE MODEL</span>
-<span>PROTECT THE CAPITAL</span>
+<span>PATIENT EXECUTION</span>
+<span>PROPRIETARY METHODOLOGY</span>
+<span>MARKET STRUCTURE</span>
+<span>RISK MANAGEMENT</span>
 
 </div>
 
@@ -792,14 +1055,16 @@ METHODOLOGY™
 
 <p class="lead">
 
-A structured trading methodology built around understanding
-liquidity, displacement, market reaction and precise execution.
+A proprietary trading methodology developed by Forex Wealth Empire
+to help traders understand market behaviour, identify meaningful
+price reactions and approach execution with greater structure.
 
 Stop chasing price.
 
-Learn to wait for the market to show you where the opportunity is.
+Learn to wait for the market to reveal the opportunity.
 
 </p>
+
 
 <div class="method-box">
 
@@ -808,21 +1073,29 @@ The Core Philosophy
 </div>
 
 <p>
-Liquidity creates the environment.
-Displacement reveals intent.
-Confirmation provides the trigger.
-Execution follows the model.
+Understand the environment. Study the market's behaviour.
+Wait for the required conditions. Execute with discipline.
 </p>
 
 </div>
+
 
 <div class="cta-row">
 
 <a
 class="btn btn-buy"
 href="https://whop.com/forex-wealth-empire-pty-ltd"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 BUY NOW
+</a>
+
+<a
+class="btn btn-discord"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer">
+JOIN DISCORD
 </a>
 
 <a
@@ -836,7 +1109,7 @@ EXPLORE THE METHOD
 </div>
 
 
-<!-- VISUAL -->
+<!-- ================= HERO VISUAL ================= -->
 
 <div class="visual">
 
@@ -853,8 +1126,8 @@ DISPLACEMENT
 </h2>
 
 <p>
-A structured approach to<br>
-market execution
+PROPRIETARY MARKET<br>
+EXECUTION FRAMEWORK
 </p>
 
 </div>
@@ -874,84 +1147,50 @@ market execution
 
 <div class="section-head">
 
+<div class="proprietary-badge">
+PROPRIETARY METHODOLOGY™
+</div>
+
 <h2>
 The Methodology
 </h2>
 
 <p>
-Liquidity Displacement Methodology™ focuses on the relationship
-between liquidity, aggressive price movement and subsequent
-market reaction.
+Liquidity Displacement Methodology™ is a proprietary Forex Wealth
+Empire framework designed to help traders develop a structured way
+of reading market behaviour and approaching execution.
 </p>
 
 </div>
+
 
 <div class="methodology">
 
-<div class="steps">
-
-<div class="step">
-
-<span>01 — LIQUIDITY</span>
-
 <h3>
-Identify the Liquidity
+Built For Traders Who Want Structure
 </h3>
 
-<p>
-Map important areas where price may interact with
-existing liquidity before looking for an opportunity.
+<p class="methodology-text">
+
+The methodology brings together a structured approach to market
+observation, price behaviour, liquidity awareness, confirmation,
+execution and risk discipline.
+
+It is designed to help traders stop reacting emotionally to every
+market movement and instead focus on whether the conditions required
+by their model are present.
+
 </p>
 
-</div>
 
+<div class="methodology-note">
 
-<div class="step">
+<strong>PROPRIETARY EDUCATION:</strong>
 
-<span>02 — DISPLACEMENT</span>
-
-<h3>
-Wait for Displacement
-</h3>
-
-<p>
-Look for decisive price movement showing that the market
-has moved away from the previous area with strength.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<span>03 — REACTION</span>
-
-<h3>
-Study the Reaction
-</h3>
-
-<p>
-Instead of chasing the initial move, wait for price to
-return and observe how the market reacts.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<span>04 — EXECUTION</span>
-
-<h3>
-Execute the Model
-</h3>
-
-<p>
-Only execute when the required conditions of the
-methodology are present.
-</p>
-
-</div>
+The specific rules, confirmations, execution conditions and
+application of the Liquidity Displacement Methodology™ are kept
+inside the premium education. This public page intentionally does
+not reveal the complete trading model.
 
 </div>
 
@@ -975,11 +1214,13 @@ Built Around Precision
 </h2>
 
 <p>
-The methodology is designed to help traders structure their
-analysis instead of entering simply because price is moving.
+The framework is designed to help traders build patience, structure
+and discipline without relying on random entries or emotional
+decision-making.
 </p>
 
 </div>
+
 
 <div class="grid-4">
 
@@ -990,12 +1231,12 @@ analysis instead of entering simply because price is moving.
 </div>
 
 <h3>
-Liquidity Awareness
+Market Awareness
 </h3>
 
 <p>
-Understand the importance of liquidity when analysing
-potential market reactions.
+Develop a more structured way of observing market behaviour and
+potential areas of interest.
 </p>
 
 </div>
@@ -1008,12 +1249,12 @@ potential market reactions.
 </div>
 
 <h3>
-Displacement
+Liquidity Understanding
 </h3>
 
 <p>
-Study strong directional movement and what it can reveal
-about the market's current behaviour.
+Learn the role liquidity can play in market behaviour and why
+context matters before execution.
 </p>
 
 </div>
@@ -1030,8 +1271,8 @@ Confirmation
 </h3>
 
 <p>
-Build patience by waiting for the conditions required
-before considering execution.
+Build patience around waiting for the conditions required by the
+proprietary model.
 </p>
 
 </div>
@@ -1048,8 +1289,8 @@ Risk Discipline
 </h3>
 
 <p>
-Protect trading capital and avoid forcing setups that do
-not meet the model.
+Develop a structured approach to protecting capital and avoiding
+unnecessary trades.
 </p>
 
 </div>
@@ -1080,9 +1321,9 @@ Liquidity Displacement Methodology™
 </h2>
 
 <p>
-Get access to the Forex Wealth Empire methodology and learn
-how the model is structured from liquidity identification
-through displacement, reaction and execution.
+Get access to the Forex Wealth Empire proprietary methodology and
+learn the framework behind the model in a structured educational
+environment.
 </p>
 
 <div class="price">
@@ -1094,8 +1335,17 @@ Premium Access
 <a
 class="btn btn-buy"
 href="https://whop.com/forex-wealth-empire-pty-ltd"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 BUY NOW
+</a>
+
+<a
+class="btn btn-discord"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer">
+JOIN DISCORD
 </a>
 
 </div>
@@ -1111,21 +1361,312 @@ WHAT YOU GET
 
 <ul>
 
+<li>Proprietary methodology</li>
+
 <li>Liquidity framework</li>
 
-<li>Displacement methodology</li>
+<li>Market behaviour education</li>
 
-<li>Market reaction analysis</li>
+<li>Confirmation framework</li>
 
-<li>Execution framework</li>
+<li>Execution principles</li>
 
 <li>Trading discipline</li>
-
-<li>Structured education</li>
 
 </ul>
 
 </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DISCORD ================= -->
+
+<section class="discord-section">
+
+<div class="container">
+
+<div class="discord-box">
+
+<div class="discord-content">
+
+<div class="discord-badge">
+FOREX WEALTH EMPIRE COMMUNITY
+</div>
+
+<h2>
+JOIN THE <span>COMMUNITY.</span>
+</h2>
+
+<p>
+Connect with the Forex Wealth Empire community, discuss the
+markets, share ideas, learn with other traders and stay connected
+with the latest FWE updates.
+</p>
+
+<div class="cta-row">
+
+<a
+class="btn btn-discord"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer">
+JOIN FWE DISCORD
+</a>
+
+<a
+class="btn btn-learn"
+href="https://whop.com/forex-wealth-empire-pty-ltd"
+target="_blank"
+rel="noopener noreferrer">
+VIEW PREMIUM
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews-section">
+
+<div class="container">
+
+<div class="reviews-heading">
+
+<div class="proprietary-badge">
+COMMUNITY FEEDBACK
+</div>
+
+<h2>
+TRADER <span style="color:var(--red);">REVIEWS.</span>
+</h2>
+
+<p>
+Feedback from members of the Forex Wealth Empire community.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= MOVING REVIEW HIGHLIGHTS ================= -->
+
+<div class="review-marquee">
+
+<div class="review-track">
+
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>THABO</strong>
+
+— Clear and structured trading education.
+
+</div>
+
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>SIZWE</strong>
+
+— The community keeps me focused and disciplined.
+
+</div>
+
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>MICHELLE</strong>
+
+— Professional presentation and valuable education.
+
+</div>
+
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>ANALELE</strong>
+
+— A great environment for traders who want to learn.
+
+</div>
+
+
+<!-- DUPLICATE FOR SEAMLESS LOOP -->
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>THABO</strong>
+
+— Clear and structured trading education.
+
+</div>
+
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>SIZWE</strong>
+
+— The community keeps me focused and disciplined.
+
+</div>
+
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>MICHELLE</strong>
+
+— Professional presentation and valuable education.
+
+</div>
+
+
+<div class="review-highlight">
+
+<span class="stars">★★★★★</span>
+
+<strong>ANALELE</strong>
+
+— A great environment for traders who want to learn.
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ================= REVIEW CARDS ================= -->
+
+<div class="container">
+
+<div class="reviews-grid">
+
+
+<div class="review-card">
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p>
+“Clear and structured trading education. The methodology is
+presented in a way that keeps the focus on understanding the
+market rather than chasing trades.”
+</p>
+
+<div class="reviewer">
+
+THABO
+
+<span>
+Community Member
+</span>
+
+</div>
+
+</div>
+
+
+<div class="review-card">
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p>
+“The community keeps me focused and disciplined. I like the
+professional approach and the emphasis on having a plan.”
+</p>
+
+<div class="reviewer">
+
+SIZWE
+
+<span>
+Community Member
+</span>
+
+</div>
+
+</div>
+
+
+<div class="review-card">
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p>
+“Professional presentation and valuable education. The concepts
+are explained without making the material unnecessarily complicated.”
+</p>
+
+<div class="reviewer">
+
+MICHELLE
+
+<span>
+Community Member
+</span>
+
+</div>
+
+</div>
+
+
+<div class="review-card">
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p>
+“A great environment for traders who want to learn, improve their
+discipline and become more consistent.”
+</p>
+
+<div class="reviewer">
+
+ANALELE
+
+<span>
+Community Member
+</span>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -1144,26 +1685,40 @@ WHAT YOU GET
 
 <div class="section-head" style="margin-bottom:15px;">
 
+<div class="proprietary-badge">
+FOREX WEALTH EMPIRE
+</div>
+
 <h2>
 Stop Chasing. Start Reading.
 </h2>
 
 <p style="margin:auto;">
 
-Build your understanding of liquidity and displacement
-with Forex Wealth Empire.
+Build your understanding of market behaviour with the
+Liquidity Displacement Methodology™.
 
 </p>
 
 </div>
+
 
 <div class="cta-row" style="justify-content:center;">
 
 <a
 class="btn btn-buy"
 href="https://whop.com/forex-wealth-empire-pty-ltd"
-target="_blank">
-BUY NOW
+target="_blank"
+rel="noopener noreferrer">
+GET PREMIUM ACCESS
+</a>
+
+<a
+class="btn btn-discord"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer">
+JOIN DISCORD
 </a>
 
 </div>
@@ -1193,6 +1748,10 @@ investment advice or a guarantee of trading results.
 
 Past performance does not guarantee future results.
 
+Trading involves risk of loss. Always consider your own financial
+circumstances and risk tolerance before participating in financial
+markets.
+
 </div>
 
 </div>
@@ -1218,9 +1777,21 @@ Liquidity Displacement Methodology™
 Forex Wealth Empire (Pty) Ltd
 </div>
 
+<div>
+
+<a
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer">
+Discord Community
+</a>
+
+</div>
+
 </div>
 
 </footer>
+
 
 </body>
   </html>
