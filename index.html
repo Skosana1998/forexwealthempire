@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -2450,6 +2451,17 @@ margin-top:13px;
 
 
 /* =========================================================
+   LIVE CHAT BUTTON SUPPORT
+========================================================= */
+
+#lc_text_chat{
+
+z-index:10000!important;
+
+}
+
+
+/* =========================================================
    RESPONSIVE
 ========================================================= */
 
@@ -3355,8 +3367,6 @@ Empire Signal Course and educational environment.
 <div class="reviews-track">
 
 
-<!-- REVIEW 1 -->
-
 <div class="review-card">
 
 <div class="review-top">
@@ -3377,8 +3387,6 @@ Clear strategy, simple process and much better structure on my charts. I know wh
 
 </div>
 
-
-<!-- REVIEW 2 -->
 
 <div class="review-card">
 
@@ -3401,8 +3409,6 @@ I really like the patience behind the strategy. It gives you a process to follow
 </div>
 
 
-<!-- REVIEW 3 -->
-
 <div class="review-card">
 
 <div class="review-top">
@@ -3423,8 +3429,6 @@ The Signal Course changed how I look at price. I have become much more selective
 
 </div>
 
-
-<!-- REVIEW 4 -->
 
 <div class="review-card">
 
@@ -3447,8 +3451,6 @@ The liquidity and displacement concepts are explained in a clear way. The struct
 </div>
 
 
-<!-- REVIEW 5 -->
-
 <div class="review-card">
 
 <div class="review-top">
@@ -3469,8 +3471,6 @@ A structured approach that makes studying the market much easier. I especially l
 
 </div>
 
-
-<!-- REVIEW 6 -->
 
 <div class="review-card">
 
@@ -3493,8 +3493,6 @@ I like that the strategy focuses on waiting instead of forcing entries. It has h
 </div>
 
 
-<!-- REVIEW 7 -->
-
 <div class="review-card">
 
 <div class="review-top">
@@ -3515,8 +3513,6 @@ The methodology gives me a clearer process before taking a trade. I spend more t
 
 </div>
 
-
-<!-- REVIEW 8 -->
 
 <div class="review-card">
 
@@ -3539,8 +3535,6 @@ The Signal Course is well structured and easy to follow through the charts. The 
 </div>
 
 
-<!-- REVIEW 9 -->
-
 <div class="review-card">
 
 <div class="review-top">
@@ -3561,8 +3555,6 @@ The course helped me become more disciplined with my market analysis and more co
 
 </div>
 
-
-<!-- REVIEW 10 -->
 
 <div class="review-card">
 
@@ -3585,10 +3577,7 @@ I enjoy the combination of signals, education and market analysis. It gives the 
 </div>
 
 
-<!-- =====================================================
-     DUPLICATES FOR CONTINUOUS SCROLL
-===================================================== -->
-
+<!-- DUPLICATES -->
 
 <div class="review-card">
 
@@ -3819,7 +3808,6 @@ I enjoy the combination of signals, education and market analysis. It gives the 
 
 <div class="seminar-box">
 
-
 <div>
 
 <div class="proprietary-badge">
@@ -3851,7 +3839,6 @@ WILL BE UPDATED
 
 </div>
 
-
 </div>
 
 </div>
@@ -3866,7 +3853,6 @@ WILL BE UPDATED
 <section class="section">
 
 <div class="container">
-
 
 <div class="section-head">
 
@@ -3993,7 +3979,6 @@ id="fwe-experience"
 >
 
 <div class="container">
-
 
 <div class="section-head">
 
@@ -4170,7 +4155,6 @@ JOIN DISCORD
 
 <div class="discord-box">
 
-
 <div class="discord-content">
 
 <div class="discord-badge">
@@ -4275,21 +4259,17 @@ before participating in financial markets.
 
 <div class="container footer-inner">
 
-
 <div>
 © 2026 Forex Wealth Empire
 </div>
-
 
 <div>
 Liquidity Displacement Methodology™
 </div>
 
-
 <div>
 Forex Wealth Empire (Pty) Ltd
 </div>
-
 
 <div>
 
@@ -4302,7 +4282,6 @@ Discord Community
 </a>
 
 </div>
-
 
 </div>
 
@@ -4318,9 +4297,7 @@ class="popup-overlay"
 id="discountPopup"
 >
 
-
 <div class="popup">
-
 
 <button
 class="popup-close"
@@ -4376,7 +4353,6 @@ once off
 
 <div class="popup-options">
 
-
 <div class="popup-option">
 
 <strong>
@@ -4402,7 +4378,6 @@ PER MONTH
 
 </div>
 
-
 </div>
 
 
@@ -4425,6 +4400,123 @@ Educational content only. Trading involves risk.
 </div>
 
 </div>
+
+
+<!-- =========================================================
+     LIVECHAT
+========================================================= -->
+
+<!-- Start of LiveChat (www.livechat.com) code -->
+
+<script>
+
+window.__lc = window.__lc || {};
+
+window.__lc.license = 19960069;
+
+window.__lc.integration_name = "manual_channels";
+
+window.__lc.product_name = "livechat";
+
+;(function(n,t,c){
+
+function i(n){
+
+return e._h
+? e._h.apply(null,n)
+: e._q.push(n)
+
+}
+
+var e={
+
+_q:[],
+
+_h:null,
+
+_v:"2.0",
+
+on:function(){
+
+i(["on",c.call(arguments)])
+
+},
+
+once:function(){
+
+i(["once",c.call(arguments)])
+
+},
+
+off:function(){
+
+i(["off",c.call(arguments)])
+
+},
+
+get:function(){
+
+if(!e._h)
+
+throw new Error(
+"[LiveChatWidget] You can't use getters before load."
+);
+
+return i([
+"get",
+c.call(arguments)
+]);
+
+},
+
+call:function(){
+
+i([
+"call",
+c.call(arguments)
+]);
+
+},
+
+init:function(){
+
+var n=t.createElement("script");
+
+n.async=true;
+
+n.type="text/javascript";
+
+n.src=
+"https://cdn.livechatinc.com/tracking.js";
+
+t.head.appendChild(n);
+
+}
+
+};
+
+!n.__lc.asyncInit && e.init();
+
+n.LiveChatWidget =
+n.LiveChatWidget || e;
+
+}(window,document,[].slice));
+
+</script>
+
+
+<noscript>
+
+<a
+href="https://www.livechat.com/chat-with/19960069/"
+rel="nofollow"
+>
+Chat with us
+</a>
+
+</noscript>
+
+<!-- End of LiveChat code -->
 
 
 <!-- =========================================================
@@ -4510,4 +4602,5 @@ popup.classList.remove("active");
 
 
 </body>
-  </html>
+
+   </html>
