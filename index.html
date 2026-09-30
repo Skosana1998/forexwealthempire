@@ -18,7 +18,7 @@ content="Forex Wealth Empire — Liquidity Displacement Methodology™. Propriet
 
 <link
 rel="preconnect"
-href="https://fonts.gstatic.com"
+href="https://fonts.googleapis.com"
 crossorigin
 >
 
@@ -1616,6 +1616,325 @@ color:#ff5555;
 
 
 /* =========================================================
+   PROP FIRM PAYOUT COUNTER
+========================================================= */
+
+.payout-section{
+
+padding:85px 0;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+
+radial-gradient(
+circle at 50% 30%,
+rgba(240,201,111,.10),
+transparent 35%
+),
+
+radial-gradient(
+circle at 20% 80%,
+rgba(255,30,30,.07),
+transparent 30%
+),
+
+#020202;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.payout-box{
+
+position:relative;
+
+padding:55px 35px;
+
+border-radius:32px;
+
+text-align:center;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.045),
+rgba(255,255,255,.018)
+);
+
+border:1px solid rgba(240,201,111,.20);
+
+overflow:hidden;
+
+}
+
+.payout-box::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+border-radius:50%;
+
+background:rgba(240,201,111,.07);
+
+filter:blur(80px);
+
+top:-180px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+pointer-events:none;
+
+}
+
+.payout-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.payout-label{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:11px;
+
+font-weight:900;
+
+letter-spacing:.18em;
+
+color:var(--gold);
+
+margin-bottom:16px;
+
+text-transform:uppercase;
+
+}
+
+.payout-title{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+1.8rem,
+5vw,
+3rem
+);
+
+line-height:1.1;
+
+margin-bottom:12px;
+
+text-transform:uppercase;
+
+}
+
+.payout-subtitle{
+
+font-size:13px;
+
+color:#aaa092;
+
+line-height:1.7;
+
+margin-bottom:30px;
+
+}
+
+.payout-amount{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+3rem,
+10vw,
+6.5rem
+);
+
+font-weight:900;
+
+line-height:1;
+
+letter-spacing:-.045em;
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff 0%,
+#fff0bd 45%,
+#f0c96f 75%,
+#a66b00 100%
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:28px;
+
+text-shadow:
+0 0 40px rgba(240,201,111,.08);
+
+}
+
+.payout-progress-wrap{
+
+max-width:850px;
+
+margin:0 auto;
+
+}
+
+.payout-progress-top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:10px;
+
+font-family:'Orbitron',sans-serif;
+
+font-size:10px;
+
+font-weight:900;
+
+letter-spacing:.1em;
+
+text-transform:uppercase;
+
+}
+
+.payout-progress-label{
+
+color:#aaa092;
+
+}
+
+.payout-progress-percent{
+
+color:var(--gold);
+
+min-width:48px;
+
+text-align:right;
+
+}
+
+.payout-progress{
+
+height:14px;
+
+width:100%;
+
+border-radius:999px;
+
+overflow:hidden;
+
+background:
+
+rgba(255,255,255,.07);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+inset 0 2px 8px rgba(0,0,0,.45);
+
+}
+
+.payout-progress-fill{
+
+height:100%;
+
+width:0%;
+
+border-radius:999px;
+
+background:
+
+linear-gradient(
+90deg,
+var(--darkred),
+var(--red),
+var(--gold)
+);
+
+box-shadow:
+
+0 0 20px rgba(240,201,111,.25);
+
+transform-origin:left center;
+
+will-change:width;
+
+}
+
+.payout-footer{
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-top:18px;
+
+font-size:10px;
+
+font-weight:800;
+
+letter-spacing:.1em;
+
+color:#777064;
+
+text-transform:uppercase;
+
+}
+
+.payout-dot{
+
+width:6px;
+
+height:6px;
+
+border-radius:50%;
+
+background:var(--green);
+
+box-shadow:0 0 10px rgba(85,217,138,.65);
+
+display:inline-block;
+
+margin-right:6px;
+
+}
+
+
+/* =========================================================
    STRATEGIES
 ========================================================= */
 
@@ -2984,7 +3303,8 @@ padding:27px;
 .instagram-section,
 .strategies-section,
 .reviews-section,
-.recommendations-section{
+.recommendations-section,
+.payout-section{
 
 padding:65px 0;
 
@@ -3074,6 +3394,35 @@ flex-direction:column;
 align-items:flex-start;
 
 padding:25px;
+
+}
+
+.payout-box{
+
+padding:42px 20px;
+
+}
+
+.payout-amount{
+
+font-size:
+clamp(
+2.8rem,
+15vw,
+4.5rem
+);
+
+}
+
+.payout-progress-top{
+
+font-size:8px;
+
+}
+
+.payout-progress{
+
+height:11px;
 
 }
 
@@ -3538,119 +3887,6 @@ unnecessary trades.
 
 
 <!-- =========================================================
-     STRATEGIES
-========================================================= -->
-
-<section
-class="strategies-section"
-id="strategies"
->
-
-<div class="container">
-
-<div class="strategies-heading">
-
-<div class="proprietary-badge">
-FOREX WEALTH EMPIRE
-</div>
-
-<h2>
-THE STRATEGY ARCHITECTURE
-</h2>
-
-<p>
-
-A collection of proprietary trading frameworks developed within
-the Forex Wealth Empire educational environment.
-
-</p>
-
-</div>
-
-
-<div class="strategy-grid">
-
-
-<div class="strategy-card">
-
-<div class="strategy-number">
-01 / CORE MODEL
-</div>
-
-<h3>
-Liquidity Displacement Methodology™
-</h3>
-
-<p>
-
-The core FWE framework focused on understanding liquidity,
-market behaviour, displacement and structured execution.
-
-</p>
-
-<span class="strategy-tag">
-PROPRIETARY FRAMEWORK
-</span>
-
-</div>
-
-
-<div class="strategy-card">
-
-<div class="strategy-number">
-02 / RELOAD MODEL
-</div>
-
-<h3>
-Daily Reload Method™
-</h3>
-
-<p>
-
-A structured framework designed around identifying opportunities
-to reload into the market while maintaining patience and execution
-discipline.
-
-</p>
-
-<span class="strategy-tag">
-DAILY FRAMEWORK
-</span>
-
-</div>
-
-
-<div class="strategy-card">
-
-<div class="strategy-number">
-03 / ARCHITECTURE
-</div>
-
-<h3>
-4H Architecture Method™
-</h3>
-
-<p>
-
-A higher-timeframe framework focused on reading 4H market
-architecture and identifying meaningful structural behaviour.
-
-</p>
-
-<span class="strategy-tag">
-HIGHER-TIMEFRAME
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
      PREMIUM EDUCATION
 ========================================================= -->
 
@@ -3806,13 +4042,9 @@ Empire Signal Course and educational environment.
 
 <div class="review-top">
 
-<strong>
-Lucas
-</strong>
+<strong>Lucas</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -3827,13 +4059,9 @@ Clear strategy, simple process and much better structure on my charts. I know wh
 
 <div class="review-top">
 
-<strong>
-Ashlyn
-</strong>
+<strong>Ashlyn</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -3848,13 +4076,9 @@ I really like the patience behind the strategy. It gives you a process to follow
 
 <div class="review-top">
 
-<strong>
-Themba
-</strong>
+<strong>Themba</strong>
 
-<span>
-★★★★☆
-</span>
+<span>★★★★☆</span>
 
 </div>
 
@@ -3869,13 +4093,9 @@ The Signal Course changed how I look at price. I have become much more selective
 
 <div class="review-top">
 
-<strong>
-Aron
-</strong>
+<strong>Aron</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -3890,13 +4110,9 @@ The liquidity and displacement concepts are explained in a clear way. The struct
 
 <div class="review-top">
 
-<strong>
-Nomsa
-</strong>
+<strong>Nomsa</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -3911,13 +4127,9 @@ A structured approach that makes studying the market much easier. I especially l
 
 <div class="review-top">
 
-<strong>
-Banana
-</strong>
+<strong>Banana</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -3932,13 +4144,9 @@ I like that the strategy focuses on waiting instead of forcing entries. It has h
 
 <div class="review-top">
 
-<strong>
-Mandla
-</strong>
+<strong>Mandla</strong>
 
-<span>
-★★★★☆
-</span>
+<span>★★★★☆</span>
 
 </div>
 
@@ -3953,13 +4161,9 @@ The methodology gives me a clearer process before taking a trade. I spend more t
 
 <div class="review-top">
 
-<strong>
-Mxolisi
-</strong>
+<strong>Mxolisi</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -3974,13 +4178,9 @@ The Signal Course is well structured and easy to follow through the charts. The 
 
 <div class="review-top">
 
-<strong>
-Adam
-</strong>
+<strong>Adam</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -3995,13 +4195,9 @@ The course helped me become more disciplined with my market analysis and more co
 
 <div class="review-top">
 
-<strong>
-Gugulethu
-</strong>
+<strong>Gugulethu</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4012,19 +4208,15 @@ I enjoy the combination of signals, education and market analysis. It gives the 
 </div>
 
 
-<!-- DUPLICATES -->
+<!-- DUPLICATES FOR INFINITE ANIMATION -->
 
 <div class="review-card">
 
 <div class="review-top">
 
-<strong>
-Lucas
-</strong>
+<strong>Lucas</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4039,13 +4231,9 @@ Clear strategy, simple process and much better structure on my charts. I know wh
 
 <div class="review-top">
 
-<strong>
-Ashlyn
-</strong>
+<strong>Ashlyn</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4060,13 +4248,9 @@ I really like the patience behind the strategy. It gives you a process to follow
 
 <div class="review-top">
 
-<strong>
-Themba
-</strong>
+<strong>Themba</strong>
 
-<span>
-★★★★☆
-</span>
+<span>★★★★☆</span>
 
 </div>
 
@@ -4081,13 +4265,9 @@ The Signal Course changed how I look at price. I have become much more selective
 
 <div class="review-top">
 
-<strong>
-Aron
-</strong>
+<strong>Aron</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4102,13 +4282,9 @@ The liquidity and displacement concepts are explained in a clear way. The struct
 
 <div class="review-top">
 
-<strong>
-Nomsa
-</strong>
+<strong>Nomsa</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4123,13 +4299,9 @@ A structured approach that makes studying the market much easier. I especially l
 
 <div class="review-top">
 
-<strong>
-Banana
-</strong>
+<strong>Banana</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4144,13 +4316,9 @@ I like that the strategy focuses on waiting instead of forcing entries. It has h
 
 <div class="review-top">
 
-<strong>
-Mandla
-</strong>
+<strong>Mandla</strong>
 
-<span>
-★★★★☆
-</span>
+<span>★★★★☆</span>
 
 </div>
 
@@ -4165,13 +4333,9 @@ The methodology gives me a clearer process before taking a trade. I spend more t
 
 <div class="review-top">
 
-<strong>
-Mxolisi
-</strong>
+<strong>Mxolisi</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4186,13 +4350,9 @@ The Signal Course is well structured and easy to follow through the charts. The 
 
 <div class="review-top">
 
-<strong>
-Adam
-</strong>
+<strong>Adam</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4207,13 +4367,9 @@ The course helped me become more disciplined with my market analysis and more co
 
 <div class="review-top">
 
-<strong>
-Gugulethu
-</strong>
+<strong>Gugulethu</strong>
 
-<span>
-★★★★★
-</span>
+<span>★★★★★</span>
 
 </div>
 
@@ -4404,6 +4560,216 @@ TP HIT
 
 
 <!-- =========================================================
+     PROP FIRM PAYOUT COUNTER
+========================================================= -->
+
+<section class="payout-section">
+
+<div class="container">
+
+<div class="payout-box">
+
+<div class="payout-content">
+
+<div class="payout-label">
+FOREX WEALTH EMPIRE TRACK RECORD
+</div>
+
+<h2 class="payout-title">
+TOTAL PROP FIRM PAYOUTS
+</h2>
+
+<p class="payout-subtitle">
+All-time prop firm payouts displayed as a cumulative figure.
+</p>
+
+<div
+class="payout-amount"
+id="payoutCounter"
+aria-live="polite"
+>
+$0
+</div>
+
+
+<div class="payout-progress-wrap">
+
+<div class="payout-progress-top">
+
+<span class="payout-progress-label">
+PAYOUT PROGRESS
+</span>
+
+<span
+class="payout-progress-percent"
+id="payoutPercent"
+>
+0%
+</span>
+
+</div>
+
+
+<div
+class="payout-progress"
+role="progressbar"
+aria-label="Total prop firm payout progress"
+aria-valuemin="0"
+aria-valuemax="100"
+aria-valuenow="0"
+>
+
+<div
+class="payout-progress-fill"
+id="payoutProgressFill"
+>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="payout-footer">
+
+<span>
+<span class="payout-dot"></span>
+TARGET REACHED
+</span>
+
+<span>
+•
+</span>
+
+<span>
+$545,000 ALL-TIME PAYOUT
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     STRATEGIES
+========================================================= -->
+
+<section
+class="strategies-section"
+id="strategies"
+>
+
+<div class="container">
+
+<div class="strategies-heading">
+
+<div class="proprietary-badge">
+FOREX WEALTH EMPIRE
+</div>
+
+<h2>
+THE STRATEGY ARCHITECTURE
+</h2>
+
+<p>
+
+A collection of proprietary trading frameworks developed within
+the Forex Wealth Empire educational environment.
+
+</p>
+
+</div>
+
+
+<div class="strategy-grid">
+
+
+<div class="strategy-card">
+
+<div class="strategy-number">
+01 / CORE MODEL
+</div>
+
+<h3>
+Liquidity Displacement Methodology™
+</h3>
+
+<p>
+
+The core FWE framework focused on understanding liquidity,
+market behaviour, displacement and structured execution.
+
+</p>
+
+<span class="strategy-tag">
+PROPRIETARY FRAMEWORK
+</span>
+
+</div>
+
+
+<div class="strategy-card">
+
+<div class="strategy-number">
+02 / RELOAD MODEL
+</div>
+
+<h3>
+Daily Reload Method™
+</h3>
+
+<p>
+
+A structured framework designed around identifying opportunities
+to reload into the market while maintaining patience and execution
+discipline.
+
+</p>
+
+<span class="strategy-tag">
+DAILY FRAMEWORK
+</span>
+
+</div>
+
+
+<div class="strategy-card">
+
+<div class="strategy-number">
+03 / ARCHITECTURE
+</div>
+
+<h3>
+4H Architecture Method™
+</h3>
+
+<p>
+
+A higher-timeframe framework focused on reading 4H market
+architecture and identifying meaningful structural behaviour.
+
+</p>
+
+<span class="strategy-tag">
+HIGHER-TIMEFRAME
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      RECOMMENDATIONS
 ========================================================= -->
 
@@ -4438,8 +4804,6 @@ Empire platform.
 <div class="recommendation-grid">
 
 
-<!-- PROP FIRMS -->
-
 <div class="recommendation-card">
 
 <div class="recommendation-icon">
@@ -4471,8 +4835,6 @@ RESEARCH IN PROGRESS
 
 </div>
 
-
-<!-- BROKERS -->
 
 <div class="recommendation-card">
 
@@ -5034,8 +5396,6 @@ Educational content only. Trading involves risk.
      LIVECHAT
 ========================================================= -->
 
-<!-- Start of LiveChat (www.livechat.com) code -->
-
 <script>
 
 window.__lc = window.__lc || {};
@@ -5144,7 +5504,217 @@ Chat with us
 
 </noscript>
 
-<!-- End of LiveChat code -->
+
+<!-- =========================================================
+     PAYOUT COUNTER SCRIPT
+========================================================= -->
+
+<script>
+
+(function(){
+
+const TARGET = 545000;
+
+const DURATION = 6500;
+
+const counter =
+document.getElementById("payoutCounter");
+
+const progressFill =
+document.getElementById("payoutProgressFill");
+
+const progressPercent =
+document.getElementById("payoutPercent");
+
+const progressBar =
+document.querySelector(".payout-progress");
+
+if(
+!counter ||
+!progressFill ||
+!progressPercent ||
+!progressBar
+){
+
+return;
+
+}
+
+
+/*
+   Formats the payout number.
+   Example:
+   1250 -> $1,250
+   545000 -> $545,000
+*/
+
+function formatMoney(value){
+
+return "$" + Math.round(value).toLocaleString("en-US");
+
+}
+
+
+/*
+   Easing function.
+
+   Starts quickly,
+   continues smoothly,
+   then slows progressively
+   near the final target.
+*/
+
+function easeOutQuint(t){
+
+return 1 - Math.pow(1 - t, 5);
+
+}
+
+
+function updateCounter(progress){
+
+const easedProgress =
+easeOutQuint(progress);
+
+const currentValue =
+TARGET * easedProgress;
+
+const percentage =
+easedProgress * 100;
+
+
+/*
+   Counter
+*/
+
+counter.textContent =
+formatMoney(currentValue);
+
+
+/*
+   Progress bar
+*/
+
+progressFill.style.width =
+percentage + "%";
+
+
+/*
+   Percentage text
+*/
+
+progressPercent.textContent =
+Math.round(percentage) + "%";
+
+
+/*
+   Accessibility value
+*/
+
+progressBar.setAttribute(
+"aria-valuenow",
+Math.round(percentage)
+);
+
+}
+
+
+/*
+   Reduced motion:
+   immediately display final value.
+*/
+
+const reducedMotion =
+window.matchMedia(
+"(prefers-reduced-motion: reduce)"
+).matches;
+
+
+if(reducedMotion){
+
+updateCounter(1);
+
+counter.textContent =
+formatMoney(TARGET);
+
+progressFill.style.width =
+"100%";
+
+progressPercent.textContent =
+"100%";
+
+progressBar.setAttribute(
+"aria-valuenow",
+"100"
+);
+
+return;
+
+}
+
+
+/*
+   Animation.
+*/
+
+let startTime = null;
+
+
+function animate(timestamp){
+
+if(!startTime){
+
+startTime = timestamp;
+
+}
+
+const elapsed =
+timestamp - startTime;
+
+const progress =
+Math.min(
+elapsed / DURATION,
+1
+);
+
+
+updateCounter(progress);
+
+
+if(progress < 1){
+
+requestAnimationFrame(animate);
+
+}else{
+
+/*
+   Force the final state exactly.
+*/
+
+counter.textContent =
+formatMoney(TARGET);
+
+progressFill.style.width =
+"100%";
+
+progressPercent.textContent =
+"100%";
+
+progressBar.setAttribute(
+"aria-valuenow",
+"100"
+);
+
+}
+
+}
+
+
+requestAnimationFrame(animate);
+
+})();
+
+</script>
 
 
 <!-- =========================================================
@@ -5231,4 +5801,4 @@ popup.classList.remove("active");
 
 </body>
 
-  </html>
+   </html>
