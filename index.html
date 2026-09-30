@@ -46,6 +46,7 @@ rel="stylesheet"
 --darkred:#720000;
 --discord:#5865f2;
 --green:#55d98a;
+--instagram:#e1306c;
 --radius:24px;
 --max:1220px;
 
@@ -290,6 +291,26 @@ padding:12px 18px;
 border-radius:999px;
 
 background:var(--discord);
+
+color:white!important;
+
+font-weight:900;
+
+}
+
+.nav-instagram{
+
+padding:12px 18px;
+
+border-radius:999px;
+
+background:
+linear-gradient(
+135deg,
+#833ab4,
+#e1306c,
+#f77737
+);
 
 color:white!important;
 
@@ -614,6 +635,23 @@ color:white;
 
 box-shadow:
 0 0 30px rgba(88,101,242,.2);
+
+}
+
+.btn-instagram{
+
+background:
+linear-gradient(
+135deg,
+#833ab4,
+#e1306c,
+#f77737
+);
+
+color:white;
+
+box-shadow:
+0 0 30px rgba(225,48,108,.18);
 
 }
 
@@ -1778,6 +1816,369 @@ background:rgba(240,201,111,.04);
 
 
 /* =========================================================
+   RECOMMENDATIONS
+========================================================= */
+
+.recommendations-section{
+
+padding:85px 0;
+
+background:
+
+radial-gradient(
+circle at 80% 20%,
+rgba(255,30,30,.08),
+transparent 30%
+),
+
+#020202;
+
+}
+
+.recommendations-heading{
+
+text-align:center;
+
+max-width:800px;
+
+margin:0 auto 45px;
+
+}
+
+.recommendations-heading h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+2rem,
+5vw,
+3.2rem
+);
+
+margin-bottom:15px;
+
+}
+
+.recommendations-heading p{
+
+color:var(--muted);
+
+font-size:14px;
+
+line-height:1.8;
+
+}
+
+.recommendation-grid{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:20px;
+
+}
+
+.recommendation-card{
+
+padding:35px;
+
+border-radius:28px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,30,30,.07),
+rgba(240,201,111,.035)
+),
+
+rgba(255,255,255,.025);
+
+border:1px solid rgba(255,255,255,.08);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.recommendation-card::before{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+background:rgba(255,30,30,.07);
+
+filter:blur(45px);
+
+right:-70px;
+
+top:-70px;
+
+}
+
+.recommendation-icon{
+
+width:65px;
+
+height:65px;
+
+border-radius:18px;
+
+display:grid;
+
+place-items:center;
+
+background:rgba(255,30,30,.10);
+
+border:1px solid rgba(255,30,30,.2);
+
+color:var(--red);
+
+font-family:'Orbitron',sans-serif;
+
+font-size:18px;
+
+font-weight:900;
+
+margin-bottom:23px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.recommendation-card h3{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:21px;
+
+margin-bottom:13px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.recommendation-card p{
+
+font-size:13px;
+
+line-height:1.9;
+
+color:#b8ad9d;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.recommendation-status{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:9px;
+
+margin-top:23px;
+
+padding:10px 14px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:#aaa092;
+
+font-size:10px;
+
+font-weight:900;
+
+letter-spacing:.1em;
+
+text-transform:uppercase;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.recommendation-status-dot{
+
+width:7px;
+
+height:7px;
+
+border-radius:50%;
+
+background:var(--gold);
+
+box-shadow:0 0 10px rgba(240,201,111,.5);
+
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.instagram-section{
+
+padding:85px 0;
+
+background:
+
+radial-gradient(
+circle at 15% 50%,
+rgba(225,48,108,.10),
+transparent 35%
+),
+
+#030303;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.instagram-box{
+
+padding:42px;
+
+border-radius:30px;
+
+border:1px solid rgba(225,48,108,.24);
+
+background:
+
+linear-gradient(
+135deg,
+rgba(225,48,108,.08),
+rgba(255,255,255,.025)
+),
+
+rgba(255,255,255,.02);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:35px;
+
+}
+
+.instagram-content{
+
+max-width:760px;
+
+}
+
+.instagram-badge{
+
+display:inline-block;
+
+padding:8px 13px;
+
+border-radius:999px;
+
+background:rgba(225,48,108,.12);
+
+border:1px solid rgba(225,48,108,.25);
+
+color:#ff7aa7;
+
+font-size:10px;
+
+font-weight:900;
+
+letter-spacing:.14em;
+
+text-transform:uppercase;
+
+margin-bottom:17px;
+
+}
+
+.instagram-box h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+2rem,
+5vw,
+3.3rem
+);
+
+margin-bottom:15px;
+
+}
+
+.instagram-box h2 span{
+
+background:
+linear-gradient(
+135deg,
+#833ab4,
+#e1306c,
+#f77737
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.instagram-box p{
+
+color:#aaa092;
+
+font-size:14px;
+
+line-height:1.85;
+
+}
+
+.instagram-handle{
+
+margin-top:17px;
+
+font-family:'Orbitron',sans-serif;
+
+font-size:13px;
+
+font-weight:900;
+
+letter-spacing:.08em;
+
+color:white;
+
+}
+
+
+/* =========================================================
    EXPERIENCE
 ========================================================= */
 
@@ -2502,13 +2903,20 @@ repeat(3,1fr);
 
 }
 
-nav a:not(.nav-buy):not(.nav-discord){
+.recommendation-grid{
+
+grid-template-columns:1fr;
+
+}
+
+nav a:not(.nav-buy):not(.nav-discord):not(.nav-instagram){
 
 display:none;
 
 }
 
-.discord-box{
+.discord-box,
+.instagram-box{
 
 flex-direction:column;
 
@@ -2564,7 +2972,8 @@ grid-template-columns:1fr;
 
 }
 
-.discord-box{
+.discord-box,
+.instagram-box{
 
 padding:27px;
 
@@ -2572,8 +2981,10 @@ padding:27px;
 
 .section,
 .discord-section,
+.instagram-section,
 .strategies-section,
-.reviews-section{
+.reviews-section,
+.recommendations-section{
 
 padding:65px 0;
 
@@ -2596,7 +3007,8 @@ width:100%;
 
 }
 
-.nav-discord{
+.nav-discord,
+.nav-instagram{
 
 display:none;
 
@@ -2718,8 +3130,21 @@ Features
 Strategies
 </a>
 
+<a href="#recommendations">
+Recommendations
+</a>
+
 <a href="#mentorship">
 Mentorship
+</a>
+
+<a
+href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
+target="_blank"
+rel="noopener noreferrer"
+class="nav-instagram"
+>
+INSTAGRAM
 </a>
 
 <a
@@ -2864,6 +3289,16 @@ target="_blank"
 rel="noopener noreferrer"
 >
 JOIN DISCORD
+</a>
+
+
+<a
+class="btn btn-instagram"
+href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
+target="_blank"
+rel="noopener noreferrer"
+>
+FOLLOW INSTAGRAM
 </a>
 
 
@@ -3961,6 +4396,178 @@ TP HIT
 
 </div>
 
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     RECOMMENDATIONS
+========================================================= -->
+
+<section
+class="recommendations-section"
+id="recommendations"
+>
+
+<div class="container">
+
+<div class="recommendations-heading">
+
+<div class="proprietary-badge">
+FWE RECOMMENDATIONS
+</div>
+
+<h2>
+PROP FIRMS & BROKERS
+</h2>
+
+<p>
+
+We are currently researching and reviewing reliable prop firms
+and brokers before adding any recommendations to the Forex Wealth
+Empire platform.
+
+</p>
+
+</div>
+
+
+<div class="recommendation-grid">
+
+
+<!-- PROP FIRMS -->
+
+<div class="recommendation-card">
+
+<div class="recommendation-icon">
+PF
+</div>
+
+<h3>
+PROP FIRM RECOMMENDATIONS
+</h3>
+
+<p>
+
+Forex Wealth Empire is still searching for reliable prop firms
+that meet our standards for trading conditions, transparency,
+rules, payouts and overall trader experience.
+
+We will publish selected recommendations here once our research
+and review process is complete.
+
+</p>
+
+<div class="recommendation-status">
+
+<span class="recommendation-status-dot"></span>
+
+RESEARCH IN PROGRESS
+
+</div>
+
+</div>
+
+
+<!-- BROKERS -->
+
+<div class="recommendation-card">
+
+<div class="recommendation-icon">
+BR
+</div>
+
+<h3>
+BROKER RECOMMENDATIONS
+</h3>
+
+<p>
+
+We are also reviewing brokers and their trading conditions,
+execution, fees, regulation, reliability and overall suitability
+for traders.
+
+A broker recommendation will appear here once the review process
+has been completed.
+
+</p>
+
+<div class="recommendation-status">
+
+<span class="recommendation-status-dot"></span>
+
+COMING SOON
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     INSTAGRAM
+========================================================= -->
+
+<section
+class="instagram-section"
+id="instagram"
+>
+
+<div class="container">
+
+<div class="instagram-box">
+
+<div class="instagram-content">
+
+<div class="instagram-badge">
+OFFICIAL INSTAGRAM
+</div>
+
+<h2>
+
+FOLLOW
+<span>
+THE LDM.
+</span>
+
+</h2>
+
+<p>
+
+Follow the official Liquidity Displacement Methodology™ Instagram
+account for market content, methodology updates, educational
+material and Forex Wealth Empire announcements.
+
+</p>
+
+<div class="instagram-handle">
+@the.ldm_
+</div>
+
+
+<div class="cta-row">
+
+<a
+class="btn btn-instagram"
+href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
+target="_blank"
+rel="noopener noreferrer"
+>
+FOLLOW @THE.LDM_
+</a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -4136,6 +4743,15 @@ rel="noopener noreferrer"
 JOIN DISCORD
 </a>
 
+<a
+class="btn btn-instagram"
+href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
+target="_blank"
+rel="noopener noreferrer"
+>
+FOLLOW INSTAGRAM
+</a>
+
 </div>
 
 </div>
@@ -4269,6 +4885,18 @@ Liquidity Displacement Methodology™
 
 <div>
 Forex Wealth Empire (Pty) Ltd
+</div>
+
+<div>
+
+<a
+href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
+target="_blank"
+rel="noopener noreferrer"
+>
+Instagram @the.ldm_
+</a>
+
 </div>
 
 <div>
