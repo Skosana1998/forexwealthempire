@@ -2843,6 +2843,275 @@ line-height:1.8;
 
 
 /* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section{
+
+padding:72px 0;
+
+background:
+
+radial-gradient(
+circle at 85% 20%,
+rgba(240,201,111,.08),
+transparent 30%
+),
+
+radial-gradient(
+circle at 10% 80%,
+rgba(255,30,30,.07),
+transparent 30%
+),
+
+#030303;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.faq-heading{
+
+max-width:800px;
+
+margin:0 auto 35px;
+
+text-align:center;
+
+}
+
+.faq-heading h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+2rem,
+5vw,
+3.2rem
+);
+
+line-height:1.1;
+
+margin-bottom:12px;
+
+}
+
+.faq-heading p{
+
+color:var(--muted);
+
+font-size:13px;
+
+line-height:1.8;
+
+}
+
+.faq-list{
+
+max-width:900px;
+
+margin:0 auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.faq-item{
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.035),
+rgba(255,255,255,.018)
+);
+
+overflow:hidden;
+
+transition:
+
+border-color .3s ease,
+
+box-shadow .3s ease,
+
+transform .3s ease;
+
+}
+
+.faq-item:hover{
+
+border-color:rgba(240,201,111,.18);
+
+}
+
+.faq-item.active{
+
+border-color:rgba(240,201,111,.28);
+
+box-shadow:
+0 12px 40px rgba(0,0,0,.25);
+
+}
+
+.faq-question{
+
+width:100%;
+
+border:0;
+
+outline:0;
+
+background:transparent;
+
+color:white;
+
+padding:19px 21px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+text-align:left;
+
+font-family:'Inter',sans-serif;
+
+font-size:13px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+.faq-question:hover{
+
+color:var(--gold2);
+
+}
+
+.faq-icon{
+
+width:27px;
+
+height:27px;
+
+min-width:27px;
+
+border-radius:50%;
+
+display:grid;
+
+place-items:center;
+
+border:1px solid rgba(240,201,111,.18);
+
+background:rgba(240,201,111,.05);
+
+color:var(--gold);
+
+font-size:18px;
+
+font-weight:400;
+
+transition:.35s ease;
+
+}
+
+.faq-item.active .faq-icon{
+
+transform:rotate(45deg);
+
+background:rgba(255,30,30,.10);
+
+border-color:rgba(255,30,30,.28);
+
+color:#ff7777;
+
+}
+
+.faq-answer{
+
+display:grid;
+
+grid-template-rows:0fr;
+
+transition:
+
+grid-template-rows .35s ease;
+
+}
+
+.faq-item.active .faq-answer{
+
+grid-template-rows:1fr;
+
+}
+
+.faq-answer-inner{
+
+overflow:hidden;
+
+min-height:0;
+
+}
+
+.faq-answer p{
+
+padding:0 21px 20px;
+
+color:#aaa092;
+
+font-size:12px;
+
+line-height:1.8;
+
+max-width:820px;
+
+}
+
+.faq-answer strong{
+
+color:#ddd2c0;
+
+}
+
+.faq-bottom-note{
+
+max-width:900px;
+
+margin:25px auto 0;
+
+padding:15px 18px;
+
+border-left:3px solid var(--gold);
+
+background:rgba(240,201,111,.035);
+
+color:#8f8576;
+
+font-size:10px;
+
+line-height:1.75;
+
+}
+
+
+/* =========================================================
    DISCLAIMER
 ========================================================= */
 
@@ -3344,7 +3613,8 @@ padding:25px;
 .strategies-section,
 .reviews-section,
 .recommendations-section,
-.payout-section{
+.payout-section,
+.faq-section{
 
 padding-top:48px;
 
@@ -3480,6 +3750,32 @@ padding:24px;
 
 }
 
+.faq-question{
+
+padding:17px 15px;
+
+font-size:12px;
+
+}
+
+.faq-answer p{
+
+padding:0 15px 18px;
+
+font-size:11px;
+
+}
+
+.faq-icon{
+
+width:25px;
+
+height:25px;
+
+min-width:25px;
+
+}
+
 }
 
 
@@ -3501,6 +3797,12 @@ scroll-behavior:auto!important;
 .visual::after{
 
 animation:none!important;
+
+}
+
+.faq-answer{
+
+transition:none!important;
 
 }
 
@@ -3563,6 +3865,10 @@ Recommendations
 
 <a href="#mentorship">
 Mentorship
+</a>
+
+<a href="#faq">
+FAQ
 </a>
 
 <a
@@ -5033,6 +5339,651 @@ VIEW PREMIUM
 
 
 <!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section
+class="faq-section"
+id="faq"
+>
+
+<div class="container">
+
+<div class="faq-heading">
+
+<div class="proprietary-badge">
+LIQUIDITY DISPLACEMENT METHODOLOGY™
+</div>
+
+<h2>
+FREQUENTLY ASKED QUESTIONS
+</h2>
+
+<p>
+
+Everything you need to know about the methodology, educational
+framework and Forex Wealth Empire environment.
+
+</p>
+
+</div>
+
+
+<div class="faq-list">
+
+
+<!-- FAQ 01 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+What is the Liquidity Displacement Methodology™?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+The Liquidity Displacement Methodology™ is a proprietary trading
+framework developed by Forex Wealth Empire, designed to provide
+traders with a structured approach to understanding and navigating
+financial markets.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 02 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Who is the methodology for?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+It is designed for traders who want to develop a more structured,
+disciplined and professional approach to market analysis and
+execution.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 03 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Is it a trading strategy?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+It is a proprietary methodology and educational framework. The
+methodology is designed to provide a structured way of approaching
+the markets rather than relying on random entries or emotional
+decision-making.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 04 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+What markets can I use it on?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+The methodology is designed for application across major financial
+markets, including Forex, indices, commodities and selected
+cryptocurrency markets.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 05 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Do I need trading experience?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+No. The educational material is designed to help traders understand
+the framework progressively. However, basic knowledge of financial
+markets can be beneficial.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 06 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Does the methodology guarantee profits?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+No. There are no guaranteed profits in financial markets. The
+methodology is designed to provide structure, education and a
+disciplined approach to trading.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 07 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Does this include trading signals?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+The methodology and educational material are separate from any
+signal services offered by Forex Wealth Empire. Any available
+signal service will be clearly stated as a separate product or
+service.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 08 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Can I use it with my current trading system?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+Yes. Traders may use the methodology as part of their broader
+trading education and market-analysis process.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 09 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Is it suitable for beginners?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+Yes. The framework can be studied by traders at different
+experience levels. Beginners are encouraged to focus on understanding
+the concepts and developing proper risk-management habits before
+trading live capital.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 10 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Is it suitable for funded accounts?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+The framework can be studied by traders operating funded or
+evaluation accounts. However, every trader remains responsible for
+understanding and following the specific rules of their funding
+provider.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 11 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Do I need expensive indicators or software?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+No specific indicator package or expensive software is required to
+access the educational methodology.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 12 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+How is the methodology different?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+The Liquidity Displacement Methodology™ is a proprietary Forex
+Wealth Empire framework built around a structured way of viewing
+market behaviour. Its purpose is to help traders move away from
+random decision-making and toward a more professional trading
+process.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 13 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Will the complete methodology be available publicly?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+No. The detailed rules, proprietary concepts, execution framework
+and educational material are reserved for authorized students and
+customers.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 14 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Can I share or resell the methodology?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+No. The Liquidity Displacement Methodology™ and its educational
+materials are proprietary intellectual property of Forex Wealth
+Empire. Unauthorized copying, redistribution, resale or reproduction
+is prohibited.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ 15 -->
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+type="button"
+aria-expanded="false"
+>
+
+<span>
+Where can I learn more?
+</span>
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<div class="faq-answer-inner">
+
+<p>
+
+You can explore the available Forex Wealth Empire educational
+products and services to find the option that best suits your
+trading goals.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="faq-bottom-note">
+
+<strong>
+PROPRIETARY NOTICE:
+</strong>
+
+The public FAQ intentionally provides general information only.
+Specific trading rules, confirmations, execution conditions and
+proprietary concepts are not disclosed on this public website.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      DISCLAIMER
 ========================================================= -->
 
@@ -5509,6 +6460,69 @@ Math.round(finalPercentage)
 
 
 requestAnimationFrame(animate);
+
+})();
+
+</script>
+
+
+<!-- =========================================================
+     FAQ SCRIPT
+========================================================= -->
+
+<script>
+
+(function(){
+
+const faqItems =
+document.querySelectorAll(".faq-item");
+
+faqItems.forEach(function(item){
+
+const question =
+item.querySelector(".faq-question");
+
+question.addEventListener(
+"click",
+function(){
+
+const isOpen =
+item.classList.contains("active");
+
+
+faqItems.forEach(function(otherItem){
+
+otherItem.classList.remove("active");
+
+const otherQuestion =
+otherItem.querySelector(".faq-question");
+
+if(otherQuestion){
+
+otherQuestion.setAttribute(
+"aria-expanded",
+"false"
+);
+
+}
+
+});
+
+
+if(!isOpen){
+
+item.classList.add("active");
+
+question.setAttribute(
+"aria-expanded",
+"true"
+);
+
+}
+
+});
+
+});
 
 })();
 
