@@ -18,7 +18,7 @@ content="Forex Wealth Empire — Liquidity Displacement Methodology™. Propriet
 
 <link
 rel="preconnect"
-href="https://fonts.googleapis.com"
+href="https://fonts.gstatic.com"
 crossorigin
 >
 
@@ -2173,10 +2173,13 @@ line-height:1.75;
 
 display:grid;
 
-grid-template-columns:
-1.25fr .75fr;
+grid-template-columns:1fr;
 
 gap:15px;
+
+max-width:760px;
+
+margin:0 auto;
 
 }
 
@@ -2184,40 +2187,46 @@ gap:15px;
 
 padding:28px;
 
-border-radius:25px;
+border-radius:28px;
 
 background:
 
 linear-gradient(
 145deg,
-rgba(255,30,30,.07),
-rgba(240,201,111,.035)
+rgba(88,101,242,.13),
+rgba(88,101,242,.035)
 ),
 
 rgba(255,255,255,.025);
 
-border:1px solid rgba(255,255,255,.08);
+border:1px solid rgba(88,101,242,.28);
 
 position:relative;
 
 overflow:hidden;
+
+box-shadow:
+0 0 45px rgba(88,101,242,.05);
 
 }
 
 .featured-prop{
 
 border-color:
-rgba(240,201,111,.28);
+rgba(88,101,242,.35);
 
 background:
 
 linear-gradient(
 145deg,
-rgba(240,201,111,.08),
-rgba(255,30,30,.05)
+rgba(88,101,242,.14),
+rgba(88,101,242,.045)
 ),
 
 rgba(255,255,255,.025);
+
+box-shadow:
+0 0 50px rgba(88,101,242,.08);
 
 }
 
@@ -2227,19 +2236,19 @@ content:"";
 
 position:absolute;
 
-width:180px;
+width:220px;
 
-height:180px;
+height:220px;
 
 border-radius:50%;
 
-background:rgba(255,30,30,.07);
+background:rgba(88,101,242,.12);
 
-filter:blur(45px);
+filter:blur(55px);
 
-right:-70px;
+right:-80px;
 
-top:-70px;
+top:-80px;
 
 }
 
@@ -2255,11 +2264,17 @@ display:grid;
 
 place-items:center;
 
-background:rgba(255,30,30,.10);
+background:
 
-border:1px solid rgba(255,30,30,.2);
+linear-gradient(
+135deg,
+rgba(88,101,242,.28),
+rgba(88,101,242,.10)
+);
 
-color:var(--red);
+border:1px solid rgba(88,101,242,.45);
+
+color:#929cff;
 
 font-family:'Orbitron',sans-serif;
 
@@ -2272,6 +2287,9 @@ margin-bottom:20px;
 position:relative;
 
 z-index:2;
+
+box-shadow:
+0 0 30px rgba(88,101,242,.18);
 
 }
 
@@ -2305,7 +2323,7 @@ z-index:2;
 
 .recommendation-card p strong{
 
-color:var(--gold);
+color:#929cff;
 
 }
 
@@ -2323,11 +2341,11 @@ padding:9px 13px;
 
 border-radius:999px;
 
-background:rgba(255,255,255,.04);
+background:rgba(88,101,242,.10);
 
-border:1px solid rgba(255,255,255,.08);
+border:1px solid rgba(88,101,242,.28);
 
-color:#aaa092;
+color:#929cff;
 
 font-size:9px;
 
@@ -2351,9 +2369,9 @@ height:7px;
 
 border-radius:50%;
 
-background:var(--gold);
+background:var(--discord);
 
-box-shadow:0 0 10px rgba(240,201,111,.5);
+box-shadow:0 0 12px rgba(88,101,242,.8);
 
 }
 
@@ -2382,7 +2400,7 @@ border-radius:15px;
 
 background:rgba(0,0,0,.35);
 
-border:1px solid rgba(255,255,255,.07);
+border:1px solid rgba(88,101,242,.18);
 
 text-align:center;
 
@@ -2396,7 +2414,7 @@ font-family:'Orbitron',sans-serif;
 
 font-size:13px;
 
-color:var(--gold);
+color:#929cff;
 
 margin-bottom:5px;
 
@@ -2410,7 +2428,7 @@ font-weight:900;
 
 letter-spacing:.08em;
 
-color:#817668;
+color:#817b96;
 
 }
 
@@ -2440,17 +2458,20 @@ background:
 
 linear-gradient(
 135deg,
-var(--gold),
-var(--gold2)
+#5865f2,
+#7280ff
 );
 
-color:#000;
+color:#fff;
 
 transition:.3s;
 
 position:relative;
 
 z-index:2;
+
+box-shadow:
+0 0 30px rgba(88,101,242,.18);
 
 }
 
@@ -2459,7 +2480,7 @@ z-index:2;
 transform:translateY(-3px);
 
 box-shadow:
-0 12px 35px rgba(240,201,111,.18);
+0 12px 35px rgba(88,101,242,.30);
 
 }
 
@@ -2471,7 +2492,7 @@ font-size:9px!important;
 
 margin-top:9px!important;
 
-color:#777064!important;
+color:#77758a!important;
 
 }
 
@@ -2701,65 +2722,6 @@ font-size:11px;
 line-height:1.75;
 
 color:#aaa092;
-
-}
-
-.final-cta-box{
-
-margin-top:23px;
-
-padding:43px 30px;
-
-border-radius:30px;
-
-text-align:center;
-
-background:
-
-radial-gradient(
-circle at top,
-rgba(255,30,30,.12),
-transparent 45%
-),
-
-linear-gradient(
-145deg,
-rgba(255,255,255,.04),
-rgba(255,255,255,.015)
-);
-
-border:1px solid rgba(255,255,255,.08);
-
-}
-
-.final-cta-box h2{
-
-font-family:'Orbitron',sans-serif;
-
-font-size:
-clamp(
-2rem,
-5vw,
-3.3rem
-);
-
-line-height:1.1;
-
-margin-bottom:15px;
-
-}
-
-.final-cta-box p{
-
-max-width:700px;
-
-margin:auto;
-
-color:#aaa092;
-
-font-size:13px;
-
-line-height:1.8;
 
 }
 
@@ -3596,7 +3558,7 @@ Strategies
 </a>
 
 <a href="#recommendations">
-Prop Firm
+Recommendations
 </a>
 
 <a href="#mentorship">
@@ -3734,8 +3696,6 @@ Wait for the required conditions. Execute with discipline.
 
 </div>
 
-
-<!-- ONLY TWO HERO BUTTONS -->
 
 <div class="cta-row">
 
@@ -4138,146 +4098,114 @@ Empire Signal Course and educational environment.
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Lucas</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 Clear strategy, simple process and much better structure on my charts. I know what I am waiting for before considering an entry.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Ashlyn</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 I really like the patience behind the strategy. It gives you a process to follow instead of making decisions from emotion.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Themba</strong>
 <span>★★★★☆</span>
 </div>
-
 <p>
 The Signal Course changed how I look at price. I have become much more selective with the setups I study.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Aron</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 The liquidity and displacement concepts are explained in a clear way. The structure makes the charts easier to study.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Nomsa</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 A structured approach that makes studying the market much easier. I especially like the focus on waiting for confirmation.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Banana</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 I like that the strategy focuses on waiting instead of forcing entries. It has helped me become more patient with the market.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Mandla</strong>
 <span>★★★★☆</span>
 </div>
-
 <p>
 The methodology gives me a clearer process before taking a trade. I spend more time analysing the conditions first.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Mxolisi</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 The Signal Course is well structured and easy to follow through the charts. The lessons feel practical and focused.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Adam</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 The course helped me become more disciplined with my market analysis and more comfortable waiting for my model.
 </p>
-
 </div>
 
 
 <div class="review-card">
-
 <div class="review-top">
 <strong>Gugulethu</strong>
 <span>★★★★★</span>
 </div>
-
 <p>
 I enjoy the combination of signals, education and market analysis. It gives the community a good learning environment.
 </p>
-
 </div>
 
-
-<!-- DUPLICATES -->
 
 <div class="review-card">
 <div class="review-top">
@@ -4289,6 +4217,7 @@ Clear strategy, simple process and much better structure on my charts. I know wh
 </p>
 </div>
 
+
 <div class="review-card">
 <div class="review-top">
 <strong>Ashlyn</strong>
@@ -4298,6 +4227,7 @@ Clear strategy, simple process and much better structure on my charts. I know wh
 I really like the patience behind the strategy. It gives you a process to follow instead of making decisions from emotion.
 </p>
 </div>
+
 
 <div class="review-card">
 <div class="review-top">
@@ -4309,6 +4239,7 @@ The Signal Course changed how I look at price. I have become much more selective
 </p>
 </div>
 
+
 <div class="review-card">
 <div class="review-top">
 <strong>Aron</strong>
@@ -4318,6 +4249,7 @@ The Signal Course changed how I look at price. I have become much more selective
 The liquidity and displacement concepts are explained in a clear way. The structure makes the charts easier to study.
 </p>
 </div>
+
 
 <div class="review-card">
 <div class="review-top">
@@ -4329,6 +4261,7 @@ A structured approach that makes studying the market much easier. I especially l
 </p>
 </div>
 
+
 <div class="review-card">
 <div class="review-top">
 <strong>Banana</strong>
@@ -4338,6 +4271,7 @@ A structured approach that makes studying the market much easier. I especially l
 I like that the strategy focuses on waiting instead of forcing entries. It has helped me become more patient with the market.
 </p>
 </div>
+
 
 <div class="review-card">
 <div class="review-top">
@@ -4349,6 +4283,7 @@ The methodology gives me a clearer process before taking a trade. I spend more t
 </p>
 </div>
 
+
 <div class="review-card">
 <div class="review-top">
 <strong>Mxolisi</strong>
@@ -4359,6 +4294,7 @@ The Signal Course is well structured and easy to follow through the charts. The 
 </p>
 </div>
 
+
 <div class="review-card">
 <div class="review-top">
 <strong>Adam</strong>
@@ -4368,6 +4304,7 @@ The Signal Course is well structured and easy to follow through the charts. The 
 The course helped me become more disciplined with my market analysis and more comfortable waiting for my model.
 </p>
 </div>
+
 
 <div class="review-card">
 <div class="review-top">
@@ -4464,13 +4401,11 @@ environment.
 
 <div class="signals-grid">
 
-
 <div class="signal-card hit">
 <div class="signal-pair">NASDAQ</div>
 <div class="signal-direction">SELL</div>
 <div class="signal-result">TP HIT</div>
 </div>
-
 
 <div class="signal-card hit">
 <div class="signal-pair">USD/JPY</div>
@@ -4478,13 +4413,11 @@ environment.
 <div class="signal-result">TP HIT</div>
 </div>
 
-
 <div class="signal-card hit">
 <div class="signal-pair">XAUUSD</div>
 <div class="signal-direction">TRADE</div>
 <div class="signal-result">TP HIT</div>
 </div>
-
 
 <div class="signal-card loss">
 <div class="signal-pair">USD/CAD</div>
@@ -4492,13 +4425,11 @@ environment.
 <div class="signal-result">SL HIT</div>
 </div>
 
-
 <div class="signal-card hit">
 <div class="signal-pair">NZDUSD</div>
 <div class="signal-direction">TRADE</div>
 <div class="signal-result">TP HIT</div>
 </div>
-
 
 </div>
 
@@ -4641,7 +4572,6 @@ the Forex Wealth Empire educational environment.
 
 <div class="strategy-grid">
 
-
 <div class="strategy-card">
 
 <div class="strategy-number">
@@ -4714,7 +4644,6 @@ HIGHER-TIMEFRAME
 
 </div>
 
-
 </div>
 
 </div>
@@ -4723,7 +4652,7 @@ HIGHER-TIMEFRAME
 
 
 <!-- =========================================================
-     PROP FIRM RECOMMENDATION
+     RECOMMENDATIONS
 ========================================================= -->
 
 <section
@@ -4740,14 +4669,13 @@ FWE RECOMMENDATION
 </div>
 
 <h2>
-RECOMMENDED PROP FIRM
+BLUE GUARDIAN
 </h2>
 
 <p>
 
-We have selected Blue Guardian as a prop-firm option for traders
-looking for funded trading opportunities, including Instant Account
-options and funding of up to $400,000.
+A recommended prop firm option for traders looking for funded
+account opportunities and instant account options.
 
 </p>
 
@@ -4843,39 +4771,6 @@ Use referral code:
 <strong>LDM30</strong>
 
 </p>
-
-</div>
-
-
-<!-- BROKER -->
-
-<div class="recommendation-card">
-
-<div class="recommendation-icon">
-BR
-</div>
-
-<h3>
-BROKER RECOMMENDATIONS
-</h3>
-
-<p>
-
-We are continuing to review brokers based on trading conditions,
-execution, fees, regulation and overall suitability for traders.
-
-Additional broker recommendations will be published after our
-review process is completed.
-
-</p>
-
-<div class="recommendation-status">
-
-<span class="recommendation-status-dot"></span>
-
-COMING SOON
-
-</div>
 
 </div>
 
@@ -4983,7 +4878,6 @@ market analysis, live education, mentorship and community.
 
 <div class="experience-grid">
 
-
 <div class="experience-card">
 
 <div class="experience-number">
@@ -5060,69 +4954,6 @@ Live seminars designed to bring the methodology, market analysis
 and trading education directly to the community.
 
 </p>
-
-</div>
-
-
-</div>
-
-
-<div class="final-cta-box">
-
-<div class="proprietary-badge">
-LIVE EDUCATION • MENTORSHIP • COMMUNITY
-</div>
-
-<h2>
-
-LEARN THE MARKET.
-<br>
-
-UNDERSTAND THE MOVE.
-
-</h2>
-
-<p>
-
-Join Forex Wealth Empire for live seminars, premium education,
-one-on-one mentorship and a growing trading community.
-
-</p>
-
-
-<div
-class="cta-row"
-style="justify-content:center;"
->
-
-<a
-class="btn btn-buy"
-href="https://whop.com/forex-wealth-empire-pty-ltd"
-target="_blank"
-rel="noopener noreferrer"
->
-GET PREMIUM ACCESS
-</a>
-
-
-<a
-class="btn btn-discord"
-href="https://discord.gg/zQC9u3qvMJ"
-target="_blank"
-rel="noopener noreferrer"
->
-JOIN DISCORD
-</a>
-
-
-<a
-class="btn btn-instagram"
-href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
-target="_blank"
-rel="noopener noreferrer"
->
-FOLLOW INSTAGRAM
-</a>
 
 </div>
 
