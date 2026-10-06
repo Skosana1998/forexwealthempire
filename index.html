@@ -14,6 +14,13 @@ name="description"
 content="Forex Wealth Empire — Liquidity Displacement Methodology™. Proprietary trading education focused on structured market analysis, discipline and execution."
 >
 
+<meta
+name="keywords"
+content="Forex Wealth Empire, Liquidity Displacement Methodology, LDM, forex education, trading education, market structure, liquidity, trading mentorship"
+>
+
+<meta name="theme-color" content="#030303">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link
@@ -53,6 +60,8 @@ rel="stylesheet"
 
 --instagram:#e1306c;
 
+--blue:#5b72ff;
+
 --radius:24px;
 --max:1220px;
 
@@ -71,6 +80,7 @@ box-sizing:border-box;
 
 html{
 scroll-behavior:smooth;
+scroll-padding-top:100px;
 }
 
 body{
@@ -133,6 +143,10 @@ z-index:-1;
 
 }
 
+body.menu-open{
+overflow:hidden;
+}
+
 .container{
 
 width:min(
@@ -142,6 +156,15 @@ calc(100% - 30px)
 
 margin:auto;
 
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+-webkit-tap-highlight-color:transparent;
 }
 
 
@@ -157,9 +180,11 @@ top:0;
 
 z-index:999;
 
-background:rgba(0,0,0,.80);
+background:rgba(0,0,0,.82);
 
 backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
 
 border-bottom:1px solid rgba(255,255,255,.07);
 
@@ -188,6 +213,10 @@ gap:13px;
 text-decoration:none;
 
 color:white;
+
+position:relative;
+
+z-index:1002;
 
 }
 
@@ -326,6 +355,89 @@ font-weight:900;
 
 
 /* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle{
+
+display:none;
+
+width:44px;
+
+height:44px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,.10);
+
+background:rgba(255,255,255,.045);
+
+cursor:pointer;
+
+position:relative;
+
+z-index:1002;
+
+}
+
+.menu-toggle span{
+
+position:absolute;
+
+width:20px;
+
+height:2px;
+
+background:white;
+
+left:50%;
+
+transform:translateX(-50%);
+
+transition:.3s ease;
+
+}
+
+.menu-toggle span:nth-child(1){
+top:14px;
+}
+
+.menu-toggle span:nth-child(2){
+top:21px;
+}
+
+.menu-toggle span:nth-child(3){
+top:28px;
+}
+
+.menu-toggle.active span:nth-child(1){
+
+top:21px;
+
+transform:
+translateX(-50%)
+rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+top:21px;
+
+transform:
+translateX(-50%)
+rotate(-45deg);
+
+}
+
+
+/* =========================================================
    TICKER
 ========================================================= */
 
@@ -367,6 +479,8 @@ font-weight:800;
 letter-spacing:.16em;
 
 color:var(--gold);
+
+width:max-content;
 
 }
 
@@ -968,6 +1082,422 @@ color:#cfc3b2;
 
 
 /* =========================================================
+   ABOUT FWE
+========================================================= */
+
+.about-section{
+
+padding:72px 0;
+
+background:
+
+radial-gradient(
+circle at 85% 20%,
+rgba(255,30,30,.08),
+transparent 32%
+),
+
+#030303;
+
+border-top:1px solid rgba(255,255,255,.05);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:
+1.1fr .9fr;
+
+gap:20px;
+
+align-items:stretch;
+
+}
+
+.about-main{
+
+padding:32px;
+
+border-radius:28px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,30,30,.08),
+rgba(240,201,111,.035)
+),
+
+rgba(255,255,255,.025);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.about-main h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+2rem,
+5vw,
+3.2rem
+);
+
+line-height:1.1;
+
+margin-bottom:18px;
+
+}
+
+.about-main h2 span{
+
+color:var(--red);
+
+}
+
+.about-main p{
+
+font-size:13px;
+
+line-height:1.9;
+
+color:#bdb1a0;
+
+margin-bottom:15px;
+
+}
+
+.about-side{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+
+}
+
+.about-stat{
+
+padding:23px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.07);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.about-stat strong{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:25px;
+
+color:var(--gold);
+
+margin-bottom:8px;
+
+}
+
+.about-stat span{
+
+font-size:9px;
+
+font-weight:900;
+
+letter-spacing:.12em;
+
+color:#8e8578;
+
+line-height:1.6;
+
+}
+
+
+/* =========================================================
+   FOUNDER
+========================================================= */
+
+.founder-section{
+
+padding:72px 0;
+
+background:
+
+radial-gradient(
+circle at 15% 50%,
+rgba(240,201,111,.08),
+transparent 35%
+),
+
+#020202;
+
+}
+
+.founder-card{
+
+display:grid;
+
+grid-template-columns:
+.42fr 1fr;
+
+gap:30px;
+
+padding:32px;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.045),
+rgba(255,255,255,.018)
+);
+
+border:1px solid rgba(240,201,111,.18);
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.founder-card::before{
+
+content:"";
+
+position:absolute;
+
+width:300px;
+
+height:300px;
+
+border-radius:50%;
+
+background:rgba(255,30,30,.08);
+
+filter:blur(70px);
+
+left:-150px;
+
+bottom:-150px;
+
+pointer-events:none;
+
+}
+
+.founder-visual{
+
+min-height:330px;
+
+border-radius:25px;
+
+background:
+
+radial-gradient(
+circle at 50% 30%,
+rgba(255,30,30,.17),
+transparent 35%
+),
+
+linear-gradient(
+145deg,
+#151515,
+#050505
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.founder-initials{
+
+width:145px;
+
+height:145px;
+
+border-radius:40px;
+
+display:grid;
+
+place-items:center;
+
+font-family:'Orbitron',sans-serif;
+
+font-size:42px;
+
+font-weight:900;
+
+color:var(--gold);
+
+border:1px solid rgba(240,201,111,.3);
+
+background:rgba(0,0,0,.55);
+
+box-shadow:
+
+0 0 60px rgba(255,0,0,.16),
+
+inset 0 0 40px rgba(240,201,111,.05);
+
+}
+
+.founder-visual-label{
+
+position:absolute;
+
+bottom:18px;
+
+left:18px;
+
+right:18px;
+
+padding:12px;
+
+border-radius:14px;
+
+background:rgba(0,0,0,.55);
+
+border:1px solid rgba(255,255,255,.07);
+
+text-align:center;
+
+font-family:'Orbitron',sans-serif;
+
+font-size:8px;
+
+letter-spacing:.15em;
+
+color:#aaa092;
+
+}
+
+.founder-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.founder-badge{
+
+display:inline-block;
+
+padding:7px 11px;
+
+border-radius:999px;
+
+background:rgba(255,30,30,.10);
+
+border:1px solid rgba(255,30,30,.2);
+
+color:#ff7777;
+
+font-size:9px;
+
+font-weight:900;
+
+letter-spacing:.13em;
+
+margin-bottom:14px;
+
+}
+
+.founder-content h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+2rem,
+5vw,
+3.4rem
+);
+
+line-height:1.08;
+
+margin-bottom:8px;
+
+}
+
+.founder-content h2 span{
+
+color:var(--red);
+
+}
+
+.founder-alias{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:12px;
+
+letter-spacing:.12em;
+
+color:var(--gold);
+
+margin-bottom:20px;
+
+}
+
+.founder-content p{
+
+font-size:13px;
+
+line-height:1.9;
+
+color:#bdb1a0;
+
+margin-bottom:14px;
+
+}
+
+.founder-signature{
+
+margin-top:22px;
+
+padding-top:17px;
+
+border-top:1px solid rgba(255,255,255,.07);
+
+font-family:'Orbitron',sans-serif;
+
+font-size:10px;
+
+letter-spacing:.12em;
+
+color:#777064;
+
+}
+
+
+/* =========================================================
    METHODOLOGY
 ========================================================= */
 
@@ -1054,6 +1584,152 @@ color:#a99d8a;
 font-size:11px;
 
 line-height:1.75;
+
+}
+
+
+/* =========================================================
+   WHAT YOU GET
+========================================================= */
+
+.what-you-get{
+
+padding:72px 0;
+
+background:
+
+radial-gradient(
+circle at 80% 60%,
+rgba(240,201,111,.07),
+transparent 32%
+),
+
+#030303;
+
+}
+
+.get-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:14px;
+
+}
+
+.get-card{
+
+padding:25px;
+
+border-radius:23px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.045),
+rgba(255,255,255,.018)
+);
+
+border:1px solid rgba(255,255,255,.07);
+
+position:relative;
+
+overflow:hidden;
+
+transition:.35s;
+
+}
+
+.get-card:hover{
+
+transform:translateY(-5px);
+
+border-color:rgba(240,201,111,.25);
+
+}
+
+.get-card::after{
+
+content:"";
+
+position:absolute;
+
+width:100px;
+
+height:100px;
+
+border-radius:50%;
+
+background:rgba(255,30,30,.08);
+
+filter:blur(35px);
+
+right:-45px;
+
+top:-45px;
+
+}
+
+.get-icon{
+
+width:46px;
+
+height:46px;
+
+border-radius:14px;
+
+display:grid;
+
+place-items:center;
+
+background:rgba(255,30,30,.09);
+
+border:1px solid rgba(255,30,30,.2);
+
+color:var(--gold);
+
+font-family:'Orbitron',sans-serif;
+
+font-size:11px;
+
+font-weight:900;
+
+margin-bottom:18px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.get-card h3{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:14px;
+
+margin-bottom:9px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.get-card p{
+
+font-size:11px;
+
+line-height:1.8;
+
+color:#aaa092;
+
+position:relative;
+
+z-index:2;
 
 }
 
@@ -1385,6 +2061,24 @@ color:#b8ad9d;
 
 }
 
+.review-source{
+
+display:block;
+
+margin-top:12px;
+
+font-size:8px;
+
+font-weight:800;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+color:#686056;
+
+}
+
 @keyframes reviewsMove{
 
 0%{
@@ -1597,6 +2291,104 @@ rgba(255,30,30,.18);
 .signal-card.loss .signal-result{
 
 color:#ff5555;
+
+}
+
+
+/* =========================================================
+   SIGNAL ARCHIVE
+========================================================= */
+
+.archive-section{
+
+padding:62px 0;
+
+background:#030303;
+
+}
+
+.archive-box{
+
+border-radius:27px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.025);
+
+}
+
+.archive-row{
+
+display:grid;
+
+grid-template-columns:
+1.1fr .8fr .8fr .8fr;
+
+align-items:center;
+
+gap:15px;
+
+padding:18px 22px;
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.archive-row:last-child{
+border-bottom:0;
+}
+
+.archive-row.header{
+
+background:rgba(255,255,255,.035);
+
+font-family:'Orbitron',sans-serif;
+
+font-size:8px;
+
+font-weight:900;
+
+letter-spacing:.12em;
+
+color:#817668;
+
+text-transform:uppercase;
+
+}
+
+.archive-row span{
+
+font-size:11px;
+
+color:#b8ad9d;
+
+}
+
+.archive-row strong{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:10px;
+
+color:white;
+
+}
+
+.result-win{
+
+color:var(--green)!important;
+
+font-weight:900;
+
+}
+
+.result-loss{
+
+color:#ff5555!important;
+
+font-weight:900;
 
 }
 
@@ -2843,6 +3635,160 @@ line-height:1.8;
 
 
 /* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section{
+
+padding:72px 0;
+
+background:
+
+radial-gradient(
+circle at 80% 20%,
+rgba(255,30,30,.08),
+transparent 30%
+),
+
+#020202;
+
+}
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:15px;
+
+}
+
+.contact-card{
+
+padding:29px;
+
+border-radius:25px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.045),
+rgba(255,255,255,.018)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-card h3{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:18px;
+
+margin-bottom:12px;
+
+}
+
+.contact-card p{
+
+font-size:12px;
+
+line-height:1.8;
+
+color:#aaa092;
+
+}
+
+.contact-links{
+
+display:grid;
+
+gap:10px;
+
+margin-top:20px;
+
+}
+
+.contact-link{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.07);
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.contact-link:hover{
+
+transform:translateX(4px);
+
+border-color:rgba(240,201,111,.25);
+
+}
+
+.contact-link-icon{
+
+width:36px;
+
+height:36px;
+
+border-radius:11px;
+
+display:grid;
+
+place-items:center;
+
+background:rgba(240,201,111,.08);
+
+color:var(--gold);
+
+font-family:'Orbitron',sans-serif;
+
+font-size:9px;
+
+font-weight:900;
+
+}
+
+.contact-link strong{
+
+display:block;
+
+font-size:11px;
+
+margin-bottom:3px;
+
+}
+
+.contact-link span{
+
+font-size:9px;
+
+color:#777064;
+
+}
+
+
+/* =========================================================
    FAQ
 ========================================================= */
 
@@ -3112,6 +4058,176 @@ line-height:1.75;
 
 
 /* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta{
+
+padding:90px 0;
+
+background:
+
+radial-gradient(
+circle at 50% 35%,
+rgba(255,30,30,.15),
+transparent 30%
+),
+
+radial-gradient(
+circle at 50% 80%,
+rgba(240,201,111,.08),
+transparent 35%
+),
+
+#010101;
+
+}
+
+.final-cta-box{
+
+padding:55px 30px;
+
+border-radius:32px;
+
+text-align:center;
+
+border:1px solid rgba(240,201,111,.22);
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.045),
+rgba(255,255,255,.015)
+);
+
+box-shadow:
+
+0 25px 100px rgba(0,0,0,.5),
+
+inset 0 0 70px rgba(255,30,30,.025);
+
+}
+
+.final-cta-box h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:
+clamp(
+2.2rem,
+6vw,
+4.3rem
+);
+
+line-height:1;
+
+text-transform:uppercase;
+
+margin-bottom:17px;
+
+}
+
+.final-cta-box h2 span{
+
+color:var(--red);
+
+}
+
+.final-cta-box p{
+
+max-width:700px;
+
+margin:0 auto;
+
+color:#aaa092;
+
+font-size:13px;
+
+line-height:1.85;
+
+}
+
+.final-cta-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:11px;
+
+flex-wrap:wrap;
+
+margin-top:25px;
+
+}
+
+
+/* =========================================================
+   LEGAL
+========================================================= */
+
+.legal-section{
+
+padding:72px 0;
+
+background:#020202;
+
+}
+
+.legal-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:14px;
+
+}
+
+.legal-card{
+
+padding:26px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.025);
+
+border:1px solid rgba(255,255,255,.07);
+
+}
+
+.legal-card h3{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:14px;
+
+color:#fff0cf;
+
+margin-bottom:12px;
+
+}
+
+.legal-card p{
+
+font-size:10px;
+
+line-height:1.85;
+
+color:#8f8576;
+
+}
+
+.legal-card strong{
+
+color:#cfc3b2;
+
+}
+
+
+/* =========================================================
    DISCLAIMER
 ========================================================= */
 
@@ -3130,6 +4246,12 @@ color:#8f8576;
 font-size:10px;
 
 line-height:1.8;
+
+}
+
+.disclaimer strong{
+
+color:#d8ccb9;
 
 }
 
@@ -3176,6 +4298,16 @@ color:white;
 
 }
 
+.footer-legal{
+
+display:flex;
+
+gap:16px;
+
+flex-wrap:wrap;
+
+}
+
 
 /* =========================================================
    POPUP
@@ -3190,6 +4322,8 @@ inset:0;
 background:rgba(0,0,0,.78);
 
 backdrop-filter:blur(10px);
+
+-webkit-backdrop-filter:blur(10px);
 
 display:flex;
 
@@ -3497,7 +4631,9 @@ z-index:10000!important;
 @media(max-width:1050px){
 
 .hero-grid,
-.offer{
+.offer,
+.about-grid,
+.founder-card{
 
 grid-template-columns:1fr;
 
@@ -3505,6 +4641,13 @@ grid-template-columns:1fr;
 
 .grid-4,
 .grid-3{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.get-grid{
 
 grid-template-columns:
 1fr 1fr;
@@ -3537,9 +4680,98 @@ grid-template-columns:1fr;
 
 }
 
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
 nav a:not(.nav-buy):not(.nav-discord):not(.nav-instagram){
 
 display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+}
+
+nav{
+
+position:fixed;
+
+top:0;
+
+right:0;
+
+width:min(390px,88vw);
+
+height:100vh;
+
+padding:
+95px 25px 30px;
+
+background:
+
+linear-gradient(
+180deg,
+#080808,
+#020202
+);
+
+border-left:1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:stretch;
+
+justify-content:flex-start;
+
+gap:8px;
+
+transform:translateX(105%);
+
+transition:.4s ease;
+
+box-shadow:-25px 0 80px rgba(0,0,0,.65);
+
+z-index:1001;
+
+}
+
+nav.active{
+
+transform:translateX(0);
+
+}
+
+nav a{
+
+display:flex!important;
+
+padding:15px 16px;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.025);
+
+border:1px solid rgba(255,255,255,.05);
+
+font-size:12px;
+
+}
+
+nav .nav-buy,
+nav .nav-discord,
+nav .nav-instagram{
+
+justify-content:center;
+
+margin-top:4px;
 
 }
 
@@ -3573,6 +4805,18 @@ gap:28px;
 .grid-3{
 
 grid-template-columns:1fr;
+
+}
+
+.get-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.about-side{
+
+grid-template-columns:1fr 1fr;
 
 }
 
@@ -3614,7 +4858,13 @@ padding:25px;
 .reviews-section,
 .recommendations-section,
 .payout-section,
-.faq-section{
+.faq-section,
+.about-section,
+.founder-section,
+.what-you-get,
+.archive-section,
+.contact-section,
+.legal-section{
 
 padding-top:48px;
 
@@ -3776,6 +5026,66 @@ min-width:25px;
 
 }
 
+.founder-card{
+
+padding:20px;
+
+}
+
+.founder-visual{
+
+min-height:280px;
+
+}
+
+.about-side{
+
+gap:9px;
+
+}
+
+.about-stat{
+
+padding:18px 14px;
+
+}
+
+.about-stat strong{
+
+font-size:20px;
+
+}
+
+.archive-box{
+
+overflow-x:auto;
+
+}
+
+.archive-row{
+
+min-width:650px;
+
+}
+
+.legal-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.final-cta{
+
+padding:60px 0;
+
+}
+
+.final-cta-box{
+
+padding:40px 20px;
+
+}
+
 }
 
 
@@ -3805,6 +5115,19 @@ animation:none!important;
 transition:none!important;
 
 }
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection{
+
+background:rgba(240,201,111,.25);
+
+color:white;
 
 }
 
@@ -3845,7 +5168,15 @@ PROPRIETARY TRADING EDUCATION
 </a>
 
 
-<nav>
+<nav id="mainNav">
+
+<a href="#about">
+About
+</a>
+
+<a href="#founder">
+Founder
+</a>
 
 <a href="#methodology">
 Methodology
@@ -3899,6 +5230,21 @@ BUY NOW
 </a>
 
 </nav>
+
+
+<button
+class="menu-toggle"
+id="menuToggle"
+type="button"
+aria-label="Open navigation menu"
+aria-expanded="false"
+>
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
 
 </div>
 
@@ -4051,6 +5397,252 @@ PROPRIETARY MARKET
 EXECUTION FRAMEWORK
 
 </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT FOREX WEALTH EMPIRE
+========================================================= -->
+
+<section
+class="about-section"
+id="about"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="proprietary-badge">
+ABOUT FOREX WEALTH EMPIRE
+</div>
+
+<h2>
+BUILT WITH A PURPOSE.
+</h2>
+
+<p>
+Forex Wealth Empire is a trading education brand focused on
+structured market analysis, proprietary frameworks, disciplined
+execution and community-based learning.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-main">
+
+<h2>
+MORE THAN
+<span>TRADING.</span>
+</h2>
+
+<p>
+
+Forex Wealth Empire was created to provide traders with a more
+structured environment for studying financial markets and developing
+their own trading process.
+
+</p>
+
+<p>
+
+The FWE educational environment focuses on market behaviour,
+liquidity awareness, price structure, confirmation, execution and
+risk discipline.
+
+</p>
+
+<p>
+
+At the centre of the brand is the Liquidity Displacement
+Methodology™ — a proprietary framework developed within the Forex
+Wealth Empire ecosystem.
+
+</p>
+
+<p>
+
+The public website intentionally provides only the high-level
+philosophy. The detailed methodology, proprietary rules and
+educational material are reserved for authorised students and
+customers.
+
+</p>
+
+<div class="cta-row">
+
+<a
+class="btn btn-buy"
+href="#mentorship"
+>
+EXPLORE PREMIUM
+</a>
+
+<a
+class="btn btn-learn"
+href="#methodology"
+>
+VIEW METHODOLOGY
+</a>
+
+</div>
+
+</div>
+
+
+<div class="about-side">
+
+<div class="about-stat">
+
+<strong>
+2023
+</strong>
+
+<span>
+FOREX WEALTH EMPIRE
+ESTABLISHED
+</span>
+
+</div>
+
+
+<div class="about-stat">
+
+<strong>
+2026
+</strong>
+
+<span>
+GROOTMONEY.BOT
+ECOSYSTEM
+</span>
+
+</div>
+
+
+<div class="about-stat">
+
+<strong>
+LDM™
+</strong>
+
+<span>
+PROPRIETARY TRADING
+METHODOLOGY
+</span>
+
+</div>
+
+
+<div class="about-stat">
+
+<strong>
+FWE
+</strong>
+
+<span>
+TRADING EDUCATION &
+COMMUNITY
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOUNDER
+========================================================= -->
+
+<section
+class="founder-section"
+id="founder"
+>
+
+<div class="container">
+
+<div class="founder-card">
+
+<div class="founder-visual">
+
+<div class="founder-initials">
+LS
+</div>
+
+<div class="founder-visual-label">
+FOUNDER • FOREX WEALTH EMPIRE
+</div>
+
+</div>
+
+
+<div class="founder-content">
+
+<div class="founder-badge">
+FOUNDER &amp; CREATOR
+</div>
+
+<h2>
+LUVUYO
+<span>SKOSANA</span>
+</h2>
+
+<div class="founder-alias">
+ALSO KNOWN AS “TROY NASDAQ”
+</div>
+
+<p>
+
+Luvuyo Skosana is the founder behind Forex Wealth Empire and the
+creator of the educational ecosystem surrounding the Liquidity
+Displacement Methodology™.
+
+</p>
+
+<p>
+
+The vision behind Forex Wealth Empire is to build a professional
+trading environment where traders can study market behaviour,
+develop discipline and learn to approach execution through a
+structured framework.
+
+</p>
+
+<p>
+
+Rather than promoting the idea of simply chasing trades, the FWE
+philosophy places emphasis on preparation, patience, confirmation,
+risk awareness and understanding the market environment.
+
+</p>
+
+<p>
+
+The proprietary concepts developed within FWE are intentionally
+protected. Public content introduces the philosophy and educational
+direction without publishing the complete model.
+
+</p>
+
+<div class="founder-signature">
+LUVUYO SKOSANA • TROY NASDAQ • FOREX WEALTH EMPIRE
+</div>
 
 </div>
 
@@ -4252,6 +5844,167 @@ unnecessary trades.
 
 
 <!-- =========================================================
+     WHAT YOU GET
+========================================================= -->
+
+<section
+class="what-you-get"
+id="what-you-get"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="proprietary-badge">
+PREMIUM ENVIRONMENT
+</div>
+
+<h2>
+WHAT YOU GET
+</h2>
+
+<p>
+
+Premium access is designed to give traders a structured educational
+environment rather than simply giving them isolated pieces of
+information.
+
+</p>
+
+</div>
+
+
+<div class="get-grid">
+
+
+<div class="get-card">
+
+<div class="get-icon">
+01
+</div>
+
+<h3>
+LDM™ EDUCATION
+</h3>
+
+<p>
+
+Study the proprietary Liquidity Displacement Methodology™ through
+the authorised Forex Wealth Empire educational environment.
+
+</p>
+
+</div>
+
+
+<div class="get-card">
+
+<div class="get-icon">
+02
+</div>
+
+<h3>
+STRATEGY FRAMEWORKS
+</h3>
+
+<p>
+
+Access educational frameworks developed within the FWE ecosystem,
+including the Daily Reload Method™ and 4H Architecture Method™.
+
+</p>
+
+</div>
+
+
+<div class="get-card">
+
+<div class="get-icon">
+03
+</div>
+
+<h3>
+MARKET ANALYSIS
+</h3>
+
+<p>
+
+Develop a more structured process for observing price behaviour,
+market structure and potential opportunities.
+
+</p>
+
+</div>
+
+
+<div class="get-card">
+
+<div class="get-icon">
+04
+</div>
+
+<h3>
+COMMUNITY ACCESS
+</h3>
+
+<p>
+
+Connect with other traders inside the Forex Wealth Empire community
+and participate in the broader educational environment.
+
+</p>
+
+</div>
+
+
+<div class="get-card">
+
+<div class="get-icon">
+05
+</div>
+
+<h3>
+EDUCATIONAL UPDATES
+</h3>
+
+<p>
+
+Stay connected with methodology updates, educational material,
+market discussions and FWE announcements.
+
+</p>
+
+</div>
+
+
+<div class="get-card">
+
+<div class="get-icon">
+06
+</div>
+
+<h3>
+DISCIPLINE &amp; PROCESS
+</h3>
+
+<p>
+
+Build a repeatable mindset around preparation, patience,
+confirmation and responsible risk management.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      PREMIUM EDUCATION
 ========================================================= -->
 
@@ -4390,8 +6143,9 @@ TRADER FEEDBACK
 
 <p>
 
-Feedback-style comments from traders experiencing the Forex Wealth
-Empire Signal Course and educational environment.
+Examples of feedback-style commentary from the FWE educational
+environment. Published testimonials should always reflect genuine
+customer experiences.
 
 </p>
 
@@ -4404,222 +6158,524 @@ Empire Signal Course and educational environment.
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Lucas</strong>
-<span>★★★★★</span>
+
+<strong>
+Lucas
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-Clear strategy, simple process and much better structure on my charts. I know what I am waiting for before considering an entry.
+Clear strategy, simple process and much better structure on my
+charts. I know what I am waiting for before considering an entry.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Ashlyn</strong>
-<span>★★★★★</span>
+
+<strong>
+Ashlyn
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-I really like the patience behind the strategy. It gives you a process to follow instead of making decisions from emotion.
+I really like the patience behind the strategy. It gives you a
+process to follow instead of making decisions from emotion.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Themba</strong>
-<span>★★★★☆</span>
+
+<strong>
+Themba
+</strong>
+
+<span>
+★★★★☆
+</span>
+
 </div>
+
 <p>
-The Signal Course changed how I look at price. I have become much more selective with the setups I study.
+The Signal Course changed how I look at price. I have become much
+more selective with the setups I study.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Aron</strong>
-<span>★★★★★</span>
+
+<strong>
+Aron
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-The liquidity and displacement concepts are explained in a clear way. The structure makes the charts easier to study.
+The liquidity and displacement concepts are explained in a clear
+way. The structure makes the charts easier to study.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Nomsa</strong>
-<span>★★★★★</span>
+
+<strong>
+Nomsa
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-A structured approach that makes studying the market much easier. I especially like the focus on waiting for confirmation.
+A structured approach that makes studying the market much easier.
+I especially like the focus on waiting for confirmation.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Banana</strong>
-<span>★★★★★</span>
+
+<strong>
+Banana
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-I like that the strategy focuses on waiting instead of forcing entries. It has helped me become more patient with the market.
+I like that the strategy focuses on waiting instead of forcing
+entries. It has helped me become more patient with the market.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Mandla</strong>
-<span>★★★★☆</span>
+
+<strong>
+Mandla
+</strong>
+
+<span>
+★★★★☆
+</span>
+
 </div>
+
 <p>
-The methodology gives me a clearer process before taking a trade. I spend more time analysing the conditions first.
+The methodology gives me a clearer process before taking a trade.
+I spend more time analysing the conditions first.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Mxolisi</strong>
-<span>★★★★★</span>
+
+<strong>
+Mxolisi
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-The Signal Course is well structured and easy to follow through the charts. The lessons feel practical and focused.
+The Signal Course is well structured and easy to follow through
+the charts. The lessons feel practical and focused.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Adam</strong>
-<span>★★★★★</span>
+
+<strong>
+Adam
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-The course helped me become more disciplined with my market analysis and more comfortable waiting for my model.
+The course helped me become more disciplined with my market
+analysis and more comfortable waiting for my model.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Gugulethu</strong>
-<span>★★★★★</span>
+
+<strong>
+Gugulethu
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-I enjoy the combination of signals, education and market analysis. It gives the community a good learning environment.
+I enjoy the combination of signals, education and market analysis.
+It gives the community a good learning environment.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
+</div>
+
+
+<!-- DUPLICATE SET FOR CONTINUOUS ANIMATION -->
+
+<div class="review-card">
+
+<div class="review-top">
+
+<strong>
+Lucas
+</strong>
+
+<span>
+★★★★★
+</span>
+
+</div>
+
+<p>
+Clear strategy, simple process and much better structure on my
+charts. I know what I am waiting for before considering an entry.
+</p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Lucas</strong>
-<span>★★★★★</span>
+
+<strong>
+Ashlyn
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-Clear strategy, simple process and much better structure on my charts. I know what I am waiting for before considering an entry.
+I really like the patience behind the strategy. It gives you a
+process to follow instead of making decisions from emotion.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Ashlyn</strong>
-<span>★★★★★</span>
+
+<strong>
+Themba
+</strong>
+
+<span>
+★★★★☆
+</span>
+
 </div>
+
 <p>
-I really like the patience behind the strategy. It gives you a process to follow instead of making decisions from emotion.
+The Signal Course changed how I look at price. I have become much
+more selective with the setups I study.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Themba</strong>
-<span>★★★★☆</span>
+
+<strong>
+Aron
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-The Signal Course changed how I look at price. I have become much more selective with the setups I study.
+The liquidity and displacement concepts are explained in a clear
+way. The structure makes the charts easier to study.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Aron</strong>
-<span>★★★★★</span>
+
+<strong>
+Nomsa
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-The liquidity and displacement concepts are explained in a clear way. The structure makes the charts easier to study.
+A structured approach that makes studying the market much easier.
+I especially like the focus on waiting for confirmation.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Nomsa</strong>
-<span>★★★★★</span>
+
+<strong>
+Banana
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-A structured approach that makes studying the market much easier. I especially like the focus on waiting for confirmation.
+I like that the strategy focuses on waiting instead of forcing
+entries. It has helped me become more patient with the market.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Banana</strong>
-<span>★★★★★</span>
+
+<strong>
+Mandla
+</strong>
+
+<span>
+★★★★☆
+</span>
+
 </div>
+
 <p>
-I like that the strategy focuses on waiting instead of forcing entries. It has helped me become more patient with the market.
+The methodology gives me a clearer process before taking a trade.
+I spend more time analysing the conditions first.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Mandla</strong>
-<span>★★★★☆</span>
+
+<strong>
+Mxolisi
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-The methodology gives me a clearer process before taking a trade. I spend more time analysing the conditions first.
+The Signal Course is well structured and easy to follow through
+the charts. The lessons feel practical and focused.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Mxolisi</strong>
-<span>★★★★★</span>
+
+<strong>
+Adam
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
+
 <p>
-The Signal Course is well structured and easy to follow through the charts. The lessons feel practical and focused.
+The course helped me become more disciplined with my market
+analysis and more comfortable waiting for my model.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
 <div class="review-card">
+
 <div class="review-top">
-<strong>Adam</strong>
-<span>★★★★★</span>
-</div>
-<p>
-The course helped me become more disciplined with my market analysis and more comfortable waiting for my model.
-</p>
+
+<strong>
+Gugulethu
+</strong>
+
+<span>
+★★★★★
+</span>
+
 </div>
 
-
-<div class="review-card">
-<div class="review-top">
-<strong>Gugulethu</strong>
-<span>★★★★★</span>
-</div>
 <p>
-I enjoy the combination of signals, education and market analysis. It gives the community a good learning environment.
+I enjoy the combination of signals, education and market analysis.
+It gives the community a good learning environment.
 </p>
+
+<span class="review-source">
+Community feedback
+</span>
+
 </div>
 
 
@@ -4708,33 +6764,253 @@ environment.
 <div class="signals-grid">
 
 <div class="signal-card hit">
-<div class="signal-pair">NASDAQ</div>
-<div class="signal-direction">SELL</div>
-<div class="signal-result">TP HIT</div>
+
+<div class="signal-pair">
+NASDAQ
 </div>
 
-<div class="signal-card hit">
-<div class="signal-pair">USD/JPY</div>
-<div class="signal-direction">TRADE</div>
-<div class="signal-result">TP HIT</div>
+<div class="signal-direction">
+SELL
 </div>
 
-<div class="signal-card hit">
-<div class="signal-pair">XAUUSD</div>
-<div class="signal-direction">TRADE</div>
-<div class="signal-result">TP HIT</div>
+<div class="signal-result">
+TP HIT
 </div>
+
+</div>
+
+
+<div class="signal-card hit">
+
+<div class="signal-pair">
+USD/JPY
+</div>
+
+<div class="signal-direction">
+TRADE
+</div>
+
+<div class="signal-result">
+TP HIT
+</div>
+
+</div>
+
+
+<div class="signal-card hit">
+
+<div class="signal-pair">
+XAUUSD
+</div>
+
+<div class="signal-direction">
+TRADE
+</div>
+
+<div class="signal-result">
+TP HIT
+</div>
+
+</div>
+
 
 <div class="signal-card loss">
-<div class="signal-pair">USD/CAD</div>
-<div class="signal-direction">TRADE</div>
-<div class="signal-result">SL HIT</div>
+
+<div class="signal-pair">
+USD/CAD
 </div>
 
+<div class="signal-direction">
+TRADE
+</div>
+
+<div class="signal-result">
+SL HIT
+</div>
+
+</div>
+
+
 <div class="signal-card hit">
-<div class="signal-pair">NZDUSD</div>
-<div class="signal-direction">TRADE</div>
-<div class="signal-result">TP HIT</div>
+
+<div class="signal-pair">
+NZDUSD
+</div>
+
+<div class="signal-direction">
+TRADE
+</div>
+
+<div class="signal-result">
+TP HIT
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SIGNAL ARCHIVE
+========================================================= -->
+
+<section
+class="archive-section"
+id="signal-history"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="proprietary-badge">
+TRADE HISTORY
+</div>
+
+<h2>
+SIGNAL ARCHIVE
+</h2>
+
+<p>
+
+A compact record of selected recent market activity. This section
+is intended as a transparent activity display and is not presented
+as a guarantee of future results.
+
+</p>
+
+</div>
+
+
+<div class="archive-box">
+
+<div class="archive-row header">
+
+<span>
+MARKET
+</span>
+
+<span>
+DIRECTION
+</span>
+
+<span>
+STATUS
+</span>
+
+<span>
+TYPE
+</span>
+
+</div>
+
+
+<div class="archive-row">
+
+<strong>
+NASDAQ
+</strong>
+
+<span>
+SELL
+</span>
+
+<span class="result-win">
+TP HIT
+</span>
+
+<span>
+SIGNAL
+</span>
+
+</div>
+
+
+<div class="archive-row">
+
+<strong>
+USD/JPY
+</strong>
+
+<span>
+TRADE
+</span>
+
+<span class="result-win">
+TP HIT
+</span>
+
+<span>
+SIGNAL
+</span>
+
+</div>
+
+
+<div class="archive-row">
+
+<strong>
+XAUUSD
+</strong>
+
+<span>
+TRADE
+</span>
+
+<span class="result-win">
+TP HIT
+</span>
+
+<span>
+SIGNAL
+</span>
+
+</div>
+
+
+<div class="archive-row">
+
+<strong>
+USD/CAD
+</strong>
+
+<span>
+TRADE
+</span>
+
+<span class="result-loss">
+SL HIT
+</span>
+
+<span>
+SIGNAL
+</span>
+
+</div>
+
+
+<div class="archive-row">
+
+<strong>
+NZDUSD
+</strong>
+
+<span>
+TRADE
+</span>
+
+<span class="result-win">
+TP HIT
+</span>
+
+<span>
+SIGNAL
+</span>
+
 </div>
 
 </div>
@@ -4761,13 +7037,13 @@ FOREX WEALTH EMPIRE TRACK RECORD
 </div>
 
 <h2 class="payout-title">
-TOTAL PROP FIRM PAYOUTS
+REPORTED PROP-FIRM PAYOUTS
 </h2>
 
 <p class="payout-subtitle">
 
-All-time prop firm payouts displayed against our long-term
-$1,000,000 payout goal.
+Reported all-time prop-firm payout figure displayed against the
+Forex Wealth Empire long-term $1,000,000 payout goal.
 
 </p>
 
@@ -4824,7 +7100,7 @@ id="payoutProgressFill"
 
 <span class="payout-dot"></span>
 
-$270,000 CURRENT PAYOUTS
+$270,000 REPORTED PAYOUTS
 
 </span>
 
@@ -4990,8 +7266,6 @@ account opportunities and instant account options.
 
 <div class="recommendation-grid">
 
-
-<!-- BLUE GUARDIAN -->
 
 <div class="recommendation-card featured-prop">
 
@@ -5325,6 +7599,192 @@ target="_blank"
 rel="noopener noreferrer"
 >
 VIEW PREMIUM
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+class="contact-section"
+id="contact"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="proprietary-badge">
+CONTACT FWE
+</div>
+
+<h2>
+STAY CONNECTED.
+</h2>
+
+<p>
+
+For premium access, community support, announcements and general
+questions, use the official Forex Wealth Empire channels below.
+
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<h3>
+OFFICIAL CHANNELS
+</h3>
+
+<p>
+
+Use the official platforms for current information, premium access,
+community discussions and educational updates.
+
+</p>
+
+
+<div class="contact-links">
+
+<a
+class="contact-link"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+<div class="contact-link-icon">
+DC
+</div>
+
+<div>
+
+<strong>
+FWE DISCORD
+</strong>
+
+<span>
+Community &amp; support
+</span>
+
+</div>
+
+</a>
+
+
+<a
+class="contact-link"
+href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
+target="_blank"
+rel="noopener noreferrer"
+>
+
+<div class="contact-link-icon">
+IG
+</div>
+
+<div>
+
+<strong>
+@THE.LDM_
+</strong>
+
+<span>
+Official Instagram
+</span>
+
+</div>
+
+</a>
+
+
+<a
+class="contact-link"
+href="https://whop.com/forex-wealth-empire-pty-ltd"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+<div class="contact-link-icon">
+WP
+</div>
+
+<div>
+
+<strong>
+PREMIUM ACCESS
+</strong>
+
+<span>
+Official FWE storefront
+</span>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+BEFORE YOU TRADE
+</h3>
+
+<p>
+
+Forex Wealth Empire provides educational content and trading
+frameworks. Nothing on this website should be interpreted as a
+guarantee of profit or personalised financial advice.
+
+</p>
+
+<p style="margin-top:14px;">
+
+Trading financial markets involves risk. Always understand your
+broker or funding provider's rules, manage risk responsibly and
+make decisions based on your own circumstances.
+
+</p>
+
+
+<div class="cta-row">
+
+<a
+class="btn btn-buy"
+href="https://whop.com/forex-wealth-empire-pty-ltd"
+target="_blank"
+rel="noopener noreferrer"
+>
+GET PREMIUM
+</a>
+
+<a
+class="btn btn-discord"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer"
+>
+JOIN DISCORD
 </a>
 
 </div>
@@ -5872,7 +8332,7 @@ Will the complete methodology be available publicly?
 <p>
 
 No. The detailed rules, proprietary concepts, execution framework
-and educational material are reserved for authorized students and
+and educational material are reserved for authorised students and
 customers.
 
 </p>
@@ -5984,6 +8444,299 @@ proprietary concepts are not disclosed on this public website.
 
 
 <!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta">
+
+<div class="container">
+
+<div class="final-cta-box">
+
+<div class="proprietary-badge">
+FOREX WEALTH EMPIRE
+</div>
+
+<h2>
+
+STOP CHASING.
+<br>
+START
+<span>
+UNDERSTANDING.
+</span>
+
+</h2>
+
+<p>
+
+The market does not owe anyone an entry. Build the patience to wait,
+the structure to analyse and the discipline to execute when your
+model is present.
+
+Explore the Forex Wealth Empire premium educational environment and
+discover the Liquidity Displacement Methodology™.
+
+</p>
+
+
+<div class="final-cta-buttons">
+
+<a
+class="btn btn-buy"
+href="https://whop.com/forex-wealth-empire-pty-ltd"
+target="_blank"
+rel="noopener noreferrer"
+>
+GET PREMIUM ACCESS
+</a>
+
+<a
+class="btn btn-discord"
+href="https://discord.gg/zQC9u3qvMJ"
+target="_blank"
+rel="noopener noreferrer"
+>
+JOIN DISCORD
+</a>
+
+<a
+class="btn btn-instagram"
+href="https://www.instagram.com/the.ldm_?stkn=MWd2N2ZoNjQ0eWFxeQ=="
+target="_blank"
+rel="noopener noreferrer"
+>
+FOLLOW THE LDM
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     LEGAL
+========================================================= -->
+
+<section
+class="legal-section"
+id="legal"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="proprietary-badge">
+LEGAL &amp; PROTECTION
+</div>
+
+<h2>
+IMPORTANT INFORMATION
+</h2>
+
+<p>
+
+Please review the following information before purchasing or using
+Forex Wealth Empire educational products, services or content.
+
+</p>
+
+</div>
+
+
+<div class="legal-grid">
+
+
+<!-- TERMS -->
+
+<div class="legal-card">
+
+<h3>
+TERMS &amp; CONDITIONS
+</h3>
+
+<p>
+
+By accessing this website, joining the Forex Wealth Empire community
+or purchasing an educational product or service, you acknowledge
+that you have read and accepted the applicable terms.
+
+<strong>
+All educational content is provided for informational and
+educational purposes only.
+</strong>
+
+Access to paid content is intended for the authorised purchaser and
+may not be transferred, resold, copied, reproduced, redistributed
+or publicly republished without written permission.
+
+Forex Wealth Empire reserves the right to update educational
+products, community structures, content and access arrangements when
+reasonably necessary.
+
+</p>
+
+</div>
+
+
+<!-- PRIVACY -->
+
+<div class="legal-card">
+
+<h3>
+PRIVACY POLICY
+</h3>
+
+<p>
+
+Forex Wealth Empire respects user privacy.
+
+Information voluntarily provided through official purchasing,
+community, communication or support platforms may be processed for
+the purpose of delivering products, providing support, managing
+access and communicating relevant service information.
+
+<strong>
+Users should avoid submitting unnecessary sensitive personal
+information through public community channels.
+</strong>
+
+Third-party platforms used by Forex Wealth Empire may maintain
+their own privacy policies and terms.
+
+</p>
+
+</div>
+
+
+<!-- REFUNDS -->
+
+<div class="legal-card">
+
+<h3>
+REFUND POLICY
+</h3>
+
+<p>
+
+Purchases of digital educational products, memberships and access
+services may be subject to the refund terms displayed at the time
+of purchase through the applicable checkout platform.
+
+<strong>
+Before purchasing, customers should review the applicable product
+description, pricing and refund conditions.
+</strong>
+
+Where a third-party payment platform processes the purchase, its
+applicable checkout and dispute procedures may also apply.
+
+Nothing on this page creates a guarantee of a refund outside the
+terms applicable to the specific purchase.
+
+</p>
+
+</div>
+
+
+<!-- RISK -->
+
+<div class="legal-card">
+
+<h3>
+RISK DISCLOSURE
+</h3>
+
+<p>
+
+Forex, CFDs, indices, commodities, cryptocurrencies and other
+financial instruments involve significant risk and may result in
+losses.
+
+<strong>
+Past performance, historical trades, signals, payouts or examples
+do not guarantee future results.
+</strong>
+
+Educational information should not be treated as personalised
+financial, investment or trading advice.
+
+Each trader remains responsible for their own decisions, capital,
+risk exposure and compliance with the rules of their broker or
+funding provider.
+
+</p>
+
+</div>
+
+
+<!-- IP -->
+
+<div class="legal-card">
+
+<h3>
+INTELLECTUAL PROPERTY
+</h3>
+
+<p>
+
+The Forex Wealth Empire name, branding, Liquidity Displacement
+Methodology™, educational frameworks, written material, graphics,
+course content, proprietary concepts and related intellectual
+property are owned by or used by Forex Wealth Empire with the
+applicable rights.
+
+<strong>
+Unauthorised copying, recording, redistribution, resale,
+repackaging, reproduction or commercial exploitation is prohibited.
+</strong>
+
+This includes attempts to reproduce proprietary educational
+materials for sale or distribution to third parties.
+
+</p>
+
+</div>
+
+
+<!-- EDUCATION -->
+
+<div class="legal-card">
+
+<h3>
+EDUCATIONAL PURPOSE
+</h3>
+
+<p>
+
+The purpose of the Forex Wealth Empire educational environment is
+to provide information, concepts, frameworks and market education.
+
+<strong>
+No educational material can eliminate trading risk.
+</strong>
+
+Students and customers should independently evaluate information,
+develop appropriate risk-management practices and seek qualified
+professional advice where appropriate.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      DISCLAIMER
 ========================================================= -->
 
@@ -6000,14 +8753,19 @@ style="padding-top:0;"
 Risk Disclaimer:
 </strong>
 
-Forex and CFD trading involve substantial risk and may not be
-suitable for every trader.
+Forex, CFD, index, commodity and cryptocurrency trading involve
+substantial risk and may not be suitable for every trader.
 
 The information and educational material provided by Forex Wealth
 Empire is for educational purposes only and should not be considered
-financial advice, investment advice or a guarantee of trading results.
+financial advice, investment advice, portfolio management or a
+guarantee of trading results.
 
 Past performance does not guarantee future results.
+
+Any signals, examples, historical trades, testimonials, payout
+figures or performance references shown on this website should not
+be interpreted as a promise of future performance.
 
 Trading involves risk of loss.
 
@@ -6041,6 +8799,32 @@ Liquidity Displacement Methodology™
 Forex Wealth Empire (Pty) Ltd
 </div>
 
+
+<div class="footer-legal">
+
+<a href="#legal">
+Terms
+</a>
+
+<a href="#legal">
+Privacy
+</a>
+
+<a href="#legal">
+Refunds
+</a>
+
+<a href="#legal">
+Risk Disclosure
+</a>
+
+<a href="#legal">
+IP / Copyright
+</a>
+
+</div>
+
+
 <div>
 
 <a
@@ -6072,11 +8856,12 @@ Discord Community
 
 <!-- =========================================================
      PREMIUM POPUP
+     RENAMED FROM discountPopup
 ========================================================= -->
 
 <div
 class="popup-overlay"
-id="discountPopup"
+id="premiumPopup"
 >
 
 <div class="popup">
@@ -6293,6 +9078,112 @@ Chat with us
 
 
 <!-- =========================================================
+     MOBILE NAVIGATION
+========================================================= -->
+
+<script>
+
+(function(){
+
+const menuToggle =
+document.getElementById("menuToggle");
+
+const mainNav =
+document.getElementById("mainNav");
+
+if(!menuToggle || !mainNav){
+return;
+}
+
+
+function closeMenu(){
+
+menuToggle.classList.remove("active");
+
+mainNav.classList.remove("active");
+
+menuToggle.setAttribute(
+"aria-expanded",
+"false"
+);
+
+menuToggle.setAttribute(
+"aria-label",
+"Open navigation menu"
+);
+
+document.body.classList.remove("menu-open");
+
+}
+
+
+menuToggle.addEventListener(
+"click",
+function(){
+
+const isOpen =
+mainNav.classList.contains("active");
+
+
+if(isOpen){
+
+closeMenu();
+
+}else{
+
+menuToggle.classList.add("active");
+
+mainNav.classList.add("active");
+
+menuToggle.setAttribute(
+"aria-expanded",
+"true"
+);
+
+menuToggle.setAttribute(
+"aria-label",
+"Close navigation menu"
+);
+
+document.body.classList.add("menu-open");
+
+}
+
+});
+
+
+mainNav.querySelectorAll("a").forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+closeMenu();
+
+});
+
+});
+
+
+window.addEventListener(
+"resize",
+function(){
+
+if(window.innerWidth > 1050){
+
+closeMenu();
+
+}
+
+});
+
+})();
+
+</script>
+
+
+<!-- =========================================================
      PAYOUT COUNTER
 ========================================================= -->
 
@@ -6482,6 +9373,10 @@ faqItems.forEach(function(item){
 const question =
 item.querySelector(".faq-question");
 
+if(!question){
+return;
+}
+
 question.addEventListener(
 "click",
 function(){
@@ -6530,7 +9425,7 @@ question.setAttribute(
 
 
 <!-- =========================================================
-     POPUP SCRIPT
+     PREMIUM POPUP SCRIPT
 ========================================================= -->
 
 <script>
@@ -6538,10 +9433,14 @@ question.setAttribute(
 (function(){
 
 const popup =
-document.getElementById("discountPopup");
+document.getElementById("premiumPopup");
 
 const closeButton =
 document.getElementById("popupClose");
+
+if(!popup || !closeButton){
+return;
+}
 
 let popupShown = false;
 
@@ -6579,7 +9478,8 @@ showPopup();
 
 window.addEventListener(
 "scroll",
-handleFirstScroll
+handleFirstScroll,
+{passive:true}
 );
 
 
@@ -6605,6 +9505,19 @@ popup.classList.remove("active");
 
 }
 );
+
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Escape"){
+
+popup.classList.remove("active");
+
+}
+
+});
 
 })();
 
