@@ -1,5273 +1,2052 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Forex Wealth Empire | Liquidity Displacement Methodology™</title>
+  <title>Liquidity Displacement Methodology™ | Forex Wealth Empire</title>
 
-<meta name="description" content="Forex Wealth Empire — premium trading education, market insights, trading community and Liquidity Displacement Methodology™.">
-<meta name="theme-color" content="#080808">
+  <meta name="description" content="Discover Liquidity Displacement Methodology™ by Forex Wealth Empire. Explore the methodology, course packages, and upcoming official launch on January 11, 2027.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="theme-color" content="#080808">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-/* =====================================================
-   FOREX WEALTH EMPIRE
-   CINEMATIC GLASSMORPHISM EXPERIENCE
-===================================================== */
-
-:root {
-    --bg: #070707;
-    --bg-soft: #0c0c0d;
-    --panel: rgba(255,255,255,0.035);
-    --panel-hover: rgba(255,255,255,0.065);
-    --gold: #d9b56d;
-    --gold-light: #ffe6a7;
-    --red: #e32936;
-    --red-dark: #8e101a;
-    --white: #f7f7f7;
-    --muted: #a4a4a4;
-    --line: rgba(255,255,255,0.09);
-    --glass-border: rgba(255,255,255,0.12);
-    --radius: 22px;
-    --max-width: 1200px;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--white);
-    line-height: 1.7;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -2;
-
-    background:
-        radial-gradient(
-            ellipse at 10% 10%,
-            rgba(160, 15, 25, 0.13),
-            transparent 35%
-        ),
-        radial-gradient(
-            ellipse at 90% 25%,
-            rgba(217, 181, 109, 0.09),
-            transparent 30%
-        ),
-        radial-gradient(
-            ellipse at 50% 100%,
-            rgba(120, 15, 25, 0.12),
-            transparent 40%
-        );
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0.13;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        );
-
-    background-size: 75px 75px;
-
-    mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent 90%
-    );
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button {
-    cursor: pointer;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-section {
-    position: relative;
-    padding: 105px 24px;
-    scroll-margin-top: 85px;
-}
-
-.container {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.section-heading {
-    max-width: 760px;
-    margin: 0 auto 55px;
-    text-align: center;
-}
-
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-
-    margin-bottom: 20px;
-}
-
-.eyebrow::before,
-.eyebrow::after {
-    content: "";
-    height: 1px;
-    width: 24px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold)
-    );
-}
-
-.eyebrow::after {
-    transform: rotate(180deg);
-}
-
-h1,
-h2,
-h3,
-h4 {
-    line-height: 1.15;
-    letter-spacing: -1.2px;
-}
-
-h1 {
-    font-size: clamp(42px, 7vw, 82px);
-    font-weight: 800;
-}
-
-h2 {
-    font-size: clamp(32px, 5vw, 52px);
-    font-weight: 800;
-}
-
-h3 {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.gradient-text {
-    color: var(--gold);
-    background: linear-gradient(
-        110deg,
-        #fff1c5 0%,
-        #d9b56d 40%,
-        #a8752a 100%
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.red-text {
-    color: var(--red);
-}
-
-.section-description {
-    color: var(--muted);
-    font-size: 15px;
-    max-width: 680px;
-    margin: 20px auto 0;
-    line-height: 1.9;
-}
-
-.muted {
-    color: var(--muted);
-}
-
-.small {
-    font-size: 12px;
-}
-
-/* =====================================================
-   SCROLL PROGRESS
-===================================================== */
-
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    z-index: 9999;
-
-    background: linear-gradient(
-        90deg,
-        var(--red),
-        var(--gold),
-        var(--gold-light)
-    );
-
-    box-shadow: 0 0 15px rgba(217,181,109,0.5);
-}
-
-/* =====================================================
-   ANNOUNCEMENT BAR
-===================================================== */
-
-.announcement {
-    height: 34px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-
-    background: #0d0b09;
-    border-bottom: 1px solid rgba(217,181,109,0.2);
-}
-
-.announcement-track {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    width: max-content;
-
-    animation: announcementMove 42s linear infinite;
-}
-
-.announcement:hover .announcement-track {
-    animation-play-state: paused;
-}
-
-.announcement-item {
-    padding: 0 35px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.7px;
-    text-transform: uppercase;
-    color: var(--gold);
-}
-
-.announcement-item span {
-    color: var(--white);
-    margin-left: 8px;
-}
-
-@keyframes announcementMove {
-    from {
-        transform: translateX(0);
+  <style>
+    :root {
+      --bg: #080808;
+      --panel: #111111;
+      --panel-light: #171717;
+      --gold: #d6ad55;
+      --gold-light: #f4d68b;
+      --red: #a51d29;
+      --white: #f6f3ec;
+      --muted: #aaa49a;
+      --border: rgba(214, 173, 85, 0.24);
+      --green: #35d07f;
     }
 
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    background: rgba(7,7,7,0.77);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    transition: background 0.3s ease;
-}
-
-.navbar {
-    max-width: 1350px;
-    min-height: 78px;
-    margin: auto;
-    padding: 0 28px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-}
-
-.brand-mark {
-    position: relative;
-    width: 42px;
-    height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid rgba(217,181,109,0.55);
-    border-radius: 13px;
-
-    background: linear-gradient(
-        145deg,
-        rgba(217,181,109,0.14),
-        rgba(227,41,54,0.08)
-    );
-
-    color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-
-    box-shadow: inset 0 0 18px rgba(217,181,109,0.05);
-}
-
-.brand-mark::after {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border: 1px solid rgba(217,181,109,0.08);
-    border-radius: 16px;
-}
-
-.brand-name {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1.1px;
-    line-height: 1.4;
-    text-transform: uppercase;
-}
-
-.brand-subtitle {
-    display: block;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: var(--gold);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 27px;
-}
-
-.nav-links a {
-    position: relative;
-    color: #c9c9c9;
-    font-size: 12px;
-    font-weight: 600;
-    transition: color 0.25s ease;
-}
-
-.nav-links a:not(.nav-cta)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 1px;
-    width: 0;
-
-    background: var(--gold);
-    transition: width 0.25s ease;
-}
-
-.nav-links a:hover {
-    color: var(--gold-light);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-cta {
-    padding: 12px 18px;
-    border: 1px solid rgba(217,181,109,0.6);
-    border-radius: 9px;
-    color: var(--gold) !important;
-}
-
-.nav-cta:hover {
-    background: var(--gold);
-    color: #080808 !important;
-}
-
-.menu-toggle {
-    display: none;
-    width: 44px;
-    height: 44px;
-
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: rgba(255,255,255,0.04);
-    color: white;
-    font-size: 23px;
-}
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.btn {
-    min-height: 49px;
-    padding: 14px 22px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    border-radius: 10px;
-    border: 1px solid transparent;
-
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-.btn-gold {
-    color: #090909;
-
-    background: linear-gradient(
-        115deg,
-        #ffe8ac,
-        #d9b56d 60%,
-        #b8893c
-    );
-
-    box-shadow: 0 8px 28px rgba(217,181,109,0.15);
-}
-
-.btn-gold:hover {
-    box-shadow: 0 12px 38px rgba(217,181,109,0.28);
-}
-
-.btn-outline {
-    color: white;
-    background: rgba(255,255,255,0.035);
-    border-color: rgba(255,255,255,0.18);
-}
-
-.btn-outline:hover {
-    border-color: var(--gold);
-    background: rgba(217,181,109,0.08);
-}
-
-.btn-red {
-    color: white;
-
-    background: linear-gradient(
-        120deg,
-        #e32936,
-        #99131d
-    );
-
-    box-shadow: 0 8px 28px rgba(227,41,54,0.16);
-}
-
-.btn-red:hover {
-    box-shadow: 0 12px 38px rgba(227,41,54,0.3);
-}
-
-.btn-block {
-    width: 100%;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    min-height: 750px;
-    min-height: min(850px, calc(100svh - 112px));
-
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-
-    padding-top: 90px;
-    padding-bottom: 90px;
-}
-
-.hero-glow {
-    position: absolute;
-    width: 650px;
-    height: 650px;
-    border-radius: 50%;
-
-    right: -100px;
-    top: 40px;
-
-    background: radial-gradient(
-        circle,
-        rgba(180,120,40,0.12),
-        rgba(130,15,25,0.05) 40%,
-        transparent 70%
-    );
-
-    filter: blur(20px);
-    pointer-events: none;
-    animation: glowFloat 10s ease-in-out infinite alternate;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 55px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-copy {
-    max-width: 720px;
-}
-
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 9px 14px;
-    margin-bottom: 26px;
-
-    border: 1px solid rgba(217,181,109,0.25);
-    border-radius: 100px;
-
-    background: rgba(217,181,109,0.055);
-    color: #e8d7ae;
-
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-
-    background: #5ce09a;
-    box-shadow: 0 0 12px rgba(92,224,154,0.6);
-}
-
-.hero h1 {
-    max-width: 800px;
-    margin-bottom: 25px;
-}
-
-.hero-description {
-    max-width: 580px;
-    color: #b1b1b1;
-    font-size: 15px;
-    line-height: 2;
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 32px;
-}
-
-.hero-note {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    margin-top: 28px;
-    color: #898989;
-    font-size: 11px;
-}
-
-.hero-note strong {
-    color: #d9d9d9;
-}
-
-.hero-note-line {
-    width: 30px;
-    height: 1px;
-    background: var(--gold);
-}
-
-/* HERO VISUAL */
-
-.hero-visual {
-    position: relative;
-    min-width: 0;
-    perspective: 1000px;
-}
-
-.terminal {
-    position: relative;
-    overflow: hidden;
-
-    padding: 23px;
-    border-radius: 25px;
-    border: 1px solid rgba(255,255,255,0.12);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.07),
-            rgba(255,255,255,0.015)
-        );
-
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,0.55),
-        inset 0 1px 0 rgba(255,255,255,0.07);
-
-    transform: rotateY(-5deg) rotateX(2deg);
-    animation: terminalFloat 8s ease-in-out infinite;
-}
-
-.terminal::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        var(--red),
-        transparent
-    );
-}
-
-.terminal-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-}
-
-.terminal-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 10px;
-    letter-spacing: 1.4px;
-}
-
-.terminal-status {
-    font-size: 9px;
-    color: #7ee0a8;
-}
-
-.terminal-chart {
-    height: 230px;
-    position: relative;
-    margin: 20px 0;
-    overflow: hidden;
-
-    border-radius: 13px;
-    border: 1px solid rgba(255,255,255,0.05);
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        rgba(0,0,0,0.22);
-
-    background-size: 35px 35px;
-}
-
-.chart-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.terminal-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.terminal-stat {
-    padding: 13px 10px;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 11px;
-    background: rgba(0,0,0,0.2);
-}
-
-.terminal-stat span {
-    display: block;
-    color: #888;
-    font-size: 9px;
-    margin-bottom: 5px;
-}
-
-.terminal-stat strong {
-    font-size: 13px;
-    color: var(--gold);
-}
-
-.floating-tag {
-    position: absolute;
-    z-index: 3;
-
-    padding: 13px 16px;
-
-    border: 1px solid rgba(217,181,109,0.3);
-    border-radius: 13px;
-
-    background: rgba(15,15,15,0.84);
-    backdrop-filter: blur(15px);
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-
-    font-size: 10px;
-    font-weight: 700;
-}
-
-.floating-tag span {
-    display: block;
-    margin-top: 4px;
-    color: var(--gold);
-    font-size: 12px;
-}
-
-.tag-one {
-    top: 55px;
-    left: -35px;
-}
-
-.tag-two {
-    right: -20px;
-    bottom: 60px;
-}
-
-@keyframes terminalFloat {
-    0%, 100% {
-        transform: translateY(0) rotateY(-5deg) rotateX(2deg);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    50% {
-        transform: translateY(-10px) rotateY(-2deg) rotateX(1deg);
-    }
-}
-
-@keyframes glowFloat {
-    from {
-        transform: translate3d(0,0,0) scale(1);
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
-    to {
-        transform: translate3d(-25px,20px,0) scale(1.08);
-    }
-}
-
-/* =====================================================
-   TRUST STRIP
-===================================================== */
-
-.trust-strip {
-    padding: 24px;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-
-    background: rgba(255,255,255,0.015);
-}
-
-.trust-items {
-    max-width: 1150px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.trust-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.trust-icon {
-    width: 36px;
-    height: 36px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 10px;
-    border: 1px solid rgba(217,181,109,0.22);
-
-    background: rgba(217,181,109,0.06);
-    color: var(--gold);
-    font-size: 15px;
-}
-
-.trust-item strong {
-    display: block;
-    font-size: 11px;
-}
-
-.trust-item span {
-    display: block;
-    color: #888;
-    font-size: 10px;
-}
-
-/* =====================================================
-   GLASS CARDS
-===================================================== */
-
-.glass-card {
-    position: relative;
-    overflow: hidden;
-
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius);
-
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.055),
-        rgba(255,255,255,0.018)
-    );
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    box-shadow:
-        0 18px 60px rgba(0,0,0,0.16),
-        inset 0 1px 0 rgba(255,255,255,0.025);
-
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-7px);
-    border-color: rgba(217,181,109,0.36);
-
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.075),
-        rgba(255,255,255,0.025)
-    );
-
-    box-shadow:
-        0 25px 65px rgba(0,0,0,0.28),
-        0 0 35px rgba(217,181,109,0.035);
-}
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 55px;
-    align-items: center;
-}
-
-.about-copy h2 {
-    margin-bottom: 23px;
-}
-
-.about-copy p {
-    color: #aaa;
-    font-size: 14px;
-    line-height: 2;
-    margin-bottom: 18px;
-}
-
-.about-highlight {
-    margin-top: 28px;
-    padding: 22px;
-
-    border-left: 2px solid var(--gold);
-    border-radius: 0 14px 14px 0;
-
-    background: linear-gradient(
-        90deg,
-        rgba(217,181,109,0.08),
-        transparent
-    );
-
-    color: #e4d5b5;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.about-visual {
-    padding: 30px;
-    min-height: 420px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    background:
-        radial-gradient(
-            ellipse at 100% 0,
-            rgba(217,181,109,0.12),
-            transparent 45%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.05),
-            rgba(255,255,255,0.012)
-        );
-}
-
-.about-visual-label {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-.about-monogram {
-    margin: 25px auto;
-
-    width: 170px;
-    height: 170px;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid rgba(217,181,109,0.4);
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(217,181,109,0.1),
-            rgba(0,0,0,0.2) 65%
-        );
-
-    box-shadow:
-        0 0 60px rgba(217,181,109,0.08),
-        inset 0 0 40px rgba(217,181,109,0.05);
-
-    color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-}
-
-.about-visual-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-}
-
-.about-visual-bottom strong {
-    display: block;
-    font-size: 12px;
-}
-
-.about-visual-bottom span {
-    display: block;
-    color: #888;
-    font-size: 10px;
-}
-
-/* =====================================================
-   METHODOLOGY
-===================================================== */
-
-.methodology {
-    background: linear-gradient(
-        180deg,
-        transparent,
-        rgba(255,255,255,0.015),
-        transparent
-    );
-}
-
-.methodology-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.method-card {
-    padding: 28px;
-    min-height: 250px;
-}
-
-.method-number {
-    display: inline-grid;
-    place-items: center;
-
-    width: 42px;
-    height: 42px;
-
-    margin-bottom: 25px;
-
-    border: 1px solid rgba(217,181,109,0.3);
-    border-radius: 12px;
-
-    background: rgba(217,181,109,0.06);
-    color: var(--gold);
-
-    font-family: 'Orbitron', sans-serif;
-    font-size: 12px;
-}
-
-.method-card h3 {
-    margin-bottom: 13px;
-    font-size: 19px;
-}
-
-.method-card p {
-    color: #999;
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-/* =====================================================
-   LEARNING FRAMEWORK
-===================================================== */
-
-.learning-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.learning-card {
-    padding: 25px;
-    min-height: 220px;
-}
-
-.learning-icon {
-    width: 47px;
-    height: 47px;
-
-    display: grid;
-    place-items: center;
-
-    margin-bottom: 22px;
-
-    border: 1px solid rgba(217,181,109,0.22);
-    border-radius: 13px;
-
-    background: rgba(217,181,109,0.06);
-
-    font-size: 20px;
-}
-
-.learning-card h3 {
-    font-size: 17px;
-    margin-bottom: 11px;
-}
-
-.learning-card p {
-    color: #999;
-    font-size: 12px;
-    line-height: 1.9;
-}
-
-/* =====================================================
-   CHART / EDUCATION PREVIEW
-===================================================== */
-
-.chart-section {
-    background:
-        radial-gradient(
-            ellipse at 50% 50%,
-            rgba(150,15,25,0.08),
-            transparent 65%
-        );
-}
-
-.chart-showcase {
-    padding: 22px;
-}
-
-.chart-showcase-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-
-    padding: 8px 8px 22px;
-}
-
-.chart-showcase-header h3 {
-    font-size: 14px;
-}
-
-.chart-showcase-header span {
-    color: var(--gold);
-    font-size: 10px;
-}
-
-.chart-placeholder {
-    position: relative;
-    min-height: 320px;
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        rgba(0,0,0,0.24);
-
-    background-size: 45px 45px;
-}
-
-.chart-placeholder svg {
-    width: 100%;
-    height: 320px;
-    display: block;
-}
-
-.chart-label {
-    position: absolute;
-    top: 18px;
-    left: 18px;
-
-    padding: 8px 12px;
-
-    border: 1px solid rgba(217,181,109,0.2);
-    border-radius: 8px;
-
-    background: rgba(0,0,0,0.55);
-
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 1px;
-}
-
-.chart-disclaimer {
-    margin-top: 15px;
-    color: #777;
-    font-size: 10px;
-    line-height: 1.8;
-}
-
-/* =====================================================
-   LAUNCH / COUNTDOWN
-===================================================== */
-
-.launch-panel {
-    position: relative;
-    overflow: hidden;
-
-    padding: 55px 35px;
-    text-align: center;
-
-    border: 1px solid rgba(217,181,109,0.28);
-    border-radius: 28px;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 0,
-            rgba(217,181,109,0.11),
-            transparent 60%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.05),
-            rgba(255,255,255,0.015)
-        );
-
-    box-shadow: 0 25px 80px rgba(0,0,0,0.22);
-}
-
-.launch-panel h2 {
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.launch-panel > p {
-    color: #aaa;
-    max-width: 600px;
-    margin: 18px auto 0;
-    font-size: 13px;
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 35px 0;
-}
-
-.countdown-box {
-    width: 105px;
-    padding: 18px 10px;
-
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 13px;
-
-    background: rgba(0,0,0,0.3);
-}
-
-.countdown-box strong {
-    display: block;
-    color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 27px;
-}
-
-.countdown-box span {
-    color: #888;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-.launch-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-/* =====================================================
-   BLUE GUARDIAN PARTNERSHIP
-===================================================== */
-
-.partner-section {
-    background: linear-gradient(
-        180deg,
-        transparent,
-        rgba(255,255,255,0.012),
-        transparent
-    );
-}
-
-.partner-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 40px;
-
-    padding: 42px;
-}
-
-.partner-label {
-    display: inline-block;
-
-    padding: 8px 12px;
-    margin-bottom: 20px;
-
-    border: 1px solid rgba(217,181,109,0.25);
-    border-radius: 8px;
-
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.partner-copy h3 {
-    font-size: clamp(28px, 4vw, 42px);
-    margin-bottom: 18px;
-}
-
-.partner-copy p {
-    color: #aaa;
-    font-size: 13px;
-    line-height: 2;
-    margin-bottom: 20px;
-}
-
-.partner-list {
-    display: grid;
-    gap: 12px;
-    margin: 24px 0;
-    list-style: none;
-}
-
-.partner-list li {
-    display: flex;
-    gap: 12px;
-    color: #ccc;
-    font-size: 12px;
-}
-
-.partner-list li::before {
-    content: "✓";
-    color: var(--gold);
-    font-weight: 800;
-}
-
-.partner-visual {
-    min-height: 320px;
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(217,181,109,0.12),
-            transparent 65%
-        ),
-        rgba(0,0,0,0.22);
-}
-
-.partner-emblem {
-    width: 105px;
-    height: 105px;
-
-    display: grid;
-    place-items: center;
-
-    margin-bottom: 22px;
-
-    border: 1px solid rgba(217,181,109,0.4);
-    border-radius: 28px;
-
-    background: rgba(217,181,109,0.07);
-
-    color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 24px;
-    font-weight: 800;
-
-    box-shadow: 0 0 55px rgba(217,181,109,0.08);
-}
-
-.partner-visual h3 {
-    font-size: 21px;
-    letter-spacing: 2px;
-}
-
-.partner-visual p {
-    color: #888;
-    font-size: 11px;
-    margin-top: 10px;
-}
-
-/* =====================================================
-   GIVEAWAY
-===================================================== */
-
-.giveaway-section {
-    overflow: hidden;
-}
-
-.giveaway-card {
-    position: relative;
-    padding: 45px;
-
-    border: 1px solid rgba(227,41,54,0.28);
-    border-radius: 26px;
-
-    background:
-        radial-gradient(
-            ellipse at 100% 0,
-            rgba(227,41,54,0.14),
-            transparent 50%
-        ),
-        radial-gradient(
-            ellipse at 0 100%,
-            rgba(217,181,109,0.08),
-            transparent 45%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.045),
-            rgba(255,255,255,0.012)
-        );
-
-    box-shadow: 0 25px 85px rgba(0,0,0,0.25);
-}
-
-.giveaway-layout {
-    display: grid;
-    grid-template-columns: 1fr 0.8fr;
-    gap: 45px;
-    align-items: center;
-}
-
-.giveaway-tag {
-    display: inline-block;
-    padding: 8px 12px;
-
-    border: 1px solid rgba(227,41,54,0.35);
-    border-radius: 8px;
-
-    background: rgba(227,41,54,0.08);
-
-    color: #ff8d95;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-
-    margin-bottom: 22px;
-}
-
-.giveaway-copy h2 {
-    font-size: clamp(32px, 5vw, 53px);
-}
-
-.giveaway-copy p {
-    color: #aaa;
-    font-size: 13px;
-    line-height: 1.9;
-    margin-top: 18px;
-}
-
-.giveaway-prizes {
-    display: grid;
-    gap: 12px;
-}
-
-.prize-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    padding: 18px;
-
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-
-    background: rgba(0,0,0,0.25);
-}
-
-.prize-icon {
-    flex-shrink: 0;
-
-    width: 47px;
-    height: 47px;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid rgba(217,181,109,0.25);
-    border-radius: 12px;
-
-    background: rgba(217,181,109,0.06);
-
-    font-size: 20px;
-}
-
-.prize-item strong {
-    display: block;
-    font-size: 13px;
-}
-
-.prize-item span {
-    display: block;
-    color: #888;
-    font-size: 10px;
-    margin-top: 4px;
-}
-
-.giveaway-actions {
-    margin-top: 28px;
-}
-
-.giveaway-note {
-    color: #777;
-    font-size: 10px;
-    margin-top: 14px;
-    line-height: 1.8;
-}
-
-/* =====================================================
-   COMMUNITY PAYOUT COUNTER
-===================================================== */
-
-.payout-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.payout-card {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 25px;
-
-    padding: 32px;
-
-    border: 1px solid rgba(217,181,109,0.22);
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            110deg,
-            rgba(217,181,109,0.07),
-            rgba(255,255,255,0.02)
-        );
-}
-
-.payout-label {
-    color: #999;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.7px;
-    text-transform: uppercase;
-}
-
-.payout-number {
-    display: block;
-    margin-top: 8px;
-
-    color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(29px, 5vw, 48px);
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.payout-description {
-    color: #888;
-    font-size: 11px;
-    margin-top: 8px;
-}
-
-.payout-goal {
-    width: 210px;
-}
-
-.payout-goal-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-
-    margin-bottom: 10px;
-
-    font-size: 10px;
-    color: #999;
-}
-
-.payout-goal-top strong {
-    color: var(--gold);
-}
-
-.progress-track {
-    width: 100%;
-    height: 7px;
-
-    overflow: hidden;
-
-    border-radius: 50px;
-    background: rgba(255,255,255,0.08);
-}
-
-.progress-fill {
-    width: 27%;
-    height: 100%;
-
-    border-radius: inherit;
-
-    background: linear-gradient(
-        90deg,
-        var(--red),
-        var(--gold)
-    );
-
-    box-shadow: 0 0 14px rgba(217,181,109,0.2);
-
-    transition: width 1s ease;
-}
-
-/* =====================================================
-   COMMUNITY
-===================================================== */
-
-.community-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.community-card {
-    padding: 28px;
-}
-
-.community-icon {
-    font-size: 25px;
-    margin-bottom: 18px;
-}
-
-.community-card h3 {
-    font-size: 17px;
-    margin-bottom: 11px;
-}
-
-.community-card p {
-    color: #999;
-    font-size: 12px;
-    line-height: 1.9;
-}
-
-.community-card a {
-    display: inline-flex;
-    margin-top: 20px;
-
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 800;
-}
-
-/* =====================================================
-   PRICING
-===================================================== */
-
-.pricing-section {
-    background:
-        radial-gradient(
-            ellipse at 50% 0,
-            rgba(217,181,109,0.07),
-            transparent 55%
-        );
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-
-    max-width: 900px;
-    margin: auto;
-}
-
-.price-card {
-    position: relative;
-    padding: 34px;
-}
-
-.price-card.featured {
-    border-color: rgba(217,181,109,0.45);
-
-    background:
-        radial-gradient(
-            ellipse at 100% 0,
-            rgba(217,181,109,0.1),
-            transparent 55%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.065),
-            rgba(255,255,255,0.02)
-        );
-
-    box-shadow:
-        0 25px 75px rgba(0,0,0,0.3),
-        0 0 40px rgba(217,181,109,0.035);
-}
-
-.price-badge {
-    display: inline-block;
-    padding: 7px 10px;
-
-    border-radius: 7px;
-    border: 1px solid rgba(217,181,109,0.3);
-
-    color: var(--gold);
-    background: rgba(217,181,109,0.06);
-
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-
-    margin-bottom: 20px;
-}
-
-.price-card h3 {
-    font-size: 23px;
-    margin-bottom: 12px;
-}
-
-.price-description {
-    color: #999;
-    font-size: 12px;
-    line-height: 1.8;
-    min-height: 44px;
-}
-
-.price-amount {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 7px;
-
-    margin: 27px 0 8px;
-}
-
-.price-amount strong {
-    color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(30px, 4vw, 42px);
-    letter-spacing: -1px;
-}
-
-.price-amount span {
-    color: #888;
-    font-size: 11px;
-}
-
-.price-note {
-    color: #777;
-    font-size: 10px;
-}
-
-.price-divider {
-    height: 1px;
-    margin: 25px 0;
-    background: var(--line);
-}
-
-.price-features {
-    list-style: none;
-    display: grid;
-    gap: 14px;
-    margin-bottom: 28px;
-}
-
-.price-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 11px;
-
-    color: #c4c4c4;
-    font-size: 12px;
-}
-
-.price-features li::before {
-    content: "✓";
-    color: var(--gold);
-    font-weight: 800;
-}
-
-.pricing-note {
-    max-width: 750px;
-    margin: 30px auto 0;
-
-    color: #777;
-    font-size: 10px;
-    line-height: 1.8;
-    text-align: center;
-}
-
-/* =====================================================
-   FAQ
-===================================================== */
-
-.faq-container {
-    max-width: 850px;
-    margin: auto;
-}
-
-.faq-item {
-    overflow: hidden;
-
-    margin-bottom: 12px;
-
-    border: 1px solid rgba(255,255,255,0.09);
-    border-radius: 14px;
-
-    background: rgba(255,255,255,0.025);
-
-    transition: border-color 0.25s ease;
-}
-
-.faq-item.active {
-    border-color: rgba(217,181,109,0.32);
-}
-
-.faq-question {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-
-    padding: 22px;
-
-    border: 0;
-    background: transparent;
-    color: white;
-    text-align: left;
-
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.faq-symbol {
-    display: grid;
-    place-items: center;
-
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-
-    border: 1px solid rgba(217,181,109,0.25);
-    border-radius: 8px;
-
-    color: var(--gold);
-    transition: transform 0.25s ease;
-}
-
-.faq-item.active .faq-symbol {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease;
-}
-
-.faq-answer-inner {
-    overflow: hidden;
-}
-
-.faq-answer p {
-    padding: 0 22px 22px;
-
-    color: #999;
-    font-size: 12px;
-    line-height: 1.9;
-}
-
-.faq-item.active .faq-answer {
-    grid-template-rows: 1fr;
-}
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 35px;
-    align-items: start;
-}
-
-.contact-copy h2 {
-    margin-bottom: 20px;
-}
-
-.contact-copy > p {
-    color: #999;
-    font-size: 13px;
-    line-height: 2;
-}
-
-.contact-details {
-    display: grid;
-    gap: 13px;
-    margin-top: 30px;
-}
-
-.contact-detail {
-    padding: 16px;
-
-    display: flex;
-    align-items: center;
-    gap: 13px;
-
-    border: 1px solid var(--line);
-    border-radius: 13px;
-
-    background: rgba(255,255,255,0.025);
-}
-
-.contact-detail-icon {
-    width: 38px;
-    height: 38px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 10px;
-    border: 1px solid rgba(217,181,109,0.22);
-
-    color: var(--gold);
-    background: rgba(217,181,109,0.05);
-}
-
-.contact-detail strong {
-    display: block;
-    font-size: 11px;
-}
-
-.contact-detail span {
-    display: block;
-    color: #999;
-    font-size: 11px;
-    overflow-wrap: anywhere;
-}
-
-.contact-form {
-    padding: 30px;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 17px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group.full {
-    grid-column: 1 / -1;
-}
-
-.form-group label {
-    color: #bbb;
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 14px;
-
-    outline: none;
-
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-
-    background: rgba(0,0,0,0.28);
-    color: white;
-
-    font-size: 12px;
-
-    transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.form-group select option {
-    background: #111;
-    color: white;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: rgba(217,181,109,0.65);
-    box-shadow: 0 0 0 3px rgba(217,181,109,0.06);
-}
-
-.form-group textarea {
-    min-height: 145px;
-    resize: vertical;
-}
-
-.form-note {
-    margin-top: 15px;
-    color: #777;
-    font-size: 10px;
-    line-height: 1.8;
-}
-
-/* =====================================================
-   RISK DISCLAIMER
-===================================================== */
-
-.risk-section {
-    padding-top: 0;
-    padding-bottom: 55px;
-}
-
-.risk-box {
-    padding: 24px;
-
-    border: 1px solid rgba(227,41,54,0.2);
-    border-radius: 16px;
-
-    background: rgba(227,41,54,0.025);
-}
-
-.risk-box h3 {
-    color: #e78b91;
-    font-size: 13px;
-    margin-bottom: 12px;
-    letter-spacing: 0;
-}
-
-.risk-box p {
-    color: #858585;
-    font-size: 10px;
-    line-height: 2;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.site-footer {
-    padding: 55px 24px 25px;
-
-    border-top: 1px solid var(--line);
-
-    background: rgba(0,0,0,0.28);
-}
-
-.footer-top {
-    max-width: var(--max-width);
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr 0.7fr;
-    gap: 45px;
-
-    padding-bottom: 40px;
-}
-
-.footer-brand p {
-    max-width: 340px;
-    color: #888;
-    font-size: 11px;
-    line-height: 2;
-    margin-top: 20px;
-}
-
-.footer-column h4 {
-    margin-bottom: 18px;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.footer-column a {
-    display: block;
-    width: fit-content;
-
-    color: #888;
-    font-size: 11px;
-
-    margin-bottom: 12px;
-
-    transition: color 0.2s ease;
-}
-
-.footer-column a:hover {
-    color: var(--gold);
-}
-
-.footer-bottom {
-    max-width: var(--max-width);
-    margin: auto;
-
-    padding-top: 22px;
-
-    border-top: 1px solid var(--line);
-
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    color: #686868;
-    font-size: 10px;
-}
-
-/* =====================================================
-   COMMUNITY NOTIFICATION
-===================================================== */
-
-.community-toast {
-    position: fixed;
-    z-index: 1500;
-
-    left: 22px;
-    bottom: 22px;
-
-    width: min(350px, calc(100vw - 44px));
-
-    display: flex;
-    align-items: center;
-    gap: 13px;
-
-    padding: 16px;
-
-    border: 1px solid rgba(217,181,109,0.25);
-    border-radius: 15px;
-
-    background: rgba(13,13,13,0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-
-    opacity: 0;
-    transform: translateY(18px);
-    pointer-events: none;
-
-    transition:
-        opacity 0.4s ease,
-        transform 0.4s ease;
-}
-
-.community-toast.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.toast-icon {
-    flex-shrink: 0;
-
-    width: 42px;
-    height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid rgba(217,181,109,0.25);
-    border-radius: 12px;
-
-    background: rgba(217,181,109,0.07);
-
-    color: var(--gold);
-    font-size: 17px;
-}
-
-.toast-content strong {
-    display: block;
-    font-size: 11px;
-}
-
-.toast-content p {
-    color: #aaa;
-    font-size: 10px;
-    margin-top: 3px;
-}
-
-.toast-content span {
-    display: block;
-    color: #777;
-    font-size: 9px;
-    margin-top: 4px;
-}
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-delay-1 {
-    transition-delay: 0.1s;
-}
-
-.reveal-delay-2 {
-    transition-delay: 0.2s;
-}
-
-.reveal-delay-3 {
-    transition-delay: 0.3s;
-}
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-.back-to-top {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 900;
-
-    width: 45px;
-    height: 45px;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid rgba(217,181,109,0.3);
-    border-radius: 13px;
-
-    background: rgba(15,15,15,0.85);
-    backdrop-filter: blur(15px);
-
-    color: var(--gold);
-    font-size: 18px;
-
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(10px);
-
-    transition: 0.25s ease;
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-.back-to-top:hover {
-    background: rgba(217,181,109,0.12);
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 1050px) {
-
-    .navbar {
-        padding: 0 20px;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 0%, rgba(165, 29, 41, 0.12), transparent 30%),
+        radial-gradient(circle at 0% 35%, rgba(214, 173, 85, 0.07), transparent 28%),
+        var(--bg);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    .nav-links {
-        gap: 17px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .nav-links a {
-        font-size: 11px;
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
     }
 
-    .hero-grid {
-        gap: 30px;
+    button,
+    .btn {
+      cursor: pointer;
     }
 
-    .tag-one {
-        left: -10px;
+    img {
+      max-width: 100%;
     }
 
-    .tag-two {
-        right: -5px;
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
     }
 
-    .partner-card {
-        padding: 30px;
+    .gold {
+      color: var(--gold);
     }
 
-}
-
-@media (max-width: 850px) {
-
-    section {
-        padding: 80px 20px;
+    .red {
+      color: #ff5966;
     }
 
-    .menu-toggle {
-        display: grid;
-        place-items: center;
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      letter-spacing: 3px;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
 
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-
-        padding: 12px 20px 22px;
-
-        background: rgba(7,7,7,0.97);
-        backdrop-filter: blur(25px);
-
-        border-bottom: 1px solid var(--line);
-
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-8px);
-
-        transition:
-            opacity 0.25s ease,
-            transform 0.25s ease,
-            visibility 0.25s ease;
-    }
-
-    .nav-links.open {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .nav-links a {
-        padding: 15px 4px;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        font-size: 12px;
-    }
-
-    .nav-links a::after {
-        display: none;
-    }
-
-    .nav-links .nav-cta {
-        margin-top: 12px;
-        text-align: center;
-    }
-
-    .hero {
-        min-height: auto;
-        padding-top: 85px;
-        padding-bottom: 90px;
-    }
-
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 55px;
-    }
-
-    .hero-copy {
-        max-width: 720px;
-    }
-
-    .hero-visual {
-        max-width: 600px;
-        width: 100%;
-        margin: auto;
-    }
-
-    .terminal {
-        transform: none;
-    }
-
-    .trust-items {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .about-visual {
-        min-height: 350px;
-    }
-
-    .methodology-grid,
-    .learning-grid,
-    .community-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .partner-card {
-        grid-template-columns: 1fr;
-    }
-
-    .partner-visual {
-        min-height: 280px;
-    }
-
-    .giveaway-layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .payout-card {
-        grid-template-columns: 1fr;
-    }
-
-    .payout-goal {
-        width: 100%;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-top {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-}
-
-@media (max-width: 560px) {
-
-    section {
-        padding: 68px 17px;
-    }
-
-    .announcement-item {
-        padding: 0 22px;
-        font-size: 9px;
-    }
-
-    .navbar {
-        min-height: 70px;
-        padding: 0 16px;
-    }
-
-    .brand-mark {
-        width: 38px;
-        height: 38px;
-        font-size: 13px;
-    }
-
-    .brand-name {
-        font-size: 11px;
-    }
-
-    .brand-subtitle {
-        font-size: 8px;
-    }
-
-    .hero {
-        padding-top: 65px;
-        padding-bottom: 65px;
-    }
-
-    .hero h1 {
-        font-size: clamp(39px, 12vw, 58px);
-        letter-spacing: -2px;
-    }
-
-    .hero-description {
-        font-size: 13px;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-    }
-
-    .hero-actions .btn {
-        width: 100%;
-    }
-
-    .hero-note {
-        align-items: flex-start;
-        font-size: 10px;
-    }
-
-    .terminal {
-        padding: 15px;
-        border-radius: 18px;
-    }
-
-    .terminal-chart {
-        height: 190px;
-    }
-
-    .terminal-stats {
-        gap: 6px;
-    }
-
-    .terminal-stat {
-        padding: 10px 7px;
-    }
-
-    .terminal-stat strong {
-        font-size: 11px;
-    }
-
-    .floating-tag {
-        padding: 10px;
-        font-size: 9px;
-    }
-
-    .tag-one {
-        top: -20px;
-        left: -5px;
-    }
-
-    .tag-two {
-        right: -5px;
-        bottom: -20px;
-    }
-
-    .trust-strip {
-        padding: 22px 14px;
-    }
-
-    .trust-items {
-        gap: 20px 10px;
-    }
-
-    .trust-item {
-        justify-content: flex-start;
-        gap: 9px;
-    }
-
-    .trust-icon {
-        width: 31px;
-        height: 31px;
-        font-size: 13px;
-    }
-
-    .trust-item strong {
-        font-size: 10px;
-    }
-
-    .trust-item span {
-        font-size: 9px;
+    .section {
+      padding: 95px 0;
     }
 
     .section-heading {
-        margin-bottom: 35px;
+      max-width: 760px;
+      margin-bottom: 42px;
     }
 
-    .section-description {
-        font-size: 12px;
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.13;
+      margin-bottom: 18px;
+      letter-spacing: -1.2px;
     }
 
-    .methodology-grid,
-    .learning-grid,
-    .community-grid,
-    .pricing-grid {
-        grid-template-columns: 1fr;
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
     }
 
-    .method-card,
-    .learning-card,
-    .community-card {
-        min-height: auto;
-        padding: 24px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 22px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      text-align: center;
     }
 
-    .about-visual {
-        min-height: 310px;
-        padding: 22px;
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #100d06;
+      box-shadow: 0 8px 25px rgba(214, 173, 85, 0.13);
     }
 
-    .about-monogram {
-        width: 135px;
-        height: 135px;
-        font-size: 34px;
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(214, 173, 85, 0.25);
     }
 
-    .about-visual-bottom strong {
-        font-size: 10px;
+    .btn-outline {
+      border-color: var(--gold);
+      color: var(--gold-light);
+      background: transparent;
     }
 
-    .about-visual-bottom span {
-        font-size: 9px;
+    .btn-outline:hover {
+      background: rgba(214, 173, 85, 0.1);
+      transform: translateY(-2px);
     }
 
-    .chart-showcase {
-        padding: 12px;
+    .btn-discord {
+      background: #5865f2;
+      color: #fff;
     }
 
-    .chart-placeholder,
-    .chart-placeholder svg {
-        min-height: 230px;
-        height: 230px;
+    .btn-discord:hover {
+      background: #4752c4;
+      transform: translateY(-2px);
     }
 
-    .launch-panel {
-        padding: 35px 18px;
-        border-radius: 20px;
+    .btn-full {
+      width: 100%;
     }
 
-    .countdown {
-        gap: 7px;
+    .announcement {
+      padding: 9px 15px;
+      text-align: center;
+      background: linear-gradient(90deg, #5f1018, #a51d29, #5f1018);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      flex-shrink: 0;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: 1.4px;
+    }
+
+    .brand span {
+      margin-top: 5px;
+      color: var(--gold);
+      font-size: 0.63rem;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d7d2c8;
+      font-size: 0.86rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-toggle {
+      display: none;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 1.2rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 670px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      border: 1px solid rgba(214, 173, 85, 0.12);
+      border-radius: 50%;
+      right: -130px;
+      top: 30px;
+      box-shadow:
+        0 0 0 55px rgba(214, 173, 85, 0.025),
+        0 0 0 110px rgba(214, 173, 85, 0.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(214, 173, 85, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(214, 173, 85, 0.08) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: linear-gradient(to right, transparent, black);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      padding: 100px 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--border);
+      background: rgba(214, 173, 85, 0.06);
+      color: var(--gold-light);
+      border-radius: 4px;
+      padding: 8px 13px;
+      margin-bottom: 25px;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 7vw, 5.6rem);
+      line-height: 0.99;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+      max-width: 850px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #c1bcb2;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      max-width: 660px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 38px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .hero-meta strong {
+      color: var(--gold-light);
+    }
+
+    /* TRUST STRIP */
+
+    .trust-strip {
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: 26px 15px;
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+      padding: 70px 0;
+      background:
+        linear-gradient(120deg, rgba(165, 29, 41, 0.12), transparent 55%),
+        #0b0b0b;
+      border-bottom: 1px solid var(--border);
     }
 
     .countdown-box {
-        width: 74px;
-        padding: 14px 6px;
+      text-align: center;
+      border: 1px solid var(--border);
+      background: rgba(17, 17, 17, 0.8);
+      border-radius: 8px;
+      padding: 38px 20px;
     }
 
-    .countdown-box strong {
-        font-size: 20px;
+    .countdown-box h2 {
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      margin-bottom: 10px;
     }
 
-    .countdown-box span {
-        font-size: 8px;
-        letter-spacing: 0.5px;
+    .countdown-box > p {
+      color: var(--muted);
+      margin-bottom: 27px;
     }
 
-    .launch-actions {
-        flex-direction: column;
+    .countdown {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .launch-actions .btn {
-        width: 100%;
+    .time-unit {
+      width: 105px;
+      padding: 17px 10px;
+      background: #090909;
+      border: 1px solid var(--border);
+      border-radius: 5px;
     }
 
-    .partner-card {
-        padding: 20px;
+    .time-unit strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1.3;
+      color: var(--gold-light);
     }
 
-    .partner-visual {
-        min-height: 250px;
-        padding: 20px;
+    .time-unit span {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      color: var(--muted);
     }
 
-    .giveaway-card {
-        padding: 25px 18px;
-        border-radius: 20px;
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 55px;
+      align-items: center;
     }
 
-    .prize-item {
-        padding: 13px;
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
     }
 
-    .payout-card {
-        padding: 24px 18px;
+    .feature-panel {
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, #151515, #0c0c0c);
+      border-radius: 8px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-panel::before {
+      content: "LDM";
+      position: absolute;
+      right: -10px;
+      bottom: -35px;
+      font-size: 9rem;
+      font-weight: 900;
+      color: rgba(214, 173, 85, 0.035);
+      pointer-events: none;
+    }
+
+    .feature-panel h3 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      color: #d0cbc1;
+    }
+
+    .feature-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .feature-list b {
+      color: var(--gold);
+    }
+
+    /* LEARNING */
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .learning-card {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: linear-gradient(145deg, #151515, #0c0c0c);
+      transition: 0.25s ease;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(214, 173, 85, 0.65);
+    }
+
+    .card-number {
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 17px;
+    }
+
+    .learning-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .learning-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* CHART PLACEHOLDER */
+
+    .chart-section {
+      padding: 80px 0;
+      background: #0c0c0c;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chart-placeholder {
+      min-height: 300px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px dashed rgba(214, 173, 85, 0.5);
+      border-radius: 8px;
+      background:
+        linear-gradient(rgba(214, 173, 85, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(214, 173, 85, 0.04) 1px, transparent 1px),
+        #090909;
+      background-size: 35px 35px;
+    }
+
+    .chart-placeholder .chart-icon {
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .chart-placeholder h3 {
+      margin-bottom: 8px;
+    }
+
+    .chart-placeholder p {
+      color: var(--muted);
+      max-width: 600px;
+      font-size: 0.9rem;
+    }
+
+    /* LAUNCH */
+
+    .launch-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      padding: 36px;
+      background: linear-gradient(110deg, #17120b, #101010 65%);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .launch-panel h3 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .launch-panel p {
+      color: var(--muted);
+    }
+
+    .launch-date {
+      color: var(--gold-light);
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-top: 12px;
+    }
+
+    /* PRICING */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: stretch;
     }
 
     .price-card {
-        padding: 27px 22px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 30px 25px;
+      background: linear-gradient(150deg, #151515, #0b0b0b);
+      border: 1px solid var(--border);
+      border-radius: 8px;
     }
 
-    .faq-question {
-        padding: 18px;
-        font-size: 12px;
+    .price-card.featured {
+      border-color: var(--gold);
+      box-shadow: 0 0 35px rgba(214, 173, 85, 0.07);
     }
 
-    .faq-answer p {
-        padding: 0 18px 18px;
+    .price-label {
+      display: inline-block;
+      align-self: flex-start;
+      background: rgba(214, 173, 85, 0.1);
+      color: var(--gold-light);
+      border: 1px solid var(--border);
+      padding: 5px 9px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .price-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 9px;
+    }
+
+    .price-description {
+      color: var(--muted);
+      min-height: 52px;
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+
+    .price-old {
+      color: #8c8880;
+      text-decoration: line-through;
+      font-size: 1rem;
+    }
+
+    .price-value {
+      color: var(--gold-light);
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      font-weight: 900;
+      margin: 5px 0 10px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 22px;
+    }
+
+    .price-features {
+      list-style: none;
+      margin-bottom: 25px;
+      flex: 1;
+    }
+
+    .price-features li {
+      color: #d0cbc1;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.88rem;
+    }
+
+    .price-features li::before {
+      content: "✓";
+      color: var(--gold);
+      margin-right: 9px;
+      font-weight: 900;
+    }
+
+    .pricing-disclaimer {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    /* DISCORD AD */
+
+    .discord-ad-section {
+      padding: 70px 0;
+      background:
+        radial-gradient(circle at 85% 40%, rgba(88, 101, 242, 0.18), transparent 35%),
+        #0a0a0a;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .discord-ad {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 25px;
+      align-items: center;
+      padding: 38px;
+      border: 1px solid rgba(88, 101, 242, 0.55);
+      background: rgba(20, 21, 39, 0.7);
+      border-radius: 9px;
+    }
+
+    .discord-ad h2 {
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      line-height: 1.15;
+      margin-bottom: 13px;
+    }
+
+    .discord-ad p {
+      color: #c1c1d2;
+      max-width: 690px;
+    }
+
+    .discord-icon {
+      color: #8c95ff;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 850px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 21px 35px 21px 0;
+      position: relative;
+      font-weight: 800;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 4px;
+      top: 16px;
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      padding: 0 0 22px;
+      font-size: 0.93rem;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .contact-card {
+      margin-top: 24px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--panel);
+    }
+
+    .contact-card strong {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .contact-card p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
     }
 
     .contact-form {
-        padding: 21px 16px;
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
     }
 
-    .form-grid {
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      color: var(--white);
+      background: #090909;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 12px 13px;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .form-help {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      padding: 32px 0;
+      background: #0b0b0b;
+      border-top: 1px solid var(--border);
+    }
+
+    .disclaimer h3 {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .disclaimer p {
+      color: #918c83;
+      font-size: 0.8rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      background: #060606;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand strong {
+      display: block;
+      letter-spacing: 1.3px;
+    }
+
+    .footer-brand span {
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      width: 100%;
+      color: #706c64;
+      font-size: 0.77rem;
+      margin-top: 10px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 0.78rem;
+      }
+
+      .about-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
-    }
+      }
 
-    .form-group.full {
-        grid-column: auto;
-    }
+      .learning-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    .footer-top {
+      .pricing-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 30px 20px;
-    }
+      }
 
-    .footer-brand {
+      .price-card:last-child {
         grid-column: 1 / -1;
+      }
     }
 
-    .footer-bottom {
+    @media (max-width: 720px) {
+      .navbar {
+        min-height: 70px;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
         flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #0a0a0a;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 0.95rem;
+      }
+
+      .nav-links .btn {
+        margin-top: 10px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 80px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.7px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .learning-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card:last-child {
+        grid-column: auto;
+      }
+
+      .launch-panel,
+      .discord-ad {
+        grid-template-columns: 1fr;
+        padding: 27px;
+      }
+
+      .launch-panel .btn,
+      .discord-ad .btn {
+        width: 100%;
+      }
+
+      .time-unit {
+        width: calc(50% - 8px);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
-    .community-toast {
-        left: 12px;
-        bottom: 12px;
-        width: min(330px, calc(100vw - 24px));
-    }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
 
-    .back-to-top {
-        right: 12px;
-        bottom: 12px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .community-toast.show ~ .back-to-top {
-        bottom: 115px;
-    }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+      *,
+      *::before,
+      *::after {
         transition-duration: 0.01ms !important;
+      }
     }
 
-    .reveal {
-        opacity: 1;
-        transform: none;
+    /* LIVECHAT POSITIONING */
+
+    #lc_text_chat {
+      z-index: 10000 !important;
     }
-
-}
-
-</style>
+  </style>
 </head>
 
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
+  <div class="announcement">
+    OFFICIAL COURSE LAUNCH — 11 JANUARY 2027
+  </div>
 
-<!-- ===================================================
-     ANNOUNCEMENT
-=================================================== -->
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
 
-<div class="announcement">
-    <div class="announcement-track">
+      <a href="#home" class="brand" aria-label="Forex Wealth Empire home">
+        <strong>FOREX WEALTH <span class="gold">EMPIRE</span></strong>
+        <span>LIQUIDITY DISPLACEMENT METHODOLOGY™</span>
+      </a>
 
-        <div class="announcement-item">
-            FOREX WEALTH EMPIRE
-            <span>• Built on structure, discipline and execution</span>
-        </div>
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-        <div class="announcement-item">
-            LIQUIDITY DISPLACEMENT METHODOLOGY™
-            <span>• Trading education and market analysis</span>
-        </div>
-
-        <div class="announcement-item">
-            JOIN OUR COMMUNITY
-            <span>• Learn, connect and develop your process</span>
-        </div>
-
-        <div class="announcement-item">
-            FOREX WEALTH EMPIRE
-            <span>• Built on structure, discipline and execution</span>
-        </div>
-
-        <div class="announcement-item">
-            LIQUIDITY DISPLACEMENT METHODOLOGY™
-            <span>• Trading education and market analysis</span>
-        </div>
-
-        <div class="announcement-item">
-            JOIN OUR COMMUNITY
-            <span>• Learn, connect and develop your process</span>
-        </div>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Methodology</a></li>
+          <li><a href="#learning">What You'll Learn</a></li>
+          <li><a href="#launch">Launch</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li>
+            <a
+              href="https://discord.gg/zQC9u3qvMJ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Discord
+            </a>
+          </li>
+          <li>
+            <a href="#pricing" class="btn btn-gold">Explore Courses</a>
+          </li>
+        </ul>
+      </nav>
 
     </div>
-</div>
+  </header>
 
-<!-- ===================================================
-     HEADER
-=================================================== -->
+  <main>
 
-<header class="site-header">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
 
-    <nav class="navbar">
+          <div class="hero-badge">
+            Forex Wealth Empire presents
+          </div>
 
-        <a href="#home" class="brand" aria-label="Forex Wealth Empire home">
+          <h1>
+            LIQUIDITY
+            <span>DISPLACEMENT</span>
+            METHODOLOGY™
+          </h1>
 
-            <div class="brand-mark">FWE</div>
+          <p>
+            A structured educational approach to understanding liquidity,
+            price displacement, market structure, and the decision-making
+            process behind a trading setup.
+          </p>
 
-            <div class="brand-name">
-                Forex Wealth Empire
-                <span class="brand-subtitle">LIQUIDITY DISPLACEMENT</span>
-            </div>
-
-        </a>
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
-            ☰
-        </button>
-
-        <div class="nav-links" id="navLinks">
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#methodology">Methodology</a>
-            <a href="#community">Community</a>
-            <a href="#giveaway">Giveaway</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-
-            <a
-                href="https://whop.com/forex-wealth-empire-pty-ltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nav-cta"
-            >
-                Explore Offers ↗
+          <div class="hero-actions">
+            <a href="#about" class="btn btn-gold">
+              Discover the Methodology
             </a>
 
-        </div>
+            <a href="#pricing" class="btn btn-outline">
+              View Course Packages
+            </a>
 
-    </nav>
+            <a
+              href="https://discord.gg/zQC9u3qvMJ"
+              class="btn btn-discord"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join Discord
+            </a>
+          </div>
 
-</header>
-
-<main>
-
-<!-- ===================================================
-     HERO
-=================================================== -->
-
-<section class="hero" id="home">
-
-    <div class="hero-glow"></div>
-
-    <div class="container hero-grid">
-
-        <div class="hero-copy reveal">
-
-            <div class="hero-badge">
-                <span class="status-dot"></span>
-                A New Standard in Trading Education
-            </div>
-
-            <h1>
-                Think Beyond
-                <span class="gradient-text">The Chart.</span>
-                Trade With
-                <span class="red-text">Purpose.</span>
-            </h1>
-
-            <p class="hero-description">
-                Welcome to Forex Wealth Empire — a trading education
-                brand focused on market structure, disciplined execution,
-                professional development and our proprietary Liquidity
-                Displacement Methodology™.
-            </p>
-
-            <div class="hero-actions">
-
-                <a
-                    href="https://whop.com/forex-wealth-empire-pty-ltd"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-gold"
-                >
-                    Explore Our Offers ↗
-                </a>
-
-                <a
-                    href="https://discord.gg/zQC9u3qvMJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-outline"
-                >
-                    Join Our Community →
-                </a>
-
-            </div>
-
-            <div class="hero-note">
-                <span class="hero-note-line"></span>
-                <span>
-                    Education. Structure. Discipline.
-                    <strong>No guaranteed outcomes.</strong>
-                </span>
-            </div>
+          <div class="hero-meta">
+            <span><strong>01</strong> Structured Learning</span>
+            <span><strong>02</strong> Market Analysis</span>
+            <span><strong>03</strong> Risk Awareness</span>
+          </div>
 
         </div>
+      </div>
+    </section>
 
-        <div class="hero-visual reveal reveal-delay-2">
-
-            <div class="floating-tag tag-one">
-                MARKET STRUCTURE
-                <span>Observe → Analyse</span>
-            </div>
-
-            <div class="terminal">
-
-                <div class="terminal-top">
-
-                    <div class="terminal-title">
-                        FWE / MARKET OVERVIEW
-                    </div>
-
-                    <div class="terminal-status">
-                        ● EDUCATIONAL VIEW
-                    </div>
-
-                </div>
-
-                <div class="terminal-chart">
-
-                    <svg
-                        class="chart-svg"
-                        viewBox="0 0 500 300"
-                        preserveAspectRatio="none"
-                        aria-label="Decorative market chart illustration"
-                    >
-
-                        <defs>
-                            <linearGradient id="chartGold" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#d9b56d" stop-opacity=".35"/>
-                                <stop offset="100%" stop-color="#d9b56d" stop-opacity="0"/>
-                            </linearGradient>
-
-                            <linearGradient id="chartRed" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#e32936" stop-opacity="0"/>
-                                <stop offset="50%" stop-color="#e32936" stop-opacity=".9"/>
-                                <stop offset="100%" stop-color="#d9b56d" stop-opacity=".8"/>
-                            </linearGradient>
-                        </defs>
-
-                        <path
-                            d="M0 220
-                               L35 205
-                               L60 222
-                               L88 175
-                               L112 190
-                               L138 155
-                               L166 180
-                               L195 130
-                               L224 145
-                               L252 105
-                               L280 127
-                               L310 92
-                               L340 115
-                               L370 70
-                               L405 88
-                               L440 45
-                               L475 62
-                               L500 28
-                               L500 300
-                               L0 300 Z"
-                            fill="url(#chartGold)"
-                        />
-
-                        <path
-                            d="M0 220
-                               L35 205
-                               L60 222
-                               L88 175
-                               L112 190
-                               L138 155
-                               L166 180
-                               L195 130
-                               L224 145
-                               L252 105
-                               L280 127
-                               L310 92
-                               L340 115
-                               L370 70
-                               L405 88
-                               L440 45
-                               L475 62
-                               L500 28"
-                            fill="none"
-                            stroke="url(#chartRed)"
-                            stroke-width="3"
-                            vector-effect="non-scaling-stroke"
-                        />
-
-                        <path
-                            d="M0 245 L500 245"
-                            stroke="#e32936"
-                            stroke-opacity=".5"
-                            stroke-dasharray="6 7"
-                        />
-
-                        <path
-                            d="M0 160 L500 160"
-                            stroke="#d9b56d"
-                            stroke-opacity=".35"
-                            stroke-dasharray="4 8"
-                        />
-
-                        <circle cx="440" cy="45" r="5" fill="#ffe6a7"/>
-                        <circle cx="440" cy="45" r="13" fill="#d9b56d" fill-opacity=".12"/>
-
-                    </svg>
-
-                </div>
-
-                <div class="terminal-stats">
-
-                    <div class="terminal-stat">
-                        <span>APPROACH</span>
-                        <strong>Structured</strong>
-                    </div>
-
-                    <div class="terminal-stat">
-                        <span>PROCESS</span>
-                        <strong>Disciplined</strong>
-                    </div>
-
-                    <div class="terminal-stat">
-                        <span>PRIORITY</span>
-                        <strong>Execution</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="floating-tag tag-two">
-                LIQUIDITY DISPLACEMENT
-                <span>Process over impulse</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     TRUST STRIP
-=================================================== -->
-
-<div class="trust-strip">
-
-    <div class="trust-items">
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+      <div class="container trust-grid">
 
         <div class="trust-item">
-            <div class="trust-icon">◈</div>
-            <div>
-                <strong>Market Education</strong>
-                <span>Build understanding</span>
-            </div>
+          <strong>EDUCATION FIRST</strong>
+          <span>Understand the process before acting</span>
         </div>
 
         <div class="trust-item">
-            <div class="trust-icon">⌁</div>
-            <div>
-                <strong>Structured Analysis</strong>
-                <span>Focus on the process</span>
-            </div>
+          <strong>STRUCTURED METHODOLOGY</strong>
+          <span>Study concepts in a clear sequence</span>
         </div>
 
         <div class="trust-item">
-            <div class="trust-icon">◎</div>
-            <div>
-                <strong>Trading Community</strong>
-                <span>Connect with traders</span>
-            </div>
+          <strong>RISK AWARENESS</strong>
+          <span>Learn why discipline matters</span>
         </div>
 
-        <div class="trust-item">
-            <div class="trust-icon">✦</div>
-            <div>
-                <strong>Continuous Learning</strong>
-                <span>Develop your skills</span>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section" id="launch">
+      <div class="container">
+
+        <div class="countdown-box">
+          <div class="eyebrow">The countdown has begun</div>
+
+          <h2>THE NEXT CHAPTER STARTS <span class="gold">HERE.</span></h2>
+
+          <p>
+            The official Liquidity Displacement Methodology™ course launch
+            is scheduled for 11 January 2027.
+          </p>
+
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div class="time-unit">
+              <strong id="days">000</strong>
+              <span>Days</span>
             </div>
-        </div>
 
-    </div>
-
-</div>
-
-<!-- ===================================================
-     ABOUT
-=================================================== -->
-
-<section id="about">
-
-    <div class="container about-grid">
-
-        <div class="about-copy reveal">
-
-            <div class="eyebrow">Our Identity</div>
-
-            <h2>
-                More Than A Trading Brand.
-                <span class="gradient-text">A Standard.</span>
-            </h2>
-
-            <p>
-                Forex Wealth Empire is a trading education and community
-                brand built around a commitment to structured analysis,
-                personal development and a more disciplined approach
-                to the financial markets.
-            </p>
-
-            <p>
-                We aim to provide educational resources, market
-                discussions and learning opportunities for traders
-                who want to improve their understanding of how markets
-                move and how decisions can be approached systematically.
-            </p>
-
-            <p>
-                Our focus is not on promising profits. It is on encouraging
-                education, consistency, critical thinking and responsible
-                risk management.
-            </p>
-
-            <div class="about-highlight">
-                “A structured process does not remove uncertainty.
-                It helps you approach uncertainty with greater discipline.”
+            <div class="time-unit">
+              <strong id="hours">00</strong>
+              <span>Hours</span>
             </div>
+
+            <div class="time-unit">
+              <strong id="minutes">00</strong>
+              <span>Minutes</span>
+            </div>
+
+            <div class="time-unit">
+              <strong id="seconds">00</strong>
+              <span>Seconds</span>
+            </div>
+          </div>
+
+          <p class="launch-date">
+            LAUNCH DATE: 11 JANUARY 2027
+          </p>
 
         </div>
 
-        <div class="about-visual glass-card reveal reveal-delay-2">
+      </div>
+    </section>
 
-            <div class="about-visual-label">
-                FWE / OUR PHILOSOPHY
-            </div>
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
 
-            <div class="about-monogram">
-                FWE
-            </div>
+        <div class="about-copy">
+          <div class="eyebrow">About the methodology</div>
 
-            <div class="about-visual-bottom">
+          <div class="section-heading">
+            <h2>Understand the <span class="gold">process.</span> Study the <span class="red">displacement.</span></h2>
+          </div>
 
-                <div>
-                    <strong>Structure First</strong>
-                    <span>Study the market</span>
-                </div>
+          <p>
+            Liquidity Displacement Methodology™ is an educational trading
+            framework created to help students study how price interacts
+            with liquidity, how directional movement develops, and how
+            market structure can be used to organise analysis.
+          </p>
 
-                <div>
-                    <strong>Discipline Always</strong>
-                    <span>Respect your risk</span>
-                </div>
+          <p>
+            Rather than treating every price movement as an opportunity,
+            the learning process focuses on observation, context,
+            confirmation, and disciplined decision-making.
+          </p>
 
-                <div>
-                    <strong>Learn Continuously</strong>
-                    <span>Refine your process</span>
-                </div>
+          <p>
+            Students are encouraged to develop a repeatable analysis
+            routine, document their observations, understand invalidation,
+            and recognise when a market does not present a clear setup.
+          </p>
 
-            </div>
-
+          <a href="#learning" class="btn btn-outline">
+            Explore the Learning Areas
+          </a>
         </div>
 
-    </div>
+        <div class="feature-panel">
+          <h3>THE CORE LEARNING FRAMEWORK</h3>
 
-</section>
+          <ul class="feature-list">
+            <li>
+              <b>01.</b>
+              <span>Understand liquidity and why important highs and lows attract attention.</span>
+            </li>
 
-<!-- ===================================================
-     METHODOLOGY
-=================================================== -->
+            <li>
+              <b>02.</b>
+              <span>Study displacement and the significance of strong directional price movement.</span>
+            </li>
 
-<section class="methodology" id="methodology">
+            <li>
+              <b>03.</b>
+              <span>Observe market structure and identify meaningful changes in price behaviour.</span>
+            </li>
 
-    <div class="container">
+            <li>
+              <b>04.</b>
+              <span>Build a structured process for analysing potential opportunities.</span>
+            </li>
 
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">Our Proprietary Framework</div>
-
-            <h2>
-                Introducing
-                <span class="gradient-text">
-                    Liquidity Displacement Methodology™
-                </span>
-            </h2>
-
-            <p class="section-description">
-                A proprietary educational framework associated with
-                Forex Wealth Empire. Explore the philosophy behind
-                our approach without exposing private course material
-                or detailed methodology rules.
-            </p>
-
+            <li>
+              <b>05.</b>
+              <span>Understand risk, invalidation, patience, and the importance of avoiding forced trades.</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="methodology-grid">
+      </div>
+    </section>
 
-            <article class="glass-card method-card reveal">
+    <!-- WHAT YOU WILL LEARN -->
+    <section class="section" id="learning">
+      <div class="container">
 
-                <div class="method-number">01</div>
+        <div class="section-heading">
+          <div class="eyebrow">Inside the educational framework</div>
 
-                <h3>Market Awareness</h3>
+          <h2>Build your understanding <span class="gold">step by step.</span></h2>
 
-                <p>
-                    Develop a clearer understanding of price behaviour,
-                    market context and the importance of examining
-                    conditions before making a trading decision.
-                </p>
-
-            </article>
-
-            <article class="glass-card method-card reveal reveal-delay-1">
-
-                <div class="method-number">02</div>
-
-                <h3>Structured Thinking</h3>
-
-                <p>
-                    Learn to approach analysis with a defined process,
-                    objective observations and a greater awareness
-                    of uncertainty and changing market conditions.
-                </p>
-
-            </article>
-
-            <article class="glass-card method-card reveal reveal-delay-2">
-
-                <div class="method-number">03</div>
-
-                <h3>Responsible Execution</h3>
-
-                <p>
-                    Emphasise preparation, risk awareness, patience
-                    and review instead of impulsive decisions or
-                    unrealistic expectations.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     LEARNING FRAMEWORK
-=================================================== -->
-
-<section id="education">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">Education Framework</div>
-
-            <h2>
-                Build Your Trading
-                <span class="gradient-text">Foundation.</span>
-            </h2>
-
-            <p class="section-description">
-                Explore key areas of trading education designed to
-                encourage a more organised, informed and disciplined
-                approach to analysing financial markets.
-            </p>
-
+          <p>
+            The methodology is organised around essential market-analysis
+            concepts. The objective is to understand the reasoning behind
+            an analysis rather than blindly copy a trade.
+          </p>
         </div>
 
         <div class="learning-grid">
 
-            <article class="glass-card learning-card reveal">
-
-                <div class="learning-icon">⌁</div>
-
-                <h3>Market Structure</h3>
-
-                <p>
-                    Study price movement, market context and the
-                    relationship between different phases of price
-                    behaviour.
-                </p>
-
-            </article>
-
-            <article class="glass-card learning-card reveal reveal-delay-1">
-
-                <div class="learning-icon">◈</div>
-
-                <h3>Liquidity Concepts</h3>
-
-                <p>
-                    Develop an educational understanding of liquidity
-                    and its relevance to market analysis.
-                </p>
-
-            </article>
-
-            <article class="glass-card learning-card reveal reveal-delay-2">
-
-                <div class="learning-icon">⌖</div>
-
-                <h3>Multi-Timeframe Analysis</h3>
-
-                <p>
-                    Learn why traders examine different timeframes
-                    to build broader market context.
-                </p>
-
-            </article>
-
-            <article class="glass-card learning-card reveal">
-
-                <div class="learning-icon">◎</div>
-
-                <h3>Risk Management</h3>
-
-                <p>
-                    Understand position sizing, potential losses,
-                    exposure and the importance of protecting capital.
-                </p>
-
-            </article>
-
-            <article class="glass-card learning-card reveal reveal-delay-1">
-
-                <div class="learning-icon">◷</div>
-
-                <h3>Trading Psychology</h3>
-
-                <p>
-                    Explore patience, emotional awareness and the
-                    challenges involved in maintaining a disciplined
-                    trading routine.
-                </p>
-
-            </article>
-
-            <article class="glass-card learning-card reveal reveal-delay-2">
-
-                <div class="learning-icon">✧</div>
-
-                <h3>Performance Review</h3>
-
-                <p>
-                    Learn how journaling, reviewing decisions and
-                    studying outcomes can support continued development.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     CHART SHOWCASE
-=================================================== -->
-
-<section class="chart-section" id="analysis">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">The Analytical Mindset</div>
-
-            <h2>
-                Read The Market.
-                <span class="gradient-text">Respect The Risk.</span>
-            </h2>
-
-            <p class="section-description">
-                Markets are uncertain. Our educational philosophy
-                encourages traders to focus on context, preparation
-                and the quality of their decision-making process.
+          <article class="learning-card">
+            <div class="card-number">MODULE 01</div>
+            <h3>Liquidity Concepts</h3>
+            <p>
+              Learn what traders mean by liquidity, how significant highs
+              and lows are studied, and why liquidity context matters
+              when analysing price behaviour.
             </p>
+          </article>
 
-        </div>
-
-        <div class="glass-card chart-showcase reveal">
-
-            <div class="chart-showcase-header">
-
-                <h3>FWE / Market Analysis Concept</h3>
-
-                <span>ILLUSTRATIVE VISUAL — NOT LIVE MARKET DATA</span>
-
-            </div>
-
-            <div class="chart-placeholder">
-
-                <div class="chart-label">
-                    EDUCATIONAL ILLUSTRATION
-                </div>
-
-                <svg
-                    viewBox="0 0 1000 400"
-                    preserveAspectRatio="none"
-                    role="img"
-                    aria-label="Decorative illustration of market price movement"
-                >
-
-                    <defs>
-                        <linearGradient id="marketArea" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#d9b56d" stop-opacity=".2"/>
-                            <stop offset="100%" stop-color="#d9b56d" stop-opacity="0"/>
-                        </linearGradient>
-                    </defs>
-
-                    <path
-                        d="M0 270
-                           L40 250
-                           L75 280
-                           L110 225
-                           L145 245
-                           L180 180
-                           L220 215
-                           L255 155
-                           L290 175
-                           L325 225
-                           L365 205
-                           L400 250
-                           L435 220
-                           L475 255
-                           L510 180
-                           L550 195
-                           L590 130
-                           L630 165
-                           L670 110
-                           L710 135
-                           L750 90
-                           L790 110
-                           L830 65
-                           L870 90
-                           L915 45
-                           L955 65
-                           L1000 25
-                           L1000 400
-                           L0 400 Z"
-                        fill="url(#marketArea)"
-                    />
-
-                    <path
-                        d="M0 270
-                           L40 250
-                           L75 280
-                           L110 225
-                           L145 245
-                           L180 180
-                           L220 215
-                           L255 155
-                           L290 175
-                           L325 225
-                           L365 205
-                           L400 250
-                           L435 220
-                           L475 255
-                           L510 180
-                           L550 195
-                           L590 130
-                           L630 165
-                           L670 110
-                           L710 135
-                           L750 90
-                           L790 110
-                           L830 65
-                           L870 90
-                           L915 45
-                           L955 65
-                           L1000 25"
-                        fill="none"
-                        stroke="#d9b56d"
-                        stroke-width="3"
-                        vector-effect="non-scaling-stroke"
-                    />
-
-                    <path
-                        d="M0 300 L1000 300"
-                        stroke="#e32936"
-                        stroke-opacity=".6"
-                        stroke-dasharray="8 8"
-                    />
-
-                    <path
-                        d="M0 200 L1000 200"
-                        stroke="#d9b56d"
-                        stroke-opacity=".25"
-                        stroke-dasharray="5 8"
-                    />
-
-                    <path
-                        d="M0 100 L1000 100"
-                        stroke="#ffffff"
-                        stroke-opacity=".1"
-                        stroke-dasharray="5 8"
-                    />
-
-                    <circle cx="915" cy="45" r="7" fill="#ffe6a7"/>
-                    <circle cx="915" cy="45" r="17" fill="#d9b56d" fill-opacity=".1"/>
-
-                </svg>
-
-            </div>
-
-            <p class="chart-disclaimer">
-                This illustration is decorative and does not represent
-                current prices, a live chart, a trade signal or a forecast.
-                Trading decisions should never be based on this illustration.
+          <article class="learning-card">
+            <div class="card-number">MODULE 02</div>
+            <h3>Price Displacement</h3>
+            <p>
+              Study strong directional movement, candle behaviour,
+              momentum, and how displacement can contribute to a broader
+              market narrative.
             </p>
+          </article>
+
+          <article class="learning-card">
+            <div class="card-number">MODULE 03</div>
+            <h3>Market Structure</h3>
+            <p>
+              Explore price swings, structural changes, continuation,
+              and the importance of evaluating movement within its
+              wider context.
+            </p>
+          </article>
+
+          <article class="learning-card">
+            <div class="card-number">MODULE 04</div>
+            <h3>Confirmation & Patience</h3>
+            <p>
+              Understand why a market touching a level does not
+              automatically confirm a trade and why waiting for
+              defined conditions can matter.
+            </p>
+          </article>
+
+          <article class="learning-card">
+            <div class="card-number">MODULE 05</div>
+            <h3>Trade Planning</h3>
+            <p>
+              Learn to consider entry conditions, invalidation,
+              position sizing, and risk-to-reward before making
+              a trading decision.
+            </p>
+          </article>
+
+          <article class="learning-card">
+            <div class="card-number">MODULE 06</div>
+            <h3>Discipline & Review</h3>
+            <p>
+              Develop a routine for recording decisions, reviewing
+              mistakes, managing emotions, and recognising when
+              there is no valid opportunity.
+            </p>
+          </article>
 
         </div>
 
-    </div>
+      </div>
+    </section>
 
-</section>
+    <!-- CHART / VISUAL PLACEHOLDER -->
+    <section class="chart-section">
+      <div class="container">
 
-<!-- ===================================================
-     LAUNCH COUNTDOWN
-=================================================== -->
+        <div class="section-heading">
+          <div class="eyebrow">Study the market</div>
 
-<section id="launch">
+          <h2>From market observation to <span class="gold">structured analysis.</span></h2>
 
-    <div class="container">
+          <p>
+            A key part of trading education is learning to observe price
+            action carefully and explain why a potential setup may or may
+            not meet predefined conditions.
+          </p>
+        </div>
 
-        <div class="launch-panel reveal">
+        <!-- Replace this placeholder with your own TradingView screenshots
+             or educational chart images when ready. -->
 
-            <div class="eyebrow">The Next Chapter</div>
+        <div class="chart-placeholder">
+          <div class="chart-icon">⌁</div>
 
-            <h2>
-                The Future Is Built
-                <span class="gradient-text">With Preparation.</span>
-            </h2>
+          <h3>YOUR CHART ANALYSIS GOES HERE</h3>
+
+          <p>
+            Add your own TradingView screenshot, annotated chart, or
+            educational illustration here to demonstrate the methodology.
+            Use real examples to explain the context and reasoning.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COURSE LAUNCH -->
+    <section class="section">
+      <div class="container">
+
+        <div class="launch-panel">
+
+          <div>
+            <div class="eyebrow">Official release</div>
+
+            <h3>Prepare for the <span class="gold">LDM launch.</span></h3>
 
             <p>
-                Stay connected with Forex Wealth Empire for educational
-                updates, community announcements and future releases.
+              Explore the available course packages and enquire about
+              preorder access ahead of the scheduled official release.
             </p>
 
-            <div class="countdown" id="countdown">
-
-                <div class="countdown-box">
-                    <strong id="days">000</strong>
-                    <span>Days</span>
-                </div>
-
-                <div class="countdown-box">
-                    <strong id="hours">00</strong>
-                    <span>Hours</span>
-                </div>
-
-                <div class="countdown-box">
-                    <strong id="minutes">00</strong>
-                    <span>Minutes</span>
-                </div>
-
-                <div class="countdown-box">
-                    <strong id="seconds">00</strong>
-                    <span>Seconds</span>
-                </div>
-
+            <div class="launch-date">
+              11 JANUARY 2027
             </div>
+          </div>
 
-            <div class="launch-actions">
-
-                <a
-                    href="https://discord.gg/zQC9u3qvMJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-gold"
-                >
-                    Join Discord →
-                </a>
-
-                <a
-                    href="https://www.instagram.com/the.ldm_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-outline"
-                >
-                    Follow Instagram ↗
-                </a>
-
-            </div>
-
-            <p class="small muted" style="margin-top:20px;">
-                Countdown date: 11 January 2027.
-                Check official announcements for release details.
-            </p>
+          <a href="#pricing" class="btn btn-gold">
+            View Course Pricing
+          </a>
 
         </div>
 
-    </div>
-
-</section>
-
-<!-- ===================================================
-     BLUE GUARDIAN PARTNERSHIP
-=================================================== -->
-
-<section class="partner-section" id="blueguardian">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">Our Partner</div>
-
-            <h2>
-                Your Trading Journey.
-                <span class="gradient-text">Your Next Step.</span>
-            </h2>
-
-            <p class="section-description">
-                Explore our Blue Guardian partner link and review
-                the available programmes, conditions and account rules
-                directly with the provider.
-            </p>
-
-        </div>
-
-        <div class="glass-card partner-card reveal">
-
-            <div class="partner-copy">
-
-                <div class="partner-label">
-                    FWE × BLUE GUARDIAN
-                </div>
-
-                <h3>
-                    Take Your Trading
-                    <span class="gradient-text">Seriously.</span>
-                </h3>
-
-                <p>
-                    Forex Wealth Empire connects its community with
-                    external trading-related services that may help
-                    traders explore different opportunities.
-                </p>
-
-                <p>
-                    Before purchasing any evaluation or account,
-                    review the provider's current fees, trading rules,
-                    drawdown limits, payout requirements and terms.
-                </p>
-
-                <ul class="partner-list">
-
-                    <li>Explore available trading programmes.</li>
-
-                    <li>Review account conditions before purchasing.</li>
-
-                    <li>Understand the rules and potential risks.</li>
-
-                    <li>Make your own informed decision.</li>
-
-                </ul>
-
-                <a
-                    href="https://blueguardian.com/?afmc=LDM30"
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
-                    class="btn btn-gold"
-                >
-                    Explore Blue Guardian ↗
-                </a>
-
-                <p class="small muted" style="margin-top:15px;">
-                    Partner link: LDM30
-                </p>
-
-            </div>
-
-            <div class="partner-visual">
-
-                <div class="partner-emblem">
-                    BG
-                </div>
-
-                <h3>BLUE GUARDIAN</h3>
-
-                <p>
-                    TRADING PROGRAMMES · ACCOUNT RULES · EVALUATION
-                </p>
-
-                <div style="
-                    height:1px;
-                    width:70%;
-                    margin:25px auto;
-                    background:linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(217,181,109,.6),
-                        transparent
-                    );
-                "></div>
-
-                <p>
-                    Review all terms directly with the provider
-                    before making a purchase.
-                </p>
-
-            </div>
-
-        </div>
-
-        <p class="pricing-note">
-            Forex Wealth Empire may receive compensation when visitors
-            use certain partner links. Any relationship does not guarantee
-            account approval, funding, trading profits or payouts.
-            Check the provider's current terms.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     GIVEAWAY
-=================================================== -->
-
-<section class="giveaway-section" id="giveaway">
-
-    <div class="container">
-
-        <div class="giveaway-card reveal">
-
-            <div class="giveaway-layout">
-
-                <div class="giveaway-copy">
-
-                    <div class="giveaway-tag">
-                        FWE Community Giveaway
-                    </div>
-
-                    <h2>
-                        Three Winners.
-                        <span class="gradient-text">New Opportunities.</span>
-                    </h2>
-
-                    <p>
-                        Forex Wealth Empire is promoting a giveaway
-                        featuring three $10,000 instant-account prizes.
-                        Join our Discord community and look for the
-                        official giveaway instructions.
-                    </p>
-
-                    <p>
-                        Eligible purchases may provide additional entries
-                        only when expressly stated in the official
-                        giveaway rules.
-                    </p>
-
-                    <div class="giveaway-actions">
-
-                        <a
-                            href="https://discord.gg/zQC9u3qvMJ"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-red"
-                        >
-                            Join Discord & View Giveaway ↗
-                        </a>
-
-                    </div>
-
-                    <p class="giveaway-note">
-                        Giveaway participation is subject to official
-                        rules, eligibility requirements and applicable law.
-                        Prizes, entry conditions and dates must be confirmed
-                        in the official giveaway announcement. No purchase
-                        should be assumed necessary unless the official rules
-                        expressly state otherwise.
-                    </p>
-
-                </div>
-
-                <div class="giveaway-prizes">
-
-                    <div class="prize-item">
-
-                        <div class="prize-icon">🏆</div>
-
-                        <div>
-                            <strong>$10,000 Instant Account</strong>
-                            <span>Prize 01 · Subject to official rules</span>
-                        </div>
-
-                    </div>
-
-                    <div class="prize-item">
-
-                        <div class="prize-icon">✦</div>
-
-                        <div>
-                            <strong>$10,000 Instant Account</strong>
-                            <span>Prize 02 · Subject to official rules</span>
-                        </div>
-
-                    </div>
-
-                    <div class="prize-item">
-
-                        <div class="prize-icon">◈</div>
-
-                        <div>
-                            <strong>$10,000 Instant Account</strong>
-                            <span>Prize 03 · Subject to official rules</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     PAYOUT COUNTER
-=================================================== -->
-
-<section class="payout-section" id="community-progress">
-
-    <div class="container">
-
-        <div class="payout-card glass-card reveal">
-
-            <div>
-
-                <div class="payout-label">
-                    Community Payout Milestone
-                </div>
-
-                <strong class="payout-number" id="payoutAmount">
-                    $270,000
-                </strong>
-
-                <p class="payout-description">
-                    Displayed milestone: $270,000 toward a $1,000,000 goal.
-                </p>
-
-            </div>
-
-            <div class="payout-goal">
-
-                <div class="payout-goal-top">
-                    <span>Displayed goal</span>
-                    <strong id="payoutPercent">27%</strong>
-                </div>
-
-                <div
-                    class="progress-track"
-                    role="progressbar"
-                    aria-label="Displayed progress toward community payout goal"
-                    aria-valuemin="0"
-                    aria-valuemax="1000000"
-                    aria-valuenow="270000"
-                    id="payoutProgress"
-                >
-
-                    <div class="progress-fill" id="payoutProgressFill"></div>
-
-                </div>
-
-                <p class="small muted" style="margin-top:12px;">
-                    Update this figure when verified results change.
-                    It is not a promise of future payouts.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     COMMUNITY
-=================================================== -->
-
-<section id="community">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">The FWE Community</div>
-
-            <h2>
-                Connect With Traders.
-                <span class="gradient-text">Keep Learning.</span>
-            </h2>
-
-            <p class="section-description">
-                Join the Forex Wealth Empire community to connect
-                with other traders, access announcements and explore
-                available educational resources.
-            </p>
-
-        </div>
-
-        <div class="community-grid">
-
-            <article class="glass-card community-card reveal">
-
-                <div class="community-icon">◈</div>
-
-                <h3>Discord Community</h3>
-
-                <p>
-                    Connect with other traders, participate in discussions
-                    and keep up with community announcements.
-                </p>
-
-                <a
-                    href="https://discord.gg/zQC9u3qvMJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Join Discord ↗
-                </a>
-
-            </article>
-
-            <article class="glass-card community-card reveal reveal-delay-1">
-
-                <div class="community-icon">◎</div>
-
-                <h3>Instagram Updates</h3>
-
-                <p>
-                    Follow our content, educational posts, brand updates
-                    and announcements from Forex Wealth Empire.
-                </p>
-
-                <a
-                    href="https://www.instagram.com/the.ldm_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Follow Instagram ↗
-                </a>
-
-            </article>
-
-            <article class="glass-card community-card reveal reveal-delay-2">
-
-                <div class="community-icon">✦</div>
-
-                <h3>Education & Resources</h3>
-
-                <p>
-                    Explore the available trading education, methodology
-                    information and services through our official offers.
-                </p>
-
-                <a
-                    href="https://whop.com/forex-wealth-empire-pty-ltd"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Explore Offers ↗
-                </a>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     PRICING
-=================================================== -->
-
-<section class="pricing-section" id="pricing">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">Membership & Services</div>
-
-            <h2>
-                Choose Your
-                <span class="gradient-text">Next Step.</span>
-            </h2>
-
-            <p class="section-description">
-                Explore the available Forex Wealth Empire options.
-                Check the official checkout page for the current
-                package details, billing conditions and inclusions.
-            </p>
-
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Course packages</div>
+
+          <h2>Choose your <span class="gold">learning package.</span></h2>
+
+          <p>
+            Review the available packages and select the option that
+            suits your learning goals. Preorder pricing is displayed
+            for the single-course package.
+          </p>
         </div>
 
         <div class="pricing-grid">
 
-            <!-- MONTHLY -->
+          <!-- ONE COURSE -->
+          <article class="price-card">
 
-            <article class="glass-card price-card reveal">
+            <div class="price-label">Single Course</div>
 
-                <div class="price-badge">
-                    Monthly Access
-                </div>
+            <h3>1 Course</h3>
 
-                <h3>FWE Membership</h3>
+            <p class="price-description">
+              Focus on one course and build your understanding of the
+              methodology.
+            </p>
 
-                <p class="price-description">
-                    For traders who want to explore the available
-                    community and educational membership.
-                </p>
+            <div class="price-old">Regular price: R5,000</div>
 
-                <div class="price-amount">
+            <div class="price-value">R3,500</div>
 
-                    <strong>R599</strong>
+            <div class="price-note">
+              Advertised preorder price
+            </div>
 
-                    <span>/ month</span>
+            <ul class="price-features">
+              <li>One selected course</li>
+              <li>Structured educational content</li>
+              <li>Methodology-focused learning</li>
+              <li>Risk-awareness education</li>
+            </ul>
 
-                </div>
+            <button
+              class="btn btn-gold btn-full preorder-btn"
+              data-package="1 Course"
+              data-price="R3,500"
+            >
+              Enquire About Preorder
+            </button>
 
-                <p class="price-note">
-                    Recurring subscription. Confirm the current terms
-                    at checkout.
-                </p>
+          </article>
 
-                <div class="price-divider"></div>
+          <!-- TWO COURSES -->
+          <article class="price-card featured">
 
-                <ul class="price-features">
+            <div class="price-label">Two-Course Package</div>
 
-                    <li>Access to the purchased membership tier.</li>
+            <h3>2 Courses</h3>
 
-                    <li>Community and educational resources as specified.</li>
+            <p class="price-description">
+              Choose two courses for a broader educational experience.
+            </p>
 
-                    <li>Updates according to the selected plan.</li>
+            <div class="price-old">Regular package price</div>
 
-                    <li>Learn at your own pace.</li>
+            <div class="price-value">R6,570</div>
 
-                </ul>
+            <div class="price-note">
+              Regular price supplied for this package
+            </div>
 
-                <a
-                    href="https://whop.com/forex-wealth-empire-pty-ltd"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-outline btn-block"
-                >
-                    View Membership ↗
-                </a>
+            <ul class="price-features">
+              <li>Two selected courses</li>
+              <li>Structured educational content</li>
+              <li>Broader learning coverage</li>
+              <li>Risk-awareness education</li>
+            </ul>
 
-            </article>
+            <button
+              class="btn btn-gold btn-full preorder-btn"
+              data-package="2 Courses"
+              data-price="R6,570 regular price"
+            >
+              Enquire About Package
+            </button>
 
-            <!-- ONE-TIME -->
+          </article>
 
-            <article class="glass-card price-card featured reveal reveal-delay-1">
+          <!-- THREE COURSES -->
+          <article class="price-card">
 
-                <div class="price-badge">
-                    One-Time Option
-                </div>
+            <div class="price-label">Three-Course Package</div>
 
-                <h3>FWE Premium</h3>
+            <h3>3 Courses</h3>
 
-                <p class="price-description">
-                    Explore the available premium option for traders
-                    looking for a different payment structure.
-                </p>
+            <p class="price-description">
+              A wider learning package for students seeking more
+              comprehensive course coverage.
+            </p>
 
-                <div class="price-amount">
+            <div class="price-old">Regular package price</div>
 
-                    <strong>R5,000</strong>
+            <div class="price-value">R9,000</div>
 
-                    <span>once-off</span>
+            <div class="price-note">
+              Regular price supplied for this package
+            </div>
 
-                </div>
+            <ul class="price-features">
+              <li>Three selected courses</li>
+              <li>Structured educational content</li>
+              <li>Wider learning coverage</li>
+              <li>Risk-awareness education</li>
+            </ul>
 
-                <p class="price-note">
-                    One-time listed price. Confirm what is included
-                    before purchasing.
-                </p>
+            <button
+              class="btn btn-gold btn-full preorder-btn"
+              data-package="3 Courses"
+              data-price="R9,000 regular price"
+            >
+              Enquire About Package
+            </button>
 
-                <div class="price-divider"></div>
-
-                <ul class="price-features">
-
-                    <li>Premium offer details shown at checkout.</li>
-
-                    <li>Access according to the purchased package.</li>
-
-                    <li>Educational material as specified by the offer.</li>
-
-                    <li>Review the full product description before payment.</li>
-
-                </ul>
-
-                <a
-                    href="https://whop.com/forex-wealth-empire-pty-ltd"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-gold btn-block"
-                >
-                    Explore Premium ↗
-                </a>
-
-            </article>
+          </article>
 
         </div>
 
-        <p class="pricing-note">
-            Prices and package descriptions are displayed for informational
-            purposes and should be verified against the live checkout page.
-            A purchase does not guarantee trading profits, funded-account
-            approval or any financial outcome. Services and inclusions
-            are subject to the relevant product terms.
+        <p class="pricing-disclaimer">
+          Important: The prices above reflect the supplied package
+          information. Preorder pricing for the two-course and three-course
+          packages has not been specified. Confirm package contents,
+          availability, payment terms, and any preorder conditions with
+          Forex Wealth Empire before paying.
         </p>
 
-    </div>
+      </div>
+    </section>
 
-</section>
+    <!-- DISCORD ADVERTISEMENT -->
+    <section class="discord-ad-section" id="community">
+      <div class="container">
 
-<!-- ===================================================
-     FAQ
-=================================================== -->
+        <div class="discord-ad">
 
-<section id="faq">
+          <div>
+            <div class="discord-icon">DISCORD COMMUNITY</div>
 
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">Frequently Asked Questions</div>
-
-            <h2>
-                Questions?
-                <span class="gradient-text">Start Here.</span>
-            </h2>
-
-            <p class="section-description">
-                Learn more about Forex Wealth Empire, our educational
-                approach and how to explore our official services.
-            </p>
-
-        </div>
-
-        <div class="faq-container">
-
-            <div class="faq-item reveal">
-
-                <button
-                    class="faq-question"
-                    aria-expanded="false"
-                    type="button"
-                >
-                    What is Forex Wealth Empire?
-
-                    <span class="faq-symbol">+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>
-                            Forex Wealth Empire is a trading education
-                            and community brand focused on market analysis,
-                            structured learning, trading discipline and
-                            educational resources.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="faq-item reveal">
-
-                <button
-                    class="faq-question"
-                    aria-expanded="false"
-                    type="button"
-                >
-                    What is Liquidity Displacement Methodology™?
-
-                    <span class="faq-symbol">+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>
-                            Liquidity Displacement Methodology™ is our
-                            proprietary educational framework. Detailed
-                            course material and methodology-specific
-                            rules are reserved for the appropriate
-                            educational products. This website provides
-                            an overview without disclosing the private
-                            instructional material.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="faq-item reveal">
-
-                <button
-                    class="faq-question"
-                    aria-expanded="false"
-                    type="button"
-                >
-                    Do you offer trading education?
-
-                    <span class="faq-symbol">+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>
-                            Available educational products and services
-                            can be explored through our official Whop
-                            page. Always read the product description
-                            to confirm what is included before purchasing.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="faq-item reveal">
-
-                <button
-                    class="faq-question"
-                    aria-expanded="false"
-                    type="button"
-                >
-                    How do I join the Forex Wealth Empire community?
-
-                    <span class="faq-symbol">+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>
-                            Use the Discord link provided on this website
-                            to access our community. Check the relevant
-                            server channels for the latest announcements,
-                            community information and participation rules.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="faq-item reveal">
-
-                <button
-                    class="faq-question"
-                    aria-expanded="false"
-                    type="button"
-                >
-                    Do you guarantee trading profits?
-
-                    <span class="faq-symbol">+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>
-                            No. Trading involves significant risk, and
-                            losses are possible. Education, indicators,
-                            strategies, signals or other resources cannot
-                            guarantee profitable results. You are
-                            responsible for your own trading decisions.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="faq-item reveal">
-
-                <button
-                    class="faq-question"
-                    aria-expanded="false"
-                    type="button"
-                >
-                    How can I contact Forex Wealth Empire?
-
-                    <span class="faq-symbol">+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>
-                            You can use the enquiry form on this website
-                            or email Naswealthempire@gmail.com directly.
-                            You can also connect with us through our
-                            official community channels.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="faq-item reveal">
-
-                <button
-                    class="faq-question"
-                    aria-expanded="false"
-                    type="button"
-                >
-                    How do I check prices and product details?
-
-                    <span class="faq-symbol">+</span>
-                </button>
-
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        <p>
-                            Visit our official Whop page and review the
-                            live product description, checkout price,
-                            billing arrangement, access conditions and
-                            applicable terms before making a purchase.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     CONTACT
-=================================================== -->
-
-<section id="contact">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div class="eyebrow">Contact Forex Wealth Empire</div>
-
-            <h2>
-                Let's Start A
-                <span class="gradient-text">Conversation.</span>
-            </h2>
-
-            <p class="section-description">
-                Questions about our educational products, services
-                or partnership opportunities? Send us an enquiry.
-            </p>
-
-        </div>
-
-        <div class="contact-grid">
-
-            <div class="contact-copy reveal">
-
-                <h2>
-                    We're Here To
-                    <span class="gradient-text">Connect.</span>
-                </h2>
-
-                <p>
-                    Use the contact form to prepare an email enquiry.
-                    Include enough detail for us to understand your
-                    question or request.
-                </p>
-
-                <div class="contact-details">
-
-                    <a
-                        class="contact-detail"
-                        href="mailto:Naswealthempire@gmail.com"
-                    >
-
-                        <div class="contact-detail-icon">
-                            ✉
-                        </div>
-
-                        <div>
-                            <strong>Email Us</strong>
-                            <span>Naswealthempire@gmail.com</span>
-                        </div>
-
-                    </a>
-
-                    <a
-                        class="contact-detail"
-                        href="https://discord.gg/zQC9u3qvMJ"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <div class="contact-detail-icon">
-                            ◈
-                        </div>
-
-                        <div>
-                            <strong>Discord Community</strong>
-                            <span>Connect with Forex Wealth Empire</span>
-                        </div>
-
-                    </a>
-
-                    <a
-                        class="contact-detail"
-                        href="https://www.instagram.com/the.ldm_/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <div class="contact-detail-icon">
-                            ◎
-                        </div>
-
-                        <div>
-                            <strong>Instagram</strong>
-                            <span>@the.ldm_</span>
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <form class="glass-card contact-form reveal reveal-delay-1" id="contactForm">
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-
-                        <label for="contactName">Your Name</label>
-
-                        <input
-                            type="text"
-                            id="contactName"
-                            name="name"
-                            placeholder="Enter your name"
-                            autocomplete="name"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="contactEmail">Your Email</label>
-
-                        <input
-                            type="email"
-                            id="contactEmail"
-                            name="email"
-                            placeholder="you@example.com"
-                            autocomplete="email"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group full">
-
-                        <label for="contactSubject">Enquiry Type</label>
-
-                        <select
-                            id="contactSubject"
-                            name="subject"
-                            required
-                        >
-
-                            <option value="">Select an enquiry type</option>
-                            <option value="Trading Education">Trading Education</option>
-                            <option value="Membership">Membership</option>
-                            <option value="Partnership">Partnership</option>
-                            <option value="Website Enquiry">Website Enquiry</option>
-                            <option value="Other Enquiry">Other</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="form-group full">
-
-                        <label for="contactMessage">Your Message</label>
-
-                        <textarea
-                            id="contactMessage"
-                            name="message"
-                            placeholder="Tell us how we can help..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-                    <div class="form-group full">
-
-                        <button
-                            type="submit"
-                            class="btn btn-gold btn-block"
-                        >
-                            Prepare Email Enquiry ↗
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <p class="form-note">
-                    This form opens your device's configured email
-                    application with your message prepared. You must
-                    review and send the email yourself. If no email
-                    application is configured, email us directly at
-                    Naswealthempire@gmail.com.
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===================================================
-     RISK DISCLAIMER
-=================================================== -->
-
-<section class="risk-section" id="risk-disclaimer">
-
-    <div class="container">
-
-        <div class="risk-box">
-
-            <h3>Important Risk Disclaimer</h3>
+            <h2>Connect with the <span class="gold">Forex Wealth Empire</span> community.</h2>
 
             <p>
-                Forex, contracts for difference (CFDs), cryptocurrencies,
-                indices and other financial instruments involve substantial
-                risk. You may lose some or all of your invested capital.
-                Leverage can magnify both gains and losses. Past performance
-                is not indicative of future results. Nothing on this website
-                constitutes individual financial, investment, legal or tax
-                advice, or a recommendation to buy or sell a financial
-                instrument. Educational content, signals, examples,
-                illustrations and methodologies do not guarantee a particular
-                outcome. Always conduct your own research, understand the
-                relevant risks and consider whether trading is appropriate
-                for your circumstances. Use appropriate risk management and
-                never trade money you cannot afford to lose.
+              Join the community to connect with other members, follow
+              announcements, discuss trading education, and stay updated
+              on information shared by Forex Wealth Empire.
             </p>
+          </div>
 
-            <p style="margin-top:12px;">
-                Any payout figures, milestones, testimonials, promotional
-                materials or giveaway descriptions must be independently
-                verified and understood in context. Displayed figures are
-                not a promise of future performance. Third-party services
-                are subject to their own terms, conditions and eligibility
-                requirements.
-            </p>
+          <a
+            href="https://discord.gg/zQC9u3qvMJ"
+            class="btn btn-discord"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join Our Discord
+          </a>
 
         </div>
 
-    </div>
+      </div>
+    </section>
 
-</section>
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
 
-</main>
+        <div class="section-heading">
+          <div class="eyebrow">Frequently asked questions</div>
 
-<!-- ===================================================
-     FOOTER
-=================================================== -->
+          <h2>Before you <span class="gold">get started.</span></h2>
 
-<footer class="site-footer">
+          <p>
+            Find answers to common questions about the methodology,
+            launch date, course packages, and trading risk.
+          </p>
+        </div>
 
-    <div class="footer-top">
+        <div class="faq-list">
 
-        <div class="footer-brand">
-
-            <a href="#home" class="brand">
-
-                <div class="brand-mark">FWE</div>
-
-                <div class="brand-name">
-                    Forex Wealth Empire
-                    <span class="brand-subtitle">LIQUIDITY DISPLACEMENT</span>
-                </div>
-
-            </a>
-
+          <details class="faq-item">
+            <summary>What is Liquidity Displacement Methodology™?</summary>
             <p>
-                Trading education, structured market analysis and
-                community learning — built around discipline,
-                responsible risk management and continuous improvement.
+              It is a trading-education framework focused on understanding
+              liquidity, displacement, market structure, confirmation,
+              and disciplined trade planning.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>When is the official course launch?</summary>
+            <p>
+              The scheduled official launch date is 11 January 2027.
+              Check the website or Discord community for any future
+              announcements about availability.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How much does a course cost?</summary>
+            <p>
+              The advertised single-course preorder price is R3,500,
+              compared with a regular price of R5,000. The regular price
+              supplied for two courses is R6,570, and for three courses
+              is R9,000. Confirm any preorder or promotional pricing
+              before making payment.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does the methodology guarantee profits?</summary>
+            <p>
+              No. No trading methodology can guarantee profits or eliminate
+              the risk of loss. Market conditions change, and past examples
+              do not guarantee future results.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can beginners study the methodology?</summary>
+            <p>
+              The educational material is intended to explain the
+              methodology in a structured way. Beginners should also
+              learn basic market terminology, practise in a simulated
+              environment, and understand trading risks before risking
+              real money.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I ask about a preorder?</summary>
+            <p>
+              Use the enquiry form below to prepare a message about your
+              preferred course package. The form opens your email
+              application; it does not process payment or automatically
+              send a message from this website.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I join the community?</summary>
+            <p>
+              Click any Discord community button on this website to open
+              the Forex Wealth Empire Discord invitation.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT / PREORDER ENQUIRY -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-copy">
+
+          <div class="eyebrow">Contact & enquiries</div>
+
+          <div class="section-heading">
+            <h2>Make your next move <span class="gold">informed.</span></h2>
+          </div>
+
+          <p>
+            Interested in a course package or have a question about the
+            upcoming release? Prepare an enquiry using the form.
+          </p>
+
+          <p>
+            Before submitting payment for any course, ensure you have
+            confirmed the package, access arrangements, total cost,
+            and applicable terms.
+          </p>
+
+          <div class="contact-card">
+            <strong>FOREX WEALTH EMPIRE</strong>
+            <p>
+              Liquidity Displacement Methodology™
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <strong>JOIN THE DISCORD COMMUNITY</strong>
+            <p>
+              Use the invitation below to access community announcements.
             </p>
 
-        </div>
-
-        <div class="footer-column">
-
-            <h4>Explore</h4>
-
-            <a href="#about">About Us</a>
-            <a href="#methodology">Our Methodology</a>
-            <a href="#education">Education</a>
-            <a href="#community">Community</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">Frequently Asked Questions</a>
-
-        </div>
-
-        <div class="footer-column">
-
-            <h4>Connect</h4>
-
             <a
-                href="https://discord.gg/zQC9u3qvMJ"
-                target="_blank"
-                rel="noopener noreferrer"
+              href="https://discord.gg/zQC9u3qvMJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-discord"
+              style="margin-top: 15px;"
             >
-                Discord
+              Open Discord
             </a>
-
-            <a
-                href="https://www.instagram.com/the.ldm_/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Instagram
-            </a>
-
-            <a
-                href="https://whop.com/forex-wealth-empire-pty-ltd"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Official Offers
-            </a>
-
-            <a
-                href="https://blueguardian.com/?afmc=LDM30"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-            >
-                Blue Guardian
-            </a>
-
-            <a href="mailto:Naswealthempire@gmail.com">
-                Email Us
-            </a>
+          </div>
 
         </div>
 
-    </div>
+        <form class="contact-form" id="enquiryForm">
 
-    <div class="footer-bottom">
+          <div class="eyebrow">Course enquiry</div>
 
-        <span>
-            © <span id="currentYear"></span>
-            Forex Wealth Empire. All rights reserved.
-        </span>
+          <h3 style="margin-bottom: 22px;">Send an enquiry</h3>
 
-        <span>
-            Liquidity Displacement Methodology™
-        </span>
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              required
+            >
+          </div>
 
-        <a href="#risk-disclaimer">
-            Risk Disclaimer
+          <div class="form-group">
+            <label for="email">Your email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter your email address"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="package">Select a package</label>
+
+            <select id="package" name="package" required>
+              <option value="">Choose a package</option>
+              <option value="1 Course — R3,500 advertised preorder price">
+                1 Course — R3,500 advertised preorder price
+              </option>
+              <option value="2 Courses — R6,570 regular price">
+                2 Courses — R6,570 regular price
+              </option>
+              <option value="3 Courses — R9,000 regular price">
+                3 Courses — R9,000 regular price
+              </option>
+              <option value="General enquiry">
+                General enquiry
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us what you would like to know..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-full">
+            Prepare Enquiry Email
+          </button>
+
+          <p class="form-help">
+            This form prepares an email in your email application.
+            It will not submit or store information on a server.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- RISK DISCLAIMER -->
+    <section class="disclaimer" id="disclaimer">
+      <div class="container">
+
+        <h3>Risk Disclaimer & Educational Notice</h3>
+
+        <p>
+          Forex Wealth Empire and Liquidity Displacement Methodology™
+          provide educational information only. Nothing on this website
+          constitutes financial advice, investment advice, a recommendation
+          to buy or sell any financial instrument, or a promise of future
+          performance. Trading foreign exchange, indices, commodities,
+          CFDs, and other leveraged products involves substantial risk
+          and may result in the loss of some or all of your capital.
+          Leverage can magnify both gains and losses. Trading results
+          vary between individuals, and examples or past performance
+          do not guarantee future outcomes. You are responsible for
+          your own trading decisions. Consider whether trading is
+          suitable for your circumstances and seek independent
+          professional advice where appropriate. Never trade with
+          money you cannot afford to lose.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <strong>FOREX WEALTH <span class="gold">EMPIRE</span></strong>
+        <span>LIQUIDITY DISPLACEMENT METHODOLOGY™</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">Methodology</a>
+        <a href="#pricing">Courses</a>
+        <a href="#disclaimer">Risk Disclaimer</a>
+
+        <a
+          href="https://discord.gg/zQC9u3qvMJ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discord Community
         </a>
+      </div>
+
+      <p class="copyright">
+        © <span id="year"></span> Forex Wealth Empire. All rights reserved.
+        Liquidity Displacement Methodology™.
+      </p>
 
     </div>
+  </footer>
 
-</footer>
+  <!-- WEBSITE FUNCTIONALITY -->
+  <script>
+    // MOBILE NAVIGATION
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
 
-<!-- ===================================================
-     COMMUNITY NOTIFICATION
-=================================================== -->
-
-<div
-    class="community-toast"
-    id="communityToast"
-    aria-live="polite"
-    aria-atomic="true"
->
-
-    <div class="toast-icon" id="toastIcon">
-        ✦
-    </div>
-
-    <div class="toast-content">
-
-        <strong id="toastTitle">
-            Forex Wealth Empire
-        </strong>
-
-        <p id="toastMessage">
-            Welcome to our community.
-        </p>
-
-        <span id="toastTime">
-            Community update
-        </span>
-
-    </div>
-
-</div>
-
-<!-- ===================================================
-     BACK TO TOP
-=================================================== -->
-
-<button
-    class="back-to-top"
-    id="backToTop"
-    aria-label="Back to top"
-    type="button"
->
-    ↑
-</button>
-
-<!-- ===================================================
-     JAVASCRIPT
-=================================================== -->
-
-<script>
-
-/* =====================================================
-   MOBILE NAVIGATION
-===================================================== */
-
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", function () {
-
-    const isOpen = navLinks.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
-
-    menuToggle.textContent = isOpen ? "✕" : "☰";
-
-});
-
-navLinks.querySelectorAll("a").forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navLinks.classList.remove("open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-
-        menuToggle.textContent = "☰";
-
+    navToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("active");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.textContent = isOpen ? "✕" : "☰";
     });
 
-});
+    document.querySelectorAll("#navLinks a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.textContent = "☰";
+      });
+    });
 
-document.addEventListener("click", function (event) {
+    // LAUNCH COUNTDOWN
+    // South African Standard Time is UTC+02:00.
+    const launchDate = new Date("2027-01-11T00:00:00+02:00").getTime();
 
-    if (
-        !navLinks.contains(event.target) &&
-        !menuToggle.contains(event.target)
-    ) {
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = launchDate - now;
+      const countdown = document.getElementById("countdown");
 
-        navLinks.classList.remove("open");
+      if (distance <= 0) {
+        countdown.innerHTML =
+          '<div style="color:var(--gold-light);font-size:1.1rem;font-weight:900;padding:20px;">THE OFFICIAL LAUNCH DATE HAS ARRIVED</div>';
+        return;
+      }
 
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        menuToggle.textContent = "☰";
+      document.getElementById("days").textContent =
+        String(days).padStart(3, "0");
 
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
     }
 
-});
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-/* =====================================================
-   SCROLL PROGRESS + BACK TO TOP
-===================================================== */
+    // AUTOMATIC COPYRIGHT YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-const scrollProgress = document.getElementById("scrollProgress");
-const backToTop = document.getElementById("backToTop");
+    // PREORDER BUTTONS
+    document.querySelectorAll(".preorder-btn").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const selectedPackage = button.dataset.package;
+        const selectedPrice = button.dataset.price;
 
-function updateScrollUI() {
+        document.getElementById("package").value = selectedPackage;
 
-    const scrollable =
-        document.documentElement.scrollHeight - window.innerHeight;
+        const messageBox = document.getElementById("message");
 
-    const progress =
-        scrollable > 0
-            ? (window.scrollY / scrollable) * 100
-            : 0;
+        messageBox.value =
+          "Hello Forex Wealth Empire,\n\n" +
+          "I would like to enquire about the " + selectedPackage +
+          " package.\n" +
+          "Displayed price information: " + selectedPrice + ".\n\n" +
+          "Please provide information about availability, package contents, " +
+          "payment arrangements, and access terms.\n\nThank you.";
 
-    scrollProgress.style.width = progress + "%";
-
-    if (window.scrollY > 500) {
-
-        backToTop.classList.add("visible");
-
-    } else {
-
-        backToTop.classList.remove("visible");
-
-    }
-
-}
-
-window.addEventListener("scroll", updateScrollUI, {
-    passive: true
-});
-
-updateScrollUI();
-
-backToTop.addEventListener("click", function () {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-/* =====================================================
-   SCROLL REVEAL ANIMATIONS
-===================================================== */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-
-    const revealObserver = new IntersectionObserver(
-        function (entries, observer) {
-
-            entries.forEach(function (entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12,
-            rootMargin: "0px 0px -35px 0px"
-        }
-    );
-
-    revealElements.forEach(function (element) {
-
-        revealObserver.observe(element);
-
-    });
-
-} else {
-
-    revealElements.forEach(function (element) {
-
-        element.classList.add("visible");
-
-    });
-
-}
-
-/* =====================================================
-   FAQ ACCORDION
-===================================================== */
-
-document.querySelectorAll(".faq-question").forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        const currentItem = button.closest(".faq-item");
-        const wasActive = currentItem.classList.contains("active");
-
-        document.querySelectorAll(".faq-item").forEach(function (item) {
-
-            item.classList.remove("active");
-
-            const question = item.querySelector(".faq-question");
-
-            question.setAttribute("aria-expanded", "false");
-
+        document.getElementById("contact").scrollIntoView({
+          behavior: "smooth"
         });
-
-        if (!wasActive) {
-
-            currentItem.classList.add("active");
-
-            button.setAttribute("aria-expanded", "true");
-
-        }
-
+      });
     });
 
-});
+    // ENQUIRY FORM
+    // Replace the placeholder email address below with your real business email.
+    const BUSINESS_EMAIL = "YOUR-EMAIL@example.com";
 
-/* =====================================================
-   COUNTDOWN
-   Target: 11 January 2027 at midnight South African time
-===================================================== */
+    document.getElementById("enquiryForm").addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
 
-const launchDate = new Date("2027-01-11T00:00:00+02:00").getTime();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const selectedPackage = document.getElementById("package").value;
+        const message = document.getElementById("message").value.trim();
 
-function updateCountdown() {
+        if (!name || !email || !selectedPackage || !message) {
+          alert("Please complete all fields before continuing.");
+          return;
+        }
 
-    const now = Date.now();
-    const distance = launchDate - now;
+        if (BUSINESS_EMAIL === "YOUR-EMAIL@example.com") {
+          alert(
+            "The website owner must replace YOUR-EMAIL@example.com in the HTML " +
+            "with a real business email address before using this enquiry form."
+          );
+          return;
+        }
 
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
+        const subject = encodeURIComponent(
+          "Course Enquiry — " + selectedPackage
+        );
 
-    if (distance <= 0) {
+        const body = encodeURIComponent(
+          "Name: " + name + "\n" +
+          "Email: " + email + "\n" +
+          "Package: " + selectedPackage + "\n\n" +
+          "Message:\n" + message
+        );
 
-        daysElement.textContent = "000";
-        hoursElement.textContent = "00";
-        minutesElement.textContent = "00";
-        secondsElement.textContent = "00";
-
-        return;
-
-    }
-
-    const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
+        window.location.href =
+          "mailto:" + BUSINESS_EMAIL +
+          "?subject=" + subject +
+          "&body=" + body;
+      }
     );
-
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
-
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
-
-    const seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
-    );
-
-    daysElement.textContent = String(days).padStart(3, "0");
-    hoursElement.textContent = String(hours).padStart(2, "0");
-    minutesElement.textContent = String(minutes).padStart(2, "0");
-    secondsElement.textContent = String(seconds).padStart(2, "0");
-
-}
-
-updateCountdown();
-
-setInterval(updateCountdown, 1000);
-
-/* =====================================================
-   PAYOUT COUNTER
-   Displayed values must be updated when verified.
-===================================================== */
-
-const CURRENT_PAYOUT = 270000;
-const PAYOUT_GOAL = 1000000;
-
-function updatePayoutDisplay() {
-
-    const amountElement = document.getElementById("payoutAmount");
-    const percentElement = document.getElementById("payoutPercent");
-    const fillElement = document.getElementById("payoutProgressFill");
-    const progressElement = document.getElementById("payoutProgress");
-
-    const percentage = Math.min(
-        100,
-        Math.max(0, (CURRENT_PAYOUT / PAYOUT_GOAL) * 100)
-    );
-
-    amountElement.textContent = "$" + CURRENT_PAYOUT.toLocaleString("en-US");
-
-    percentElement.textContent =
-        percentage.toLocaleString("en-US", {
-            maximumFractionDigits: 1
-        }) + "%";
-
-    fillElement.style.width = percentage + "%";
-
-    progressElement.setAttribute(
-        "aria-valuenow",
-        String(CURRENT_PAYOUT)
-    );
-
-}
-
-updatePayoutDisplay();
-
-/* =====================================================
-   CONTACT FORM
-   Uses the user's email address.
-   Opens the visitor's configured email application.
-===================================================== */
-
-const contactForm = document.getElementById("contactForm");
-
-const contactDestination = "Naswealthempire@gmail.com";
-
-contactForm.addEventListener("submit", function (event) {
-
-    event.preventDefault();
-
-    if (!contactForm.reportValidity()) {
-        return;
-    }
-
-    const name =
-        document.getElementById("contactName").value.trim();
-
-    const senderEmail =
-        document.getElementById("contactEmail").value.trim();
-
-    const subjectType =
-        document.getElementById("contactSubject").value;
-
-    const message =
-        document.getElementById("contactMessage").value.trim();
-
-    const subject =
-        "FWE Website Enquiry: " + subjectType;
-
-    const body =
-        "Forex Wealth Empire Website Enquiry\n\n" +
-        "Name: " + name + "\n" +
-        "Sender Email: " + senderEmail + "\n" +
-        "Enquiry Type: " + subjectType + "\n\n" +
-        "Message:\n" + message + "\n\n" +
-        "Sent from the Forex Wealth Empire website.";
-
-    const mailtoLink =
-        "mailto:" + contactDestination +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-    window.location.href = mailtoLink;
-
-});
-
-/* =====================================================
-   FOOTER YEAR
-===================================================== */
-
-document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
-
-/* =====================================================
-   COMMUNITY NOTIFICATIONS
-   These are illustrative website messages, not verified
-   live transactions. Edit or remove them as needed.
-===================================================== */
-
-const communityNotifications = [
-
-    {
-        icon: "✦",
-        title: "Forex Wealth Empire",
-        message: "Welcome to our trading community.",
-        time: "Community update"
-    },
-
-    {
-        icon: "◈",
-        title: "Trading Education",
-        message: "Keep learning. Keep reviewing your process.",
-        time: "Educational reminder"
-    },
-
-    {
-        icon: "◎",
-        title: "FWE Community",
-        message: "Connect with traders and explore the resources.",
-        time: "Community update"
-    },
-
-    {
-        icon: "⌁",
-        title: "Risk Management",
-        message: "Preparation and risk awareness matter.",
-        time: "Trading reminder"
-    },
-
-    {
-        icon: "✧",
-        title: "Forex Wealth Empire",
-        message: "Explore our available educational offers.",
-        time: "Website update"
-    }
-
-];
-
-const communityToast = document.getElementById("communityToast");
-const toastIcon = document.getElementById("toastIcon");
-const toastTitle = document.getElementById("toastTitle");
-const toastMessage = document.getElementById("toastMessage");
-const toastTime = document.getElementById("toastTime");
-
-let notificationIndex = 0;
-let notificationTimer = null;
-let notificationHideTimer = null;
-
-function showCommunityNotification() {
-
-    const notification =
-        communityNotifications[notificationIndex];
-
-    toastIcon.textContent = notification.icon;
-    toastTitle.textContent = notification.title;
-    toastMessage.textContent = notification.message;
-    toastTime.textContent = notification.time;
-
-    communityToast.classList.add("show");
-
-    clearTimeout(notificationHideTimer);
-
-    notificationHideTimer = setTimeout(function () {
-
-        communityToast.classList.remove("show");
-
-    }, 6500);
-
-    notificationIndex =
-        (notificationIndex + 1) % communityNotifications.length;
-
-}
-
-function startCommunityNotifications() {
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
-    }
-
-    if (notificationTimer) {
-        clearInterval(notificationTimer);
-    }
-
-    notificationTimer = setInterval(
-        showCommunityNotification,
-        20000
-    );
-
-}
-
-/*
-   Start after a short delay.
-   Messages above are general website notifications,
-   not claims of verified payouts or customer purchases.
-*/
-
-setTimeout(function () {
-
-    showCommunityNotification();
-    startCommunityNotifications();
-
-}, 5000);
-
-/* =====================================================
-   REDUCE UNNECESSARY MOTION WHEN THE TAB IS HIDDEN
-===================================================== */
-
-document.addEventListener("visibilitychange", function () {
-
-    if (document.hidden) {
-
-        clearInterval(notificationTimer);
-
-        clearTimeout(notificationHideTimer);
-
-        communityToast.classList.remove("show");
-
-    } else {
-
-        startCommunityNotifications();
-
-    }
-
-});
-
-</script>
+  </script>
+
+  <!-- LIVECHAT INTEGRATION -->
+  <script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 19960069;
+
+    (function () {
+      var lc = document.createElement("script");
+      lc.type = "text/javascript";
+      lc.async = true;
+      lc.src = "https://cdn.livechatinc.com/tracking.js";
+
+      var firstScript = document.getElementsByTagName("script")[0];
+      firstScript.parentNode.insertBefore(lc, firstScript);
+    })();
+  </script>
+
+  <noscript>
+    <a href="https://www.livechat.com/chat-with/19960069/" rel="nofollow">
+      Chat with us
+    </a>
+  </noscript>
 
 </body>
    </html>
