@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,24 +8,21 @@
 <title>Liquidity Displacement University™ | Coming Soon</title>
 
 <meta name="description" content="Liquidity Displacement University™ by Forex Wealth Empire. A new destination for structured market education, trading discipline, and professional development. Coming soon.">
-
 <meta name="theme-color" content="#070707">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
     --black: #070707;
     --panel: #101010;
-    --panel-light: #151515;
     --red: #e50914;
     --gold: #d9ad55;
     --white: #f5f5f5;
-    --muted: #999999;
-    --border: rgba(255,255,255,0.09);
+    --muted: #999;
+    --border: rgba(255,255,255,.09);
 }
 
 * {
@@ -50,13 +48,8 @@ a {
     text-decoration: none;
 }
 
-button,
-input,
-textarea {
-    font: inherit;
-}
-
 button {
+    font: inherit;
     cursor: pointer;
 }
 
@@ -65,18 +58,13 @@ button {
     color: white;
 }
 
-/* =========================
-   BACKGROUND EFFECTS
-========================= */
-
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 5;
-    opacity: 0.12;
-
+    opacity: .08;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
 }
 
@@ -86,36 +74,25 @@ body::before {
     height: 450px;
     border-radius: 50%;
     filter: blur(120px);
-    opacity: 0.13;
+    opacity: .13;
     pointer-events: none;
 }
 
-.glow-red {
-    background: #e50914;
-}
+.glow-red { background: var(--red); }
+.glow-gold { background: var(--gold); }
 
-.glow-gold {
-    background: #d9ad55;
-}
-
-/* =========================
-   INITIAL LOADING SCREEN
-========================= */
+/* LOADING SCREEN */
 
 .loader-screen {
     position: fixed;
     inset: 0;
     z-index: 99999;
     background: #050505;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-    transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
+    transition: opacity .8s ease, visibility .8s ease;
 }
 
 .loader-screen.hidden {
@@ -132,17 +109,14 @@ body::before {
 .loader-emblem {
     width: 90px;
     height: 90px;
-    border: 1px solid rgba(217,173,85,0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 1px solid rgba(217,173,85,.7);
+    display: grid;
+    place-items: center;
     margin: 0 auto 30px;
-
     font-family: 'Orbitron', sans-serif;
     font-size: 28px;
     font-weight: 800;
     color: var(--gold);
-
     position: relative;
     animation: emblemGlow 2s infinite alternate;
 }
@@ -151,20 +125,18 @@ body::before {
     content: "";
     position: absolute;
     inset: -8px;
-    border: 1px solid rgba(229,9,20,0.45);
+    border: 1px solid rgba(229,9,20,.45);
     transform: rotate(45deg);
 }
 
 .loader-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(15px, 3vw, 23px);
+    font-size: clamp(15px,3vw,23px);
     letter-spacing: 4px;
     line-height: 1.7;
 }
 
-.loader-title span {
-    color: var(--gold);
-}
+.loader-title span { color: var(--gold); }
 
 .loader-subtitle {
     margin-top: 12px;
@@ -185,7 +157,7 @@ body::before {
 .loader-progress {
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, var(--red), var(--gold));
+    background: linear-gradient(90deg,var(--red),var(--gold));
     animation: loading 2.4s ease forwards;
 }
 
@@ -196,22 +168,14 @@ body::before {
     text-transform: uppercase;
 }
 
-@keyframes loading {
-    to { width: 100%; }
-}
+@keyframes loading { to { width: 100%; } }
 
 @keyframes emblemGlow {
-    from {
-        box-shadow: 0 0 5px rgba(217,173,85,0.1);
-    }
-    to {
-        box-shadow: 0 0 35px rgba(217,173,85,0.2);
-    }
+    from { box-shadow: 0 0 5px rgba(217,173,85,.1); }
+    to { box-shadow: 0 0 35px rgba(217,173,85,.2); }
 }
 
-/* =========================
-   ANNOUNCEMENT BAR
-========================= */
+/* ANNOUNCEMENT */
 
 .announcement {
     background: #a70710;
@@ -241,24 +205,19 @@ body::before {
     to { transform: translateX(-50%); }
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
 
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     min-height: 82px;
     padding: 0 7%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 25px;
-
-    background: rgba(7,7,7,0.88);
+    background: rgba(7,7,7,.9);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
 }
@@ -275,29 +234,26 @@ body::before {
     height: 43px;
     display: grid;
     place-items: center;
-
     border: 1px solid var(--gold);
     color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron',sans-serif;
     font-weight: 800;
     font-size: 14px;
 }
 
 .brand-name {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron',sans-serif;
     font-size: 11px;
     font-weight: 700;
     line-height: 1.8;
     letter-spacing: 1px;
 }
 
-.brand-name span {
-    color: var(--gold);
-}
+.brand-name span { color: var(--gold); }
 
 .brand-name small {
     display: block;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter',sans-serif;
     font-size: 9px;
     letter-spacing: 2px;
     color: #888;
@@ -306,21 +262,19 @@ body::before {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 25px;
 }
 
 .nav-links a {
     font-size: 11px;
     color: #b7b7b7;
-    transition: color 0.25s;
+    transition: color .25s;
 }
 
-.nav-links a:hover {
-    color: var(--gold);
-}
+.nav-links a:hover { color: var(--gold); }
 
 .nav-cta {
-    border: 1px solid rgba(217,173,85,0.6);
+    border: 1px solid rgba(217,173,85,.6);
     padding: 12px 17px;
     color: var(--gold) !important;
     text-transform: uppercase;
@@ -336,9 +290,7 @@ body::before {
     font-size: 27px;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
     position: relative;
@@ -364,16 +316,13 @@ body::before {
 .hero-grid {
     position: absolute;
     inset: 0;
-    opacity: 0.17;
+    opacity: .17;
     pointer-events: none;
-
     background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
     background-size: 65px 65px;
-
-    mask-image: linear-gradient(to bottom, black, transparent 90%);
+    mask-image: linear-gradient(to bottom,black,transparent 90%);
 }
 
 .hero-content {
@@ -387,13 +336,10 @@ body::before {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
-    border: 1px solid rgba(217,173,85,0.35);
-    background: rgba(217,173,85,0.045);
-
+    border: 1px solid rgba(217,173,85,.35);
+    background: rgba(217,173,85,.045);
     padding: 11px 16px;
     margin-bottom: 34px;
-
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -410,25 +356,21 @@ body::before {
     animation: pulse 1.7s infinite;
 }
 
-@keyframes pulse {
-    50% { opacity: 0.35; }
-}
+@keyframes pulse { 50% { opacity: .35; } }
 
 .hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(37px, 7.2vw, 86px);
+    font-family: 'Orbitron',sans-serif;
+    font-size: clamp(37px,7.2vw,86px);
     font-weight: 800;
     line-height: 1.12;
     letter-spacing: -3px;
 }
 
-.hero h1 .gold {
-    color: var(--gold);
-}
+.gold { color: var(--gold); }
 
-.hero h1 .outline {
+.outline {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.75);
+    -webkit-text-stroke: 1px rgba(255,255,255,.75);
 }
 
 .hero-description {
@@ -439,10 +381,7 @@ body::before {
     color: #a5a5a5;
 }
 
-.hero-description strong {
-    color: #eee;
-    font-weight: 600;
-}
+.hero-description strong { color: #eee; }
 
 .hero-buttons {
     display: flex;
@@ -457,45 +396,33 @@ body::before {
     align-items: center;
     justify-content: center;
     gap: 10px;
-
     padding: 16px 24px;
     min-height: 52px;
-
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1.3px;
     text-transform: uppercase;
-
-    transition:
-        transform 0.25s,
-        background 0.25s,
-        border-color 0.25s;
+    transition: transform .25s,background .25s,border-color .25s;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-}
+.btn:hover { transform: translateY(-3px); }
 
 .btn-primary {
     background: var(--red);
     color: white;
     border: 1px solid var(--red);
-    box-shadow: 0 8px 35px rgba(229,9,20,0.15);
+    box-shadow: 0 8px 35px rgba(229,9,20,.15);
 }
 
-.btn-primary:hover {
-    background: #b70710;
-}
+.btn-primary:hover { background: #b70710; }
 
 .btn-secondary {
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,.18);
     color: white;
-    background: rgba(255,255,255,0.025);
+    background: rgba(255,255,255,.025);
 }
 
-.btn-secondary:hover {
-    border-color: var(--gold);
-}
+.btn-secondary:hover { border-color: var(--gold); }
 
 .hero-note {
     margin-top: 25px;
@@ -505,9 +432,7 @@ body::before {
     text-transform: uppercase;
 }
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* COUNTDOWN */
 
 .countdown-section {
     position: relative;
@@ -518,14 +443,11 @@ body::before {
 }
 
 .countdown-box {
-    border: 1px solid rgba(217,173,85,0.25);
-    background:
-        linear-gradient(135deg, rgba(217,173,85,0.055), transparent 50%),
-        #0b0b0b;
-
+    border: 1px solid rgba(217,173,85,.25);
+    background: linear-gradient(135deg,rgba(217,173,85,.055),transparent 50%),#0b0b0b;
     padding: 42px 35px;
     text-align: center;
-    box-shadow: 0 30px 100px rgba(0,0,0,0.4);
+    box-shadow: 0 30px 100px rgba(0,0,0,.4);
 }
 
 .section-kicker {
@@ -538,8 +460,8 @@ body::before {
 
 .countdown-box h2 {
     margin-top: 14px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(20px, 3vw, 31px);
+    font-family: 'Orbitron',sans-serif;
+    font-size: clamp(20px,3vw,31px);
 }
 
 .countdown-box p {
@@ -551,7 +473,7 @@ body::before {
 
 .countdown {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4,minmax(0,1fr));
     max-width: 620px;
     margin: 35px auto 0;
     gap: 13px;
@@ -559,14 +481,14 @@ body::before {
 
 .time-card {
     padding: 23px 10px;
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.07);
 }
 
 .time-number {
     display: block;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(25px, 4vw, 43px);
+    font-family: 'Orbitron',sans-serif;
+    font-size: clamp(25px,4vw,43px);
     font-weight: 700;
     color: var(--gold);
 }
@@ -588,13 +510,9 @@ body::before {
     text-transform: uppercase;
 }
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* SECTIONS */
 
-.section {
-    padding: 115px 7%;
-}
+.section { padding: 115px 7%; }
 
 .section-heading {
     max-width: 740px;
@@ -604,13 +522,9 @@ body::before {
 
 .section-heading h2 {
     margin-top: 18px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(27px, 4vw, 45px);
+    font-family: 'Orbitron',sans-serif;
+    font-size: clamp(27px,4vw,45px);
     line-height: 1.3;
-}
-
-.section-heading h2 span {
-    color: var(--gold);
 }
 
 .section-heading p {
@@ -635,14 +549,12 @@ body::before {
 }
 
 .about-copy h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(27px, 4vw, 43px);
+    font-family: 'Orbitron',sans-serif;
+    font-size: clamp(27px,4vw,43px);
     line-height: 1.35;
 }
 
-.about-copy h2 span {
-    color: var(--gold);
-}
+.about-copy h2 span { color: var(--gold); }
 
 .about-copy p {
     color: #999;
@@ -651,17 +563,13 @@ body::before {
     margin-top: 22px;
 }
 
-.about-copy .btn {
-    margin-top: 30px;
-}
+.about-copy .btn { margin-top: 30px; }
 
 .feature-panel {
     position: relative;
     border: 1px solid var(--border);
     padding: 35px;
-    background:
-        radial-gradient(circle at 100% 0%, rgba(229,9,20,0.09), transparent 40%),
-        #0d0d0d;
+    background: radial-gradient(circle at 100% 0%,rgba(229,9,20,.09),transparent 40%),#0d0d0d;
 }
 
 .feature-panel::before {
@@ -676,7 +584,7 @@ body::before {
 
 .feature-panel-label {
     color: var(--gold);
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron',sans-serif;
     font-size: 11px;
     letter-spacing: 2px;
     margin-bottom: 25px;
@@ -690,21 +598,17 @@ body::before {
     border-bottom: 1px solid var(--border);
 }
 
-.feature-row:last-child {
-    border-bottom: 0;
-}
+.feature-row:last-child { border-bottom: 0; }
 
 .feature-icon {
     width: 42px;
     height: 42px;
     flex-shrink: 0;
-
     display: grid;
     place-items: center;
-
     color: var(--gold);
-    background: rgba(217,173,85,0.07);
-    border: 1px solid rgba(217,173,85,0.2);
+    background: rgba(217,173,85,.07);
+    border: 1px solid rgba(217,173,85,.2);
     font-size: 18px;
 }
 
@@ -719,13 +623,10 @@ body::before {
     color: #888;
 }
 
-/* =========================
-   LEARNING AREAS
-========================= */
+/* LEARNING */
 
 .learning-section {
-    background:
-        linear-gradient(180deg, #080808, #0b0b0b, #080808);
+    background: linear-gradient(180deg,#080808,#0b0b0b,#080808);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -734,32 +635,27 @@ body::before {
     max-width: 1180px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .learning-card {
     position: relative;
     overflow: hidden;
-
     min-height: 245px;
     padding: 32px;
-
-    background: linear-gradient(145deg, #121212, #0b0b0b);
+    background: linear-gradient(145deg,#121212,#0b0b0b);
     border: 1px solid var(--border);
-
-    transition:
-        transform 0.3s,
-        border-color 0.3s;
+    transition: transform .3s,border-color .3s;
 }
 
 .learning-card:hover {
     transform: translateY(-7px);
-    border-color: rgba(217,173,85,0.45);
+    border-color: rgba(217,173,85,.45);
 }
 
 .card-number {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron',sans-serif;
     font-size: 12px;
     color: var(--gold);
     letter-spacing: 2px;
@@ -787,23 +683,18 @@ body::before {
     display: inline-block;
     margin-top: 25px;
     padding: 7px 10px;
-
-    background: rgba(229,9,20,0.09);
+    background: rgba(229,9,20,.09);
     color: #ef6b71;
-
     font-size: 9px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* =========================
-   UNIVERSITY EXPERIENCE
-========================= */
+/* APPROACH */
 
 .experience-layout {
     max-width: 1180px;
     margin: auto;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
@@ -816,13 +707,11 @@ body::before {
 }
 
 .experience-card:first-child {
-    background:
-        radial-gradient(circle at 100% 0%, rgba(217,173,85,0.07), transparent 45%),
-        #0d0d0d;
+    background: radial-gradient(circle at 100% 0%,rgba(217,173,85,.07),transparent 45%),#0d0d0d;
 }
 
 .experience-card h3 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron',sans-serif;
     font-size: 19px;
     line-height: 1.6;
     margin: 20px 0;
@@ -852,40 +741,29 @@ body::before {
     margin-right: 12px;
 }
 
-/* =========================
-   DISCORD CTA
-========================= */
+/* COMMUNITY */
 
-.community-section {
-    padding: 0 7% 110px;
-}
+.community-section { padding: 0 7% 110px; }
 
 .community-box {
     max-width: 1180px;
     margin: auto;
     position: relative;
     overflow: hidden;
-
     text-align: center;
     padding: 75px 30px;
-
-    border: 1px solid rgba(217,173,85,0.3);
-
-    background:
-        radial-gradient(ellipse at 50% 120%, rgba(229,9,20,0.19), transparent 55%),
-        linear-gradient(135deg, #111, #080808);
+    border: 1px solid rgba(217,173,85,.3);
+    background: radial-gradient(ellipse at 50% 120%,rgba(229,9,20,.19),transparent 55%),linear-gradient(135deg,#111,#080808);
 }
 
 .community-box h2 {
     position: relative;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(25px, 4vw, 45px);
+    font-family: 'Orbitron',sans-serif;
+    font-size: clamp(25px,4vw,45px);
     line-height: 1.35;
 }
 
-.community-box h2 span {
-    color: var(--gold);
-}
+.community-box h2 span { color: var(--gold); }
 
 .community-box p {
     position: relative;
@@ -901,9 +779,7 @@ body::before {
     margin-top: 0;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     border-top: 1px solid var(--border);
@@ -914,7 +790,6 @@ footer {
 .footer-inner {
     max-width: 1180px;
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -928,9 +803,7 @@ footer {
     line-height: 2;
 }
 
-.footer-copy strong {
-    color: #aaa;
-}
+.footer-copy strong { color: #aaa; }
 
 .footer-links {
     display: flex;
@@ -943,218 +816,24 @@ footer {
     font-size: 10px;
 }
 
-.footer-links a:hover {
-    color: var(--gold);
-}
+.footer-links a:hover { color: var(--gold); }
 
 .risk-notice {
     max-width: 1180px;
     margin: 28px auto 0;
     padding-top: 25px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-
+    border-top: 1px solid rgba(255,255,255,.05);
     color: #555;
     font-size: 10px;
     line-height: 1.9;
 }
 
-/* =========================
-   LIVE CHAT
-========================= */
-
-.chat-launcher {
-    position: fixed;
-    z-index: 9000;
-    right: 25px;
-    bottom: 25px;
-
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-
-    display: grid;
-    place-items: center;
-
-    background: var(--red);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-
-    font-size: 25px;
-    box-shadow: 0 8px 35px rgba(229,9,20,0.3);
-
-    transition: transform 0.25s;
-}
-
-.chat-launcher:hover {
-    transform: scale(1.07);
-}
-
-.chat-label {
-    position: fixed;
-    z-index: 8999;
-    right: 98px;
-    bottom: 43px;
-
-    padding: 11px 15px;
-    background: #161616;
-    border: 1px solid var(--border);
-
-    font-size: 11px;
-    color: white;
-    pointer-events: none;
-}
-
-.chat-panel {
-    position: fixed;
-    z-index: 9001;
-    right: 25px;
-    bottom: 100px;
-
-    width: min(360px, calc(100vw - 30px));
-    height: 450px;
-    max-height: calc(100vh - 140px);
-
-    display: none;
-    flex-direction: column;
-
-    background: #0b0b0b;
-    border: 1px solid rgba(217,173,85,0.35);
-    box-shadow: 0 25px 80px rgba(0,0,0,0.7);
-}
-
-.chat-panel.open {
-    display: flex;
-    animation: chatOpen 0.25s ease;
-}
-
-@keyframes chatOpen {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.chat-header {
-    padding: 20px;
-    background: #121212;
-    border-bottom: 1px solid var(--border);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.chat-header h3 {
-    font-size: 13px;
-}
-
-.chat-header p {
-    margin-top: 6px;
-    font-size: 10px;
-    color: #888;
-}
-
-.chat-header .online {
-    color: #69d49b;
-}
-
-.chat-close {
-    border: 0;
-    background: none;
-    color: #aaa;
-    font-size: 23px;
-}
-
-.chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 18px;
-}
-
-.chat-message {
-    padding: 12px;
-    background: #171717;
-    border: 1px solid var(--border);
-    color: #ddd;
-    font-size: 12px;
-    line-height: 1.8;
-    margin-bottom: 12px;
-    overflow-wrap: anywhere;
-}
-
-.chat-message.user {
-    background: rgba(229,9,20,0.12);
-    border-color: rgba(229,9,20,0.2);
-}
-
-.chat-message small {
-    display: block;
-    color: #777;
-    font-size: 9px;
-    margin-bottom: 5px;
-}
-
-.chat-form {
-    padding: 14px;
-    border-top: 1px solid var(--border);
-}
-
-.chat-form input,
-.chat-form textarea {
-    width: 100%;
-    padding: 12px;
-    background: #141414;
-    color: white;
-    border: 1px solid #292929;
-    outline: none;
-    font-size: 12px;
-    margin-bottom: 9px;
-}
-
-.chat-form input:focus,
-.chat-form textarea:focus {
-    border-color: var(--gold);
-}
-
-.chat-form textarea {
-    resize: vertical;
-    min-height: 65px;
-    max-height: 100px;
-}
-
-.chat-form button {
-    width: 100%;
-    padding: 12px;
-    border: 0;
-    background: var(--red);
-    color: white;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.chat-disclaimer {
-    color: #666;
-    font-size: 9px;
-    line-height: 1.6;
-    margin-top: 9px;
-}
-
-/* =========================
-   SCROLL REVEALS
-========================= */
+/* REVEALS */
 
 .reveal {
     opacity: 0;
     transform: translateY(25px);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+    transition: opacity .8s ease,transform .8s ease;
 }
 
 .reveal.visible {
@@ -1162,40 +841,19 @@ footer {
     transform: translateY(0);
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* MOBILE */
 
 @media (max-width: 950px) {
-    .navbar {
-        padding: 0 5%;
-    }
-
-    .nav-links {
-        gap: 17px;
-    }
-
-    .nav-links a {
-        font-size: 10px;
-    }
-
-    .about-layout {
-        gap: 35px;
-    }
-
-    .learning-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .navbar { padding: 0 5%; }
+    .nav-links { gap: 17px; }
+    .nav-links a { font-size: 10px; }
+    .about-layout { gap: 35px; }
+    .learning-grid { grid-template-columns: repeat(2,1fr); }
 }
 
 @media (max-width: 720px) {
-    .navbar {
-        min-height: 72px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
+    .navbar { min-height: 72px; }
+    .menu-toggle { display: block; }
 
     .nav-links {
         display: none;
@@ -1203,24 +861,20 @@ footer {
         top: 72px;
         left: 0;
         right: 0;
-
         padding: 20px 6% 25px;
         background: #090909;
         border-bottom: 1px solid var(--border);
-
         flex-direction: column;
         align-items: stretch;
         gap: 0;
     }
 
-    .nav-links.open {
-        display: flex;
-    }
+    .nav-links.open { display: flex; }
 
     .nav-links a {
         display: block;
         padding: 15px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,.06);
         font-size: 12px;
     }
 
@@ -1235,48 +889,22 @@ footer {
         padding: 85px 6% 95px;
     }
 
-    .hero h1 {
-        letter-spacing: -1.5px;
-    }
-
-    .hero-description {
-        font-size: 13px;
-    }
-
-    .eyebrow {
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
+    .hero h1 { letter-spacing: -1.5px; }
+    .hero-description { font-size: 13px; }
+    .eyebrow { font-size: 8px; letter-spacing: 2px; }
 
     .btn {
         width: 100%;
         max-width: 340px;
     }
 
-    .countdown-section {
-        padding: 0 15px;
-    }
+    .countdown-section { padding: 0 15px; }
+    .countdown-box { padding: 32px 15px; }
+    .countdown { gap: 7px; }
+    .time-card { padding: 19px 5px; }
+    .time-label { font-size: 8px; letter-spacing: 1px; }
 
-    .countdown-box {
-        padding: 32px 15px;
-    }
-
-    .countdown {
-        gap: 7px;
-    }
-
-    .time-card {
-        padding: 19px 5px;
-    }
-
-    .time-label {
-        font-size: 8px;
-        letter-spacing: 1px;
-    }
-
-    .section {
-        padding: 80px 6%;
-    }
+    .section { padding: 80px 6%; }
 
     .about-layout,
     .experience-layout {
@@ -1285,46 +913,17 @@ footer {
     }
 
     .feature-panel,
-    .experience-card {
-        padding: 25px;
-    }
+    .experience-card { padding: 25px; }
 
-    .learning-grid {
-        grid-template-columns: 1fr;
-    }
+    .learning-grid { grid-template-columns: 1fr; }
+    .learning-card { min-height: auto; }
 
-    .learning-card {
-        min-height: auto;
-    }
-
-    .community-section {
-        padding: 0 6% 80px;
-    }
-
-    .community-box {
-        padding: 55px 22px;
-    }
+    .community-section { padding: 0 6% 80px; }
+    .community-box { padding: 55px 22px; }
 
     .footer-inner {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .chat-launcher {
-        width: 56px;
-        height: 56px;
-        right: 16px;
-        bottom: 16px;
-    }
-
-    .chat-label {
-        right: 82px;
-        bottom: 33px;
-    }
-
-    .chat-panel {
-        right: 15px;
-        bottom: 83px;
     }
 }
 
@@ -1332,10 +931,10 @@ footer {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
     }
 }
 </style>
@@ -1343,109 +942,67 @@ footer {
 
 <body>
 
-<!-- =========================
-     FIRST: LOADING SCREEN
-========================= -->
-
+<!-- LOADING SCREEN -->
 <div class="loader-screen" id="loaderScreen">
-
     <div class="loader-content">
-
         <div class="loader-emblem">LD</div>
-
         <div class="loader-title">
             LIQUIDITY DISPLACEMENT<br>
             <span>UNIVERSITY™</span>
         </div>
-
-        <div class="loader-subtitle">
-            A New Standard In Trading Education
-        </div>
-
+        <div class="loader-subtitle">A New Standard In Trading Education</div>
         <div class="loader-track">
             <div class="loader-progress"></div>
         </div>
-
-        <div class="loader-status" id="loaderStatus">
-            Preparing Your Experience
-        </div>
-
+        <div class="loader-status" id="loaderStatus">Preparing Your Experience</div>
     </div>
-
 </div>
-
-
-<!-- =========================
-     UNIVERSITY HOMEPAGE
-========================= -->
 
 <div id="universityPage">
 
+    <!-- ANNOUNCEMENT BAR -->
     <div class="announcement">
         <div class="announcement-track">
-
             <span>✦ LIQUIDITY DISPLACEMENT UNIVERSITY™ — COMING SOON</span>
             <span>✦ THE NEXT CHAPTER IN STRUCTURED TRADING EDUCATION</span>
             <span>✦ POWERED BY FOREX WEALTH EMPIRE</span>
-
             <span>✦ LIQUIDITY DISPLACEMENT UNIVERSITY™ — COMING SOON</span>
             <span>✦ THE NEXT CHAPTER IN STRUCTURED TRADING EDUCATION</span>
             <span>✦ POWERED BY FOREX WEALTH EMPIRE</span>
-
         </div>
     </div>
 
-
     <!-- NAVIGATION -->
-
     <nav class="navbar">
-
         <a href="#home" class="brand">
-
             <div class="brand-icon">LD</div>
-
             <div class="brand-name">
                 LIQUIDITY DISPLACEMENT
                 <span>UNIVERSITY™</span>
                 <small>POWERED BY FWE</small>
             </div>
-
         </a>
 
-        <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation"
-                aria-expanded="false">
-            ☰
-        </button>
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation" aria-expanded="false">☰</button>
 
         <div class="nav-links" id="navLinks">
-
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#learning">Learning</a>
             <a href="#experience">Our Approach</a>
             <a href="#community">Community</a>
-
-            <a href="#countdown" class="nav-cta">
-                Launch Countdown
-            </a>
-
+            <a href="#countdown" class="nav-cta">Launch Countdown</a>
         </div>
-
     </nav>
 
-
-    <!-- HERO SECTION -->
-
+    <!-- HERO -->
     <section class="hero" id="home">
-
         <div class="hero-grid"></div>
         <div class="glow glow-red"></div>
         <div class="glow glow-gold"></div>
 
         <div class="hero-content reveal">
-
             <div class="eyebrow">
                 <span class="status-dot"></span>
                 THE UNIVERSITY IS IN DEVELOPMENT
@@ -1460,99 +1017,59 @@ footer {
             <p class="hero-description">
                 Welcome to <strong>Liquidity Displacement University™</strong>,
                 an upcoming educational platform by Forex Wealth Empire.
-                A dedicated destination for traders seeking a more structured
+                A dedicated destination for traders seeking a structured
                 approach to market education, professional development
                 and disciplined decision-making.
             </p>
 
             <div class="hero-buttons">
-
-                <a href="#countdown" class="btn btn-primary">
-                    Discover The Launch ↓
-                </a>
-
-                <a href="#about" class="btn btn-secondary">
-                    Explore The University
-                </a>
-
+                <a href="#countdown" class="btn btn-primary">Discover The Launch ↓</a>
+                <a href="#about" class="btn btn-secondary">Explore The University</a>
             </div>
 
-            <div class="hero-note">
-                BUILT FOR EDUCATION. DESIGNED FOR DISCIPLINE.
-            </div>
-
+            <div class="hero-note">BUILT FOR EDUCATION. DESIGNED FOR DISCIPLINE.</div>
         </div>
-
     </section>
 
-
     <!-- COUNTDOWN -->
-
     <section class="countdown-section" id="countdown">
-
         <div class="countdown-box reveal">
-
-            <div class="section-kicker">
-                The Countdown Has Begun
-            </div>
-
+            <div class="section-kicker">The Countdown Has Begun</div>
             <h2>YOUR NEXT CHAPTER STARTS HERE.</h2>
-
             <p>
-                We are preparing something special.
-                The University will introduce a dedicated environment
+                We are preparing something special: a dedicated environment
                 for structured trading education and trader development.
             </p>
 
             <div class="countdown" aria-label="Time until launch">
-
                 <div class="time-card">
                     <span class="time-number" id="days">000</span>
                     <span class="time-label">Days</span>
                 </div>
-
                 <div class="time-card">
                     <span class="time-number" id="hours">00</span>
                     <span class="time-label">Hours</span>
                 </div>
-
                 <div class="time-card">
                     <span class="time-number" id="minutes">00</span>
                     <span class="time-label">Minutes</span>
                 </div>
-
                 <div class="time-card">
                     <span class="time-number" id="seconds">00</span>
                     <span class="time-label">Seconds</span>
                 </div>
-
             </div>
 
-            <div class="launch-status" id="launchStatus">
-                PREPARING FOR LAUNCH
-            </div>
-
+            <div class="launch-status" id="launchStatus">PREPARING FOR LAUNCH</div>
         </div>
-
     </section>
 
-
     <!-- ABOUT -->
-
     <section class="section" id="about">
-
         <div class="about-layout">
-
             <div class="about-copy reveal">
-
-                <span class="section-kicker">
-                    A New Educational Destination
-                </span>
-
-                <h2>
-                    WELCOME TO THE<br>
-                    <span>UNIVERSITY.</span>
-                </h2>
+                <span class="section-kicker">A New Educational Destination</span>
+                <h2>WELCOME TO THE<br><span>UNIVERSITY.</span></h2>
 
                 <p>
                     Liquidity Displacement University™ is an upcoming
@@ -1568,563 +1085,274 @@ footer {
                 </p>
 
                 <p>
-                    This is more than a website. It is the beginning
-                    of a dedicated learning destination designed to
-                    support traders as they continue developing their skills.
+                    This is the beginning of a dedicated learning destination
+                    designed to support traders as they continue developing
+                    their skills.
                 </p>
 
-                <a href="#learning" class="btn btn-secondary">
-                    Explore Learning Areas →
-                </a>
-
+                <a href="#learning" class="btn btn-secondary">Explore Learning Areas →</a>
             </div>
-
 
             <div class="feature-panel reveal">
-
-                <div class="feature-panel-label">
-                    THE UNIVERSITY VISION
-                </div>
+                <div class="feature-panel-label">THE UNIVERSITY VISION</div>
 
                 <div class="feature-row">
-
                     <div class="feature-icon">◈</div>
-
                     <div>
                         <h3>Structured Market Education</h3>
-                        <p>
-                            Educational resources designed to help
-                            traders develop a more organised approach
-                            to analysing financial markets.
-                        </p>
+                        <p>Resources designed to help traders develop an organised approach to market analysis.</p>
                     </div>
-
                 </div>
 
                 <div class="feature-row">
-
                     <div class="feature-icon">⌘</div>
-
                     <div>
                         <h3>Analytical Development</h3>
-                        <p>
-                            Build observation, preparation and
-                            decision-making skills through
-                            structured learning.
-                        </p>
+                        <p>Build observation, preparation and decision-making skills through structured learning.</p>
                     </div>
-
                 </div>
 
                 <div class="feature-row">
-
                     <div class="feature-icon">◇</div>
-
                     <div>
                         <h3>Trading Discipline</h3>
-                        <p>
-                            Understand the importance of patience,
-                            consistency, risk awareness and
-                            responsible trading behaviour.
-                        </p>
+                        <p>Understand patience, consistency, risk awareness and responsible trading behaviour.</p>
                     </div>
-
                 </div>
 
                 <div class="feature-row">
-
                     <div class="feature-icon">✦</div>
-
                     <div>
                         <h3>Community & Development</h3>
-                        <p>
-                            Connect with a community interested in
-                            financial markets, trading education
-                            and continuous improvement.
-                        </p>
+                        <p>Connect with people interested in financial markets and continuous improvement.</p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- LEARNING AREAS -->
-
     <section class="section learning-section" id="learning">
-
         <div class="section-heading reveal">
-
-            <div class="section-kicker">
-                What We're Building
-            </div>
-
-            <h2>
-                A NEW ENVIRONMENT<br>
-                FOR <span>GROWTH.</span>
-            </h2>
-
+            <div class="section-kicker">What We're Building</div>
+            <h2>A NEW ENVIRONMENT<br>FOR <span class="gold">GROWTH.</span></h2>
             <p>
-                The University is being developed around key areas
-                of trading education. Explore the learning categories
-                planned for the platform.
+                Explore the learning categories planned for the University.
+                More details will be announced as development progresses.
             </p>
-
         </div>
-
 
         <div class="learning-grid">
-
             <article class="learning-card reveal">
-
                 <div class="card-number">01 / MARKET EDUCATION</div>
-
                 <div class="card-line"></div>
-
                 <h3>Market Structure & Analysis</h3>
-
-                <p>
-                    Develop a stronger foundation in understanding
-                    price behaviour, market structure and the
-                    process of analysing financial instruments.
-                </p>
-
+                <p>Build a foundation in price behaviour, market structure and financial market analysis.</p>
                 <span class="card-coming">Coming Soon</span>
-
             </article>
 
-
             <article class="learning-card reveal">
-
                 <div class="card-number">02 / TECHNICAL DEVELOPMENT</div>
-
                 <div class="card-line"></div>
-
                 <h3>Advanced Trading Education</h3>
-
-                <p>
-                    A future learning environment for traders
-                    looking to improve their analytical skills
-                    and build a more structured trading process.
-                </p>
-
+                <p>Develop analytical skills and a more structured trading process.</p>
                 <span class="card-coming">Coming Soon</span>
-
             </article>
 
-
             <article class="learning-card reveal">
-
                 <div class="card-number">03 / RISK AWARENESS</div>
-
                 <div class="card-line"></div>
-
                 <h3>Risk Management</h3>
-
-                <p>
-                    Learn about risk exposure, capital preservation,
-                    trade planning and the importance of responsible
-                    financial decision-making.
-                </p>
-
+                <p>Explore risk exposure, capital preservation, trade planning and responsible decisions.</p>
                 <span class="card-coming">Coming Soon</span>
-
             </article>
 
-
             <article class="learning-card reveal">
-
                 <div class="card-number">04 / TRADER DEVELOPMENT</div>
-
                 <div class="card-line"></div>
-
                 <h3>Discipline & Psychology</h3>
-
-                <p>
-                    Explore the role of patience, emotional control,
-                    preparation and consistency in the development
-                    of a disciplined trading routine.
-                </p>
-
+                <p>Learn about patience, emotional control, preparation and consistency.</p>
                 <span class="card-coming">Coming Soon</span>
-
             </article>
 
-
             <article class="learning-card reveal">
-
                 <div class="card-number">05 / PRACTICAL LEARNING</div>
-
                 <div class="card-line"></div>
-
                 <h3>Market Case Studies</h3>
-
-                <p>
-                    Future educational material may include
-                    market examples, analytical observations
-                    and practical learning exercises.
-                </p>
-
+                <p>Future resources may include market examples, observations and learning exercises.</p>
                 <span class="card-coming">Coming Soon</span>
-
             </article>
-
 
             <article class="learning-card reveal">
-
                 <div class="card-number">06 / COMMUNITY</div>
-
                 <div class="card-line"></div>
-
                 <h3>Trader Community</h3>
-
-                <p>
-                    Join a wider trading community to engage
-                    with educational discussions, market topics
-                    and opportunities for learning.
-                </p>
-
+                <p>Engage with educational discussions, market topics and opportunities for learning.</p>
                 <span class="card-coming">Coming Soon</span>
-
             </article>
-
         </div>
-
     </section>
 
-
     <!-- OUR APPROACH -->
-
     <section class="section" id="experience">
-
         <div class="section-heading reveal">
-
-            <div class="section-kicker">
-                Our Philosophy
-            </div>
-
-            <h2>
-                EDUCATION BEFORE<br>
-                <span>EXPECTATION.</span>
-            </h2>
-
+            <div class="section-kicker">Our Philosophy</div>
+            <h2>EDUCATION BEFORE<br><span class="gold">EXPECTATION.</span></h2>
             <p>
-                Our vision is centred on developing knowledge,
-                improving preparation and encouraging responsible
-                engagement with financial markets.
+                Our vision is centred on developing knowledge, improving
+                preparation and encouraging responsible engagement with markets.
             </p>
-
         </div>
 
-
         <div class="experience-layout">
-
             <div class="experience-card reveal">
-
-                <div class="section-kicker">
-                    The Mission
-                </div>
-
-                <h3>
-                    HELP TRADERS DEVELOP
-                    A MORE STRUCTURED MINDSET.
-                </h3>
-
+                <div class="section-kicker">The Mission</div>
+                <h3>HELP TRADERS DEVELOP A MORE STRUCTURED MINDSET.</h3>
                 <p>
                     Trading education should encourage understanding,
-                    critical thinking and responsible decision-making.
-                    Our goal is to create educational resources that
-                    help learners improve their process rather than
-                    depend on unrealistic promises.
+                    critical thinking and responsible decisions. Our goal
+                    is to support learning rather than make unrealistic promises.
                 </p>
-
                 <ul class="experience-list">
-
                     <li>Structured educational material</li>
                     <li>Analytical thinking and preparation</li>
                     <li>Risk awareness and discipline</li>
                     <li>Continuous learning and development</li>
-
                 </ul>
-
             </div>
 
-
             <div class="experience-card reveal">
-
-                <div class="section-kicker">
-                    The Standard
-                </div>
-
-                <h3>
-                    BUILT AROUND
-                    KNOWLEDGE. GUIDED BY DISCIPLINE.
-                </h3>
-
+                <div class="section-kicker">The Standard</div>
+                <h3>BUILT AROUND KNOWLEDGE. GUIDED BY DISCIPLINE.</h3>
                 <p>
-                    Liquidity Displacement University™ will be
-                    developed as a dedicated educational platform
-                    under Forex Wealth Empire. Further details
-                    regarding its courses, resources and learning
-                    experience will be announced as development
-                    progresses.
+                    Liquidity Displacement University™ is being developed
+                    as a dedicated educational platform under Forex Wealth
+                    Empire. Details about courses and resources will follow.
                 </p>
-
                 <ul class="experience-list">
-
                     <li>Premium, focused learning environment</li>
                     <li>Education with clear learning objectives</li>
                     <li>Respect for proprietary intellectual property</li>
                     <li>A long-term vision for trader development</li>
-
                 </ul>
-
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- DISCORD COMMUNITY -->
-
+    <!-- COMMUNITY -->
     <section class="community-section" id="community">
-
         <div class="community-box reveal">
-
-            <div class="section-kicker">
-                Connect With The Community
-            </div>
-
-            <h2>
-                THE JOURNEY STARTS<br>
-                <span>BEFORE THE LAUNCH.</span>
-            </h2>
-
+            <div class="section-kicker">Connect With The Community</div>
+            <h2>THE JOURNEY STARTS<br><span>BEFORE THE LAUNCH.</span></h2>
             <p>
-                While the University is in development, connect
-                with the Forex Wealth Empire community to stay
-                engaged with trading discussions, educational
-                content and future announcements.
+                While the University is in development, connect with
+                the Forex Wealth Empire community for trading discussions,
+                educational content and future announcements.
             </p>
 
             <div class="hero-buttons">
-
-                <!-- REPLACE THIS WITH YOUR REAL DISCORD INVITE -->
-
-                <a
-                    href="https://discord.gg/YOUR-INVITE-CODE"
-                    class="btn btn-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    id="discordButton"
-                >
+                <a href="https://discord.gg/cYzeXPTPj"
+                   class="btn btn-primary"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     Join Our Discord ↗
                 </a>
 
-                <a
-                    href="mailto:Naswealthempire@gmail.com"
-                    class="btn btn-secondary"
-                >
+                <a href="mailto:Naswealthempire@gmail.com"
+                   class="btn btn-secondary">
                     Contact The Team
                 </a>
-
             </div>
 
             <div class="hero-note">
                 FOREX WEALTH EMPIRE · LIQUIDITY DISPLACEMENT UNIVERSITY™
             </div>
-
         </div>
-
     </section>
 
-
     <!-- FOOTER -->
-
     <footer>
-
         <div class="footer-inner">
-
             <a href="#home" class="brand">
-
                 <div class="brand-icon">LD</div>
-
                 <div class="brand-name">
                     LIQUIDITY DISPLACEMENT
                     <span>UNIVERSITY™</span>
                     <small>POWERED BY FWE</small>
                 </div>
-
             </a>
 
             <div class="footer-copy">
-
                 <strong>Liquidity Displacement University™</strong><br>
-
-                © <span id="currentYear"></span>
-                Forex Wealth Empire. All rights reserved.
-
+                © <span id="currentYear"></span> Forex Wealth Empire. All rights reserved.
             </div>
 
             <div class="footer-links">
-
                 <a href="#about">About</a>
                 <a href="#learning">Learning</a>
                 <a href="#community">Community</a>
-
-                <a href="mailto:Naswealthempire@gmail.com">
-                    Email Us
-                </a>
-
+                <a href="mailto:Naswealthempire@gmail.com">Email Us</a>
             </div>
-
         </div>
-
 
         <div class="risk-notice">
-
             <strong>EDUCATIONAL DISCLAIMER:</strong>
-            The information presented on this website is intended
-            for general educational and informational purposes.
-            Nothing on this website constitutes financial,
-            investment or trading advice, or a recommendation
-            to buy or sell any financial instrument.
-
-            Trading forex, CFDs, cryptocurrencies and other
-            leveraged financial instruments involves significant
-            risk and may result in the loss of capital.
-            Past performance does not guarantee future results.
-            No profits or trading outcomes are guaranteed.
-
-            Course availability, platform features and launch
-            dates may change as development progresses.
-
+            The information presented on this website is for general
+            educational and informational purposes. Nothing on this website
+            constitutes financial, investment or trading advice, or a
+            recommendation to buy or sell any financial instrument.
+            Trading forex, CFDs, cryptocurrencies and other leveraged
+            financial instruments involves significant risk and may result
+            in the loss of capital. Past performance does not guarantee
+            future results. No profits or trading outcomes are guaranteed.
+            Course availability, platform features and launch dates may change.
         </div>
-
     </footer>
 
 </div>
 
+<!-- LIVECHAT: LICENSE 19960069 -->
+<script>
+window.__lc = window.__lc || {};
+window.__lc.license = 19960069;
+window.__lc.integration_name = "manual_onboarding";
+window.__lc.product_name = "livechat";
 
-<!-- =========================
-     FLOATING LIVE CHAT
-========================= -->
+(function (n, t, c) {
+    function i(n) {
+        return e._h ? e._h.apply(null, n) : e._q.push(n);
+    }
 
-<button
-    class="chat-launcher"
-    id="chatLauncher"
-    aria-label="Open chat"
-    aria-expanded="false"
->
-    <span id="chatIcon">✉</span>
-</button>
+    var e = {
+        _q: [],
+        _h: null,
+        _v: "2.0",
+        on: function () { i(["on", c.call(arguments)]); },
+        once: function () { i(["once", c.call(arguments)]); },
+        off: function () { i(["off", c.call(arguments)]); },
+        get: function () {
+            if (!e._h) throw new Error("[LiveChat] Not ready");
+            return i(["get", c.call(arguments)]);
+        },
+        call: function () { i(["call", c.call(arguments)]); }
+    };
 
-<div class="chat-label" id="chatLabel">
-    Questions? Contact us
-</div>
+    n.LiveChatWidget = n.LiveChatWidget || e;
+    n.LiveChatWidget._q = n.LiveChatWidget._q || [];
 
+    var s = t.createElement("script");
+    s.async = true;
+    s.src = "https://cdn.livechatinc.com/tracking.js";
+    s.charset = "UTF-8";
+    s.crossOrigin = "anonymous";
 
-<div
-    class="chat-panel"
-    id="chatPanel"
-    role="dialog"
-    aria-label="Contact Forex Wealth Empire"
-    aria-hidden="true"
->
-
-    <div class="chat-header">
-
-        <div>
-
-            <h3>UNIVERSITY SUPPORT</h3>
-
-            <p>
-                <span class="online">●</span>
-                Leave us a message
-            </p>
-
-        </div>
-
-        <button
-            class="chat-close"
-            id="chatClose"
-            aria-label="Close chat"
-        >
-            ×
-        </button>
-
-    </div>
-
-
-    <div class="chat-messages" id="chatMessages">
-
-        <div class="chat-message">
-
-            <small>LIQUIDITY DISPLACEMENT UNIVERSITY™</small>
-
-            Welcome! 👋
-
-            Thank you for your interest in the University.
-
-            Have a question about the upcoming launch?
-            Send us a message below and continue by email.
-
-        </div>
-
-    </div>
-
-
-    <form class="chat-form" id="chatForm">
-
-        <input
-            type="text"
-            id="chatName"
-            placeholder="Your name"
-            maxlength="100"
-            required
-        >
-
-        <input
-            type="email"
-            id="chatEmail"
-            placeholder="Your email address"
-            maxlength="254"
-            required
-        >
-
-        <textarea
-            id="chatInput"
-            placeholder="How can we help you?"
-            maxlength="3000"
-            required
-        ></textarea>
-
-        <button type="submit">
-            Send Message →
-        </button>
-
-        <p class="chat-disclaimer">
-            This contact widget opens your email application
-            to send your message. It is not a real-time
-            staffed chat service.
-        </p>
-
-    </form>
-
-</div>
-
+    var firstScript = t.getElementsByTagName("script")[0];
+    t.getElementsByTagName("script")[0].parentNode.insertBefore(s, t.getElementsByTagName("script")[0]);
+})(window, document, [].slice);
+</script>
 
 <script>
-
-/* =========================
-   LOADING SCREEN
-========================= */
-
+/* LOADING SCREEN */
 const loaderScreen = document.getElementById("loaderScreen");
 const loaderStatus = document.getElementById("loaderStatus");
 
@@ -2137,60 +1365,38 @@ const loadingMessages = [
 let loadingIndex = 0;
 
 const loadingTextInterval = setInterval(() => {
-
     loadingIndex++;
-
     if (loadingIndex < loadingMessages.length) {
         loaderStatus.textContent = loadingMessages[loadingIndex];
     }
-
 }, 750);
 
+/* SCROLL REVEALS */
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
 
-/*
-   The intro screen appears first.
-   The homepage is revealed automatically.
-*/
-
-window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-        clearInterval(loadingTextInterval);
-
-        loaderScreen.classList.add("hidden");
-
-        document.body.style.overflowX = "hidden";
-
-        document.getElementById("universityPage")
-            .classList.add("page-loaded");
-
-        revealObserver.observe(
-            document.querySelector(".hero-content")
-        );
-
-    }, 2500);
-
+document.querySelectorAll(".reveal").forEach(element => {
+    revealObserver.observe(element);
 });
 
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        clearInterval(loadingTextInterval);
+        loaderScreen.classList.add("hidden");
+    }, 2500);
+});
 
-/* =========================
-   COUNTDOWN TIMER
-========================= */
-
-/*
-   IMPORTANT:
-   Change this date to your confirmed launch date.
-
-   Example:
-   "2026-12-31T18:00:00+02:00"
-
-   This example date is a placeholder, NOT a confirmed
-   University launch date.
+/* COUNTDOWN
+   Replace this placeholder with your confirmed launch date.
+   Example: 2026-12-31T18:00:00+02:00
 */
-
 const LAUNCH_DATE = "2026-12-31T18:00:00+02:00";
-
 const launchTime = new Date(LAUNCH_DATE).getTime();
 
 const daysElement = document.getElementById("days");
@@ -2199,286 +1405,76 @@ const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
 const launchStatus = document.getElementById("launchStatus");
 
-
 function updateCountdown() {
-
-    const now = Date.now();
-    const difference = launchTime - now;
+    const difference = launchTime - Date.now();
 
     if (Number.isNaN(launchTime)) {
-
         daysElement.textContent = "--";
         hoursElement.textContent = "--";
         minutesElement.textContent = "--";
         secondsElement.textContent = "--";
-
         launchStatus.textContent = "LAUNCH DATE TO BE ANNOUNCED";
-
         return;
     }
 
     if (difference <= 0) {
-
         daysElement.textContent = "000";
         hoursElement.textContent = "00";
         minutesElement.textContent = "00";
         secondsElement.textContent = "00";
-
-        launchStatus.textContent =
-            "THE PLANNED COUNTDOWN HAS ENDED";
-
+        launchStatus.textContent = "THE PLANNED COUNTDOWN HAS ENDED";
         return;
     }
 
-    const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-    );
+    daysElement.textContent = String(
+        Math.floor(difference / 86400000)
+    ).padStart(3, "0");
 
-    const hours = Math.floor(
-        (difference / (1000 * 60 * 60)) % 24
-    );
+    hoursElement.textContent = String(
+        Math.floor((difference / 3600000) % 24)
+    ).padStart(2, "0");
 
-    const minutes = Math.floor(
-        (difference / (1000 * 60)) % 60
-    );
+    minutesElement.textContent = String(
+        Math.floor((difference / 60000) % 60)
+    ).padStart(2, "0");
 
-    const seconds = Math.floor(
-        (difference / 1000) % 60
-    );
-
-    daysElement.textContent = String(days).padStart(3, "0");
-    hoursElement.textContent = String(hours).padStart(2, "0");
-    minutesElement.textContent = String(minutes).padStart(2, "0");
-    secondsElement.textContent = String(seconds).padStart(2, "0");
+    secondsElement.textContent = String(
+        Math.floor((difference / 1000) % 60)
+    ).padStart(2, "0");
 
     launchStatus.textContent = "COUNTING DOWN TO OUR PLANNED LAUNCH";
 }
 
-
 updateCountdown();
-
 setInterval(updateCountdown, 1000);
 
-
-/* =========================
-   MOBILE NAVIGATION
-========================= */
-
+/* MOBILE NAVIGATION */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
-
     const isOpen = navLinks.classList.toggle("open");
-
     menuToggle.textContent = isOpen ? "×" : "☰";
-
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+    );
 });
-
 
 document.querySelectorAll(".nav-links a").forEach(link => {
-
     link.addEventListener("click", () => {
-
         navLinks.classList.remove("open");
-
         menuToggle.textContent = "☰";
-
         menuToggle.setAttribute("aria-expanded", "false");
-
+        menuToggle.setAttribute("aria-label", "Open navigation");
     });
-
 });
 
-
-/* =========================
-   SCROLL REVEAL ANIMATIONS
-========================= */
-
-const revealObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            revealObserver.unobserve(entry.target);
-
-        }
-
-    });
-
-}, {
-    threshold: 0.12
-});
-
-
-document.querySelectorAll(".reveal").forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================
-   LIVE CHAT INTERFACE
-========================= */
-
-const chatLauncher = document.getElementById("chatLauncher");
-const chatPanel = document.getElementById("chatPanel");
-const chatClose = document.getElementById("chatClose");
-const chatLabel = document.getElementById("chatLabel");
-const chatIcon = document.getElementById("chatIcon");
-const chatMessages = document.getElementById("chatMessages");
-const chatForm = document.getElementById("chatForm");
-
-
-function toggleChat(forceState) {
-
-    const shouldOpen = typeof forceState === "boolean"
-        ? forceState
-        : !chatPanel.classList.contains("open");
-
-    chatPanel.classList.toggle("open", shouldOpen);
-
-    chatPanel.setAttribute(
-        "aria-hidden",
-        String(!shouldOpen)
-    );
-
-    chatLauncher.setAttribute(
-        "aria-expanded",
-        String(shouldOpen)
-    );
-
-    chatIcon.textContent = shouldOpen ? "×" : "✉";
-
-    chatLabel.style.display = shouldOpen ? "none" : "block";
-
-}
-
-
-chatLauncher.addEventListener("click", () => {
-    toggleChat();
-});
-
-chatClose.addEventListener("click", () => {
-    toggleChat(false);
-});
-
-
-/*
-   This form creates an email draft addressed to the
-   University contact email.
-
-   For genuine real-time messaging, connect a chat
-   provider or a custom server-side messaging system.
-*/
-
-chatForm.addEventListener("submit", (event) => {
-
-    event.preventDefault();
-
-    const name = document.getElementById("chatName").value.trim();
-
-    const email = document.getElementById("chatEmail").value.trim();
-
-    const message = document.getElementById("chatInput").value.trim();
-
-    if (!name || !email || !message) {
-        return;
-    }
-
-    const subject = encodeURIComponent(
-        "University Website Enquiry"
-    );
-
-    const body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n\n" +
-        "Message:\n" + message
-    );
-
-    const recipient = "Naswealthempire@gmail.com";
-
-    const mailto =
-        "mailto:" + recipient +
-        "?subject=" + subject +
-        "&body=" + body;
-
-    const userMessage = document.createElement("div");
-
-    userMessage.className = "chat-message user";
-
-    const label = document.createElement("small");
-
-    label.textContent = "YOUR MESSAGE";
-
-    const text = document.createElement("div");
-
-    text.textContent = message;
-
-    userMessage.appendChild(label);
-
-    userMessage.appendChild(text);
-
-    chatMessages.appendChild(userMessage);
-
-    const confirmation = document.createElement("div");
-
-    confirmation.className = "chat-message";
-
-    confirmation.textContent =
-        "Your email application will open with your message prepared. Please send the email to complete your enquiry.";
-
-    chatMessages.appendChild(confirmation);
-
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-
-    window.location.href = mailto;
-
-});
-
-
-/* =========================
-   FOOTER YEAR
-========================= */
-
+/* FOOTER YEAR */
 document.getElementById("currentYear").textContent =
     new Date().getFullYear();
-
-
-/* =========================
-   DISCORD LINK SAFETY CHECK
-========================= */
-
-/*
-   Replace YOUR-INVITE-CODE in the Discord URL above
-   with your actual Discord invitation before publishing.
-*/
-
-const discordButton = document.getElementById("discordButton");
-
-discordButton.addEventListener("click", (event) => {
-
-    if (
-        discordButton.href.includes("YOUR-INVITE-CODE")
-    ) {
-
-        event.preventDefault();
-
-        alert(
-            "Please add your real Discord invitation link before publishing the website."
-        );
-
-    }
-
-});
-
 </script>
 
 </body>
-  </html>
+</html>
