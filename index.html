@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="orange">
+<html lang="en" data-theme="gold">
 
 <head>
 <meta charset="UTF-8">
@@ -7,52 +7,41 @@
 
 <title>Liquidity Displacement University™ | Forex Wealth Empire</title>
 
-<meta name="description" content="Liquidity Displacement University™ by Forex Wealth Empire. Explore structured trading education, market analysis, discipline and professional development.">
-
-<meta name="theme-color" content="#080808">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Liquidity Displacement University™ — trading education focused on market structure, analysis, risk management and disciplined learning.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #080808;
-  --surface: #101010;
-  --surface-2: #151515;
-  --text: #f7f7f7;
-  --muted: #a4a4a4;
+  --bg: #090909;
+  --panel: #111111;
+  --text: #f5f5f5;
+  --muted: #999999;
   --border: rgba(255,255,255,.10);
-  --accent: #ff8a00;
-  --accent-dark: #c65b00;
-  --accent-rgb: 255,138,0;
-  --radius: 24px;
+  --accent: #d8b46a;
+  --accent-rgb: 216,180,106;
 }
 
-html[data-theme="orange"] {
-  --accent: #ff8a00;
-  --accent-dark: #c65b00;
-  --accent-rgb: 255,138,0;
-}
-
-html[data-theme="pink"] {
-  --accent: #ff4fa3;
-  --accent-dark: #c51d70;
-  --accent-rgb: 255,79,163;
+html[data-theme="gold"] {
+  --accent: #d8b46a;
+  --accent-rgb: 216,180,106;
 }
 
 html[data-theme="red"] {
-  --accent: #ff3333;
-  --accent-dark: #b80000;
-  --accent-rgb: 255,51,51;
+  --accent: #ff4040;
+  --accent-rgb: 255,64,64;
 }
 
 html[data-theme="purple"] {
-  --accent: #a56bff;
-  --accent-dark: #6930c3;
-  --accent-rgb: 165,107,255;
+  --accent: #a477ff;
+  --accent-rgb: 164,119,255;
+}
+
+html[data-theme="pink"] {
+  --accent: #ff69b4;
+  --accent-rgb: 255,105,180;
 }
 
 * {
@@ -67,31 +56,11 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
+  font-family: Inter, sans-serif;
+  line-height: 1.7;
   overflow-x: hidden;
-  line-height: 1.6;
-  transition: background .35s ease;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  background:
-    radial-gradient(
-      circle at 80% 10%,
-      rgba(var(--accent-rgb),.10),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 10% 60%,
-      rgba(var(--accent-rgb),.045),
-      transparent 32%
-    );
 }
 
 a {
@@ -99,18 +68,13 @@ a {
   text-decoration: none;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
 button {
   font: inherit;
 }
 
 .container {
-  width: min(1160px, calc(100% - 40px));
-  margin: 0 auto;
+  width: min(1100px, calc(100% - 40px));
+  margin: auto;
 }
 
 .accent {
@@ -121,233 +85,62 @@ button {
   color: var(--muted);
 }
 
-.section {
-  padding: 105px 0;
-}
-
-.section-heading {
-  max-width: 760px;
-  margin: 0 auto 48px;
-  text-align: center;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--accent);
-  font-size: .76rem;
-  letter-spacing: .19em;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.eyebrow::before {
-  content: "";
-  width: 22px;
-  height: 2px;
-  background: var(--accent);
-}
-
-h1, h2, h3 {
-  line-height: 1.1;
-  letter-spacing: -.045em;
-}
-
-h1 {
-  font-size: clamp(2.8rem, 7.5vw, 6.5rem);
-  font-weight: 900;
-}
-
-h2 {
-  font-size: clamp(2.1rem, 5vw, 4rem);
-  font-weight: 850;
-}
-
-h3 {
-  font-size: 1.35rem;
-  font-weight: 750;
-}
-
-.section-heading p {
-  max-width: 650px;
-  margin: 20px auto 0;
-  color: var(--muted);
-  line-height: 1.9;
-}
-
-.gradient-text {
-  color: var(--accent);
-  background: linear-gradient(
-    110deg,
-    var(--accent),
-    #ffffff 50%,
-    var(--accent)
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientFlow 6s linear infinite;
-}
-
-@keyframes gradientFlow {
-  to { background-position: 200% center; }
-}
-
-/* LOADING SCREEN */
-
-.loader {
-  position: fixed;
-  inset: 0;
-  z-index: 100000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 22px;
-  background: #080808;
-  transition: opacity .5s ease, visibility .5s ease;
-}
-
-.loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.loader-logo {
-  font-size: clamp(1.1rem, 4vw, 1.7rem);
-  font-weight: 900;
-  letter-spacing: .13em;
-  text-align: center;
-}
-
-.loader-logo span {
-  color: var(--accent);
-}
-
-.loader-line {
-  width: 180px;
-  height: 3px;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #252525;
-}
-
-.loader-line::after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 40%;
-  background: var(--accent);
-  animation: loading 1.2s ease-in-out infinite;
-}
-
-@keyframes loading {
-  from { transform: translateX(-110%); }
-  to { transform: translateX(360%); }
-}
-
-/* ANNOUNCEMENT BAR */
-
-.announcement {
-  overflow: hidden;
-  white-space: nowrap;
-  background: var(--accent);
-  color: #090909;
-  font-size: .73rem;
-  font-weight: 900;
-  letter-spacing: .13em;
-  padding: 10px 0;
-}
-
-.announcement-track {
-  display: inline-flex;
-  gap: 55px;
-  min-width: max-content;
-  animation: marquee 35s linear infinite;
-}
-
-.announcement-track span {
-  padding-left: 25px;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 /* NAVIGATION */
 
-.navbar {
+header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: rgba(9,9,9,.88);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
-  background: rgba(8,8,8,.84);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
 }
 
-.nav-inner {
-  min-height: 78px;
+.navbar {
+  min-height: 76px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  align-items: center;
+  gap: 20px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 0;
+  font-size: .85rem;
+  font-weight: 800;
+  letter-spacing: .04em;
 }
 
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  flex-shrink: 0;
+.brand-icon {
+  width: 39px;
+  height: 39px;
   display: grid;
   place-items: center;
-  color: #080808;
+  border-radius: 12px;
   background: var(--accent);
-  font-weight: 1000;
-  font-size: 1.15rem;
-  border-radius: 13px;
-  box-shadow: 0 0 28px rgba(var(--accent-rgb),.2);
+  color: #080808;
+  font-weight: 900;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.brand-text strong {
-  font-size: .82rem;
-  letter-spacing: .055em;
-}
-
-.brand-text small {
+.brand small {
+  display: block;
+  font-size: .63rem;
   color: var(--muted);
-  font-size: .64rem;
-  letter-spacing: .08em;
-  margin-top: 4px;
+  letter-spacing: .12em;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 27px;
 }
 
 .nav-links a {
-  color: #d4d4d4;
+  color: #c7c7c7;
   font-size: .8rem;
-  font-weight: 600;
-  transition: color .2s ease;
+  transition: color .2s;
 }
 
 .nav-links a:hover {
@@ -355,679 +148,413 @@ h3 {
 }
 
 .nav-cta {
-  padding: 12px 17px;
-  border-radius: 100px;
-  color: #080808 !important;
   background: var(--accent);
-  font-weight: 850 !important;
+  color: #090909 !important;
+  padding: 10px 17px;
+  border-radius: 30px;
+  font-weight: 800;
 }
 
-.menu-toggle {
+.menu-button {
   display: none;
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--panel);
   color: white;
-  border-radius: 12px;
-  width: 44px;
-  height: 44px;
+  padding: 9px 13px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 1.2rem;
 }
 
 /* HERO */
 
 .hero {
-  min-height: 730px;
-  padding: 105px 0 90px;
-  position: relative;
+  min-height: 650px;
   display: flex;
   align-items: center;
+  position: relative;
   overflow: hidden;
+  padding: 90px 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  right: -150px;
+  top: 30px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--accent-rgb),.12),
+    transparent 68%
+  );
+  pointer-events: none;
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.12fr .88fr;
-  align-items: center;
-  gap: 65px;
-}
-
-.hero-copy {
   position: relative;
-  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 60px;
 }
 
-.hero h1 {
-  max-width: 790px;
+.eyebrow {
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 5.7rem);
+  line-height: 1.04;
+  letter-spacing: -.065em;
+  font-weight: 900;
+}
+
+.gradient {
+  color: var(--accent);
 }
 
 .hero-description {
-  max-width: 600px;
-  margin-top: 27px;
-  color: #b0b0b0;
-  font-size: 1.02rem;
-  line-height: 1.9;
+  max-width: 520px;
+  color: var(--muted);
+  margin-top: 25px;
+  font-size: .96rem;
+  line-height: 1.95;
 }
 
-.hero-actions {
+.actions {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 35px;
+  gap: 13px;
+  margin-top: 30px;
 }
 
-.btn {
+.button {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 51px;
-  padding: 14px 22px;
-  border-radius: 100px;
+  align-items: center;
+  padding: 13px 21px;
+  min-height: 48px;
+  border-radius: 30px;
+  font-size: .82rem;
   font-weight: 800;
-  font-size: .86rem;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  transition: transform .2s, opacity .2s;
 }
 
-.btn:hover {
+.button:hover {
   transform: translateY(-3px);
 }
 
-.btn-primary {
+.button-primary {
   background: var(--accent);
   color: #090909;
-  box-shadow: 0 8px 35px rgba(var(--accent-rgb),.17);
 }
 
-.btn-primary:hover {
-  box-shadow: 0 12px 40px rgba(var(--accent-rgb),.3);
-}
-
-.btn-secondary {
-  border-color: var(--border);
-  color: #f7f7f7;
+.button-secondary {
+  border: 1px solid var(--border);
   background: rgba(255,255,255,.025);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-}
-
-.hero-note {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--muted);
-  font-size: .76rem;
-  margin-top: 27px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 15px var(--accent);
 }
 
 .hero-visual {
+  min-height: 370px;
   position: relative;
-  min-height: 430px;
   display: grid;
   place-items: center;
 }
 
-.visual-orbit {
+.orbit {
   position: absolute;
-  width: min(100%, 440px);
-  aspect-ratio: 1;
+  width: 330px;
+  height: 330px;
   border: 1px solid rgba(var(--accent-rgb),.23);
   border-radius: 50%;
-  animation: orbit 24s linear infinite;
 }
 
-.visual-orbit::before,
-.visual-orbit::after {
+.orbit::before,
+.orbit::after {
   content: "";
   position: absolute;
-  border: 1px solid rgba(var(--accent-rgb),.15);
+  border: 1px solid rgba(var(--accent-rgb),.16);
   border-radius: 50%;
 }
 
-.visual-orbit::before {
-  inset: 35px;
+.orbit::before {
+  inset: 30px;
 }
 
-.visual-orbit::after {
-  inset: 75px;
+.orbit::after {
+  inset: 65px;
 }
 
-@keyframes orbit {
-  to { transform: rotate(360deg); }
-}
-
-.hero-card {
+.education-card {
+  width: min(100%, 320px);
+  padding: 28px;
   position: relative;
-  z-index: 2;
-  width: min(100%, 350px);
-  padding: 30px;
-  border: 1px solid rgba(var(--accent-rgb),.28);
-  border-radius: 28px;
+  border: 1px solid rgba(var(--accent-rgb),.3);
+  border-radius: 22px;
   background: linear-gradient(145deg, #191919, #0c0c0c);
-  box-shadow: 0 35px 100px rgba(0,0,0,.55);
+  box-shadow: 0 30px 90px rgba(0,0,0,.45);
 }
 
-.hero-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 35px;
-}
-
-.live-label {
+.card-label {
+  color: var(--accent);
   font-size: .68rem;
-  color: var(--accent);
-  font-weight: 850;
-  letter-spacing: .12em;
+  font-weight: 800;
+  letter-spacing: .15em;
 }
 
-.card-symbol {
-  width: 40px;
-  height: 40px;
-  border-radius: 13px;
-  display: grid;
-  place-items: center;
-  background: rgba(var(--accent-rgb),.13);
-  color: var(--accent);
-  font-weight: 900;
+.education-card h3 {
+  font-size: 1.55rem;
+  line-height: 1.3;
+  margin: 15px 0;
 }
 
-.chart {
-  height: 130px;
+.education-card p {
+  font-size: .81rem;
+  color: var(--muted);
+}
+
+.chart-art {
+  height: 100px;
   display: flex;
   align-items: flex-end;
   gap: 8px;
-  padding-bottom: 10px;
   border-bottom: 1px solid var(--border);
-}
-
-.chart-bar {
-  flex: 1;
-  min-width: 0;
-  border-radius: 5px 5px 0 0;
-  background: linear-gradient(to top, var(--accent-dark), var(--accent));
-  opacity: .85;
-  animation: barPulse 3s ease-in-out infinite alternate;
-}
-
-.chart-bar:nth-child(1) { height: 24%; }
-.chart-bar:nth-child(2) { height: 42%; animation-delay: .2s; }
-.chart-bar:nth-child(3) { height: 35%; animation-delay: .4s; }
-.chart-bar:nth-child(4) { height: 62%; animation-delay: .6s; }
-.chart-bar:nth-child(5) { height: 49%; animation-delay: .8s; }
-.chart-bar:nth-child(6) { height: 78%; animation-delay: 1s; }
-.chart-bar:nth-child(7) { height: 66%; animation-delay: 1.2s; }
-.chart-bar:nth-child(8) { height: 95%; animation-delay: 1.4s; }
-
-@keyframes barPulse {
-  from { opacity: .55; }
-  to { opacity: 1; }
-}
-
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
   margin-top: 22px;
+  padding-bottom: 8px;
 }
 
-.card-bottom small {
-  display: block;
-  color: var(--muted);
-  font-size: .69rem;
-  margin-bottom: 6px;
+.candle {
+  flex: 1;
+  position: relative;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: .85;
 }
 
-.card-bottom strong {
-  font-size: .9rem;
+.candle::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 135%;
+  left: 50%;
+  top: -17%;
+  transform: translateX(-50%);
+  background: var(--accent);
 }
 
-.hero-card-caption {
-  margin-top: 24px;
-  padding-top: 18px;
+.c1 { height: 25%; }
+.c2 { height: 45%; }
+.c3 { height: 33%; }
+.c4 { height: 65%; }
+.c5 { height: 50%; }
+.c6 { height: 80%; }
+.c7 { height: 65%; }
+.c8 { height: 95%; }
+
+/* GENERAL SECTIONS */
+
+section.content-section {
+  padding: 95px 0;
   border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  max-width: 680px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -.05em;
+}
+
+.section-heading p {
   color: var(--muted);
-  font-size: .76rem;
-  line-height: 1.7;
+  margin-top: 17px;
+  font-size: .91rem;
 }
 
-/* TRUST STRIP */
+/* LEARNING AREAS */
 
-.trust-strip {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,.015);
-}
-
-.trust-grid {
+.learning-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
 }
 
-.trust-item {
-  padding: 28px 20px;
-  text-align: center;
-}
-
-.trust-item + .trust-item {
-  border-left: 1px solid var(--border);
-}
-
-.trust-item strong {
-  display: block;
-  font-size: .96rem;
-  margin-bottom: 7px;
-}
-
-.trust-item span {
-  color: var(--muted);
-  font-size: .75rem;
-}
-
-/* COUNTDOWN */
-
-.countdown-section {
-  padding: 100px 0;
-}
-
-.countdown-box {
-  position: relative;
-  overflow: hidden;
-  padding: 60px 35px;
-  border-radius: 32px;
-  border: 1px solid rgba(var(--accent-rgb),.24);
-  background:
-    radial-gradient(circle at 50% 0%, rgba(var(--accent-rgb),.12), transparent 55%),
-    linear-gradient(145deg, #151515, #0b0b0b);
-  text-align: center;
-}
-
-.countdown-box h2 {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.countdown-description {
-  max-width: 620px;
-  margin: 20px auto 35px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.countdown-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 125px));
-  justify-content: center;
-  gap: 14px;
-}
-
-.time-unit {
-  padding: 22px 10px;
+.learning-card {
+  padding: 28px;
+  background: var(--panel);
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.025);
   border-radius: 18px;
+  transition: transform .25s, border-color .25s;
 }
 
-.time-unit strong {
-  display: block;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+.learning-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--accent-rgb),.5);
+}
+
+.card-number {
   color: var(--accent);
-  font-weight: 900;
-  font-variant-numeric: tabular-nums;
-}
-
-.time-unit span {
-  display: block;
-  margin-top: 8px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-size: .63rem;
-}
-
-.countdown-date {
-  margin-top: 27px;
-  color: #dedede;
-  font-size: .83rem;
-}
-
-.countdown-ended {
-  margin-top: 24px;
+  font-size: .73rem;
   font-weight: 800;
-  color: var(--accent);
+  letter-spacing: .12em;
+}
+
+.learning-card h3 {
+  font-size: 1.14rem;
+  margin: 20px 0 12px;
+}
+
+.learning-card p {
+  color: var(--muted);
+  font-size: .83rem;
+  line-height: 1.9;
 }
 
 /* ABOUT */
 
-.about-grid {
+.about-box {
   display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 65px;
+  grid-template-columns: .8fr 1.2fr;
   align-items: center;
+  gap: 55px;
 }
 
-.about-visual {
-  min-height: 410px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32px;
-  border-radius: 28px;
-  border: 1px solid var(--border);
-  background:
-    radial-gradient(circle at 15% 10%, rgba(var(--accent-rgb),.18), transparent 50%),
-    linear-gradient(145deg, #171717, #0a0a0a);
-}
-
-.about-monogram {
-  font-size: clamp(4rem, 10vw, 8rem);
-  line-height: 1;
-  letter-spacing: -.09em;
-  font-weight: 1000;
-  color: var(--accent);
-  opacity: .9;
-}
-
-.about-visual-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 22px;
-}
-
-.about-visual-bottom strong {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 8px;
-}
-
-.about-visual-bottom p {
-  color: var(--muted);
-  font-size: .83rem;
-  line-height: 1.8;
-}
-
-.about-copy > p {
-  color: var(--muted);
-  line-height: 1.95;
-  margin-top: 22px;
-}
-
-.feature-list {
-  list-style: none;
-  margin-top: 28px;
-  display: grid;
-  gap: 15px;
-}
-
-.feature-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 13px;
-  color: #dedede;
-  font-size: .89rem;
-}
-
-.feature-check {
-  flex-shrink: 0;
-  width: 23px;
-  height: 23px;
-  border-radius: 8px;
+.about-mark {
+  min-height: 300px;
   display: grid;
   place-items: center;
-  color: var(--accent);
-  background: rgba(var(--accent-rgb),.12);
-  font-size: .8rem;
-  font-weight: 900;
-}
-
-/* LEARNING MODULES */
-
-.modules-section {
-  background: rgba(255,255,255,.015);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.modules-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.module-card {
-  padding: 29px;
-  border-radius: 23px;
+  background:
+    radial-gradient(circle, rgba(var(--accent-rgb),.13), transparent 65%),
+    var(--panel);
   border: 1px solid var(--border);
-  background: linear-gradient(145deg, #151515, #0c0c0c);
-  transition: transform .25s ease, border-color .25s ease;
-}
-
-.module-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(var(--accent-rgb),.5);
-}
-
-.module-number {
-  color: var(--accent);
-  font-size: .75rem;
+  border-radius: 22px;
+  font-size: 7rem;
   font-weight: 900;
-  letter-spacing: .12em;
-  margin-bottom: 30px;
-}
-
-.module-card h3 {
-  margin-bottom: 14px;
-}
-
-.module-card p {
-  color: var(--muted);
-  font-size: .86rem;
-  line-height: 1.85;
-}
-
-.module-tag {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 7px 10px;
-  border-radius: 8px;
+  letter-spacing: -.1em;
   color: var(--accent);
-  background: rgba(var(--accent-rgb),.09);
-  font-size: .68rem;
-  font-weight: 800;
+}
+
+.about-copy p {
+  color: var(--muted);
+  font-size: .91rem;
+  margin-top: 18px;
+  line-height: 1.95;
 }
 
 /* PHILOSOPHY */
 
 .philosophy {
   text-align: center;
+  background: #0d0d0d;
 }
 
 .philosophy blockquote {
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: clamp(1.9rem, 5.5vw, 4.2rem);
-  font-weight: 850;
+  max-width: 850px;
+  margin: auto;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  font-weight: 800;
+  line-height: 1.25;
   letter-spacing: -.05em;
-  line-height: 1.2;
 }
 
 .philosophy p {
-  max-width: 620px;
-  margin: 26px auto 0;
+  max-width: 600px;
   color: var(--muted);
-  line-height: 1.9;
+  margin: 22px auto 0;
+  font-size: .9rem;
 }
 
 /* COMMUNITY */
 
-.community-card {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 40px;
-  align-items: center;
-  padding: 48px;
-  border: 1px solid rgba(var(--accent-rgb),.23);
-  border-radius: 30px;
+.community-box {
+  padding: 45px;
+  text-align: center;
+  border: 1px solid rgba(var(--accent-rgb),.25);
+  border-radius: 24px;
   background:
-    radial-gradient(circle at 100% 0%, rgba(var(--accent-rgb),.13), transparent 45%),
-    #101010;
+    radial-gradient(circle at 50% 0%, rgba(var(--accent-rgb),.12), transparent 60%),
+    var(--panel);
 }
 
-.community-card p {
+.community-box p {
+  max-width: 570px;
+  margin: 18px auto 0;
   color: var(--muted);
-  line-height: 1.9;
-  margin-top: 20px;
+  font-size: .9rem;
 }
 
-.community-features {
-  display: grid;
-  gap: 12px;
-}
-
-.community-feature {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding: 16px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.025);
-  border-radius: 14px;
-  font-size: .84rem;
-  font-weight: 650;
-}
-
-.community-feature span {
-  color: var(--accent);
-  font-size: 1.1rem;
+.community-box .actions {
+  justify-content: center;
 }
 
 /* CONTACT */
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  max-width: 850px;
-  margin: 0 auto;
+.contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
 
-.contact-card {
-  padding: 30px;
+.contact-link {
+  padding: 14px 20px;
   border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 23px;
-  transition: border-color .2s ease, transform .2s ease;
-}
-
-.contact-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
-}
-
-.contact-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  color: var(--accent);
-  background: rgba(var(--accent-rgb),.11);
-  border-radius: 15px;
-  font-size: 1.25rem;
-  margin-bottom: 22px;
-}
-
-.contact-card p {
-  color: var(--muted);
-  font-size: .84rem;
-  margin-top: 10px;
-  line-height: 1.8;
-}
-
-.contact-card .contact-link {
-  display: inline-block;
-  margin-top: 19px;
-  color: var(--accent);
-  font-weight: 800;
+  border-radius: 13px;
   font-size: .84rem;
   overflow-wrap: anywhere;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
 }
 
 /* FOOTER */
 
 footer {
-  padding: 40px 0 105px;
   border-top: 1px solid var(--border);
-  background: #060606;
+  padding: 30px 0 40px;
 }
 
-.footer-top {
+.footer-main {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 35px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--border);
+  gap: 20px;
 }
 
-.footer-description {
-  max-width: 440px;
+.footer-note {
   color: var(--muted);
-  font-size: .81rem;
-  line-height: 1.9;
-  margin-top: 17px;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-.footer-links a {
-  color: #c7c7c7;
-  font-size: .78rem;
-}
-
-.footer-links a:hover {
-  color: var(--accent);
-}
-
-.disclaimer {
-  padding-top: 25px;
-  color: #777;
   font-size: .72rem;
+  max-width: 650px;
+  margin-top: 18px;
   line-height: 1.9;
 }
 
 .copyright {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-  color: #777;
+  color: var(--muted);
   font-size: .72rem;
+  margin-top: 22px;
 }
 
-/* THEME CUSTOMIZER — BOTTOM LEFT */
+/* COLOUR CUSTOMIZER — BOTTOM LEFT */
 
 .theme-customizer {
   position: fixed;
-  left: 18px;
-  right: auto;
-  bottom: 20px;
+  left: 16px;
+  bottom: 18px;
   z-index: 9998;
 }
 
@@ -1035,183 +562,103 @@ footer {
   display: flex;
   align-items: center;
   gap: 9px;
-  padding: 13px 16px;
-  border-radius: 100px;
-  border: 1px solid rgba(var(--accent-rgb),.45);
-  background: rgba(15,15,15,.95);
+  border: 1px solid rgba(var(--accent-rgb),.4);
+  border-radius: 40px;
+  padding: 12px 15px;
+  background: rgba(15,15,15,.96);
   color: white;
-  cursor: pointer;
-  font-size: .78rem;
+  font-size: .75rem;
   font-weight: 800;
-  box-shadow: 0 8px 35px rgba(0,0,0,.4);
-  backdrop-filter: blur(15px);
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,.4);
 }
 
-.theme-toggle-dot {
-  width: 12px;
-  height: 12px;
+.theme-dot {
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 12px rgba(var(--accent-rgb),.5);
 }
 
 .theme-panel {
   position: absolute;
+  bottom: 55px;
   left: 0;
-  right: auto;
-  bottom: calc(100% + 12px);
-  width: 225px;
-  padding: 17px;
+  width: 215px;
+  padding: 16px;
+  background: #111;
   border: 1px solid var(--border);
-  border-radius: 19px;
-  background: rgba(15,15,15,.98);
-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  border-radius: 16px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.5);
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  transform: translateY(8px);
+  transition: .2s;
 }
 
 .theme-panel.open {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
   transform: translateY(0);
 }
 
-.theme-panel-title {
-  font-size: .78rem;
-  font-weight: 850;
-  margin-bottom: 5px;
-}
-
-.theme-panel-description {
-  font-size: .69rem;
+.theme-panel p {
+  font-size: .72rem;
   color: var(--muted);
-  margin-bottom: 15px;
+  margin: 5px 0 13px;
 }
 
 .theme-options {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 9px;
+  gap: 6px;
 }
 
 .theme-option {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
+  background: transparent;
   border: 1px solid transparent;
-  background: transparent;
+  border-radius: 9px;
   color: #ddd;
-  padding: 8px 3px;
-  border-radius: 11px;
+  font-size: .65rem;
+  padding: 8px 2px;
   cursor: pointer;
-  font-size: .63rem;
 }
 
-.theme-option:hover,
 .theme-option.active {
-  background: rgba(255,255,255,.06);
   border-color: var(--border);
+  background: #202020;
 }
 
-.theme-swatch {
-  width: 25px;
-  height: 25px;
+.swatch {
+  width: 23px;
+  height: 23px;
   border-radius: 50%;
-  display: block;
 }
 
-.swatch-orange { background: #ff8a00; }
-.swatch-pink { background: #ff4fa3; }
-.swatch-red { background: #ff3333; }
-.swatch-purple { background: #a56bff; }
+.gold { background: #d8b46a; }
+.red { background: #ff4040; }
+.purple { background: #a477ff; }
+.pink { background: #ff69b4; }
 
-.theme-reset {
-  width: 100%;
-  margin-top: 12px;
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: transparent;
-  color: #ddd;
-  font-size: .73rem;
-  cursor: pointer;
-}
+/* MOBILE */
 
-.theme-reset:hover {
-  border-color: var(--accent);
-}
-
-/* REVEAL ANIMATION */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 950px) {
-  .nav-links {
-    gap: 15px;
-  }
-
-  .nav-links a {
-    font-size: .74rem;
-  }
-
-  .hero-grid {
-    gap: 25px;
-  }
-
-  .hero-visual {
-    min-height: 360px;
-  }
-
-  .about-grid {
-    gap: 35px;
-  }
-
-  .modules-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .community-card {
-    padding: 35px;
-  }
-}
-
-@media (max-width: 760px) {
-  .section {
-    padding: 75px 0;
-  }
-
-  .nav-inner {
-    min-height: 70px;
-  }
-
-  .menu-toggle {
+@media (max-width: 800px) {
+  .menu-button {
     display: block;
   }
 
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 76px;
     left: 0;
     right: 0;
-    padding: 18px 20px 24px;
-    background: rgba(8,8,8,.98);
+    padding: 15px 20px 22px;
+    background: #090909;
     border-bottom: 1px solid var(--border);
     flex-direction: column;
     align-items: stretch;
@@ -1223,183 +670,91 @@ footer {
   }
 
   .nav-links a {
-    padding: 14px 4px;
-    font-size: .9rem;
-    border-bottom: 1px solid rgba(255,255,255,.05);
+    padding: 12px 0;
   }
 
   .nav-links .nav-cta {
     text-align: center;
-    margin-top: 13px;
-    border-radius: 12px;
+    margin-top: 10px;
   }
 
   .hero {
-    padding: 75px 0 55px;
-    min-height: auto;
+    padding: 70px 0;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 30px;
   }
 
   .hero-visual {
-    min-height: 350px;
+    min-height: 330px;
   }
 
-  .hero-card {
-    width: min(100%, 340px);
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .trust-item {
-    padding: 22px 9px;
-  }
-
-  .trust-item strong {
-    font-size: .82rem;
-  }
-
-  .trust-item span {
-    font-size: .67rem;
-  }
-
-  .countdown-box {
-    padding: 40px 18px;
-  }
-
-  .countdown-grid {
-    grid-template-columns: repeat(2, minmax(0, 120px));
-  }
-
-  .about-grid {
+  .about-box {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .about-visual {
-    min-height: 310px;
-  }
-
-  .modules-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .module-card {
-    padding: 25px;
-  }
-
-  .community-card {
-    grid-template-columns: 1fr;
-    padding: 27px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-top {
-    flex-direction: column;
+  .about-mark {
+    min-height: 230px;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 520px) {
   .container {
-    width: min(100% - 30px, 1160px);
+    width: calc(100% - 30px);
   }
 
-  .brand-text strong {
-    font-size: .72rem;
+  .brand {
+    font-size: .73rem;
   }
 
-  .brand-text small {
-    font-size: .56rem;
+  .brand small {
+    font-size: .57rem;
   }
 
-  .brand-mark {
-    width: 38px;
-    height: 38px;
+  h1 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
   }
 
-  .hero h1 {
-    font-size: clamp(2.65rem, 13vw, 4.1rem);
+  section.content-section {
+    padding: 70px 0;
   }
 
-  .hero-description {
-    font-size: .92rem;
-  }
-
-  .hero-actions {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-visual {
-    min-height: 315px;
-  }
-
-  .visual-orbit {
-    width: 300px;
-  }
-
-  .hero-card {
-    padding: 23px;
-  }
-
-  .trust-grid {
+  .learning-grid {
     grid-template-columns: 1fr;
   }
 
-  .trust-item + .trust-item {
-    border-left: none;
-    border-top: 1px solid var(--border);
+  .hero-actions {
+    flex-direction: column;
   }
 
-  .countdown-grid {
-    gap: 9px;
+  .hero-actions .button {
+    width: 100%;
   }
 
-  .time-unit {
-    padding: 18px 8px;
+  .community-box {
+    padding: 30px 20px;
   }
 
-  .about-visual {
-    padding: 25px;
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .theme-customizer {
     left: 12px;
-    right: auto;
     bottom: 14px;
-  }
-
-  .theme-toggle {
-    padding: 12px 14px;
-    font-size: .72rem;
-  }
-
-  .theme-panel {
-    width: 215px;
-  }
-
-  footer {
-    padding-bottom: 110px;
-  }
-
-  .copyright {
-    flex-direction: column;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
+  *, *::before, *::after {
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
   }
@@ -1409,55 +764,30 @@ footer {
 
 <body>
 
-<!-- LOADING SCREEN -->
-<div class="loader" id="loader" aria-label="Loading website">
-  <div class="loader-logo">
-    LIQUIDITY <span>DISPLACEMENT</span>
-  </div>
-  <div class="loader-line"></div>
-  <p class="muted" style="font-size:.7rem;letter-spacing:.15em;">
-    POWERED BY FOREX WEALTH EMPIRE
-  </p>
-</div>
+<!-- HEADER -->
 
-<!-- ANNOUNCEMENT -->
-<div class="announcement">
-  <div class="announcement-track">
-    <span>LIQUIDITY DISPLACEMENT UNIVERSITY™</span>
-    <span>STRUCTURE · DISCIPLINE · EDUCATION</span>
-    <span>POWERED BY FOREX WEALTH EMPIRE</span>
-    <span>LIQUIDITY DISPLACEMENT UNIVERSITY™</span>
-    <span>STRUCTURE · DISCIPLINE · EDUCATION</span>
-    <span>POWERED BY FOREX WEALTH EMPIRE</span>
-  </div>
-</div>
+<header>
+  <div class="container navbar">
 
-<!-- NAVIGATION -->
-<header class="navbar">
-  <div class="container nav-inner">
-
-    <a href="#home" class="brand" aria-label="Go to homepage">
-      <div class="brand-mark">LD</div>
-      <div class="brand-text">
-        <strong>LIQUIDITY DISPLACEMENT</strong>
-        <small>UNIVERSITY™ · BY FWE</small>
-      </div>
+    <a href="#home" class="brand">
+      <span class="brand-icon">LD</span>
+      <span>
+        LIQUIDITY DISPLACEMENT
+        <small>UNIVERSITY™ · FOREX WEALTH EMPIRE</small>
+      </span>
     </a>
 
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-    >☰</button>
+    <button class="menu-button" id="menuButton"
+            aria-label="Toggle navigation"
+            aria-expanded="false">☰</button>
 
     <nav class="nav-links" id="navLinks">
+      <a href="#learn">Education</a>
       <a href="#about">About</a>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#philosophy">Philosophy</a>
       <a href="#community">Community</a>
       <a href="#contact">Contact</a>
-      <a class="nav-cta" href="https://discord.gg/cYzeXPTPj" target="_blank" rel="noopener noreferrer">Join Community ↗</a>
+      <a class="nav-cta" href="https://discord.gg/cYzeXPTPj"
+         target="_blank" rel="noopener noreferrer">Join Community ↗</a>
     </nav>
 
   </div>
@@ -1466,82 +796,53 @@ footer {
 <main>
 
 <!-- HERO -->
+
 <section class="hero" id="home">
   <div class="container hero-grid">
 
-    <div class="hero-copy">
-      <div class="eyebrow">A new standard in trading education</div>
+    <div>
+      <div class="eyebrow">Trading education · A different perspective</div>
 
       <h1>
-        Understand the market.<br>
-        <span class="gradient-text">Think with structure.</span>
+        Learn the market.<br>
+        <span class="gradient">Understand the structure.</span>
       </h1>
 
       <p class="hero-description">
-        Liquidity Displacement University™ is an educational platform by
-        Forex Wealth Empire, focused on structured market analysis,
-        disciplined decision-making and developing a more systematic
-        approach to trading.
+        Welcome to Liquidity Displacement University™ — an educational
+        platform dedicated to market structure, price analysis,
+        risk awareness and disciplined trading.
       </p>
 
-      <div class="hero-actions">
-        <a href="#curriculum" class="btn btn-primary">
-          Explore the University <span>↗</span>
-        </a>
-
+      <div class="actions">
+        <a href="#learn" class="button button-primary">Explore Education ↗</a>
         <a href="https://discord.gg/cYzeXPTPj"
-           class="btn btn-secondary"
-           target="_blank"
-           rel="noopener noreferrer">
-          Enter the Community
-        </a>
-      </div>
-
-      <div class="hero-note">
-        <span class="status-dot"></span>
-        Education first. Process over impulse.
+           target="_blank" rel="noopener noreferrer"
+           class="button button-secondary">Join Discord</a>
       </div>
     </div>
 
-    <div class="hero-visual" aria-label="Abstract market data visual">
-      <div class="visual-orbit"></div>
+    <div class="hero-visual">
+      <div class="orbit"></div>
 
-      <div class="hero-card">
-        <div class="hero-card-top">
-          <div>
-            <div class="live-label">MARKET STRUCTURE</div>
-            <p class="muted" style="font-size:.75rem;margin-top:5px;">
-              A structured perspective
-            </p>
-          </div>
-          <div class="card-symbol">LD</div>
-        </div>
+      <div class="education-card">
+        <div class="card-label">THE LEARNING PROCESS</div>
 
-        <div class="chart" aria-hidden="true">
-          <div class="chart-bar"></div>
-          <div class="chart-bar"></div>
-          <div class="chart-bar"></div>
-          <div class="chart-bar"></div>
-          <div class="chart-bar"></div>
-          <div class="chart-bar"></div>
-          <div class="chart-bar"></div>
-          <div class="chart-bar"></div>
-        </div>
+        <h3>Observe.<br>Understand.<br><span class="gradient">Execute with discipline.</span></h3>
 
-        <div class="card-bottom">
-          <div>
-            <small>FOCUS</small>
-            <strong>Structure</strong>
-          </div>
-          <div>
-            <small>PRINCIPLE</small>
-            <strong>Discipline</strong>
-          </div>
-        </div>
+        <p>
+          Develop a structured approach to studying the financial markets.
+        </p>
 
-        <div class="hero-card-caption">
-          Learn to approach market behaviour through observation,
-          preparation and a repeatable decision-making process.
+        <div class="chart-art" aria-hidden="true">
+          <span class="candle c1"></span>
+          <span class="candle c2"></span>
+          <span class="candle c3"></span>
+          <span class="candle c4"></span>
+          <span class="candle c5"></span>
+          <span class="candle c6"></span>
+          <span class="candle c7"></span>
+          <span class="candle c8"></span>
         </div>
       </div>
     </div>
@@ -1549,302 +850,128 @@ footer {
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<section class="trust-strip" aria-label="Educational principles">
-  <div class="container trust-grid">
+<!-- EDUCATION -->
 
-    <div class="trust-item">
-      <strong>Structured Learning</strong>
-      <span>Build understanding step by step</span>
-    </div>
-
-    <div class="trust-item">
-      <strong>Process Over Emotion</strong>
-      <span>Prioritise patience and discipline</span>
-    </div>
-
-    <div class="trust-item">
-      <strong>Continuous Development</strong>
-      <span>Review, learn and refine</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- COUNTDOWN -->
-<section class="countdown-section" id="countdown">
+<section class="content-section" id="learn">
   <div class="container">
-    <div class="countdown-box reveal">
 
-      <div class="eyebrow">The countdown</div>
-
-      <h2>
-        A new chapter is <span class="gradient-text">approaching.</span>
-      </h2>
-
-      <p class="countdown-description">
-        Follow the countdown as we prepare for the next chapter of
-        Liquidity Displacement University™. Check the community for
-        confirmed announcements and updates.
+    <div class="section-heading">
+      <div class="eyebrow">The curriculum</div>
+      <h2>Knowledge before <span class="gradient">execution.</span></h2>
+      <p>
+        A focused learning environment built around the essential
+        foundations of informed trading.
       </p>
+    </div>
 
-      <div class="countdown-grid" id="countdownGrid">
+    <div class="learning-grid">
 
-        <div class="time-unit">
-          <strong id="days">000</strong>
-          <span>Days</span>
-        </div>
+      <article class="learning-card">
+        <div class="card-number">01 — FOUNDATIONS</div>
+        <h3>Market Structure</h3>
+        <p>Study price behaviour, market conditions and structural context.</p>
+      </article>
 
-        <div class="time-unit">
-          <strong id="hours">00</strong>
-          <span>Hours</span>
-        </div>
+      <article class="learning-card">
+        <div class="card-number">02 — ANALYSIS</div>
+        <h3>Liquidity Concepts</h3>
+        <p>Explore liquidity concepts and how traders interpret market activity.</p>
+      </article>
 
-        <div class="time-unit">
-          <strong id="minutes">00</strong>
-          <span>Minutes</span>
-        </div>
+      <article class="learning-card">
+        <div class="card-number">03 — PRICE ACTION</div>
+        <h3>Price Displacement</h3>
+        <p>Learn to observe significant price movement within a wider market context.</p>
+      </article>
 
-        <div class="time-unit">
-          <strong id="seconds">00</strong>
-          <span>Seconds</span>
-        </div>
+      <article class="learning-card">
+        <div class="card-number">04 — PREPARATION</div>
+        <h3>Trade Planning</h3>
+        <p>Develop structured preparation habits and define your trading scenarios.</p>
+      </article>
 
-      </div>
+      <article class="learning-card">
+        <div class="card-number">05 — RISK</div>
+        <h3>Risk Management</h3>
+        <p>Understand position sizing, potential losses and responsible risk control.</p>
+      </article>
 
-      <p class="countdown-date">
-        Target date: 11 January 2027 · 18:00 SAST
-      </p>
-
-      <p id="countdownEnded" class="countdown-ended" hidden>
-        The countdown has ended. Visit the community for the latest updates.
-      </p>
+      <article class="learning-card">
+        <div class="card-number">06 — DEVELOPMENT</div>
+        <h3>Trading Psychology</h3>
+        <p>Build patience, review your decisions and learn from your trading process.</p>
+      </article>
 
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container about-grid">
 
-    <div class="about-visual reveal">
-      <div class="eyebrow">The vision</div>
+<section class="content-section" id="about">
+  <div class="container about-box">
 
-      <div class="about-monogram">LD<span style="color:#fff;">.</span></div>
+    <div class="about-mark">LD<span style="color:white;">.</span></div>
 
-      <div class="about-visual-bottom">
-        <strong>Liquidity Displacement University™</strong>
-        <p>
-          A trading education initiative powered by Forex Wealth Empire,
-          built around structured learning and disciplined analysis.
-        </p>
-      </div>
-    </div>
-
-    <div class="about-copy reveal">
+    <div class="about-copy">
       <div class="eyebrow">About the university</div>
 
-      <h2>
-        More than a chart.<br>
-        <span class="gradient-text">A way to think.</span>
-      </h2>
+      <h2>Built for <span class="gradient">serious learning.</span></h2>
 
       <p>
-        Liquidity Displacement University™ is designed for traders who
-        want to develop a more structured understanding of financial
-        markets. The focus is on education, observation, preparation
-        and decision-making rather than impulsive trading.
+        Liquidity Displacement University™ is powered by Forex Wealth Empire.
+        Its purpose is to help traders study the markets with greater structure,
+        develop their understanding and take risk management seriously.
       </p>
 
       <p>
-        Powered by Forex Wealth Empire, the platform aims to provide a
-        learning environment where traders can strengthen their market
-        knowledge, study trading concepts and build more disciplined
-        habits.
-      </p>
-
-      <ul class="feature-list">
-        <li>
-          <span class="feature-check">✓</span>
-          <span>Understand market structure and price behaviour.</span>
-        </li>
-        <li>
-          <span class="feature-check">✓</span>
-          <span>Develop a repeatable analysis and review process.</span>
-        </li>
-        <li>
-          <span class="feature-check">✓</span>
-          <span>Place risk management and discipline at the centre of learning.</span>
-        </li>
-        <li>
-          <span class="feature-check">✓</span>
-          <span>Continue learning through education and community discussion.</span>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- CURRICULUM -->
-<section class="section modules-section" id="curriculum">
-  <div class="container">
-
-    <div class="section-heading reveal">
-      <div class="eyebrow">The learning experience</div>
-
-      <h2>
-        Built around <span class="gradient-text">understanding.</span>
-      </h2>
-
-      <p>
-        Explore key areas of trading education designed to encourage
-        structured thinking, better preparation and ongoing development.
-        Specific lessons and learning materials may be introduced over time.
+        The focus is on education and process — not unrealistic promises
+        or guaranteed financial outcomes.
       </p>
     </div>
 
-    <div class="modules-grid">
-
-      <article class="module-card reveal">
-        <div class="module-number">MODULE 01 / FOUNDATIONS</div>
-        <h3>Market Structure</h3>
-        <p>
-          Study how price behaves, how market conditions change and why
-          context matters when interpreting a chart.
-        </p>
-        <span class="module-tag">CORE CONCEPTS</span>
-      </article>
-
-      <article class="module-card reveal">
-        <div class="module-number">MODULE 02 / ANALYSIS</div>
-        <h3>Liquidity Concepts</h3>
-        <p>
-          Explore liquidity as an educational market concept and learn
-          to assess price movement within a broader analytical framework.
-        </p>
-        <span class="module-tag">MARKET CONTEXT</span>
-      </article>
-
-      <article class="module-card reveal">
-        <div class="module-number">MODULE 03 / EXECUTION</div>
-        <h3>Displacement &amp; Price Behaviour</h3>
-        <p>
-          Learn about strong price movement, changes in market behaviour
-          and the importance of evaluating evidence before acting.
-        </p>
-        <span class="module-tag">PRICE ACTION</span>
-      </article>
-
-      <article class="module-card reveal">
-        <div class="module-number">MODULE 04 / PLANNING</div>
-        <h3>Trading Preparation</h3>
-        <p>
-          Develop structured preparation habits, define scenarios and
-          consider invalidation before making a trading decision.
-        </p>
-        <span class="module-tag">PRE-TRADE PROCESS</span>
-      </article>
-
-      <article class="module-card reveal">
-        <div class="module-number">MODULE 05 / RISK</div>
-        <h3>Risk &amp; Discipline</h3>
-        <p>
-          Understand the role of risk management, position sizing,
-          emotional control and consistency in a trading plan.
-        </p>
-        <span class="module-tag">RISK AWARENESS</span>
-      </article>
-
-      <article class="module-card reveal">
-        <div class="module-number">MODULE 06 / DEVELOPMENT</div>
-        <h3>Review &amp; Improvement</h3>
-        <p>
-          Learn how journaling, reviewing decisions and identifying
-          repeated mistakes can support ongoing development.
-        </p>
-        <span class="module-tag">CONTINUOUS LEARNING</span>
-      </article>
-
-    </div>
   </div>
 </section>
 
 <!-- PHILOSOPHY -->
-<section class="section philosophy" id="philosophy">
-  <div class="container reveal">
 
-    <div class="eyebrow">The philosophy</div>
+<section class="content-section philosophy">
+  <div class="container">
+    <div class="eyebrow">Our philosophy</div>
 
     <blockquote>
-      “Don't let the need to trade
-      <span class="gradient-text">replace the need to understand.</span>”
+      The goal is not to trade more.
+      <span class="gradient">The goal is to understand better.</span>
     </blockquote>
 
     <p>
-      Markets are uncertain. The goal of education is not to promise
-      outcomes, but to help traders ask better questions, evaluate
-      information carefully and understand the risks behind their decisions.
+      Study patiently. Analyse objectively. Respect risk.
+      Keep learning.
     </p>
-
   </div>
 </section>
 
 <!-- COMMUNITY -->
-<section class="section" id="community">
+
+<section class="content-section" id="community">
   <div class="container">
+    <div class="community-box">
 
-    <div class="community-card reveal">
+      <div class="eyebrow">Learn with the community</div>
 
-      <div>
-        <div class="eyebrow">The community</div>
+      <h2>Continue your <span class="gradient">learning journey.</span></h2>
 
-        <h2>
-          Learn together.<br>
-          <span class="gradient-text">Grow with purpose.</span>
-        </h2>
+      <p>
+        Connect with Forex Wealth Empire for educational discussions,
+        announcements and updates.
+      </p>
 
-        <p>
-          Connect with the Forex Wealth Empire community for announcements,
-          educational discussions and updates about the university.
-          Join the conversation and stay informed about future developments.
-        </p>
-
-        <div class="hero-actions">
-          <a
-            class="btn btn-primary"
-            href="https://discord.gg/cYzeXPTPj"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join Discord ↗
-          </a>
-        </div>
-      </div>
-
-      <div class="community-features">
-
-        <div class="community-feature">
-          <span>✦</span>
-          Educational discussions
-        </div>
-
-        <div class="community-feature">
-          <span>◈</span>
-          Community announcements
-        </div>
-
-        <div class="community-feature">
-          <span>⌁</span>
-          Trading concepts and analysis
-        </div>
-
-        <div class="community-feature">
-          <span>◎</span>
-          Updates from Forex Wealth Empire
-        </div>
-
+      <div class="actions">
+        <a class="button button-primary"
+           href="https://discord.gg/cYzeXPTPj"
+           target="_blank" rel="noopener noreferrer">
+          Join Discord ↗
+        </a>
       </div>
 
     </div>
@@ -1852,436 +979,216 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+
+<section class="content-section" id="contact">
   <div class="container">
 
-    <div class="section-heading reveal">
-      <div class="eyebrow">Get in touch</div>
+    <div class="section-heading">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's <span class="gradient">connect.</span></h2>
+      <p>For questions and general enquiries, contact Forex Wealth Empire.</p>
 
-      <h2>
-        Start the <span class="gradient-text">conversation.</span>
-      </h2>
+      <div class="contact-row">
+        <a class="contact-link" href="mailto:Naswealthempire@gmail.com">
+          ✉ Naswealthempire@gmail.com
+        </a>
 
-      <p>
-        Have a question about the university or want to follow future
-        updates? Contact us by email or connect with the community.
-      </p>
+        <a class="contact-link"
+           href="https://discord.gg/cYzeXPTPj"
+           target="_blank" rel="noopener noreferrer">
+          Discord ↗
+        </a>
+      </div>
     </div>
 
-    <div class="contact-grid">
-
-      <a class="contact-card reveal"
-         href="mailto:Naswealthempire@gmail.com">
-
-        <div class="contact-icon">✉</div>
-
-        <h3>Email Us</h3>
-
-        <p>
-          For general enquiries, questions and information about
-          Liquidity Displacement University™.
-        </p>
-
-        <span class="contact-link">
-          Naswealthempire@gmail.com ↗
-        </span>
-      </a>
-
-      <a class="contact-card reveal"
-         href="https://discord.gg/cYzeXPTPj"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        <div class="contact-icon">◎</div>
-
-        <h3>Join Discord</h3>
-
-        <p>
-          Join the Forex Wealth Empire community for discussions,
-          announcements and updates.
-        </p>
-
-        <span class="contact-link">
-          Open Discord ↗
-        </span>
-      </a>
-
-    </div>
   </div>
 </section>
 
 </main>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="container">
 
-    <div class="footer-top">
+    <div class="footer-main">
+      <a href="#home" class="brand">
+        <span class="brand-icon">LD</span>
+        <span>
+          LIQUIDITY DISPLACEMENT
+          <small>UNIVERSITY™ · FOREX WEALTH EMPIRE</small>
+        </span>
+      </a>
 
-      <div>
-        <a href="#home" class="brand">
-          <div class="brand-mark">LD</div>
-          <div class="brand-text">
-            <strong>LIQUIDITY DISPLACEMENT</strong>
-            <small>UNIVERSITY™ · BY FWE</small>
-          </div>
-        </a>
-
-        <p class="footer-description">
-          Liquidity Displacement University™ is an educational initiative
-          powered by Forex Wealth Empire, focused on market understanding,
-          disciplined analysis and responsible trading education.
-        </p>
-      </div>
-
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#curriculum">Curriculum</a>
-        <a href="#community">Community</a>
-        <a href="#contact">Contact</a>
-        <a href="mailto:Naswealthempire@gmail.com">Email</a>
-      </div>
-
+      <a href="#home" class="muted" style="font-size:.78rem;">Back to top ↑</a>
     </div>
 
-    <div class="disclaimer">
-      <strong>Risk Disclaimer:</strong>
-      Trading foreign exchange, CFDs, cryptocurrencies and other financial
-      instruments involves substantial risk and may not be suitable for
-      every person. You may lose some or all of your invested capital.
-      Educational content on this website is provided for informational
-      and educational purposes only. It is not personalised financial,
-      investment or trading advice, and it does not guarantee profits
-      or future results. Past performance does not guarantee future results.
-      Always assess your financial circumstances and risk tolerance before
-      making financial decisions.
+    <p class="footer-note">
+      Trading involves substantial risk and may result in the loss of capital.
+      All website content is for educational and informational purposes only
+      and is not personalised financial advice. No profits or trading results
+      are guaranteed.
+    </p>
 
-      <br><br>
-
-      <strong>Important:</strong>
-      Liquidity Displacement University™ does not promise financial returns
-      or guaranteed trading success. Any examples or market illustrations
-      are educational and should not be interpreted as a recommendation
-      to enter a trade.
-    </div>
-
-    <div class="copyright">
-      <span>
-        © <span id="year"></span> Forex Wealth Empire. All rights reserved.
-      </span>
-
-      <span>Liquidity Displacement University™</span>
-    </div>
+    <p class="copyright">
+      © <span id="year"></span> Forex Wealth Empire. All rights reserved.
+    </p>
 
   </div>
 </footer>
 
-<!-- THEME CUSTOMIZER: BOTTOM LEFT -->
+<!-- CUSTOMIZE BUTTON: BOTTOM LEFT -->
+
 <div class="theme-customizer" id="themeCustomizer">
 
-  <button
-    class="theme-toggle"
-    id="themeToggle"
-    aria-expanded="false"
-    aria-controls="themePanel"
-  >
-    <span class="theme-toggle-dot"></span>
+  <button class="theme-toggle" id="themeToggle"
+          aria-expanded="false" aria-controls="themePanel">
+    <span class="theme-dot"></span>
     Customize
   </button>
 
   <div class="theme-panel" id="themePanel">
-
-    <div class="theme-panel-title">Make it yours</div>
-
-    <p class="theme-panel-description">
-      Choose your accent colour.
-    </p>
+    <strong style="font-size:.82rem;">Choose your colour</strong>
+    <p>Personalise the accent colour.</p>
 
     <div class="theme-options">
 
-      <button class="theme-option"
-              data-theme-choice="orange"
-              aria-label="Orange theme">
-        <span class="theme-swatch swatch-orange"></span>
-        Orange
+      <button class="theme-option" data-theme="gold">
+        <span class="swatch gold"></span>Gold
       </button>
 
-      <button class="theme-option"
-              data-theme-choice="pink"
-              aria-label="Pink theme">
-        <span class="theme-swatch swatch-pink"></span>
-        Pink
+      <button class="theme-option" data-theme="red">
+        <span class="swatch red"></span>Red
       </button>
 
-      <button class="theme-option"
-              data-theme-choice="red"
-              aria-label="Red theme">
-        <span class="theme-swatch swatch-red"></span>
-        Red
+      <button class="theme-option" data-theme="purple">
+        <span class="swatch purple"></span>Purple
       </button>
 
-      <button class="theme-option"
-              data-theme-choice="purple"
-              aria-label="Purple theme">
-        <span class="theme-swatch swatch-purple"></span>
-        Purple
+      <button class="theme-option" data-theme="pink">
+        <span class="swatch pink"></span>Pink
       </button>
 
     </div>
-
-    <button class="theme-reset" id="themeReset">
-      Reset to Orange
-    </button>
-
   </div>
+
 </div>
 
 <script>
-/* LOADING SCREEN */
-(function () {
-  const loader = document.getElementById("loader");
+/* MOBILE MENU */
 
-  function hideLoader() {
-    if (loader) {
-      loader.classList.add("hidden");
-    }
-  }
-
-  window.addEventListener("load", function () {
-    setTimeout(hideLoader, 1200);
-  });
-
-  // Fallback so the loader cannot block the site indefinitely.
-  setTimeout(hideLoader, 5000);
-})();
-
-/* MOBILE NAVIGATION */
-const menuToggle = document.getElementById("menuToggle");
+const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", function () {
-  const isOpen = navLinks.classList.toggle("open");
-
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "✕" : "☰";
+menuButton.addEventListener("click", function () {
+  const open = navLinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.textContent = open ? "✕" : "☰";
 });
 
 document.querySelectorAll("#navLinks a").forEach(function (link) {
   link.addEventListener("click", function () {
     navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "☰";
   });
 });
 
-/* THEME CUSTOMIZER */
+/* COLOUR CUSTOMIZER */
+
 const themeToggle = document.getElementById("themeToggle");
 const themePanel = document.getElementById("themePanel");
-const themeOptions = document.querySelectorAll("[data-theme-choice]");
-const themeReset = document.getElementById("themeReset");
+const themeButtons = document.querySelectorAll("[data-theme]");
 
-function applyTheme(theme) {
-  const validThemes = ["orange", "pink", "red", "purple"];
+function setTheme(theme) {
+  const validThemes = ["gold", "red", "purple", "pink"];
 
-  if (!validThemes.includes(theme)) {
-    theme = "orange";
-  }
+  if (!validThemes.includes(theme)) theme = "gold";
 
   document.documentElement.setAttribute("data-theme", theme);
 
   try {
-    localStorage.setItem("ldu-theme", theme);
-  } catch (error) {
-    // Theme still works for the current page if storage is unavailable.
-  }
+    localStorage.setItem("ldu-colour-theme", theme);
+  } catch (error) {}
 
-  themeOptions.forEach(function (button) {
-    button.classList.toggle(
-      "active",
-      button.dataset.themeChoice === theme
-    );
+  themeButtons.forEach(function (button) {
+    button.classList.toggle("active", button.dataset.theme === theme);
   });
 }
 
 try {
-  const savedTheme = localStorage.getItem("ldu-theme");
-
-  if (savedTheme) {
-    applyTheme(savedTheme);
-  } else {
-    applyTheme("orange");
-  }
+  setTheme(localStorage.getItem("ldu-colour-theme") || "gold");
 } catch (error) {
-  applyTheme("orange");
+  setTheme("gold");
 }
 
 themeToggle.addEventListener("click", function (event) {
   event.stopPropagation();
 
-  const isOpen = themePanel.classList.toggle("open");
-
-  themeToggle.setAttribute("aria-expanded", String(isOpen));
+  const open = themePanel.classList.toggle("open");
+  themeToggle.setAttribute("aria-expanded", String(open));
 });
 
 themePanel.addEventListener("click", function (event) {
   event.stopPropagation();
 });
 
-themeOptions.forEach(function (button) {
+themeButtons.forEach(function (button) {
   button.addEventListener("click", function () {
-    applyTheme(button.dataset.themeChoice);
+    setTheme(button.dataset.theme);
   });
 });
 
-themeReset.addEventListener("click", function () {
-  applyTheme("orange");
+document.addEventListener("click", function () {
+  themePanel.classList.remove("open");
+  themeToggle.setAttribute("aria-expanded", "false");
 });
-
-document.addEventListener("click", function (event) {
-  if (!document.getElementById("themeCustomizer").contains(event.target)) {
-    themePanel.classList.remove("open");
-    themeToggle.setAttribute("aria-expanded", "false");
-  }
-});
-
-/* COUNTDOWN
-   Target: 11 January 2027 at 18:00 South African Standard Time.
-*/
-const countdownTarget = new Date("2027-01-11T18:00:00+02:00").getTime();
-
-const daysElement = document.getElementById("days");
-const hoursElement = document.getElementById("hours");
-const minutesElement = document.getElementById("minutes");
-const secondsElement = document.getElementById("seconds");
-const countdownGrid = document.getElementById("countdownGrid");
-const countdownEnded = document.getElementById("countdownEnded");
-
-function updateCountdown() {
-  const now = Date.now();
-  const difference = countdownTarget - now;
-
-  if (difference <= 0) {
-    daysElement.textContent = "000";
-    hoursElement.textContent = "00";
-    minutesElement.textContent = "00";
-    secondsElement.textContent = "00";
-
-    countdownEnded.hidden = false;
-    countdownGrid.setAttribute("aria-label", "Countdown completed");
-    return;
-  }
-
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((difference / (1000 * 60)) % 60);
-  const seconds = Math.floor((difference / 1000) % 60);
-
-  daysElement.textContent = String(days).padStart(3, "0");
-  hoursElement.textContent = String(hours).padStart(2, "0");
-  minutesElement.textContent = String(minutes).padStart(2, "0");
-  secondsElement.textContent = String(seconds).padStart(2, "0");
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 /* FOOTER YEAR */
+
 document.getElementById("year").textContent = new Date().getFullYear();
-
-/* REVEAL ELEMENTS ON SCROLL */
-const revealElements = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12
-  });
-
-  revealElements.forEach(function (element) {
-    revealObserver.observe(element);
-  });
-} else {
-  revealElements.forEach(function (element) {
-    element.classList.add("visible");
-  });
-}
 </script>
 
-<!-- LIVECHAT
-     Replace the license below only if your actual LiveChat account
-     provides a different installation code. The license must be active
-     and configured in your LiveChat account for the chat to work.
--->
+<!-- LIVECHAT: requires an active, configured LiveChat account -->
+
 <script>
 window.__lc = window.__lc || {};
 window.__lc.license = 19960069;
 window.__lc.integration_name = "manual_onboarding";
 window.__lc.product_name = "livechat";
 
-(function (n, t, c) {
-  function i(n) {
-    return e._h ? e._h.apply(null, n) : e._q.push(n);
+(function(n,t,c){
+  function i(n){
+    return e._h ? e._h.apply(null,n) : e._q.push(n);
   }
 
   var e = {
     _q: [],
     _h: null,
     _v: "2.0",
-
-    on: function () {
-      i(["on", c.call(arguments)]);
+    on: function(){i(["on",c.call(arguments)]);},
+    once: function(){i(["once",c.call(arguments)]);},
+    off: function(){i(["off",c.call(arguments)]);},
+    get: function(){
+      if(!e._h) throw new Error("LiveChat has not loaded.");
+      return i(["get",c.call(arguments)]);
     },
-
-    once: function () {
-      i(["once", c.call(arguments)]);
-    },
-
-    off: function () {
-      i(["off", c.call(arguments)]);
-    },
-
-    get: function () {
-      if (!e._h) {
-        throw new Error(
-          "[LiveChatWidget] You can't use getters before load."
-        );
-      }
-
-      return i(["get", c.call(arguments)]);
-    },
-
-    call: function () {
-      i(["call", c.call(arguments)]);
-    },
-
-    init: function () {
+    call: function(){i(["call",c.call(arguments)]);},
+    init: function(){
       var script = t.createElement("script");
-
       script.async = true;
       script.type = "text/javascript";
       script.src = "https://cdn.livechatinc.com/tracking.js";
-
       t.head.appendChild(script);
     }
   };
 
-  if (!n.__lc.asyncInit) {
-    e.init();
-  }
-
+  if(!n.__lc.asyncInit) e.init();
   n.LiveChatWidget = n.LiveChatWidget || e;
-})(window, document, [].slice);
+})(window,document,[].slice);
 </script>
 
-<noscript>
-  Please enable JavaScript to use the LiveChat service.
-</noscript>
+<noscript>Please enable JavaScript to use LiveChat.</noscript>
 
 </body>
   </html>
