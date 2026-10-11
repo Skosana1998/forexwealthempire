@@ -779,6 +779,205 @@ body::before {
     margin-top: 0;
 }
 
+/* REGISTRATION */
+
+#ldu-registration {
+    position: relative;
+    overflow: hidden;
+    padding: 110px 18px;
+    color: #f5f5f5;
+    font-family: 'Inter', Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at 0% 50%,rgba(229,9,20,.08),transparent 42%),
+        radial-gradient(ellipse at 100% 50%,rgba(217,173,85,.08),transparent 42%);
+    scroll-margin-top: 100px;
+}
+
+#ldu-registration * {
+    box-sizing: border-box;
+}
+
+#ldu-registration .ldu-card {
+    position: relative;
+    max-width: 680px;
+    margin: auto;
+    padding: clamp(25px,5vw,48px);
+    background:
+        linear-gradient(145deg,rgba(217,173,85,.045),transparent 45%),
+        linear-gradient(145deg,#151515,#080808);
+    border: 1px solid rgba(217,173,85,.4);
+    border-radius: 18px;
+    box-shadow: 0 25px 85px rgba(0,0,0,.35);
+}
+
+#ldu-registration .ldu-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 35px;
+    right: 35px;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,var(--red),var(--gold),transparent);
+}
+
+#ldu-registration .ldu-eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    font-weight: 800;
+    line-height: 1.8;
+}
+
+#ldu-registration h2 {
+    margin: 18px 0 12px;
+    font-family: 'Orbitron',sans-serif;
+    font-size: clamp(27px,5vw,39px);
+    line-height: 1.35;
+}
+
+#ldu-registration h2 span {
+    color: var(--gold);
+}
+
+#ldu-registration .ldu-description {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+#ldu-registration form > label:not(.ldu-consent),
+#ldu-registration .ldu-honeypot label {
+    display: block;
+    margin: 18px 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ddd;
+}
+
+#ldu-registration input:not([type="checkbox"]),
+#ldu-registration textarea {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    background: #0d0d0d;
+    color: #fff;
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: border-color .2s,box-shadow .2s;
+}
+
+#ldu-registration input::placeholder,
+#ldu-registration textarea::placeholder {
+    color: #666;
+}
+
+#ldu-registration input:focus,
+#ldu-registration textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(217,173,85,.08);
+}
+
+#ldu-registration textarea {
+    resize: vertical;
+    min-height: 105px;
+}
+
+#ldu-registration .ldu-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin: 23px 0;
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.8;
+    cursor: pointer;
+}
+
+#ldu-registration .ldu-consent input {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    accent-color: var(--gold);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+#ldu-registration .ldu-submit {
+    width: 100%;
+    min-height: 55px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    background: linear-gradient(100deg,#c69b45,#e2c27c);
+    color: #111;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: filter .2s,transform .2s,box-shadow .2s;
+}
+
+#ldu-registration .ldu-submit span {
+    font-size: 18px;
+}
+
+#ldu-registration .ldu-submit:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(217,173,85,.12);
+}
+
+#ldu-registration .ldu-submit:disabled {
+    opacity: .65;
+    cursor: wait;
+    transform: none;
+}
+
+#ldu-registration .ldu-privacy {
+    color: #777;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 17px 0 0;
+}
+
+#ldu-registration .ldu-honeypot {
+    position: absolute !important;
+    left: -10000px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+#ldu-registration .ldu-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#ldu-registration .ldu-divider::before,
+#ldu-registration .ldu-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: rgba(255,255,255,.08);
+}
+
 /* FOOTER */
 
 footer {
@@ -921,6 +1120,24 @@ footer {
     .community-section { padding: 0 6% 80px; }
     .community-box { padding: 55px 22px; }
 
+    #ldu-registration {
+        padding: 75px 13px;
+    }
+
+    #ldu-registration .ldu-card {
+        padding: 25px 19px;
+    }
+
+    #ldu-registration .ldu-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.8px;
+    }
+
+    #ldu-registration .ldu-submit {
+        font-size: 11px;
+        padding: 15px 10px;
+    }
+
     .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -992,7 +1209,8 @@ footer {
             <a href="#learning">Learning</a>
             <a href="#experience">Our Approach</a>
             <a href="#community">Community</a>
-            <a href="#countdown" class="nav-cta">Launch Countdown</a>
+            <a href="#ldu-registration" class="nav-cta">Register Now ↗</a>
+            <a href="#countdown">Launch Countdown</a>
         </div>
     </nav>
 
@@ -1024,7 +1242,7 @@ footer {
 
             <div class="hero-buttons">
                 <a href="#countdown" class="btn btn-primary">Discover The Launch ↓</a>
-                <a href="#about" class="btn btn-secondary">Explore The University</a>
+                <a href="#ldu-registration" class="btn btn-secondary">Register Your Interest ↗</a>
             </div>
 
             <div class="hero-note">BUILT FOR EDUCATION. DESIGNED FOR DISCIPLINE.</div>
@@ -1061,6 +1279,10 @@ footer {
             </div>
 
             <div class="launch-status" id="launchStatus">PREPARING FOR LAUNCH</div>
+
+            <div class="hero-buttons">
+                <a href="#ldu-registration" class="btn btn-primary">Register Your Interest ↗</a>
+            </div>
         </div>
     </section>
 
@@ -1258,6 +1480,10 @@ footer {
                     Join Our Discord ↗
                 </a>
 
+                <a href="#ldu-registration" class="btn btn-secondary">
+                    Register Your Interest ↗
+                </a>
+
                 <a href="mailto:Naswealthempire@gmail.com"
                    class="btn btn-secondary">
                     Contact The Team
@@ -1267,6 +1493,106 @@ footer {
             <div class="hero-note">
                 FOREX WEALTH EMPIRE · LIQUIDITY DISPLACEMENT UNIVERSITY™
             </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section id="ldu-registration">
+        <div class="ldu-card">
+            <div class="ldu-eyebrow">FOREX WEALTH EMPIRE™ PRESENTS</div>
+
+            <h2>Join <span>Liquidity Displacement University™</span></h2>
+
+            <p class="ldu-description">
+                Take the next step in your trading education.
+                Submit your details and our team will contact you
+                with information about registration and the programme.
+            </p>
+
+            <div class="ldu-divider">Student Enquiry</div>
+
+            <form
+                action="https://formspree.io/f/mgaoyqyo"
+                method="POST"
+                id="lduRegistrationForm">
+
+                <input type="hidden" name="_subject"
+                    value="New Liquidity Displacement University Registration">
+
+                <input type="hidden" name="Program"
+                    value="Liquidity Displacement University™">
+
+                <!-- Formspree reply-to address -->
+                <label for="ldu-name">Full name *</label>
+                <input
+                    id="ldu-name"
+                    type="text"
+                    name="Full name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    maxlength="100"
+                    required>
+
+                <label for="ldu-email">Email address *</label>
+                <input
+                    id="ldu-email"
+                    type="email"
+                    name="_replyto"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    maxlength="150"
+                    required>
+
+                <label for="ldu-whatsapp">WhatsApp number (optional)</label>
+                <input
+                    id="ldu-whatsapp"
+                    type="tel"
+                    name="WhatsApp number"
+                    placeholder="+27..."
+                    autocomplete="tel"
+                    maxlength="25">
+
+                <label for="ldu-message">What would you like to know? (optional)</label>
+                <textarea
+                    id="ldu-message"
+                    name="Enquiry"
+                    placeholder="Tell us what you'd like to know..."
+                    rows="4"
+                    maxlength="1000"></textarea>
+
+                <!-- Spam honeypot: genuine visitors leave this empty -->
+                <div class="ldu-honeypot" aria-hidden="true">
+                    <label for="ldu-website">Leave this field empty</label>
+                    <input
+                        id="ldu-website"
+                        type="text"
+                        name="_gotcha"
+                        tabindex="-1"
+                        autocomplete="off">
+                </div>
+
+                <label class="ldu-consent" for="ldu-consent">
+                    <input
+                        id="ldu-consent"
+                        type="checkbox"
+                        name="Contact consent"
+                        value="Agreed"
+                        required>
+                    <span>
+                        I agree that Forex Wealth Empire may use these details
+                        to respond to my registration enquiry.
+                    </span>
+                </label>
+
+                <button type="submit" class="ldu-submit" id="lduSubmitButton">
+                    Submit Registration Enquiry <span>↗</span>
+                </button>
+
+                <p class="ldu-privacy">
+                    Submitting this form sends your details to our registration
+                    team. This is an enquiry, not confirmation of course admission.
+                </p>
+            </form>
         </div>
     </section>
 
@@ -1291,6 +1617,7 @@ footer {
                 <a href="#about">About</a>
                 <a href="#learning">Learning</a>
                 <a href="#community">Community</a>
+                <a href="#ldu-registration">Register</a>
                 <a href="mailto:Naswealthempire@gmail.com">Email Us</a>
             </div>
         </div>
@@ -1347,7 +1674,7 @@ window.__lc.product_name = "livechat";
     s.crossOrigin = "anonymous";
 
     var firstScript = t.getElementsByTagName("script")[0];
-    t.getElementsByTagName("script")[0].parentNode.insertBefore(s, t.getElementsByTagName("script")[0]);
+    firstScript.parentNode.insertBefore(s, firstScript);
 })(window, document, [].slice);
 </script>
 
@@ -1393,8 +1720,7 @@ window.addEventListener("load", () => {
 });
 
 /* COUNTDOWN
-   Replace this placeholder with your confirmed launch date.
-   Example: 2026-12-31T18:00:00+02:00
+   Update the date below if your official launch date changes.
 */
 const LAUNCH_DATE = "2026-12-31T18:00:00+02:00";
 const launchTime = new Date(LAUNCH_DATE).getTime();
@@ -1474,6 +1800,34 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 /* FOOTER YEAR */
 document.getElementById("currentYear").textContent =
     new Date().getFullYear();
+
+/* REGISTRATION BUTTON: PREVENT ACCIDENTAL DOUBLE SUBMISSION */
+const registrationForm = document.getElementById("lduRegistrationForm");
+const registrationButton = document.getElementById("lduSubmitButton");
+
+registrationForm.addEventListener("submit", function (event) {
+    if (!registrationForm.checkValidity()) {
+        event.preventDefault();
+        registrationForm.reportValidity();
+        return;
+    }
+
+    if (registrationForm.dataset.submitting === "true") {
+        event.preventDefault();
+        return;
+    }
+
+    registrationForm.dataset.submitting = "true";
+    registrationButton.disabled = true;
+    registrationButton.innerHTML = 'Submitting Enquiry… <span>↗</span>';
+});
+
+/* Restore button if the visitor returns using browser navigation */
+window.addEventListener("pageshow", function () {
+    registrationForm.dataset.submitting = "false";
+    registrationButton.disabled = false;
+    registrationButton.innerHTML = 'Submit Registration Enquiry <span>↗</span>';
+});
 </script>
 
 </body>
