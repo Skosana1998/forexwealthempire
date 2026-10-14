@@ -1,1 +1,661 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070707">
+<title>Student RCM | Liquidity Displacement University™</title>
+<meta name="description" content="Liquidity Displacement University student learning dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#070707;
+  --panel:#101010;
+  --panel2:#151515;
+  --red:#e50914;
+  --gold:#d9ad55;
+  --white:#f5f5f5;
+  --muted:#999;
+  --border:#292929;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:Inter,Arial,sans-serif;min-height:100vh;
+}
+button,input {font:inherit}
+button {cursor:pointer}
+a {color:inherit;text-decoration:none}
+.layout {display:flex;min-height:100vh}
+.sidebar {
+  width:255px;flex-shrink:0;background:#0b0b0b;
+  border-right:1px solid var(--border);padding:24px 16px;
+  display:flex;flex-direction:column;gap:25px;
+}
+.brand {display:flex;align-items:center;gap:12px;padding:0 5px}
+.brand-mark {
+  width:45px;height:45px;background:var(--red);border-radius:10px;
+  display:grid;place-items:center;font-size:23px;font-weight:900;
+}
+.brand h2 {font:700 16px Orbitron,sans-serif;margin:0}
+.brand small {display:block;color:var(--gold);font-size:9px;margin-top:5px;letter-spacing:1px}
+.nav-label {font-size:10px;color:#777;letter-spacing:2px;margin:5px 10px 12px}
+.nav {display:grid;gap:7px}
+.nav button {
+  width:100%;border:1px solid transparent;background:transparent;
+  color:#aaa;text-align:left;padding:13px 12px;border-radius:9px;
+  display:flex;align-items:center;gap:12px;font-size:13px;
+}
+.nav button:hover,.nav button.active {
+  background:#241010;color:white;border-color:#542023;
+}
+.nav button.active .ico {color:var(--red)}
+.ico {font-size:18px;width:22px;text-align:center}
+.side-bottom {margin-top:auto}
+.plan-mini {background:var(--panel);border:1px solid var(--border);padding:15px;border-radius:12px}
+.plan-mini strong {color:var(--gold);font-size:20px;display:block;margin:8px 0}
+.plan-mini p {font-size:11px;color:var(--muted);line-height:1.6}
+.main {flex:1;min-width:0}
+.topbar {
+  min-height:74px;border-bottom:1px solid var(--border);
+  padding:15px 30px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;
+}
+.topbar-label {font-size:12px;color:var(--muted)}
+.topbar-label strong {display:block;color:white;font-size:14px;margin-top:5px}
+.avatar {
+  width:38px;height:38px;border-radius:50%;background:#281010;
+  border:1px solid #5b2929;color:var(--gold);
+  display:grid;place-items:center;font-weight:800;
+}
+.mobile-menu {display:none}
+.content {padding:30px;max-width:1400px;margin:auto}
+.eyebrow {color:var(--gold);font-size:10px;letter-spacing:2px;font-weight:700}
+h1,h2,h3,p {margin-top:0}
+h1 {font-size:clamp(27px,4vw,39px);line-height:1.15;margin:10px 0}
+h2 {font-size:20px}
+h3 {font-size:15px}
+p {line-height:1.65}
+.muted {color:var(--muted)}
+.small {font-size:12px}
+.hero {
+  padding:30px;border-radius:17px;border:1px solid #392020;
+  background:radial-gradient(ellipse at 95% 5%,#351010 0%,transparent 45%),#111;
+  position:relative;overflow:hidden;
+}
+.hero p {max-width:600px;color:#b7b7b7;font-size:14px}
+.hero-actions {display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
+.btn {
+  border:1px solid var(--border);background:#1a1a1a;color:white;
+  padding:12px 16px;border-radius:8px;font-weight:700;font-size:12px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn:hover {filter:brightness(1.15)}
+.btn-red {background:var(--red);border-color:var(--red)}
+.btn-outline {background:transparent;border-color:#555}
+.btn-gold {background:var(--gold);border-color:var(--gold);color:#111}
+.grid {display:grid;gap:16px}
+.stats {grid-template-columns:repeat(4,minmax(0,1fr));margin:22px 0}
+.stat,.card {
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:13px;padding:19px;min-width:0;
+}
+.stat-top {display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:11px}
+.stat-icon {color:var(--gold);font-size:20px}
+.stat-value {font-size:27px;font-weight:800;margin:17px 0 6px}
+.stat-note {font-size:11px;color:var(--muted)}
+.section-head {display:flex;justify-content:space-between;align-items:center;gap:12px;margin:28px 0 14px}
+.section-head h2 {margin:0}
+.columns {grid-template-columns:minmax(0,1.55fr) minmax(260px,1fr)}
+.lesson-list {display:grid;gap:10px}
+.lesson {
+  display:flex;align-items:center;gap:13px;background:#121212;
+  border:1px solid var(--border);border-radius:10px;padding:13px;
+}
+.lesson-icon {
+  width:43px;height:43px;flex-shrink:0;border-radius:9px;
+  background:#291010;color:var(--red);display:grid;place-items:center;font-size:19px;
+}
+.lesson-info {flex:1;min-width:0}
+.lesson-info h3 {font-size:12px;margin:0 0 6px;line-height:1.5}
+.lesson-info p {margin:0;color:var(--muted);font-size:10px}
+.lesson-status {font-size:10px;color:var(--gold);white-space:nowrap}
+.progress-track {height:7px;background:#303030;border-radius:99px;overflow:hidden}
+.progress-fill {height:100%;width:0;background:var(--red);transition:width .2s}
+.progress-label {display:flex;justify-content:space-between;gap:10px;font-size:11px;margin:13px 0;color:#bbb}
+.community {
+  margin-top:16px;padding:20px;border:1px solid #44371f;
+  border-radius:12px;background:#15120d;
+}
+.community h3 {margin-bottom:8px}
+.community p {font-size:12px;color:#aaa}
+.pill {
+  display:inline-block;border:1px solid #444;border-radius:99px;
+  padding:5px 9px;font-size:10px;color:#bbb;
+}
+.gold {color:var(--gold)}
+.red {color:var(--red)}
+.page {display:none}
+.page.active {display:block}
+.course-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+.course-card {
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;
+}
+.course-art {
+  min-height:110px;border-radius:9px;display:grid;place-items:center;
+  background:radial-gradient(ellipse at center,#421010,#151010 70%);
+  font:700 22px Orbitron,sans-serif;color:var(--gold);
+}
+.course-card p {font-size:12px;color:var(--muted);margin:0}
+.course-card .btn {margin-top:auto}
+.toolbar {display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.toolbar button {background:#141414;border:1px solid #333;color:#aaa;padding:9px 12px;border-radius:8px;font-size:11px}
+.toolbar button.selected {border-color:var(--red);color:white;background:#281010}
+.form-card {max-width:600px}
+.field {display:grid;gap:7px;margin:15px 0}
+.field label {font-size:12px;color:#bbb}
+.field input,.field select {
+  background:#090909;border:1px solid #393939;border-radius:8px;
+  padding:12px;color:white;width:100%;
+}
+.payment-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+.price {font-size:31px;font-weight:800;color:var(--gold);margin:12px 0}
+.price small {font-size:12px;color:#aaa;font-weight:400}
+.price-card {border:1px solid var(--border);border-radius:13px;padding:22px;background:#111}
+.price-card.featured {border-color:#85652e}
+.price-card ul {padding-left:18px;color:#aaa;font-size:12px;line-height:2}
+.certificate {
+  border:3px double var(--gold);padding:35px 22px;text-align:center;
+  background:#101010;max-width:650px;margin:15px auto;
+}
+.certificate h2 {font:700 22px Orbitron,sans-serif;color:var(--gold);margin:18px 0}
+.certificate .seal {font-size:42px;color:var(--gold)}
+.notice {
+  padding:13px 15px;background:#15120d;border:1px solid #49391c;
+  color:#c8bda8;border-radius:9px;font-size:12px;line-height:1.7;margin-top:16px;
+}
+.footer {border-top:1px solid var(--border);padding:22px 30px;color:#777;font-size:10px;text-align:center}
+.empty {padding:25px;text-align:center;color:#aaa}
+@media(max-width:1000px) {
+  .sidebar {width:220px}
+  .content {padding:22px}
+  .stats {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .columns {grid-template-columns:1fr}
+}
+@media(max-width:680px) {
+  .layout {display:block}
+  .sidebar {
+    display:none;position:fixed;z-index:10;top:0;bottom:0;left:0;
+    width:270px;overflow:auto;box-shadow:15px 0 40px #0009;
+  }
+  .sidebar.open {display:flex}
+  .mobile-menu {display:inline-flex}
+  .topbar {padding:13px 16px}
+  .content {padding:18px 14px}
+  .hero {padding:22px 18px}
+  .stats {gap:10px}
+  .stat {padding:14px}
+  .stat-value {font-size:23px}
+  .course-grid,.payment-grid {grid-template-columns:1fr}
+  .section-head {align-items:flex-start}
+  .footer {padding:20px 14px}
+}
+</style>
+</head>
+
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">L</div>
+      <div>
+        <h2>LDU <span class="red">RCM</span></h2>
+        <small>STUDENT COMMAND CENTRE</small>
+      </div>
+    </div>
+
+    <div>
+      <div class="nav-label">LEARNING SPACE</div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="active" data-page="overview"><span class="ico">⌂</span>Overview</button>
+        <button data-page="courses"><span class="ico">▤</span>My Courses</button>
+        <button data-page="progress"><span class="ico">◷</span>My Progress</button>
+        <button data-page="certificates"><span class="ico">♙</span>Certificates</button>
+        <button data-page="community"><span class="ico">◎</span>Community</button>
+        <button data-page="payments"><span class="ico">◇</span>Programme Fees</button>
+        <button data-page="account"><span class="ico">○</span>My Account</button>
+      </nav>
+    </div>
+
+    <div class="side-bottom">
+      <div class="plan-mini">
+        <span class="eyebrow">YOUR PROGRAMME</span>
+        <strong>12 Months</strong>
+        <p>Develop your market-reading skills, discipline and independent trading process.</p>
+        <button class="btn btn-outline" style="width:100%" data-go="courses">Explore lessons</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="btn mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button>
+        <div class="topbar-label">
+          LIQUIDITY DISPLACEMENT UNIVERSITY™
+          <strong id="pageHeading">Student Overview</strong>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="pill">PREVIEW MODE</span>
+        <div class="avatar">S</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- OVERVIEW -->
+      <section class="page active" id="page-overview">
+        <div class="hero">
+          <div class="eyebrow">WELCOME TO YOUR LEARNING SPACE</div>
+          <h1>Master the Pattern.</h1>
+          <p>
+            Welcome to Liquidity Displacement University™.
+            Build your understanding of repeating market patterns,
+            develop disciplined execution and work towards trading independently.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-red" data-go="courses">Explore My Courses →</button>
+            <button class="btn btn-outline" data-go="progress">View My Progress</button>
+          </div>
+        </div>
+
+        <div class="grid stats">
+          <div class="stat">
+            <div class="stat-top"><span>Course lessons</span><span class="stat-icon">▤</span></div>
+            <div class="stat-value" id="totalLessons">5</div>
+            <div class="stat-note">Sample curriculum</div>
+          </div>
+          <div class="stat">
+            <div class="stat-top"><span>Completed</span><span class="stat-icon">✓</span></div>
+            <div class="stat-value" id="completedCount">0</div>
+            <div class="stat-note">On this browser</div>
+          </div>
+          <div class="stat">
+            <div class="stat-top"><span>Course progress</span><span class="stat-icon">◷</span></div>
+            <div class="stat-value" id="progressPercent">0%</div>
+            <div class="stat-note">Demo progress only</div>
+          </div>
+          <div class="stat">
+            <div class="stat-top"><span>Certificate</span><span class="stat-icon">♙</span></div>
+            <div class="stat-value" style="font-size:19px" id="certificateStatus">Locked</div>
+            <div class="stat-note">Assessment required</div>
+          </div>
+        </div>
+
+        <div class="grid columns">
+          <div>
+            <div class="section-head">
+              <h2>Continue Learning</h2>
+              <button class="btn btn-outline" data-go="courses">All lessons</button>
+            </div>
+            <div class="lesson-list" id="recentLessons"></div>
+          </div>
+          <div>
+            <div class="section-head"><h2>Your Journey</h2></div>
+            <div class="card">
+              <div class="eyebrow">12-MONTH PROGRAMME</div>
+              <h3 style="margin-top:12px">Build independent skills</h3>
+              <p class="muted small">Learn the curriculum, complete practice exercises and prepare for the final assessment.</p>
+              <div class="progress-label"><span>Learning progress</span><strong id="journeyPercent">0%</strong></div>
+              <div class="progress-track"><div class="progress-fill" id="journeyBar"></div></div>
+              <button class="btn btn-red" style="width:100%;margin-top:20px" data-go="progress">View progress</button>
+            </div>
+            <div class="community">
+              <h3>Student Community</h3>
+              <p>Connect with the Discord community for group discussions, education and announcements.</p>
+              <a class="btn btn-outline" style="width:100%" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Open Discord ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSES -->
+      <section class="page" id="page-courses">
+        <div class="eyebrow">YOUR CURRICULUM</div>
+        <h1>My Courses</h1>
+        <p class="muted">Study the lessons in sequence and track your progress.</p>
+        <div class="toolbar">
+          <button class="selected" data-filter="all">All lessons</button>
+          <button data-filter="remaining">Remaining</button>
+          <button data-filter="completed">Completed</button>
+        </div>
+        <div class="grid course-grid" id="courseGrid"></div>
+        <div class="notice">
+          These are sample lesson titles for the interface preview. Actual videos and PDF resources
+          must be added separately and served through a protected backend before paid students use the portal.
+        </div>
+      </section>
+
+      <!-- PROGRESS -->
+      <section class="page" id="page-progress">
+        <div class="eyebrow">YOUR DEVELOPMENT</div>
+        <h1>My Progress</h1>
+        <p class="muted">Review your lesson completion and preparation for the final assessment.</p>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+            <h3>Programme completion</h3>
+            <strong class="gold" id="largePercent">0%</strong>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="largeBar"></div></div>
+          <p class="muted small" id="progressSummary" style="margin-top:13px">0 of 5 sample lessons completed.</p>
+        </div>
+        <div class="section-head"><h2>Lesson checklist</h2></div>
+        <div class="lesson-list" id="progressLessons"></div>
+      </section>
+
+      <!-- CERTIFICATES -->
+      <section class="page" id="page-certificates">
+        <div class="eyebrow">PROGRAMME COMPLETION</div>
+        <h1>Certificates</h1>
+        <div class="certificate">
+          <div class="seal">✦</div>
+          <div class="eyebrow">LIQUIDITY DISPLACEMENT UNIVERSITY™</div>
+          <h2>Certificate of Completion</h2>
+          <p style="color:#bbb">This certificate is awarded to</p>
+          <h2 style="color:white;font-family:Inter,sans-serif">Student Name</h2>
+          <p style="color:#bbb">upon successful completion of the programme and its required assessment.</p>
+          <div style="border-top:1px solid #554629;margin:30px 0 15px"></div>
+          <p class="muted small">Powered by Forex Wealth Empire</p>
+          <span class="pill" id="certificatePill">PREVIEW — NOT ISSUED</span>
+        </div>
+        <div class="notice">
+          The certificate shown here is a visual sample only. A real certificate must be generated
+          after verifying the student's identity, course completion and final assessment result.
+        </div>
+      </section>
+
+      <!-- COMMUNITY -->
+      <section class="page" id="page-community">
+        <div class="eyebrow">LEARN TOGETHER</div>
+        <h1>Student Community</h1>
+        <div class="card">
+          <h2>Discord Education Hub</h2>
+          <p class="muted">Join your community for discussions, live education sessions and announcements.</p>
+          <a href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer" class="btn btn-red">Join Discord ↗</a>
+        </div>
+        <div class="notice">
+          The invite above uses your latest shared Discord link. If you change your invite later,
+          update the link in this file. Paid-member-only Discord roles require a separate secure integration.
+        </div>
+      </section>
+
+      <!-- PAYMENTS -->
+      <section class="page" id="page-payments">
+        <div class="eyebrow">TUITION & MEMBERSHIP</div>
+        <h1>Programme Fees</h1>
+        <p class="muted">Choose one of the two payment arrangements for the 12-month programme.</p>
+        <div class="grid payment-grid">
+          <div class="price-card">
+            <span class="pill">MONTHLY OPTION</span>
+            <div class="price">R1,500 <small>/ month</small></div>
+            <p class="muted small">12 monthly payments over the programme period.</p>
+            <ul>
+              <li>12-month programme</li>
+              <li>Course lessons and resources</li>
+              <li>Progress tracking</li>
+              <li>Certificate eligibility after assessment</li>
+            </ul>
+            <button class="btn btn-outline" style="width:100%" data-payment="monthly">Monthly payment option</button>
+          </div>
+          <div class="price-card featured">
+            <span class="pill gold">ONCE-OFF OPTION</span>
+            <div class="price">R18,000 <small>once-off</small></div>
+            <p class="muted small">One upfront payment for the 12-month programme.</p>
+            <ul>
+              <li>12-month programme</li>
+              <li>Course lessons and resources</li>
+              <li>Progress tracking</li>
+              <li>Certificate eligibility after assessment</li>
+            </ul>
+            <button class="btn btn-gold" style="width:100%" data-payment="annual">Annual payment option</button>
+          </div>
+        </div>
+        <div class="notice" id="paymentNotice">
+          Preview only. No payment will be taken and no membership will be activated from this page.
+          Live PayFast checkout and server-side payment verification must be configured before accepting money.
+        </div>
+      </section>
+
+      <!-- ACCOUNT -->
+      <section class="page" id="page-account">
+        <div class="eyebrow">STUDENT PROFILE</div>
+        <h1>My Account</h1>
+        <div class="card form-card">
+          <h2>Account preview</h2>
+          <p class="muted small">This prototype does not have real student authentication yet.</p>
+          <div class="field">
+            <label for="studentName">Display name</label>
+            <input id="studentName" placeholder="Your full name">
+          </div>
+          <div class="field">
+            <label for="studentEmail">Email address</label>
+            <input id="studentEmail" type="email" placeholder="you@example.com">
+          </div>
+          <button class="btn btn-red" id="saveProfile">Save preview details</button>
+          <p id="profileMessage" class="muted small" style="margin-top:12px"></p>
+        </div>
+        <div class="notice">
+          Do not enter passwords or payment details here. Real registration, login, password recovery
+          and account security will be provided by the backend.
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="footer">
+      LIQUIDITY DISPLACEMENT UNIVERSITY™ · POWERED BY FOREX WEALTH EMPIRE
+      <br><br>STUDENT RESOURCE & COURSE MANAGEMENT · PREVIEW VERSION
+    </footer>
+  </main>
+</div>
+
+<script>
+const lessons = [
+  {id:1,title:"Introduction to the LDM",module:"Foundation",duration:"18 min",description:"An introduction to the course and its learning objectives."},
+  {id:2,title:"Understanding Repeating Market Patterns",module:"Foundation",duration:"24 min",description:"Study recurring price behaviour and develop observation skills."},
+  {id:3,title:"Liquidity and Displacement",module:"Advanced",duration:"32 min",description:"Explore liquidity behaviour and displacement concepts."},
+  {id:4,title:"Market Confirmation and Execution",module:"Execution",duration:"28 min",description:"Study confirmation, trade planning and execution discipline."},
+  {id:5,title:"Risk Management and Trading Discipline",module:"Risk Management",duration:"21 min",description:"Learn about risk controls, journaling and responsible trading."}
+];
+
+/*
+  FRONT-END DEMO ONLY.
+  Completion is stored in this browser for preview purposes.
+  It is not proof of student identity, paid membership or course completion.
+*/
+const STORAGE_KEY = "ldu_rcm_demo_progress_v1";
+let completed = [];
+let activeFilter = "all";
+
+try {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  if (Array.isArray(saved)) completed = saved.filter(id => lessons.some(l => l.id === id));
+} catch (error) {
+  completed = [];
+}
+
+function saveDemoProgress() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(completed));
+  } catch (error) {
+    // Dashboard remains usable for the current page session.
+  }
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+  })[character]);
+}
+
+function renderLesson(lesson) {
+  const done = completed.includes(lesson.id);
+  return `
+    <article class="lesson">
+      <div class="lesson-icon">${done ? "✓" : "▶"}</div>
+      <div class="lesson-info">
+        <h3>${escapeHTML(lesson.title)}</h3>
+        <p>${escapeHTML(lesson.module)} · ${escapeHTML(lesson.duration)}</p>
+      </div>
+      <button class="btn ${done ? "btn-outline" : "btn-red"}"
+        data-toggle-lesson="${lesson.id}">
+        ${done ? "Completed ✓" : "Mark complete"}
+      </button>
+    </article>`;
+}
+
+function renderCourse(lesson) {
+  const done = completed.includes(lesson.id);
+  return `
+    <article class="course-card">
+      <div class="course-art">LDM <span style="color:#e50914">0${lesson.id}</span></div>
+      <span class="pill">${escapeHTML(lesson.module)}</span>
+      <h3>${escapeHTML(lesson.title)}</h3>
+      <p>${escapeHTML(lesson.description)}</p>
+      <p>${escapeHTML(lesson.duration)}</p>
+      <button class="btn ${done ? "btn-outline" : "btn-red"}"
+        data-toggle-lesson="${lesson.id}">
+        ${done ? "Mark incomplete" : "Mark complete (demo)"}
+      </button>
+    </article>`;
+}
+
+function updateDashboard() {
+  const total = lessons.length;
+  const count = completed.length;
+  const percent = Math.round((count / total) * 100);
+
+  document.getElementById("totalLessons").textContent = total;
+  document.getElementById("completedCount").textContent = count;
+  document.getElementById("progressPercent").textContent = percent + "%";
+  document.getElementById("journeyPercent").textContent = percent + "%";
+  document.getElementById("journeyBar").style.width = percent + "%";
+  document.getElementById("largePercent").textContent = percent + "%";
+  document.getElementById("largeBar").style.width = percent + "%";
+  document.getElementById("progressSummary").textContent =
+    `${count} of ${total} sample lessons completed.`;
+
+  // A complete demo checklist is not sufficient to issue a real certificate.
+  document.getElementById("certificateStatus").textContent =
+    count === total ? "Assessment" : "Locked";
+  document.getElementById("certificatePill").textContent =
+    "PREVIEW — NOT ISSUED";
+
+  const remaining = lessons.filter(l => !completed.includes(l.id));
+  const recent = remaining.length ? remaining.slice(0, 3) : lessons.slice(-2);
+  document.getElementById("recentLessons").innerHTML = recent.map(renderLesson).join("");
+  document.getElementById("progressLessons").innerHTML = lessons.map(renderLesson).join("");
+
+  const filtered = lessons.filter(lesson => {
+    if (activeFilter === "completed") return completed.includes(lesson.id);
+    if (activeFilter === "remaining") return !completed.includes(lesson.id);
+    return true;
+  });
+
+  document.getElementById("courseGrid").innerHTML = filtered.length
+    ? filtered.map(renderCourse).join("")
+    : '<div class="empty">No lessons in this category yet.</div>';
+
+  document.querySelectorAll("[data-filter]").forEach(button => {
+    button.classList.toggle("selected", button.dataset.filter === activeFilter);
+  });
+}
+
+function showPage(name) {
+  const page = document.getElementById("page-" + name);
+  if (!page) return;
+
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  page.classList.add("active");
+
+  document.querySelectorAll("[data-page]").forEach(button => {
+    button.classList.toggle("active", button.dataset.page === name);
+  });
+
+  const labels = {
+    overview:"Student Overview",
+    courses:"My Courses",
+    progress:"My Progress",
+    certificates:"Certificates",
+    community:"Student Community",
+    payments:"Programme Fees",
+    account:"My Account"
+  };
+
+  document.getElementById("pageHeading").textContent = labels[name] || "Student Portal";
+  document.getElementById("sidebar").classList.remove("open");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.addEventListener("click", event => {
+  const nav = event.target.closest("[data-page]");
+  if (nav) showPage(nav.dataset.page);
+
+  const go = event.target.closest("[data-go]");
+  if (go) showPage(go.dataset.go);
+
+  const toggle = event.target.closest("[data-toggle-lesson]");
+  if (toggle) {
+    const id = Number(toggle.dataset.toggleLesson);
+    if (completed.includes(id)) {
+      completed = completed.filter(item => item !== id);
+    } else if (lessons.some(lesson => lesson.id === id)) {
+      completed.push(id);
+    }
+    saveDemoProgress();
+    updateDashboard();
+  }
+
+  const filter = event.target.closest("[data-filter]");
+  if (filter) {
+    activeFilter = filter.dataset.filter;
+    updateDashboard();
+  }
+
+  const payment = event.target.closest("[data-payment]");
+  if (payment) {
+    const message = payment.dataset.payment === "monthly"
+      ? "Monthly option selected: R1,500 per month for 12 months. This is only a preview; checkout is not connected."
+      : "Annual option selected: R18,000 once-off for 12 months. This is only a preview; checkout is not connected.";
+    document.getElementById("paymentNotice").textContent = message;
+  }
+});
+
+document.getElementById("menuBtn").addEventListener("click", () => {
+  document.getElementById("sidebar").classList.toggle("open");
+});
+
+document.getElementById("saveProfile").addEventListener("click", () => {
+  const name = document.getElementById("studentName").value.trim();
+  const email = document.getElementById("studentEmail").value.trim();
+  const message = document.getElementById("profileMessage");
+
+  if (!name || !email) {
+    message.textContent = "Enter a display name and email for this local preview.";
+    return;
+  }
+
+  // Do not persist personal information in this demo.
+  message.textContent = "Preview details entered for this session only. No account was created.";
+});
+
+updateDashboard();
+</script>
+</body>
+</html>
