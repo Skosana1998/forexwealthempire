@@ -1,996 +1,1168 @@
-/* ==========================================
-LDU PREMIUM THEME UPGRADE
-Theme only — preserve existing website content
-========================================== */
-
-:root {
---bg: #050507;
---bg2: #0b0b10;
---panel: rgba(255,255,255,.045);
---panel2: rgba(255,255,255,.085);
---line: rgba(255,255,255,.12);
---text: #faf9fb;
---muted: #aaa8b2;
---red: #f20d28;
---red2: #8f0619;
---gold: #d9b66e;
---green: #69e5ae;
---radius: 25px;
---max: 1240px;
---shadow: 0 25px 90px rgba(0,0,0,.48);
-}
-
-html {
-scroll-behavior: smooth;
-scroll-padding-top: 95px;
-}
-
-body {
-background:
-radial-gradient(ellipse at 50% -15%, rgba(242,13,40,.19), transparent 42%),
-radial-gradient(ellipse at 100% 35%, rgba(217,182,110,.07), transparent 32%),
-radial-gradient(ellipse at 0% 65%, rgba(120,5,25,.11), transparent 35%),
-#050507;
-background-attachment: fixed;
-}
-
-::selection {
-background: rgba(242,13,40,.45);
-color: #fff;
-}
-
-.container {
-width: min(1240px, calc(100% - 48px));
-}
-
-.section {
-padding-top: 115px;
-padding-bottom: 115px;
-}
-
-.section-sm {
-padding-top: 72px;
-padding-bottom: 72px;
-}
-
-h1, h2, h3, h4 {
-text-wrap: balance;
-}
-
-h1 {
-font-weight: 900;
-letter-spacing: -.065em;
-}
-
-h2 {
-font-weight: 850;
-letter-spacing: -.055em;
-}
-
-p {
-text-wrap: pretty;
-}
-
-.gradient-text {
-background: linear-gradient(
-105deg,
-#ffffff 0%,
-#ffb7bf 30%,
-#f20d28 68%,
-#d9b66e 100%
-);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
-
-.gold-text {
-color: #e4c783;
-}
-
-.eyebrow {
-color: #ff7e8b;
-letter-spacing: 2.6px;
-font-size: .72rem;
-}
-
-.eyebrow:before {
-width: 29px;
-height: 2px;
-background: linear-gradient(90deg, #f20d28, #d9b66e);
-box-shadow: 0 0 13px rgba(242,13,40,.45);
-}
-
-.glass {
-background:
-linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.018)),
-rgba(10,10,14,.72);
-border: 1px solid rgba(255,255,255,.105);
-box-shadow: 0 24px 75px rgba(0,0,0,.32);
-backdrop-filter: blur(24px);
--webkit-backdrop-filter: blur(24px);
-transition:
-border-color .3s ease,
-box-shadow .3s ease,
-background .3s ease;
-}
-
-.btn {
-min-height: 52px;
-padding: 14px 24px;
-font-weight: 800;
-letter-spacing: -.01em;
-transition:
-transform .25s ease,
-box-shadow .25s ease,
-background .25s ease,
-border-color .25s ease;
-}
-
-.btn-primary {
-background: linear-gradient(120deg, #ff3349 0%, #d80b27 58%, #a8071c 100%);
-border: 1px solid rgba(255,132,144,.3);
-box-shadow:
-0 9px 28px rgba(242,13,40,.22),
-inset 0 1px 0 rgba(255,255,255,.18);
-}
-
-.btn-primary:hover {
-transform: translateY(-3px);
-box-shadow:
-0 15px 40px rgba(242,13,40,.36),
-inset 0 1px 0 rgba(255,255,255,.2);
-}
-
-.btn-secondary {
-border-color: rgba(255,255,255,.17);
-background: linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
-}
-
-.btn-secondary:hover {
-border-color: rgba(217,182,110,.5);
-background: rgba(217,182,110,.07);
-}
-
-.pill {
-background: rgba(255,255,255,.045);
-border-color: rgba(255,255,255,.12);
-backdrop-filter: blur(12px);
-}
-
-.dot {
-background: #ff3048;
-box-shadow: 0 0 15px rgba(255,48,72,.75);
-}
-
-/* Announcement */
-
-.announcement {
-min-height: 40px;
-background: linear-gradient(90deg, rgba(120,5,25,.4), rgba(242,13,40,.12), rgba(120,5,25,.4));
-border-bottom: 1px solid rgba(242,13,40,.28);
-}
-
-.announcement-track span {
-color: #ffe0e3;
-font-size: .72rem;
-letter-spacing: 1px;
-}
-
-/* Premium navigation */
-
-.nav-wrap {
-background: rgba(5,5,7,.86);
-border-bottom: 1px solid rgba(255,255,255,.09);
-box-shadow: 0 10px 35px rgba(0,0,0,.15);
-}
-
-.brand {
-gap: 13px;
-}
-
-.brand-mark {
-width: 47px;
-height: 47px;
-border-radius: 14px;
-color: #fff;
-background: linear-gradient(145deg, #f20d28, #650716);
-border: 1px solid rgba(255,160,170,.5);
-box-shadow:
-0 5px 25px rgba(242,13,40,.2),
-inset 0 1px 0 rgba(255,255,255,.2);
-letter-spacing: -1px;
-}
-
-.brand-copy strong {
-letter-spacing: .045em;
-font-size: .84rem;
-}
-
-.brand-copy small {
-color: #d2b675;
-letter-spacing: 1.45px;
-font-size: .61rem;
-}
-
-.nav-links > a:not(.btn) {
-color: #c1bec8;
-font-weight: 600;
-}
-
-.nav-links > a:not(.btn):hover {
-color: #fff;
-}
-
-.menu-toggle {
-border-color: rgba(217,182,110,.25);
-}
-
-/* Hero: stronger visual hierarchy */
-
-.hero {
-padding-top: 105px;
-padding-bottom: 105px;
-isolation: isolate;
-}
-
-.hero:before {
-width: 760px;
-height: 760px;
-top: -230px;
-right: -170px;
-background: radial-gradient(circle, rgba(242,13,40,.18), rgba(143,6,25,.06) 35%, transparent 70%);
-}
-
-.hero:after {
-content: "";
-position: absolute;
-z-index: -1;
-inset: 0;
-pointer-events: none;
-opacity: .16;
-background-image:
-linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
-background-size: 58px 58px;
-mask-image: linear-gradient(to bottom, black, transparent 85%);
-}
-
-.hero-grid {
-gap: 58px;
-}
-
-.hero h1 {
-line-height: 1.015;
-margin-top: 23px;
-margin-bottom: 27px;
-}
-
-.hero-copy > p {
-line-height: 1.95;
-color: #b9b6c1;
-}
-
-.hero-meta {
-gap: 10px;
-}
-
-.market-card {
-border-radius: 30px;
-border-color: rgba(217,182,110,.2);
-background:
-radial-gradient(ellipse at 80% 0%, rgba(242,13,40,.11), transparent 48%),
-linear-gradient(145deg, rgba(20,19,25,.97), rgba(7,7,10,.97));
-box-shadow: 0 35px 100px rgba(0,0,0,.5);
-}
-
-.market-icon {
-color: #fff;
-background: linear-gradient(145deg, #ed1731, #710817);
-border-color: rgba(255,255,255,.14);
-}
-
-.market-name strong {
-letter-spacing: -.015em;
-}
-
-.market-status {
-letter-spacing: .7px;
-font-size: .67rem;
-}
-
-.chart-shell {
-background:
-radial-gradient(ellipse at 50% 100%, rgba(242,13,40,.08), transparent 65%),
-#08080c;
-border-color: rgba(255,255,255,.1);
-}
-
-.chart-label {
-padding-top: 5px;
-}
-
-.chart-label small {
-letter-spacing: 1px;
-font-size: .66rem;
-}
-
-.chart-label strong {
-font-size: .87rem;
-}
-
-.floating-card {
-border-color: rgba(217,182,110,.28);
-background: linear-gradient(145deg, rgba(22,20,22,.97), rgba(9,9,12,.97));
-box-shadow: 0 20px 50px rgba(0,0,0,.4);
-}
-
-.floating-card strong {
-color: #f3dca8;
-}
-
-.hero-side-note {
-background: rgba(12,11,15,.94);
-border-color: rgba(255,255,255,.13);
-}
-
-/* Stats */
-
-.stats-grid {
-gap: 16px;
-}
-
-.stat-card {
-position: relative;
-overflow: hidden;
-padding: 28px 24px;
-border-radius: 20px;
-background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
-}
-
-.stat-card:before {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 48px;
-height: 2px;
-background: linear-gradient(90deg, #f20d28, #d9b66e);
-}
-
-.stat-card strong {
-font-size: 1.08rem;
-letter-spacing: -.025em;
-}
-
-.stat-card p {
-font-size: .81rem;
-}
-
-/* Section headings */
-
-.section-heading {
-margin-bottom: 52px;
-}
-
-.section-heading h2 {
-line-height: 1.12;
-margin-bottom: 21px;
-}
-
-.section-heading > p {
-color: #aaa8b2;
-line-height: 1.9;
-}
-
-/* About and mission */
-
-.mission-main {
-border-radius: 27px;
-padding: 43px;
-background:
-radial-gradient(ellipse at 100% 0%, rgba(242,13,40,.1), transparent 45%),
-linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.012));
-}
-
-.mission-main h3 {
-font-size: clamp(1.5rem, 2.5vw, 1.9rem);
-line-height: 1.25;
-}
-
-.mission-main p {
-line-height: 1.9;
-}
-
-.mission-side {
-gap: 15px;
-}
-
-.mini-card {
-border-radius: 21px;
-background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
-}
-
-.icon-box {
-color: #ff8b98;
-background: linear-gradient(145deg, rgba(242,13,40,.16), rgba(242,13,40,.035));
-border-color: rgba(242,13,40,.23);
-box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
-}
-
-/* Programme cards */
-
-.programme-grid {
-gap: 19px;
-}
-
-.programme-card {
-border-radius: 23px;
-padding: 31px;
-background:
-radial-gradient(ellipse at 100% 0%, rgba(242,13,40,.075), transparent 52%),
-linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
-}
-
-.programme-card:hover {
-transform: translateY(-6px);
-border-color: rgba(217,182,110,.36);
-box-shadow: 0 30px 70px rgba(0,0,0,.36);
-}
-
-.programme-number {
-color: #e3c47f;
-letter-spacing: 1.65px;
-}
-
-.programme-card h3 {
-line-height: 1.25;
-}
-
-.programme-card p {
-line-height: 1.85;
-}
-
-.programme-card li {
-color: #d0cdd6;
-line-height: 1.6;
-}
-
-/* Methodology */
-
-.framework {
-padding: 53px;
-border-radius: 30px;
-background:
-radial-gradient(ellipse at 100% 0%, rgba(242,13,40,.13), transparent 48%),
-radial-gradient(ellipse at 0% 100%, rgba(217,182,110,.055), transparent 42%),
-linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
-}
-
-.framework:after {
-color: rgba(255,255,255,.035);
-}
-
-.framework-head h2 {
-line-height: 1.15;
-}
-
-.framework-head p {
-line-height: 1.9;
-}
-
-.framework-steps {
-gap: 15px;
-}
-
-.framework-step {
-border-radius: 19px;
-background: rgba(4,4,7,.5);
-border-color: rgba(255,255,255,.1);
-}
-
-.step-num {
-color: #e5c67f;
-}
-
-.framework-step h3 {
-font-size: 1.04rem;
-}
-
-.framework-step p {
-line-height: 1.8;
-}
-
-/* Learning experience */
-
-.learning-grid {
-gap: 55px;
-}
-
-.learning-intro h2 {
-line-height: 1.14;
-}
-
-.learning-intro > p {
-line-height: 1.95;
-}
-
-.learning-item {
-border-radius: 20px;
-background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
-}
-
-.learning-item:hover,
-.mini-card:hover,
-.principle:hover,
-.community-card:hover {
-border-color: rgba(217,182,110,.27);
-box-shadow: 0 20px 55px rgba(0,0,0,.25);
-}
-
-.learning-item h3 {
-font-size: 1.02rem;
-}
-
-.learning-item p {
-line-height: 1.85;
-}
-
-/* Principles */
-
-.principles-grid {
-gap: 17px;
-}
-
-.principle {
-border-radius: 22px;
-background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.012));
-}
-
-.principle .symbol {
-color: #e2c17b;
-font-size: 1.28rem;
-letter-spacing: .08em;
-}
-
-.principle h3 {
-font-size: 1.14rem;
-}
-
-.principle p {
-line-height: 1.85;
-}
-
-/* Student access */
-
-.access-shell {
-padding: 52px;
-border-radius: 30px;
-background:
-radial-gradient(ellipse at 100% 0%, rgba(242,13,40,.15), transparent 48%),
-linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.012));
-}
-
-.access-shell:before {
-background: radial-gradient(circle, rgba(242,13,40,.17), transparent 70%);
-}
-
-.access-head h2 {
-line-height: 1.14;
-}
-
-.access-head p {
-line-height: 1.9;
-}
-
-.access-grid {
-gap: 17px;
-}
-
-.access-card {
-border-radius: 21px;
-background: rgba(5,5,8,.65);
-border-color: rgba(255,255,255,.11);
-transition: transform .25s ease, border-color .25s ease;
-}
-
-.access-card:hover {
-transform: translateY(-5px);
-border-color: rgba(217,182,110,.35);
-}
-
-.access-label {
-color: #e2c17b;
-}
-
-.access-card h3 {
-font-size: 1.13rem;
-}
-
-.access-card p {
-line-height: 1.8;
-}
-
-/* Countdown */
-
-.countdown-shell {
-padding: 47px;
-border-radius: 29px;
-background:
-radial-gradient(ellipse at 100% 50%, rgba(242,13,40,.13), transparent 50%),
-linear-gradient(110deg, rgba(242,13,40,.1), rgba(255,255,255,.025));
-border-color: rgba(217,182,110,.18);
-}
-
-.countdown-shell h2 {
-line-height: 1.15;
-}
-
-.countdown-shell p {
-line-height: 1.9;
-}
-
-.countdown {
-gap: 11px;
-}
-
-.time-box {
-min-width: 78px;
-padding: 17px 12px;
-background: rgba(5,5,8,.72);
-border-color: rgba(255,255,255,.12);
-border-radius: 16px;
-}
-
-.time-box strong {
-font-size: 1.65rem;
-font-variant-numeric: tabular-nums;
-color: #fff;
-}
-
-.time-box small {
-color: #d1b775;
-letter-spacing: 1.1px;
-}
-
-/* Community */
-
-.community-grid {
-gap: 18px;
-}
-
-.community-card {
-min-height: 245px;
-border-radius: 23px;
-background:
-radial-gradient(ellipse at 0% 0%, rgba(242,13,40,.07), transparent 55%),
-linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
-}
-
-.social-symbol {
-color: #fff;
-border-color: rgba(217,182,110,.24);
-background: linear-gradient(145deg, rgba(242,13,40,.17), rgba(255,255,255,.025));
-}
-
-.community-card h3 {
-font-size: 1.18rem;
-}
-
-.community-card p {
-line-height: 1.85;
-}
-
-/* FAQ */
-
-.faq-list {
-gap: 13px;
-}
-
-details {
-border-radius: 17px;
-background: linear-gradient(110deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
-transition: border-color .25s ease, background .25s ease;
-}
-
-details:hover,
-details[open] {
-border-color: rgba(217,182,110,.28);
-background: rgba(255,255,255,.04);
-}
-
-summary {
-font-size: .96rem;
-line-height: 1.6;
-}
-
-summary:after {
-color: #e2c17b;
-}
-
-details p {
-color: #b7b4be;
-line-height: 1.9;
-}
-
-/* Contact */
-
-.contact-copy h2 {
-line-height: 1.15;
-}
-
-.contact-copy > p {
-line-height: 1.9;
-}
-
-.contact-info a,
-.contact-info div {
-transition: color .2s ease;
-}
-
-.contact-info a:hover {
-color: #e2c17b;
-}
-
-.contact-info span {
-color: #e2c17b;
-}
-
-.contact-form {
-padding: 34px;
-border-radius: 25px;
-background:
-radial-gradient(ellipse at 100% 0%, rgba(242,13,40,.07), transparent 48%),
-linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
-}
-
-.field label {
-color: #e3e0e8;
-}
-
-.field input,
-.field textarea,
-.field select {
-background: rgba(4,4,7,.6);
-border-color: rgba(255,255,255,.13);
-border-radius: 12px;
-}
-
-.field input:focus,
-.field textarea:focus,
-.field select:focus {
-border-color: rgba(242,13,40,.75);
-box-shadow: 0 0 0 3px rgba(242,13,40,.09);
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
-color: #77747f;
-}
-
-.form-note {
-color: #93909b;
-line-height: 1.8;
-}
-
-/* Footer */
-
-.footer {
-background:
-radial-gradient(ellipse at 0% 0%, rgba(242,13,40,.07), transparent 38%),
-#050507;
-border-top-color: rgba(217,182,110,.16);
-}
-
-.footer-brand p {
-line-height: 1.9;
-}
-
-.footer-col h4 {
-color: #f3dca8;
-letter-spacing: .04em;
-}
-
-.footer-col a {
-line-height: 1.7;
-}
-
-.footer-col a:hover {
-color: #f3dca8;
-}
-
-.footer-bottom p {
-line-height: 1.8;
-}
-
-.disclaimer {
-color: #85818c;
-line-height: 1.95;
-}
-
-/* Back to top */
-
-.back-top {
-width: 49px;
-height: 49px;
-border-color: rgba(217,182,110,.3);
-background: rgba(12,10,14,.92);
-box-shadow: 0 10px 35px rgba(0,0,0,.35);
-color: #f3dca8;
-transition: transform .2s ease, background .2s ease;
-}
-
-.back-top:hover {
-transform: translateY(-3px);
-background: #171016;
-}
-
-/* Animation polish */
-
-.reveal {
-transition:
-opacity .75s ease,
-transform .75s cubic-bezier(.2,.75,.25,1);
-}
-
-.divider {
-background: linear-gradient(90deg, transparent, rgba(217,182,110,.2), rgba(242,13,40,.25), transparent);
-}
-
-/* Mobile refinements */
-
-@media (max-width: 1000px) {
-.hero-grid {
-gap: 36px;
-}
-
-.section {
-padding-top: 90px;
-padding-bottom: 90px;
-}
-
-.framework {
-padding: 38px;
-}
-}
-
-@media (max-width: 780px) {
-.container {
-width: calc(100% - 32px);
-}
-
-.section {
-padding-top: 76px;
-padding-bottom: 76px;
-}
-
-.section-sm {
-padding-top: 48px;
-padding-bottom: 48px;
-}
-
-.hero {
-padding-top: 66px;
-padding-bottom: 75px;
-}
-
-.hero-grid {
-gap: 48px;
-}
-
-.hero-copy > p {
-line-height: 1.85;
-}
-
-.nav-links {
-top: 73px;
-background: rgba(7,7,10,.98);
-border-color: rgba(217,182,110,.19);
-}
-
-.mission-main,
-.framework,
-.access-shell {
-padding: 29px;
-}
-
-.countdown-shell {
-gap: 25px;
-}
-
-.community-card {
-min-height: auto;
-}
-}
-
-@media (max-width: 520px) {
-.container {
-width: calc(100% - 28px);
-}
-
-.section {
-padding-top: 66px;
-padding-bottom: 66px;
-}
-
-.hero {
-padding-top: 53px;
-padding-bottom: 67px;
-}
-
-.hero h1 {
-letter-spacing: -.06em;
-line-height: 1.04;
-}
-
-.hero-meta .pill {
-font-size: .7rem;
-}
-
-.market-card {
-padding: 15px;
-}
-
-.market-top {
-align-items: flex-start;
-}
-
-.market-status {
-font-size: .6rem;
-padding-top: 5px;
-}
-
-.mission-main,
-.framework,
-.access-shell {
-padding: 23px 19px;
-}
-
-.mission-side {
-gap: 10px;
-}
-
-.mini-card {
-padding: 16px;
-}
-
-.programme-card {
-padding: 25px 22px;
-}
-
-.countdown-shell {
-padding: 24px 17px;
-}
-
-.time-box {
-padding: 12px 4px;
-border-radius: 12px;
-}
-
-.time-box strong {
-font-size: 1.2rem;
-}
-
-.time-box small {
-font-size: .54rem;
-letter-spacing: .7px;
-}
-
-.contact-form {
-padding: 22px 17px;
-}
-
-.footer {
-padding-top: 43px;
-}
-}
-
-@media (prefers-reduced-motion: reduce) {
-*,
-*::before,
-*::after {
-scroll-behavior: auto !important;
-animation-duration: .01ms !important;
-transition-duration: .01ms !important;
-}
-}
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<meta name="theme-color" content="#08090c">  
+<meta name="description" content="Liquidity Displacement University™ by Forex Wealth Empire. A structured 12-month trading education programme focused on market behaviour, repeating patterns, discipline and execution.">  
+<meta name="robots" content="index, follow">  
+<title>Liquidity Displacement University™ | Forex Wealth Empire</title>  <link rel="preconnect" href="https://fonts.googleapis.com">  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  <style>  
+:root{  
+  --bg:#08090c;  
+  --bg2:#0c0e13;  
+  --panel:rgba(255,255,255,.045);  
+  --panel2:rgba(255,255,255,.075);  
+  --line:rgba(255,255,255,.105);  
+  --text:#f5f5f7;  
+  --muted:#a1a1aa;  
+  --red:#ff3545;  
+  --red2:#a90820;  
+  --gold:#d8b36a;  
+  --green:#69e5ae;  
+  --radius:28px;  
+  --max:1200px;  
+  --shadow:0 24px 80px rgba(0,0,0,.38);  
+}  
+  
+*{box-sizing:border-box;margin:0;padding:0}  
+html{scroll-behavior:smooth;scroll-padding-top:100px}  
+body{  
+  background:  
+    radial-gradient(ellipse at 12% 5%,rgba(122,20,39,.16),transparent 38%),  
+    radial-gradient(ellipse at 90% 35%,rgba(100,75,30,.09),transparent 34%),  
+    var(--bg);  
+  color:var(--text);  
+  font-family:Inter,"DM Sans",sans-serif;  
+  line-height:1.65;  
+  overflow-x:hidden;  
+}  
+body.menu-open{overflow:hidden}  
+a{color:inherit;text-decoration:none}  
+button,input,textarea,select{font:inherit}  
+button,a{-webkit-tap-highlight-color:transparent}  
+button{color:inherit}  
+img,svg{max-width:100%}  
+::selection{background:rgba(255,53,69,.35);color:white}  
+  
+.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}  
+.section{padding:105px 0;position:relative}  
+.section-sm{padding:65px 0}  
+.eyebrow{  
+  display:inline-flex;align-items:center;gap:9px;  
+  color:#ff929b;font-size:.73rem;font-weight:800;  
+  letter-spacing:2.2px;text-transform:uppercase;  
+  margin-bottom:17px;  
+}  
+.eyebrow:before{  
+  content:"";width:22px;height:2px;background:var(--red);  
+  border-radius:10px;  
+}  
+h1,h2,h3,h4{letter-spacing:-.045em;line-height:1.12}  
+h1{font-size:clamp(2.9rem,7vw,6.1rem);font-weight:800}  
+h2{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800}  
+h3{font-size:1.35rem;font-weight:750}  
+p{color:var(--muted)}  
+.section-heading{max-width:760px;margin-bottom:46px}  
+.section-heading h2{margin-bottom:18px}  
+.section-heading p{font-size:1.03rem;max-width:680px}  
+.gradient-text{  
+  background:linear-gradient(100deg,#fff 0%,#ffc3c8 45%,#ff3545 100%);  
+  -webkit-background-clip:text;background-clip:text;color:transparent;  
+}  
+.gold-text{color:var(--gold)}  
+.glass{  
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));  
+  border:1px solid var(--line);  
+  box-shadow:var(--shadow);  
+  backdrop-filter:blur(24px);  
+  -webkit-backdrop-filter:blur(24px);  
+}  
+.btn{  
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;  
+  min-height:50px;padding:13px 22px;border-radius:999px;  
+  border:1px solid transparent;font-weight:750;font-size:.91rem;  
+  transition:transform .25s ease,background .25s ease,border-color .25s ease;  
+  cursor:pointer;text-align:center;  
+}  
+.btn:hover{transform:translateY(-3px)}  
+.btn-primary{  
+  color:white;background:linear-gradient(135deg,#ff4b59,#d80f2a);  
+  box-shadow:0 10px 32px rgba(255,35,60,.22);  
+}  
+.btn-primary:hover{box-shadow:0 14px 40px rgba(255,35,60,.32)}  
+.btn-secondary{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.045)}  
+.btn-secondary:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3)}  
+.btn-small{min-height:41px;padding:10px 17px;font-size:.83rem}  
+.btn-row{display:flex;flex-wrap:wrap;gap:13px}  
+.pill{  
+  display:inline-flex;align-items:center;gap:8px;  
+  padding:7px 12px;border-radius:999px;  
+  background:rgba(255,255,255,.055);  
+  border:1px solid var(--line);font-size:.76rem;color:#ddd;  
+}  
+.dot{height:7px;width:7px;background:var(--red);border-radius:50%;display:inline-block;box-shadow:0 0 13px rgba(255,53,69,.8)}  
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}  
+/* Announcement bar */  
+.announcement{  
+  min-height:38px;display:flex;align-items:center;overflow:hidden;  
+  background:rgba(255,53,69,.09);border-bottom:1px solid rgba(255,53,69,.18);  
+}  
+.announcement-track{  
+  display:flex;width:max-content;animation:marquee 32s linear infinite;  
+}  
+.announcement-track span{  
+  white-space:nowrap;padding:8px 32px;color:#ffd4d8;  
+  font-size:.74rem;font-weight:700;letter-spacing:.65px;  
+}  
+@keyframes marquee{to{transform:translateX(-50%)}}  
+/* Navigation */  
+.nav-wrap{  
+  position:sticky;top:0;z-index:100;  
+  padding:12px 0;  
+  background:rgba(8,9,12,.78);  
+  border-bottom:1px solid rgba(255,255,255,.07);  
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);  
+}  
+.nav{  
+  display:flex;align-items:center;justify-content:space-between;gap:25px;  
+}  
+.brand{display:flex;align-items:center;gap:12px;min-width:0}  
+.brand-mark{  
+  height:43px;width:43px;flex-shrink:0;display:grid;place-items:center;  
+  border-radius:15px;border:1px solid rgba(255,70,85,.45);  
+  background:linear-gradient(145deg,rgba(255,53,69,.22),rgba(255,255,255,.035));  
+  color:#ff6773;font-size:.95rem;font-weight:900;letter-spacing:-1px;  
+  box-shadow:inset 0 0 18px rgba(255,53,69,.07);  
+}  
+.brand-copy{display:flex;flex-direction:column;line-height:1.2}  
+.brand-copy strong{font-size:.87rem;letter-spacing:.035em}  
+.brand-copy small{color:var(--muted);font-size:.64rem;margin-top:5px;letter-spacing:1.1px}  
+.nav-links{display:flex;align-items:center;gap:23px}  
+.nav-links>a:not(.btn){font-size:.81rem;color:#b8b8c0;transition:color .2s}  
+.nav-links>a:not(.btn):hover{color:white}  
+.nav-actions{display:flex;align-items:center;gap:10px}  
+.menu-toggle{  
+  display:none;width:44px;height:44px;border-radius:50%;  
+  border:1px solid var(--line);background:rgba(255,255,255,.04);  
+  cursor:pointer;font-size:1.25rem;  
+}  
+/* Hero */  
+.hero{padding:85px 0 85px;position:relative;overflow:hidden}  
+.hero:before{  
+  content:"";position:absolute;width:580px;height:580px;border-radius:50%;  
+  top:-170px;right:-180px;pointer-events:none;  
+  background:radial-gradient(circle,rgba(255,53,69,.12),transparent 68%);  
+}  
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:45px;align-items:center}  
+.hero-copy{position:relative;z-index:2}  
+.hero h1{margin:19px 0 23px;max-width:760px}  
+.hero-copy>p{font-size:1.08rem;max-width:610px;line-height:1.9;margin-bottom:29px}  
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}  
+.hero-visual{position:relative;min-width:0}  
+.market-card{border-radius:32px;padding:23px;overflow:hidden;position:relative}  
+.market-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}  
+.market-name{display:flex;align-items:center;gap:12px}  
+.market-icon{  
+  width:42px;height:42px;border-radius:15px;display:grid;place-items:center;  
+  background:rgba(255,53,69,.13);border:1px solid rgba(255,53,69,.2);  
+  color:#ff7b85;font-weight:800;  
+}  
+.market-name strong{display:block;font-size:.91rem}  
+.market-name small{display:block;color:var(--muted);font-size:.73rem;margin-top:4px}  
+.market-status{font-size:.72rem;color:var(--green);white-space:nowrap}  
+.chart-shell{  
+  position:relative;height:245px;border-radius:20px;overflow:hidden;  
+  border:1px solid rgba(255,255,255,.07);  
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008));  
+}  
+.chart-shell svg{width:100%;height:100%;display:block}  
+.chart-label{display:flex;justify-content:space-between;gap:10px;margin-top:17px}  
+.chart-label small{color:var(--muted);font-size:.73rem}  
+.chart-label strong{font-size:.84rem}  
+.floating-card{  
+  position:absolute;bottom:-26px;left:-25px;border-radius:19px;  
+  padding:15px 19px;min-width:175px;  
+}  
+.floating-card small{display:block;color:var(--muted);font-size:.7rem;margin-bottom:5px}  
+.floating-card strong{font-size:1.04rem}  
+.hero-side-note{  
+  position:absolute;right:-14px;top:30px;padding:13px 15px;  
+  border-radius:16px;font-size:.74rem;color:#e6e6eb;  
+}  
+.hero-side-note strong{display:block;font-size:.85rem;margin-bottom:3px}  
+/* Stats */  
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}  
+.stat-card{padding:23px;border-radius:21px}  
+.stat-card strong{display:block;font-size:1.12rem;margin-bottom:6px}  
+.stat-card p{font-size:.8rem}  
+/* Mission */  
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}  
+.mission-main{border-radius:var(--radius);padding:38px}  
+.mission-main h3{font-size:1.7rem;margin-bottom:19px}  
+.mission-main p+p{margin-top:13px}  
+.mission-side{display:grid;grid-template-columns:1fr 1fr;gap:13px}  
+.mini-card{border-radius:23px;padding:23px}  
+.icon-box{  
+  width:45px;height:45px;display:grid;place-items:center;border-radius:15px;  
+  margin-bottom:19px;background:rgba(255,53,69,.1);  
+  border:1px solid rgba(255,53,69,.17);color:#ff929b;font-size:1.1rem;  
+}  
+.mini-card h3{font-size:1.02rem;margin-bottom:10px}  
+.mini-card p{font-size:.84rem;line-height:1.75}  
+/* Programme */  
+.programme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}  
+.programme-card{border-radius:25px;padding:27px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}  
+.programme-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.23)}  
+.programme-number{font-size:.73rem;font-weight:800;letter-spacing:1.8px;color:#ff858f;margin-bottom:21px}  
+.programme-card h3{margin-bottom:13px;font-size:1.25rem}  
+.programme-card p{font-size:.87rem;line-height:1.8}  
+.programme-card ul{list-style:none;margin-top:20px;display:grid;gap:10px}  
+.programme-card li{color:#c7c7ce;font-size:.82rem;display:flex;gap:9px;align-items:flex-start}  
+.programme-card li:before{content:"✓";color:var(--green);font-weight:900}  
+/* Framework */  
+.framework{border-radius:32px;padding:45px;position:relative;overflow:hidden}  
+.framework:after{  
+  content:"LDU";position:absolute;right:-20px;bottom:-95px;  
+  font-size:clamp(9rem,22vw,18rem);font-weight:900;letter-spacing:-.1em;  
+  color:rgba(255,255,255,.025);pointer-events:none;  
+}  
+.framework-head{max-width:720px;position:relative;z-index:1}  
+.framework-head h2{margin-bottom:18px}  
+.framework-head p{font-size:1rem}  
+.framework-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px;position:relative;z-index:1}  
+.framework-step{border-radius:20px;padding:21px;background:rgba(255,255,255,.035);border:1px solid var(--line)}  
+.step-num{font-size:.73rem;color:var(--gold);font-weight:800;letter-spacing:1.5px}  
+.framework-step h3{font-size:1.03rem;margin:12px 0 9px}  
+.framework-step p{font-size:.8rem;line-height:1.75}  
+/* Learning experience */  
+.learning-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}  
+.learning-intro{position:sticky;top:125px}  
+.learning-intro h2{margin-bottom:18px}  
+.learning-intro>p{margin-bottom:25px}  
+.learning-list{display:grid;gap:13px}  
+.learning-item{display:flex;gap:18px;padding:22px;border-radius:21px}  
+.learning-item .icon-box{flex-shrink:0;margin:0;width:43px;height:43px}  
+.learning-item h3{font-size:1rem;margin-bottom:7px}  
+.learning-item p{font-size:.85rem;line-height:1.75}  
+/* Principles */  
+.principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}  
+.principle{padding:27px;border-radius:24px}  
+.principle .symbol{font-size:1.55rem;color:var(--gold);margin-bottom:17px}  
+.principle h3{margin-bottom:10px}  
+.principle p{font-size:.86rem;line-height:1.8}  
+/* Access */  
+.access-shell{padding:45px;border-radius:32px;position:relative;overflow:hidden}  
+.access-shell:before{  
+  content:"";position:absolute;right:-100px;top:-180px;width:400px;height:400px;  
+  background:radial-gradient(circle,rgba(255,53,69,.13),transparent 70%);  
+}  
+.access-head{max-width:720px;position:relative}  
+.access-head h2{margin-bottom:18px}  
+.access-head p{margin-bottom:29px}  
+.access-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;position:relative}  
+.access-card{padding:27px;border-radius:23px;background:rgba(8,9,12,.4);border:1px solid var(--line)}  
+.access-card h3{margin-bottom:10px}  
+.access-card p{font-size:.84rem;min-height:58px;margin-bottom:22px}  
+.access-card .btn{width:100%}  
+.access-label{font-size:.69rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:15px}  
+/* Countdown */  
+.countdown-shell{  
+  padding:43px;border-radius:30px;display:grid;  
+  grid-template-columns:1fr auto;align-items:center;gap:35px;  
+  background:linear-gradient(115deg,rgba(255,53,69,.1),rgba(255,255,255,.025));  
+}  
+.countdown-shell h2{font-size:clamp(1.7rem,3.5vw,2.7rem);margin-bottom:12px}  
+.countdown-shell p{max-width:620px}  
+.countdown{display:flex;gap:10px}  
+.time-box{  
+  min-width:74px;padding:16px 12px;text-align:center;border-radius:17px;  
+  background:rgba(8,9,12,.48);border:1px solid var(--line);  
+}  
+.time-box strong{display:block;font-size:1.55rem;line-height:1.3}  
+.time-box small{display:block;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:7px}  
+/* Community */  
+.community-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}  
+.community-card{padding:27px;border-radius:24px;display:flex;flex-direction:column;align-items:flex-start}  
+.social-symbol{  
+  width:48px;height:48px;border-radius:16px;display:grid;place-items:center;  
+  background:rgba(255,255,255,.065);border:1px solid var(--line);  
+  font-weight:900;font-size:1rem;margin-bottom:19px;  
+}  
+.community-card h3{margin-bottom:9px}  
+.community-card p{font-size:.85rem;line-height:1.75;margin-bottom:22px;flex:1}  
+.community-card .btn{width:100%}  
+/* FAQ */  
+.faq-list{display:grid;gap:11px;max-width:900px}  
+details{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:18px;padding:0 22px}  
+summary{  
+  cursor:pointer;list-style:none;padding:20px 30px 20px 0;  
+  position:relative;font-weight:700;font-size:.94rem;  
+}  
+summary::-webkit-details-marker{display:none}  
+summary:after{content:"+";position:absolute;right:0;top:14px;font-size:1.5rem;color:var(--gold);font-weight:400}  
+details[open] summary:after{content:"−"}  
+details p{padding:0 0 21px;font-size:.88rem;line-height:1.85}  
+/* Contact */  
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}  
+.contact-copy h2{margin-bottom:18px}  
+.contact-copy>p{margin-bottom:24px}  
+.contact-info{display:grid;gap:13px;margin-top:26px}  
+.contact-info a,.contact-info div{display:flex;gap:13px;align-items:center;color:#d6d6dd;font-size:.88rem}  
+.contact-info span{color:var(--gold);font-size:1.1rem;width:25px;text-align:center}  
+.contact-form{padding:30px;border-radius:27px}  
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}  
+.field{margin-bottom:16px}  
+.field label{display:block;font-size:.8rem;font-weight:700;color:#d6d6dd;margin-bottom:8px}  
+.field input,.field textarea,.field select{  
+  width:100%;padding:14px 15px;color:white;border:1px solid rgba(255,255,255,.12);  
+  background:rgba(0,0,0,.2);border-radius:13px;outline:none;transition:border-color .2s;  
+}  
+.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(255,53,69,.65)}  
+.field textarea{min-height:140px;resize:vertical}  
+.field select option{background:#101116;color:white}  
+.form-note{font-size:.75rem;margin-top:13px;line-height:1.7}  
+.contact-form button{width:100%}  
+/* Footer */  
+.footer{padding:55px 0 25px;border-top:1px solid var(--line);background:rgba(0,0,0,.17)}  
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px;padding-bottom:38px}  
+.footer-brand p{font-size:.83rem;line-height:1.8;max-width:330px;margin-top:18px}  
+.footer-col h4{font-size:.82rem;letter-spacing:.03em;margin-bottom:16px}  
+.footer-col a{display:block;color:var(--muted);font-size:.81rem;margin:10px 0;transition:color .2s}  
+.footer-col a:hover{color:white}  
+.footer-bottom{border-top:1px solid var(--line);padding-top:23px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}  
+.footer-bottom p{font-size:.75rem}  
+.disclaimer{max-width:820px;margin-top:20px;font-size:.72rem;line-height:1.85;color:#7e7e89}  
+/* Back to top / motion */  
+.back-top{  
+  position:fixed;right:20px;bottom:20px;z-index:70;width:45px;height:45px;  
+  border-radius:50%;border:1px solid var(--line);background:rgba(20,20,25,.82);  
+  backdrop-filter:blur(15px);cursor:pointer;display:none;font-size:1.1rem;  
+}  
+.back-top.visible{display:block}  
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}  
+.reveal.show{opacity:1;transform:translateY(0)}  
+@media(prefers-reduced-motion:reduce){  
+  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}  
+  .reveal{opacity:1;transform:none}  
+}  
+/* Responsive */  
+@media(max-width:1000px){  
+  .nav-links{gap:13px}  
+  .nav-links>a:not(.btn){font-size:.76rem}  
+  .hero-grid{gap:28px}  
+  .stats-grid{grid-template-columns:repeat(2,1fr)}  
+  .programme-grid{grid-template-columns:repeat(2,1fr)}  
+  .framework-steps{grid-template-columns:repeat(2,1fr)}  
+  .footer-top{grid-template-columns:1.3fr 1fr 1fr}  
+  .footer-brand{grid-column:1/-1}  
+}  
+@media(max-width:780px){  
+  .container{width:min(100% - 30px,var(--max))}  
+  .section{padding:75px 0}  
+  .section-sm{padding:45px 0}  
+  .nav-wrap{padding:9px 0}  
+  .nav-actions>.btn-secondary{display:none}  
+  .menu-toggle{display:grid;place-items:center}  
+  .nav-links{  
+    display:none;position:fixed;top:74px;left:15px;right:15px;  
+    flex-direction:column;align-items:stretch;gap:0;padding:14px;  
+    border-radius:23px;border:1px solid var(--line);  
+    background:rgba(12,13,18,.97);backdrop-filter:blur(25px);  
+    box-shadow:var(--shadow);max-height:calc(100dvh - 95px);overflow:auto;  
+  }  
+  .nav-links.open{display:flex}  
+  .nav-links>a:not(.btn){padding:13px 12px;font-size:.9rem;border-radius:10px}  
+  .nav-links>a:not(.btn):hover{background:rgba(255,255,255,.05)}  
+  .nav-links .btn{margin-top:8px}  
+  .hero{padding:65px 0 75px}  
+  .hero-grid{grid-template-columns:1fr;gap:47px}  
+  .hero-copy>p{font-size:1rem}  
+  .hero-visual{max-width:570px;margin:0 auto;width:100%}  
+  .mission-grid,.learning-grid,.contact-grid{grid-template-columns:1fr}  
+  .learning-intro{position:static}  
+  .programme-grid{grid-template-columns:1fr 1fr}  
+  .principles-grid{grid-template-columns:1fr 1fr}  
+  .access-grid{grid-template-columns:1fr}  
+  .access-card p{min-height:0}  
+  .countdown-shell{grid-template-columns:1fr;padding:30px}  
+  .countdown{flex-wrap:wrap}  
+  .time-box{flex:1;min-width:60px}  
+  .community-grid{grid-template-columns:1fr}  
+  .community-card{display:grid;grid-template-columns:auto 1fr;column-gap:15px}  
+  .community-card .social-symbol{grid-row:1/3;margin-bottom:0}  
+  .community-card h3{align-self:end}  
+  .community-card p{grid-column:2;margin:5px 0 15px}  
+  .community-card .btn{grid-column:1/-1}  
+  .footer-top{grid-template-columns:1fr 1fr}  
+  .footer-brand{grid-column:1/-1}  
+}  
+@media(max-width:520px){  
+  .container{width:calc(100% - 28px)}  
+  h1{font-size:clamp(2.65rem,13vw,4.1rem)}  
+  h2{font-size:2.05rem}  
+  .brand-copy strong{font-size:.76rem}  
+  .brand-copy small{font-size:.58rem;letter-spacing:.6px}  
+  .brand-mark{height:39px;width:39px;border-radius:13px}  
+  .nav-actions{gap:6px}  
+  .nav-actions .btn-primary{padding:10px 14px;min-height:41px;font-size:.77rem}  
+  .hero{padding-top:52px}  
+  .hero-copy>p{font-size:.94rem}  
+  .btn-row .btn{flex:1}  
+  .market-card{padding:15px;border-radius:25px}  
+  .chart-shell{height:200px}  
+  .hero-side-note{right:-4px;top:-22px}  
+  .floating-card{left:6px;bottom:-35px}  
+  .stats-grid{gap:10px}  
+  .stat-card{padding:17px}  
+  .stat-card strong{font-size:.95rem}  
+  .stat-card p{font-size:.75rem}  
+  .mission-main{padding:25px}  
+  .mission-side{grid-template-columns:1fr 1fr;gap:10px}  
+  .mini-card{padding:17px}  
+  .mini-card h3{font-size:.93rem}  
+  .mini-card p{font-size:.78rem}  
+  .programme-grid,.principles-grid{grid-template-columns:1fr}  
+  .programme-card{padding:24px}  
+  .framework{padding:26px 20px;border-radius:25px}  
+  .framework-steps{grid-template-columns:1fr}  
+  .framework-step{padding:19px}  
+  .learning-item{padding:18px;gap:13px}  
+  .access-shell{padding:27px 19px;border-radius:25px}  
+  .countdown-shell{padding:25px 18px}  
+  .countdown{gap:7px}  
+  .time-box{padding:12px 5px;min-width:0}  
+  .time-box strong{font-size:1.22rem}  
+  .time-box small{font-size:.57rem}  
+  .form-row{grid-template-columns:1fr;gap:0}  
+  .contact-form{padding:21px}  
+  .footer-top{gap:25px 18px}  
+  .footer-col a{font-size:.77rem}  
+  .footer-bottom{flex-direction:column}  
+}  
+</style>  </head>  <body>  <!-- ANNOUNCEMENTS -->  <div class="announcement" aria-label="Announcements">  
+  <div class="announcement-track">  
+    <span>LIQUIDITY DISPLACEMENT UNIVERSITY™ — A NEW STANDARD IN STRUCTURED TRADING EDUCATION</span>  
+    <span>12-MONTH LEARNING PROGRAMME • DISCIPLINE • MARKET UNDERSTANDING • EXECUTION</span>  
+    <span>STUDENT REGISTRATION AND PORTAL ACCESS AVAILABLE BELOW</span>  
+    <span>LIQUIDITY DISPLACEMENT UNIVERSITY™ — A NEW STANDARD IN STRUCTURED TRADING EDUCATION</span>  
+    <span>12-MONTH LEARNING PROGRAMME • DISCIPLINE • MARKET UNDERSTANDING • EXECUTION</span>  
+    <span>STUDENT REGISTRATION AND PORTAL ACCESS AVAILABLE BELOW</span>  
+  </div>  
+</div>  <!-- NAVIGATION -->  <header class="nav-wrap">  
+  <div class="container nav">  
+    <a class="brand" href="index.html" aria-label="Liquidity Displacement University homepage">  
+      <span class="brand-mark">LDU</span>  
+      <span class="brand-copy">  
+        <strong>LIQUIDITY DISPLACEMENT</strong>  
+        <small>UNIVERSITY™ · BY FWE</small>  
+      </span>  
+    </a>  <nav class="nav-links" id="mainNav" aria-label="Main navigation">  
+  <a href="#about">About</a>  
+  <a href="#programme">Programme</a>  
+  <a href="#methodology">Methodology</a>  
+  <a href="#learning">Learning</a>  
+  <a href="#community">Community</a>  
+  <a href="#faq">FAQ</a>  
+  <a class="btn btn-secondary btn-small" href="login.html">Student Login</a>  
+  <a class="btn btn-primary btn-small" href="register.html">Apply for Access ↗</a>  
+</nav>  
+
+<div class="nav-actions">  
+  <a class="btn btn-primary btn-small" href="login.html">Student Login</a>  
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">☰</button>  
+</div>
+
+  </div>  
+</header>  <main>  <!-- HERO -->  <section class="hero">  
+  <div class="container hero-grid">  
+    <div class="hero-copy reveal">  
+      <span class="pill"><span class="dot"></span> FOREX WEALTH EMPIRE PRESENTS</span>  
+      <div style="margin-top:24px" class="eyebrow">A structured trading education experience</div>  
+      <h1>Understand the market.<br><span class="gradient-text">Read its language.</span></h1>  
+      <p>  
+        Welcome to Liquidity Displacement University™ — a structured learning  
+        environment built around market behaviour, repeating price patterns,  
+        analytical thinking, disciplined execution and the continuous development  
+        of a trader's decision-making process.  
+      </p>  
+      <div class="btn-row">  
+        <a class="btn btn-primary" href="register.html">Begin Your Journey <span>↗</span></a>  
+        <a class="btn btn-secondary" href="#programme">Explore the Programme ↓</a>  
+      </div>  
+      <div class="hero-meta">  
+        <span class="pill">12-Month Programme</span>  
+        <span class="pill">Structured Education</span>  
+        <span class="pill">Student Learning Portal</span>  
+      </div>  
+    </div>  <div class="hero-visual reveal">  
+  <div class="market-card glass">  
+    <div class="market-top">  
+      <div class="market-name">  
+        <div class="market-icon">L</div>  
+        <div>  
+          <strong>Market Intelligence</strong>  
+          <small>Observe · Understand · Execute</small>  
+        </div>  
+      </div>  
+      <span class="market-status"><span class="dot" style="background:var(--green);box-shadow:none"></span> LEARNING MODE</span>  
+    </div>  
+
+    <div class="chart-shell" aria-label="Decorative illustration of market price movement">  
+      <svg viewBox="0 0 500 260" role="img" aria-label="Illustrative market price movement, not a live trading chart" preserveAspectRatio="none">  
+        <defs>  
+          <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">  
+            <stop offset="0%" stop-color="#ff3545" stop-opacity=".28"/>  
+            <stop offset="100%" stop-color="#ff3545" stop-opacity="0"/>  
+          </linearGradient>  
+          <linearGradient id="chartLine" x1="0" y1="0" x2="1" y2="0">  
+            <stop offset="0%" stop-color="#d8b36a"/>  
+            <stop offset="50%" stop-color="#ff3545"/>  
+            <stop offset="100%" stop-color="#ff929b"/>  
+          </linearGradient>  
+        </defs>  
+        <g stroke="rgba(255,255,255,.07)" stroke-width="1">  
+          <path d="M0 45H500 M0 90H500 M0 135H500 M0 180H500 M0 225H500"/>  
+          <path d="M50 0V260 M125 0V260 M200 0V260 M275 0V260 M350 0V260 M425 0V260"/>  
+        </g>  
+        <path d="M0 205 L30 188 L55 198 L80 154 L104 170 L128 126 L151 141 L178 100 L202 118 L225 75 L251 95 L276 58 L298 81 L324 112 L348 88 L371 118 L398 70 L423 86 L448 45 L473 61 L500 25 L500 260 L0 260Z" fill="url(#chartFill)"/>  
+        <path d="M0 205 L30 188 L55 198 L80 154 L104 170 L128 126 L151 141 L178 100 L202 118 L225 75 L251 95 L276 58 L298 81 L324 112 L348 88 L371 118 L398 70 L423 86 L448 45 L473 61 L500 25" fill="none" stroke="url(#chartLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>  
+        <path d="M0 150H500" stroke="rgba(216,179,106,.65)" stroke-dasharray="5 7"/>  
+        <circle cx="398" cy="70" r="5" fill="#ff929b"/>  
+        <circle cx="398" cy="70" r="12" fill="none" stroke="rgba(255,146,155,.35)"/>  
+        <text x="15" y="24" fill="rgba(255,255,255,.5)" font-size="10">ILLUSTRATIVE PRICE MOVEMENT</text>  
+      </svg>  
+    </div>  
+
+    <div class="chart-label">  
+      <div><small>CORE FOCUS</small><br><strong>Pattern Recognition</strong></div>  
+      <div style="text-align:right"><small>APPROACH</small><br><strong>Structured Analysis</strong></div>  
+    </div>  
+  </div>  
+
+  <div class="floating-card glass">  
+    <small>THE LEARNING PRINCIPLE</small>  
+    <strong>Clarity over impulse.</strong>  
+  </div>  
+  <div class="hero-side-note glass">  
+    <strong>Think in patterns.</strong>  
+    <span style="color:var(--muted)">Build repeatable process.</span>  
+  </div>  
+</div>
+
+  </div>  
+</section>  <div class="divider"></div>  <!-- KEY VALUES -->  <section class="section-sm">  
+  <div class="container">  
+    <div class="stats-grid">  
+      <div class="stat-card glass reveal">  
+        <strong>12 Months</strong>  
+        <p>A structured learning journey</p>  
+      </div>  
+      <div class="stat-card glass reveal">  
+        <strong>Market Behaviour</strong>  
+        <p>Study price movement with context</p>  
+      </div>  
+      <div class="stat-card glass reveal">  
+        <strong>Disciplined Process</strong>  
+        <p>Prioritise rules and risk awareness</p>  
+      </div>  
+      <div class="stat-card glass reveal">  
+        <strong>Student Portal</strong>  
+        <p>Dedicated student access pathway</p>  
+      </div>  
+    </div>  
+  </div>  
+</section>  <!-- ABOUT -->  <section class="section" id="about">  
+  <div class="container">  
+    <div class="section-heading reveal">  
+      <span class="eyebrow">The university</span>  
+      <h2>Trading education with <span class="gradient-text">structure and purpose.</span></h2>  
+      <p>  
+        Learning to trade involves more than recognising a candle or reacting  
+        to a price movement. It requires observation, interpretation, planning,  
+        risk awareness and the ability to follow a defined process.  
+      </p>  
+    </div>  <div class="mission-grid">  
+  <div class="mission-main glass reveal">  
+    <span class="eyebrow">Our philosophy</span>  
+    <h3>Learn to understand what the market is communicating.</h3>  
+    <p>  
+      Liquidity Displacement University™ is the education platform of  
+      Forex Wealth Empire. Its purpose is to provide a more organised  
+      environment for traders to study price behaviour, identify repeating  
+      patterns and develop a consistent analytical process.  
+    </p>  
+    <p>  
+      The focus is on building understanding over time. Students are  
+      encouraged to document observations, review decisions, recognise  
+      uncertainty and treat risk management as an essential part of trading.  
+    </p>  
+    <div style="margin-top:25px">  
+      <a href="register.html" class="btn btn-primary">Explore Student Access ↗</a>  
+    </div>  
+  </div>  
+
+  <div class="mission-side">  
+    <div class="mini-card glass reveal">  
+      <div class="icon-box">⌁</div>  
+      <h3>Market Understanding</h3>  
+      <p>Develop a clearer way to observe movement and interpret context.</p>  
+    </div>  
+    <div class="mini-card glass reveal">  
+      <div class="icon-box">◎</div>  
+      <h3>Pattern Recognition</h3>  
+      <p>Study recurring behaviour without assuming every pattern must repeat.</p>  
+    </div>  
+    <div class="mini-card glass reveal">  
+      <div class="icon-box">◇</div>  
+      <h3>Execution Discipline</h3>  
+      <p>Use predefined conditions instead of emotional, impulsive decisions.</p>  
+    </div>  
+    <div class="mini-card glass reveal">  
+      <div class="icon-box">↗</div>  
+      <h3>Continuous Review</h3>  
+      <p>Learn from records, observations and the review of previous decisions.</p>  
+    </div>  
+  </div>  
+</div>
+
+  </div>  
+</section>  <!-- PROGRAMME -->  <section class="section" id="programme" style="background:rgba(255,255,255,.012)">  
+  <div class="container">  
+    <div class="section-heading reveal">  
+      <span class="eyebrow">The learning experience</span>  
+      <h2>A programme designed for <span class="gradient-text">progress.</span></h2>  
+      <p>  
+        The programme is intended to support learning across a 12-month period.  
+        Its emphasis is on developing understanding and a disciplined approach,  
+        rather than promising a particular trading outcome.  
+      </p>  
+    </div>  <div class="programme-grid">  
+  <article class="programme-card glass reveal">  
+    <div class="programme-number">PHASE 01 · FOUNDATION</div>  
+    <h3>Build Your Understanding</h3>  
+    <p>Establish a foundation for reading charts and approaching financial markets with a clear process.</p>  
+    <ul>  
+      <li>Trading foundations and terminology</li>  
+      <li>Understanding price movement</li>  
+      <li>Observation and chart reading</li>  
+      <li>Risk and trading psychology</li>  
+    </ul>  
+  </article>  
+
+  <article class="programme-card glass reveal">  
+    <div class="programme-number">PHASE 02 · ANALYSIS</div>  
+    <h3>Study Repeating Patterns</h3>  
+    <p>Develop the ability to observe market behaviour, record examples and evaluate potential setups.</p>  
+    <ul>  
+      <li>Context and market structure</li>  
+      <li>Pattern identification</li>  
+      <li>Confirmation and invalidation</li>  
+      <li>Trade planning and documentation</li>  
+    </ul>  
+  </article>  
+
+  <article class="programme-card glass reveal">  
+    <div class="programme-number">PHASE 03 · DISCIPLINE</div>  
+    <h3>Refine Your Process</h3>  
+    <p>Focus on consistency of process, review and responsible decision-making under uncertainty.</p>  
+    <ul>  
+      <li>Execution rules and patience</li>  
+      <li>Position sizing and risk awareness</li>  
+      <li>Journal and performance review</li>  
+      <li>Continuous improvement</li>  
+    </ul>  
+  </article>  
+</div>  
+
+<p style="font-size:.76rem;margin-top:19px">  
+  These are broad learning themes, not a guarantee of a specific lesson order,  
+  trading result or profitability.  
+</p>
+
+  </div>  
+</section>  <!-- METHODOLOGY -->  <section class="section" id="methodology">  
+  <div class="container">  
+    <div class="framework glass reveal">  
+      <div class="framework-head">  
+        <span class="eyebrow">The LDU approach</span>  
+        <h2>Observe the market. <span class="gradient-text">Build the process.</span></h2>  
+        <p>  
+          A useful trading process begins with observation and ends with review.  
+          Rather than forcing a trade, a trader can assess context, wait for  
+          predefined conditions and accept that some situations offer no valid setup.  
+        </p>  
+      </div>  <div class="framework-steps">  
+    <div class="framework-step">  
+      <div class="step-num">STEP 01</div>  
+      <h3>Observe</h3>  
+      <p>Study the current price behaviour and the broader context before making assumptions.</p>  
+    </div>  
+    <div class="framework-step">  
+      <div class="step-num">STEP 02</div>  
+      <h3>Interpret</h3>  
+      <p>Consider the possible meaning of the movement and identify conditions that matter.</p>  
+    </div>  
+    <div class="framework-step">  
+      <div class="step-num">STEP 03</div>  
+      <h3>Validate</h3>  
+      <p>Wait for the conditions in your trading plan. If they are absent, remain patient.</p>  
+    </div>  
+    <div class="framework-step">  
+      <div class="step-num">STEP 04</div>  
+      <h3>Review</h3>  
+      <p>Document decisions and outcomes to evaluate whether your process was followed.</p>  
+    </div>  
+  </div>  
+</div>
+
+  </div>  
+</section>  <!-- LEARNING -->  <section class="section" id="learning" style="background:rgba(255,255,255,.012)">  
+  <div class="container learning-grid">  
+    <div class="learning-intro reveal">  
+      <span class="eyebrow">Inside the experience</span>  
+      <h2>More than watching a chart.</h2>  
+      <p>  
+        Meaningful learning comes from combining education with deliberate  
+        practice, careful observation and honest review. The programme is  
+        designed around the development of those habits.  
+      </p>  
+      <a href="register.html" class="btn btn-primary">Access the Student Pathway ↗</a>  
+    </div>  <div class="learning-list">  
+  <article class="learning-item glass reveal">  
+    <div class="icon-box">▤</div>  
+    <div>  
+      <h3>Educational Resources</h3>  
+      <p>Use course materials and learning resources made available through the student learning environment.</p>  
+    </div>  
+  </article>  
+  <article class="learning-item glass reveal">  
+    <div class="icon-box">⌕</div>  
+    <div>  
+      <h3>Chart Observation</h3>  
+      <p>Develop a more deliberate way to examine price movement, market context and potential scenarios.</p>  
+    </div>  
+  </article>  
+  <article class="learning-item glass reveal">  
+    <div class="icon-box">▧</div>  
+    <div>  
+      <h3>Planning and Journaling</h3>  
+      <p>Learn to document the reasoning behind decisions and review the quality of the process.</p>  
+    </div>  
+  </article>  
+  <article class="learning-item glass reveal">  
+    <div class="icon-box">◉</div>  
+    <div>  
+      <h3>Community Learning</h3>  
+      <p>Connect through the published community channels and follow official updates from Forex Wealth Empire.</p>  
+    </div>  
+  </article>  
+  <article class="learning-item glass reveal">  
+    <div class="icon-box">⌁</div>  
+    <div>  
+      <h3>Risk Awareness</h3>  
+      <p>Understand why risk limits, position sizing and the possibility of loss belong in every trading plan.</p>  
+    </div>  
+  </article>  
+</div>
+
+  </div>  
+</section>  <!-- PRINCIPLES -->  <section class="section">  
+  <div class="container">  
+    <div class="section-heading reveal">  
+      <span class="eyebrow">Our principles</span>  
+      <h2>Build habits that support <span class="gradient-text">better decisions.</span></h2>  
+      <p>  
+        The objective is to improve the quality of the learning and decision-making  
+        process. No method removes uncertainty from financial markets.  
+      </p>  
+    </div>  <div class="principles-grid">  
+  <article class="principle glass reveal">  
+    <div class="symbol">01 /</div>  
+    <h3>Patience</h3>  
+    <p>Not every movement is an opportunity. Waiting for suitable conditions is part of a disciplined approach.</p>  
+  </article>  
+  <article class="principle glass reveal">  
+    <div class="symbol">02 /</div>  
+    <h3>Consistency</h3>  
+    <p>Follow a defined process and evaluate decisions over a meaningful sample rather than judging one trade alone.</p>  
+  </article>  
+  <article class="principle glass reveal">  
+    <div class="symbol">03 /</div>  
+    <h3>Accountability</h3>  
+    <p>Keep honest records, acknowledge mistakes and learn from decisions without hiding unfavourable outcomes.</p>  
+  </article>  
+  <article class="principle glass reveal">  
+    <div class="symbol">04 /</div>  
+    <h3>Risk First</h3>  
+    <p>Consider the potential loss before entering a trade. Never risk money you cannot afford to lose.</p>  
+  </article>  
+  <article class="principle glass reveal">  
+    <div class="symbol">05 /</div>  
+    <h3>Independent Thinking</h3>  
+    <p>Learn to assess information critically instead of following trading opinions without understanding them.</p>  
+  </article>  
+  <article class="principle glass reveal">  
+    <div class="symbol">06 /</div>  
+    <h3>Continuous Learning</h3>  
+    <p>Review evidence, question assumptions and recognise that market conditions can change.</p>  
+  </article>  
+</div>
+
+  </div>  
+</section>  <!-- STUDENT ACCESS -->  <section class="section" id="student-access">  
+  <div class="container">  
+    <div class="access-shell glass reveal">  
+      <div class="access-head">  
+        <span class="eyebrow">Your student journey</span>  
+        <h2>Everything starts with <span class="gradient-text">your next step.</span></h2>  
+        <p>  
+          New to Liquidity Displacement University™? Start with registration.  
+          Already registered? Sign in through the student login page to continue  
+          to your learning environment.  
+        </p>  
+      </div>  <div class="access-grid">  
+    <article class="access-card">  
+      <div class="access-label">01 · New students</div>  
+      <h3>Create Your Account</h3>  
+      <p>Begin through the official student registration page.</p>  
+      <a class="btn btn-primary" href="register.html">Register Now ↗</a>  
+    </article>  
+    <article class="access-card">  
+      <div class="access-label">02 · Returning students</div>  
+      <h3>Welcome Back</h3>  
+      <p>Already have an account? Use your existing login details.</p>  
+      <a class="btn btn-secondary" href="login.html">Student Login →</a>  
+    </article>  
+    <article class="access-card">  
+      <div class="access-label">03 · Learning environment</div>  
+      <h3>Student Dashboard</h3>  
+      <p>Open the student dashboard through its dedicated page.</p>  
+      <a class="btn btn-secondary" href="rcm.html">Open Student Portal ↗</a>  
+    </article>  
+  </div>  
+</div>
+
+  </div>  
+</section>  <!-- COUNTDOWN -->  <section class="section-sm" id="countdown">  
+  <div class="container">  
+    <div class="countdown-shell glass reveal">  
+      <div>  
+        <span class="eyebrow">The next chapter</span>  
+        <h2>Education. Discipline. <span class="gradient-text">Evolution.</span></h2>  
+        <p>  
+          The countdown marks the arrival of 2027. Follow the official community  
+          channels for verified announcements, learning updates and programme news.  
+        </p>  
+      </div>  
+      <div class="countdown" aria-label="Countdown to 1 January 2027">  
+        <div class="time-box"><strong id="days">000</strong><small>Days</small></div>  
+        <div class="time-box"><strong id="hours">00</strong><small>Hours</small></div>  
+        <div class="time-box"><strong id="minutes">00</strong><small>Minutes</small></div>  
+        <div class="time-box"><strong id="seconds">00</strong><small>Seconds</small></div>  
+      </div>  
+    </div>  
+  </div>  
+</section>  <!-- COMMUNITY -->  <section class="section" id="community" style="background:rgba(255,255,255,.012)">  
+  <div class="container">  
+    <div class="section-heading reveal">  
+      <span class="eyebrow">Official channels</span>  
+      <h2>Stay connected with <span class="gradient-text">the community.</span></h2>  
+      <p>  
+        Follow the official channels for market education, updates, announcements  
+        and community information. Always verify that you are using an official link.  
+      </p>  
+    </div>  <div class="community-grid">  
+  <article class="community-card glass reveal">  
+    <div class="social-symbol">IG</div>  
+    <h3>Instagram</h3>  
+    <p>Follow Liquidity Displacement for published content, announcements and updates.</p>  
+    <a class="btn btn-secondary" href="https://www.instagram.com/the.ldm_/" target="_blank" rel="noopener noreferrer">Visit Instagram ↗</a>  
+  </article>  
+  <article class="community-card glass reveal">  
+    <div class="social-symbol">YT</div>  
+    <h3>YouTube</h3>  
+    <p>Explore the official channel for trading education and related video content.</p>  
+    <a class="btn btn-secondary" href="https://www.youtube.com/@liquidity_displacement" target="_blank" rel="noopener noreferrer">Visit YouTube ↗</a>  
+  </article>  
+  <article class="community-card glass reveal">  
+    <div class="social-symbol">DC</div>  
+    <h3>Discord Community</h3>  
+    <p>Use the official invitation to access community announcements and discussions.</p>  
+    <a class="btn btn-secondary" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Join Discord ↗</a>  
+  </article>  
+</div>
+
+  </div>  
+</section>  <!-- FAQ -->  <section class="section" id="faq">  
+  <div class="container">  
+    <div class="section-heading reveal">  
+      <span class="eyebrow">Frequently asked questions</span>  
+      <h2>Questions, <span class="gradient-text">answered.</span></h2>  
+      <p>Find answers to common questions about the programme and student access.</p>  
+    </div>  <div class="faq-list reveal">  
+  <details>  
+    <summary>What is Liquidity Displacement University™?</summary>  
+    <p>It is a trading education initiative by Forex Wealth Empire focused on structured market learning, repeating price patterns, disciplined decision-making and risk awareness.</p>  
+  </details>  
+  <details>  
+    <summary>How long is the programme?</summary>  
+    <p>The course is structured as a 12-month educational programme.</p>  
+  </details>  
+  <details>  
+    <summary>How do I create a student account?</summary>  
+    <p>Use the Register Now links on this page to open the dedicated student registration page. Follow the instructions shown there.</p>  
+  </details>  
+  <details>  
+    <summary>How do returning students sign in?</summary>  
+    <p>Use the Student Login links to open login.html. After successful authentication, follow the available student portal navigation.</p>  
+  </details>  
+  <details>  
+    <summary>Where can I find course fees?</summary>  
+    <p>Course fees and enrolment terms should be confirmed through the official enrolment process before making a payment. This public homepage does not display course prices.</p>  
+  </details>  
+  <details>  
+    <summary>Does the programme guarantee trading profits?</summary>  
+    <p>No. Trading involves substantial risk and losses are possible. Education cannot guarantee profitable trades, consistent income, funded-account approval or any particular financial result.</p>  
+  </details>  
+  <details>  
+    <summary>Do I need to trade every day?</summary>  
+    <p>No. Educational emphasis should be placed on following a considered process, not on forcing trades. Whether to trade depends on the individual's plan and market conditions.</p>  
+  </details>  
+  <details>  
+    <summary>How can I contact Forex Wealth Empire?</summary>  
+    <p>Use the contact form below or email Naswealthempire@gmail.com for general enquiries.</p>  
+  </details>  
+</div>
+
+  </div>  
+</section>  <!-- CONTACT -->  <section class="section" id="contact" style="background:rgba(255,255,255,.012)">  
+  <div class="container contact-grid">  
+    <div class="contact-copy reveal">  
+      <span class="eyebrow">Get in touch</span>  
+      <h2>Let's start a <span class="gradient-text">conversation.</span></h2>  
+      <p>  
+        Have a question about the university, student access or an official  
+        announcement? Send an enquiry using the contact form.  
+      </p>  
+      <div class="contact-info">  
+        <a href="mailto:Naswealthempire@gmail.com"><span>✉</span> Naswealthempire@gmail.com</a>  
+        <a href="https://www.instagram.com/the.ldm_/" target="_blank" rel="noopener noreferrer"><span>◎</span> Official Instagram</a>  
+        <a href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer"><span>◈</span> Official Discord</a>  
+      </div>  
+    </div>  <form class="contact-form glass reveal" action="https://formspree.io/f/mgaoyqyo" method="POST">  
+  <div class="form-row">  
+    <div class="field">  
+      <label for="contactName">Full name</label>  
+      <input id="contactName" name="name" type="text" placeholder="Your name" autocomplete="name" required>  
+    </div>  
+    <div class="field">  
+      <label for="contactEmail">Email address</label>  
+      <input id="contactEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>  
+    </div>  
+  </div>  
+  <div class="field">  
+    <label for="contactSubject">Enquiry topic</label>  
+    <select id="contactSubject" name="topic" required>  
+      <option value="">Select a topic</option>  
+      <option>Course information</option>  
+      <option>Student registration</option>  
+      <option>Login or portal support</option>  
+      <option>Partnership enquiry</option>  
+      <option>General enquiry</option>  
+    </select>  
+  </div>  
+  <div class="field">  
+    <label for="contactMessage">Your message</label>  
+    <textarea id="contactMessage" name="message" placeholder="How can we help you?" required></textarea>  
+  </div>  
+  <input type="hidden" name="_subject" value="New enquiry - Liquidity Displacement University">  
+  <button class="btn btn-primary" type="submit">Send Enquiry ↗</button>  
+  <p class="form-note">Your enquiry is submitted through the configured form service. If submission fails, contact us directly by email.</p>  
+</form>
+
+  </div>  
+</section>  </main>  <!-- FOOTER -->  <footer class="footer">  
+  <div class="container">  
+    <div class="footer-top">  
+      <div class="footer-brand">  
+        <a class="brand" href="index.html">  
+          <span class="brand-mark">FWE</span>  
+          <span class="brand-copy">  
+            <strong>FOREX WEALTH EMPIRE</strong>  
+            <small>LIQUIDITY DISPLACEMENT UNIVERSITY™</small>  
+          </span>  
+        </a>  
+        <p>  
+          A trading education brand focused on structured market learning,  
+          pattern recognition, discipline and responsible decision-making.  
+        </p>  
+      </div>  <div class="footer-col">  
+    <h4>Explore</h4>  
+    <a href="#about">About LDU</a>  
+    <a href="#programme">Programme</a>  
+    <a href="#methodology">Our Approach</a>  
+    <a href="#learning">Learning Experience</a>  
+    <a href="#faq">Frequently Asked Questions</a>  
+  </div>  
+
+  <div class="footer-col">  
+    <h4>Student Access</h4>  
+    <a href="register.html">Student Registration</a>  
+    <a href="login.html">Student Login</a>  
+    <a href="rcm.html">Student Dashboard</a>  
+    <a href="#contact">Contact Support</a>  
+  </div>  
+
+  <div class="footer-col">  
+    <h4>Community</h4>  
+    <a href="https://www.instagram.com/the.ldm_/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>  
+    <a href="https://www.youtube.com/@liquidity_displacement" target="_blank" rel="noopener noreferrer">YouTube ↗</a>  
+    <a href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Discord ↗</a>  
+    <a href="mailto:Naswealthempire@gmail.com">Email Us</a>  
+  </div>  
+</div>  
+
+<div class="divider"></div>  
+
+<div class="footer-bottom" style="margin-top:22px">  
+  <p>© <span id="year"></span> Forex Wealth Empire (Pty)Ltd. All rights reserved.</p>  
+  <p>Liquidity Displacement University™</p>  
+</div>  
+
+<p class="disclaimer">  
+  <strong style="color:#aaa">Risk Disclaimer:</strong>  
+  Trading forex, contracts for difference and other leveraged financial  
+  products involves substantial risk and may not be suitable for every  
+  individual. You may lose some or all of your invested capital. Educational  
+  information on this website is provided for general learning purposes and  
+  is not personalised investment advice or a recommendation to buy or sell  
+  any financial instrument. No profit, income, trading result or funded  
+  account is guaranteed. Past performance does not guarantee future results.  
+  Always understand the risks and seek independent professional advice where appropriate.  
+</p>
+
+  </div>  
+</footer>  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>  
+(function(){  
+  "use strict";  
+  
+  // Mobile navigation  
+  const menuToggle = document.getElementById("menuToggle");  
+  const mainNav = document.getElementById("mainNav");  
+  
+  function closeMenu(){  
+    mainNav.classList.remove("open");  
+    document.body.classList.remove("menu-open");  
+    menuToggle.setAttribute("aria-expanded","false");  
+    menuToggle.setAttribute("aria-label","Open navigation menu");  
+    menuToggle.textContent = "☰";  
+  }  
+  
+  menuToggle.addEventListener("click",function(){  
+    const isOpen = mainNav.classList.toggle("open");  
+    document.body.classList.toggle("menu-open",isOpen);  
+    menuToggle.setAttribute("aria-expanded",String(isOpen));  
+    menuToggle.setAttribute("aria-label",isOpen ? "Close navigation menu" : "Open navigation menu");  
+    menuToggle.textContent = isOpen ? "✕" : "☰";  
+  });  
+  
+  mainNav.querySelectorAll("a").forEach(function(link){  
+    link.addEventListener("click",closeMenu);  
+  });  
+  
+  window.addEventListener("resize",function(){  
+    if(window.innerWidth > 780) closeMenu();  
+  });  
+  
+  // Countdown to 1 January 2027, South African time (UTC+2).  
+  const targetDate = new Date("2027-01-01T00:00:00+02:00").getTime();  
+  
+  function updateCountdown(){  
+    let remaining = Math.max(0,targetDate-Date.now());  
+    const days = Math.floor(remaining/86400000);  
+    remaining %= 86400000;  
+    const hours = Math.floor(remaining/3600000);  
+    remaining %= 3600000;  
+    const minutes = Math.floor(remaining/60000);  
+    remaining %= 60000;  
+    const seconds = Math.floor(remaining/1000);  
+  
+    document.getElementById("days").textContent = String(days).padStart(3,"0");  
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");  
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");  
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");  
+  }  
+  
+  updateCountdown();  
+  window.setInterval(updateCountdown,1000);  
+  
+  // Current year  
+  document.getElementById("year").textContent = new Date().getFullYear();  
+  
+  // Reveal animation  
+  const revealElements = document.querySelectorAll(".reveal");  
+  
+  if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){  
+    const observer = new IntersectionObserver(function(entries){  
+      entries.forEach(function(entry){  
+        if(entry.isIntersecting){  
+          entry.target.classList.add("show");  
+          observer.unobserve(entry.target);  
+        }  
+      });  
+    },{threshold:0.10});  
+  
+    revealElements.forEach(function(element){observer.observe(element);});  
+  }else{  
+    revealElements.forEach(function(element){element.classList.add("show");});  
+  }  
+  
+  // Back to top  
+  const backTop = document.getElementById("backTop");  
+  
+  window.addEventListener("scroll",function(){  
+    backTop.classList.toggle("visible",window.scrollY > 500);  
+  },{passive:true});  
+  
+  backTop.addEventListener("click",function(){  
+    window.scrollTo({top:0,behavior:"smooth"});  
+  });  
+  
+  // Pause the moving announcement while a user hovers over it.  
+  const announcement = document.querySelector(".announcement-track");  
+  announcement.addEventListener("mouseenter",function(){  
+    announcement.style.animationPlayState = "paused";  
+  });  
+  announcement.addEventListener("mouseleave",function(){  
+    announcement.style.animationPlayState = "running";  
+  });  
+})();  
+</script>  <!-- Existing LiveChat integration -->  <script>  
+window.__lc = window.__lc || {};  
+window.__lc.license = 19960069;  
+window.__lc.integration_name = "manual_onboarding";  
+window.__lc.product_name = "livechat";  
+(function(n,t,c){  
+  function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}  
+  var e={  
+    _q:[],  
+    _h:null,  
+    _v:"2.0",  
+    on:function(){i(["on",c.call(arguments)])},  
+    once:function(){i(["once",c.call(arguments)])},  
+    off:function(){i(["off",c.call(arguments)])},  
+    get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},  
+    call:function(){i(["call",c.call(arguments)])},  
+    init:function(){var n=t.createElement("script");n.async=true;n.type="text/javascript";n.src="https://cdn.livechatinc.com/tracking.js";t.head.appendChild(n)}  
+  };  
+  !n.__lc.asyncInit&&e.init();  
+  n.LiveChatWidget=n.LiveChatWidget||e;  
+})(window,document,[].slice);  
+</script>  <noscript>  
+  <a href="https://www.livechat.com/chat-with/19960069/" rel="nofollow">Chat with us</a>,  
+  powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>  
+</noscript>  </body>  
+</html>  
