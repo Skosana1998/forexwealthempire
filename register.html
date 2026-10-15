@@ -4,155 +4,270 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
+  <meta name="theme-color" content="#050505">
   <title>Student Registration | Liquidity Displacement University™</title>
   <meta name="description" content="Register for Liquidity Displacement University™.">
 
   <style>
+    :root {
+      color-scheme: dark;
+      --background: #050505;
+      --surface: rgba(24, 24, 27, 0.88);
+      --border: rgba(255, 255, 255, 0.10);
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --red: #e11d2e;
+      --gold: #e0b45a;
+    }
+
     * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      background: var(--background);
+      -webkit-text-size-adjust: 100%;
+    }
 
     body {
       margin: 0;
       min-height: 100vh;
-      padding: 28px 16px;
+      padding: 40px 18px;
       display: flex;
       align-items: center;
       justify-content: center;
       background:
-        radial-gradient(ellipse at top, rgba(135, 0, 0, .2), transparent 55%),
-        #080808;
-      color: #f5f5f5;
-      font-family: Arial, Helvetica, sans-serif;
+        radial-gradient(ellipse at 50% 0%, rgba(225,29,46,.15), transparent 48%),
+        radial-gradient(ellipse at 100% 100%, rgba(224,180,90,.045), transparent 40%),
+        #050505;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
+      position: relative;
+      isolation: isolate;
       width: 100%;
-      max-width: 560px;
-      padding: 32px;
-      background: #111;
-      border: 1px solid #383030;
-      border-top: 3px solid #d71920;
-      border-radius: 14px;
-      box-shadow: 0 20px 70px rgba(0, 0, 0, .5);
+      max-width: 570px;
+      padding: 42px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      box-shadow: 0 35px 100px rgba(0,0,0,.52),
+        inset 0 1px 0 rgba(255,255,255,.045);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--red), transparent);
     }
 
     .brand {
-      color: #e0b45a;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 3px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.8px;
+      line-height: 1.8;
       text-align: center;
     }
 
     h1 {
-      margin: 14px 0 8px;
+      margin: 22px 0 10px;
+      color: #fff;
       text-align: center;
-      font-size: 29px;
+      font-size: clamp(27px, 5vw, 35px);
+      font-weight: 650;
+      letter-spacing: -1.3px;
+      line-height: 1.15;
     }
 
     .intro {
-      color: #aaa;
+      max-width: 390px;
+      margin: 0 auto 32px;
+      color: var(--muted);
       text-align: center;
       font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 26px;
+      line-height: 1.75;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 18px 14px;
     }
 
-    .field { margin-bottom: 16px; }
+    .field { min-width: 0; margin-bottom: 0; }
     .full { grid-column: 1 / -1; }
 
     label {
       display: block;
-      color: #ddd;
-      font-size: 13px;
-      margin-bottom: 7px;
+      margin-bottom: 9px;
+      color: #e5e5e7;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .15px;
     }
 
     input, select {
+      display: block;
       width: 100%;
-      min-height: 47px;
-      padding: 12px;
-      background: #090909;
-      color: #fff;
-      border: 1px solid #393939;
-      border-radius: 7px;
+      min-height: 49px;
+      padding: 13px 14px;
+      background-color: rgba(8,8,10,.78);
+      color: #f5f5f7;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 11px;
+      font-family: inherit;
       font-size: 14px;
-      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    input::placeholder { color: #707078; }
+    select:invalid { color: #92929a; }
+
+    select option {
+      background: #171719;
+      color: #fff;
+    }
+
+    input:hover, select:hover {
+      border-color: rgba(255,255,255,.22);
     }
 
     input:focus, select:focus {
-      border-color: #d71920;
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(225,29,46,.13);
     }
-
-    select:invalid { color: #999; }
 
     .consent {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      color: #bbb;
+      gap: 11px;
+      margin: 25px 0 22px;
+      color: #aaaab2;
       font-size: 12px;
-      line-height: 1.6;
-      margin: 6px 0 20px;
+      font-weight: 400;
+      line-height: 1.75;
     }
 
     .consent input {
-      flex-shrink: 0;
-      width: 16px;
-      min-height: 16px;
-      margin-top: 3px;
-      accent-color: #d71920;
-    }
-
-    button {
-      width: 100%;
-      min-height: 49px;
-      background: #c9151c;
-      color: white;
-      border: 0;
-      border-radius: 7px;
-      font-weight: 800;
-      letter-spacing: 1px;
+      flex: 0 0 17px;
+      width: 17px;
+      min-height: 17px;
+      height: 17px;
+      margin: 2px 0 0;
+      padding: 0;
+      accent-color: var(--red);
       cursor: pointer;
     }
 
-    button:hover { background: #e02027; }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 15px 18px;
+      background: linear-gradient(135deg, #ed2636, #bd1020);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 1.1px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(225,29,46,.17);
+      transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
+    }
+
+    button:hover {
+      filter: brightness(1.12);
+      box-shadow: 0 10px 28px rgba(225,29,46,.24);
+    }
+
+    button:active { transform: scale(.99); }
     button:disabled { opacity: .6; cursor: wait; }
 
     .message {
-      padding: 12px;
-      margin: 16px 0;
-      border-radius: 7px;
+      padding: 14px 15px;
+      margin: 18px 0;
+      border: 1px solid transparent;
+      border-radius: 11px;
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-wrap: anywhere;
     }
 
-    .error { background: #351416; color: #ffb8b8; }
-    .success { background: #142d1c; color: #b9f5c9; }
-
-    .links {
-      margin-top: 22px;
-      text-align: center;
-      color: #aaa;
-      font-size: 13px;
-      line-height: 2;
+    .error {
+      background: rgba(100,20,25,.30);
+      color: #ffb8b8;
+      border-color: rgba(255,90,90,.20);
     }
 
-    a { color: #e0b45a; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .success {
+      background: rgba(20,90,48,.20);
+      color: #b9f5c9;
+      border-color: rgba(100,220,140,.20);
+    }
+
+    .links {
+      margin-top: 25px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 150ms ease;
+    }
+
+    a:hover {
+      color: #ffe1a0;
+      text-decoration: underline;
+    }
 
     @media (max-width: 480px) {
-      .container { padding: 23px 18px; }
-      .grid { grid-template-columns: 1fr; gap: 0; }
+      body { padding: 22px 12px; }
+
+      .container {
+        padding: 27px 19px;
+        border-radius: 20px;
+      }
+
+      .brand {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
       .full { grid-column: auto; }
-      h1 { font-size: 25px; }
+      h1 { font-size: 28px; }
+      .intro { margin-bottom: 26px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
@@ -160,7 +275,9 @@
 <body>
   <main class="container">
     <div class="brand">LIQUIDITY DISPLACEMENT UNIVERSITY™</div>
+
     <h1>Student Registration</h1>
+
     <p class="intro">
       Create your student account to begin your learning journey.
       Complete all required fields below.
@@ -170,23 +287,20 @@
       <div class="grid">
         <div class="field">
           <label for="firstName">Name *</label>
-          <input id="firstName" name="firstName"
-                 autocomplete="given-name" required maxlength="80"
-                 placeholder="Your first name">
+          <input id="firstName" name="firstName" autocomplete="given-name"
+            required maxlength="80" placeholder="Your first name">
         </div>
 
         <div class="field">
           <label for="surname">Surname *</label>
-          <input id="surname" name="surname"
-                 autocomplete="family-name" required maxlength="80"
-                 placeholder="Your surname">
+          <input id="surname" name="surname" autocomplete="family-name"
+            required maxlength="80" placeholder="Your surname">
         </div>
 
         <div class="field full">
           <label for="email">Email Address *</label>
-          <input id="email" name="email" type="email"
-                 autocomplete="email" required maxlength="254"
-                 placeholder="you@example.com">
+          <input id="email" name="email" type="email" autocomplete="email"
+            required maxlength="254" placeholder="you@example.com">
         </div>
 
         <div class="field">
@@ -214,9 +328,8 @@
 
         <div class="field">
           <label for="phone">Phone Number *</label>
-          <input id="phone" name="phone" type="tel"
-                 autocomplete="tel" required maxlength="25"
-                 placeholder="+27 00 000 0000">
+          <input id="phone" name="phone" type="tel" autocomplete="tel"
+            required maxlength="25" placeholder="+27 00 000 0000">
         </div>
 
         <div class="field full">
@@ -232,15 +345,15 @@
         <div class="field">
           <label for="password">Password *</label>
           <input id="password" name="password" type="password"
-                 autocomplete="new-password" required minlength="8"
-                 placeholder="At least 8 characters">
+            autocomplete="new-password" required minlength="8"
+            placeholder="At least 8 characters">
         </div>
 
         <div class="field">
           <label for="confirmPassword">Confirm Password *</label>
-          <input id="confirmPassword" name="confirmPassword"
-                 type="password" autocomplete="new-password"
-                 required minlength="8" placeholder="Repeat password">
+          <input id="confirmPassword" name="confirmPassword" type="password"
+            autocomplete="new-password" required minlength="8"
+            placeholder="Repeat password">
         </div>
       </div>
 
@@ -253,8 +366,8 @@
         </span>
       </label>
 
-      <div id="message" class="message"
-           role="status" aria-live="polite" hidden></div>
+      <div id="message" class="message" role="status"
+        aria-live="polite" hidden></div>
 
       <button id="submitButton" type="submit">
         CREATE STUDENT ACCOUNT
@@ -267,7 +380,6 @@
     </div>
   </main>
 
-  <!-- Load Supabase and the existing authentication configuration once. -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./auth-config.js"></script>
   <script src="./auth-shared.js"></script>
@@ -311,8 +423,11 @@
           return;
         }
 
-        if (!window.supabase || !window.LDUAuth ||
-            typeof window.LDUAuth.client !== "function") {
+        if (
+          !window.supabase ||
+          !window.LDUAuth ||
+          typeof window.LDUAuth.client !== "function"
+        ) {
           showMessage(
             "Authentication could not load. Refresh the page and try again. If this continues, check auth-config.js and the Supabase script.",
             "error"
@@ -334,7 +449,7 @@
                 new URL("login.html", window.location.href).href,
               data: {
                 first_name: firstName,
-                surname: surname,
+                surname,
                 full_name: firstName + " " + surname,
                 country,
                 phone,
@@ -345,8 +460,11 @@
 
           if (error) throw error;
 
-          if (data.user && data.user.identities &&
-              data.user.identities.length === 0) {
+          if (
+            data.user &&
+            data.user.identities &&
+            data.user.identities.length === 0
+          ) {
             showMessage(
               "An account may already exist for this email. Try logging in or resetting your password.",
               "error"
