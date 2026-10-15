@@ -1,27 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#070707">
-  <meta name="description" content="Liquidity Displacement University™ by Forex Wealth Empire. Structured trading education, market understanding and professional development.">
 
-  <title>Liquidity Displacement University™ | Coming Soon</title>
+  <title>Liquidity Displacement University™ | Forex Wealth Empire</title>
+
+  <meta name="description"
+        content="Liquidity Displacement University™ by Forex Wealth Empire. Structured trading education focused on market patterns, discipline, analysis and execution.">
+
+  <meta name="robots" content="index, follow">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
   <style>
     :root {
-      --bg: #070707;
-      --panel: #101010;
+      --black: #070707;
+      --black-soft: #0d0d0d;
+      --panel: #111111;
+      --panel-light: #171717;
       --red: #e50914;
+      --red-dark: #a80710;
       --gold: #d9ad55;
       --white: #ffffff;
       --muted: #a5a5a5;
-      --border: rgba(255,255,255,.10);
+      --border: rgba(255, 255, 255, 0.10);
+      --gold-border: rgba(217, 173, 85, 0.25);
+      --max-width: 1200px;
     }
 
     * {
@@ -32,16 +42,19 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
-      min-height: 100vh;
+      background: var(--black);
       color: var(--white);
-      background:
-        radial-gradient(ellipse at 50% 25%, rgba(229,9,20,.12), transparent 48%),
-        var(--bg);
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
+      line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
     }
 
     a {
@@ -49,607 +62,2115 @@
       text-decoration: none;
     }
 
-    .top-line {
-      height: 3px;
-      width: 100%;
-      background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: var(--white);
     }
 
     .container {
-      width: min(1120px, 90%);
-      margin: auto;
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    header {
-      min-height: 88px;
-      border-bottom: 1px solid var(--border);
+    .gold {
+      color: var(--gold);
+    }
+
+    .red {
+      color: var(--red);
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-family: "Orbitron", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section-rule {
+      width: 65px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+      margin: 22px auto 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 13px 22px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.25s ease,
+                  background 0.25s ease,
+                  border-color 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      box-shadow: 0 8px 28px rgba(229, 9, 20, 0.16);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 12px 34px rgba(229, 9, 20, 0.28);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      background: transparent;
+      border-color: rgba(217, 173, 85, 0.55);
+    }
+
+    .btn-outline:hover {
+      background: rgba(217, 173, 85, 0.08);
+      border-color: var(--gold);
+    }
+
+    .btn-dark {
+      background: #171717;
+      border-color: var(--border);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      border-color: var(--gold);
+    }
+
+    /* LOADING SCREEN */
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
       display: flex;
       align-items: center;
+      justify-content: center;
+      background: #050505;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
-    .nav {
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .loader-mark {
+      width: 65px;
+      height: 65px;
+      border: 3px solid rgba(217, 173, 85, 0.15);
+      border-top-color: var(--red);
+      border-right-color: var(--gold);
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      animation: spin 1s linear infinite;
+    }
+
+    .loader-title {
+      font-family: "Orbitron", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .loader-subtitle {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 3px;
+      margin-top: 9px;
+      text-transform: uppercase;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ANNOUNCEMENT BAR */
+
+    .announcement {
+      position: relative;
+      z-index: 1001;
+      min-height: 37px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 7px 18px;
+      text-align: center;
+      background: linear-gradient(90deg, #57050a, #15100a, #57050a);
+      border-bottom: 1px solid rgba(217, 173, 85, 0.25);
+      color: #f5e5c4;
+      font-family: "Orbitron", sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+    }
+
+    .announcement-label {
+      color: var(--gold);
+    }
+
+    .announcement-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      display: inline-block;
+      box-shadow: 0 0 12px rgba(229, 9, 20, 0.8);
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 7, 7, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      width: 100%;
+      gap: 25px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
     }
 
-    .brand-mark {
-      width: 47px;
-      height: 47px;
+    .brand-symbol {
+      width: 43px;
+      height: 43px;
       display: grid;
       place-items: center;
-      border: 1px solid var(--red);
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      background: linear-gradient(135deg, #1a1a1a, #080808);
       color: var(--gold);
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 800;
-      font-size: 17px;
-      background: rgba(229,9,20,.08);
-      box-shadow: 0 0 20px rgba(229,9,20,.12);
+      font-family: "Orbitron", sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: inset 0 0 15px rgba(217, 173, 85, 0.05);
     }
 
     .brand-name {
+      font-family: "Orbitron", sans-serif;
       font-size: 12px;
-      letter-spacing: 2px;
       font-weight: 800;
+      letter-spacing: 0.8px;
+      line-height: 1.4;
     }
 
-    .brand-sub {
-      margin-top: 5px;
-      font-size: 9px;
-      color: var(--muted);
-      letter-spacing: 2px;
-    }
-
-    .status {
+    .brand-subtitle {
+      display: block;
+      margin-top: 3px;
       color: var(--gold);
-      font-size: 10px;
+      font-family: "Inter", sans-serif;
+      font-size: 9px;
+      font-weight: 600;
       letter-spacing: 2px;
-      text-transform: uppercase;
+    }
+
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 23px;
     }
 
-    .status-dot {
-      height: 7px;
-      width: 7px;
-      background: var(--red);
-      border-radius: 50%;
-      box-shadow: 0 0 12px var(--red);
-      animation: pulse 1.8s infinite;
+    .nav-links > a:not(.btn) {
+      color: #c9c9c9;
+      font-size: 11px;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
 
-    @keyframes pulse {
-      50% { opacity: .35; }
+    .nav-links > a:not(.btn):hover {
+      color: var(--gold);
     }
 
-    main {
-      min-height: 76vh;
+    .nav-actions {
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 85px 0 90px;
+      gap: 8px;
     }
+
+    .nav-actions .btn {
+      min-height: 39px;
+      padding: 9px 13px;
+      font-size: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      color: var(--white);
+      background: #141414;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* HERO */
 
     .hero {
-      max-width: 900px;
-      margin: auto;
+      min-height: 670px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 95px 0 105px;
+      background:
+        radial-gradient(ellipse at 85% 45%, rgba(229, 9, 20, 0.12), transparent 40%),
+        radial-gradient(ellipse at 10% 80%, rgba(217, 173, 85, 0.07), transparent 35%),
+        linear-gradient(135deg, #080808 0%, #0d0d0d 55%, #080808 100%);
     }
 
-    .eyebrow {
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.13;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 12%;
+      right: -150px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(217, 173, 85, 0.13);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(217, 173, 85, 0.025),
+        0 0 0 75px rgba(217, 173, 85, 0.02);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 820px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      border: 1px solid rgba(217,173,85,.35);
-      padding: 10px 15px;
+      padding: 8px 13px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(217, 173, 85, 0.3);
+      border-radius: 3px;
+      background: rgba(217, 173, 85, 0.045);
       color: var(--gold);
+      font-family: "Orbitron", sans-serif;
       font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 32px;
-      background: rgba(217,173,85,.04);
+      font-weight: 700;
+      letter-spacing: 2px;
     }
 
-    .eyebrow::before,
-    .eyebrow::after {
-      content: "";
-      width: 18px;
-      height: 1px;
-      background: var(--gold);
+    .hero-label span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 12px rgba(229, 9, 20, 0.7);
     }
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(34px, 6.4vw, 75px);
-      line-height: 1.13;
-      letter-spacing: -2px;
-      font-weight: 800;
-      text-transform: uppercase;
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(39px, 7vw, 78px);
+      font-weight: 900;
+      letter-spacing: -3.5px;
+      line-height: 1.04;
+      margin-bottom: 26px;
     }
 
-    h1 span {
-      display: block;
+    .hero h1 .accent {
       color: var(--red);
-      margin-top: 10px;
-      text-shadow: 0 0 35px rgba(229,9,20,.20);
+      display: block;
     }
 
-    .trademark {
+    .hero h1 .gold-line {
       color: var(--gold);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      vertical-align: top;
-      letter-spacing: 0;
     }
 
     .hero-description {
-      max-width: 650px;
-      margin: 27px auto 0;
-      font-size: 15px;
-      line-height: 1.9;
+      max-width: 690px;
       color: #b8b8b8;
+      font-size: clamp(14px, 2vw, 17px);
+      line-height: 1.9;
+      margin-bottom: 32px;
     }
 
-    .divider {
-      width: 65px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--red), var(--gold));
-      margin: 30px auto;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 45px;
     }
 
-    .countdown-label {
+    .hero-footnote {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: #888;
       font-size: 10px;
-      letter-spacing: 4px;
+      letter-spacing: 1px;
       text-transform: uppercase;
+    }
+
+    .hero-footnote span::before {
+      content: "◆";
       color: var(--gold);
-      margin-bottom: 23px;
+      font-size: 8px;
+      margin-right: 8px;
+    }
+
+    /* INTRO STRIP */
+
+    .intro-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #0c0c0c;
+    }
+
+    .intro-strip-inner {
+      min-height: 90px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: 25px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .intro-point {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .intro-icon {
+      display: grid;
+      place-items: center;
+      width: 37px;
+      height: 37px;
+      flex-shrink: 0;
+      border: 1px solid rgba(217, 173, 85, 0.3);
+      border-radius: 4px;
+      color: var(--gold);
+      font-size: 17px;
+    }
+
+    .intro-point strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .intro-point small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      margin-top: 2px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-copy .eyebrow {
+      margin-bottom: 17px;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(29px, 4vw, 44px);
+      line-height: 1.18;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .about-highlight {
+      border-left: 3px solid var(--red);
+      padding: 15px 20px;
+      margin: 25px 0;
+      background: linear-gradient(90deg, rgba(229, 9, 20, 0.09), transparent);
+      color: #dedede;
+      font-size: 14px;
+    }
+
+    .about-visual {
+      min-height: 400px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(229, 9, 20, 0.12), transparent 48%),
+        linear-gradient(145deg, #171717, #090909);
+    }
+
+    .about-visual::before,
+    .about-visual::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(217, 173, 85, 0.18);
+      border-radius: 50%;
+    }
+
+    .about-visual::after {
+      width: 340px;
+      height: 340px;
+      border-color: rgba(229, 9, 20, 0.15);
+    }
+
+    .about-visual-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .about-monogram {
+      width: 92px;
+      height: 92px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 23px;
+      border: 2px solid var(--gold);
+      border-radius: 7px;
+      color: var(--gold);
+      font-family: "Orbitron", sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      box-shadow: 0 0 35px rgba(217, 173, 85, 0.08);
+    }
+
+    .about-visual h3 {
+      font-family: "Orbitron", sans-serif;
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .about-visual p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* LEARNING AREAS */
+
+    .learning-section {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(229, 9, 20, 0.07), transparent 50%),
+        #0b0b0b;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .learning-card {
+      position: relative;
+      min-height: 265px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: linear-gradient(145deg, #141414, #0b0b0b);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      overflow: hidden;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(217, 173, 85, 0.5);
+    }
+
+    .learning-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -65px;
+      bottom: -65px;
+      border: 1px solid rgba(229, 9, 20, 0.25);
+      border-radius: 50%;
+    }
+
+    .learning-number {
+      display: block;
+      color: rgba(217, 173, 85, 0.75);
+      font-family: "Orbitron", sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    .learning-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 13px;
+    }
+
+    .learning-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .learning-tag {
+      display: inline-block;
+      margin-top: 23px;
+      padding: 5px 9px;
+      border: 1px solid rgba(217, 173, 85, 0.28);
+      border-radius: 3px;
+      color: var(--gold);
+      font-family: "Orbitron", sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* APPROACH */
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .approach-card {
+      padding: 25px 21px;
+      border-top: 2px solid var(--red);
+      background: #111111;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .approach-card:nth-child(even) {
+      border-top-color: var(--gold);
+    }
+
+    .approach-card .approach-symbol {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--gold);
+      margin-bottom: 19px;
+      font-family: "Orbitron", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .approach-card h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .approach-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+      position: relative;
+      overflow: hidden;
+      padding: 95px 0;
+      border-top: 1px solid rgba(217, 173, 85, 0.25);
+      border-bottom: 1px solid rgba(217, 173, 85, 0.25);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(229, 9, 20, 0.15), transparent 55%),
+        linear-gradient(135deg, #120809, #090909 50%, #100c06);
+    }
+
+    .countdown-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .countdown-content h2 {
+      font-size: clamp(28px, 5vw, 47px);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .countdown-content > p {
+      color: #b3b3b3;
+      max-width: 640px;
+      margin: 0 auto 35px;
+      font-size: 14px;
     }
 
     .countdown {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 13px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
       max-width: 650px;
-      margin: 0 auto;
+      margin: 0 auto 35px;
     }
 
-    .time-box {
-      padding: 24px 8px 20px;
+    .countdown-item {
+      padding: 22px 10px;
+      border: 1px solid rgba(217, 173, 85, 0.3);
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.38);
+    }
+
+    .countdown-value {
+      display: block;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(25px, 5vw, 42px);
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1.2;
+    }
+
+    .countdown-label {
+      display: block;
+      margin-top: 10px;
+      color: #999;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .countdown-status {
+      color: var(--gold);
+      font-family: "Orbitron", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 28px;
+    }
+
+    /* COMMUNITY */
+
+    .community-panel {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 35px;
+      align-items: center;
+      padding: 45px;
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(229, 9, 20, 0.10), transparent 50%),
+        linear-gradient(145deg, #151515, #0b0b0b);
+    }
+
+    .community-panel h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 17px;
+    }
+
+    .community-panel p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .community-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .community-link {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 16px;
       border: 1px solid var(--border);
-      background: linear-gradient(145deg, #141414, #0b0b0b);
-      position: relative;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.25);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .community-link:hover {
+      transform: translateX(3px);
+      border-color: var(--gold);
+    }
+
+    .community-link-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 4px;
+      background: rgba(229, 9, 20, 0.12);
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .community-link strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .community-link small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      overflow-wrap: anywhere;
+    }
+
+    /* REGISTRATION / ENQUIRY */
+
+    .registration-section {
+      background: #0b0b0b;
+      border-top: 1px solid var(--border);
+    }
+
+    .registration-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .registration-copy h2 {
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .registration-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .registration-note {
+      margin-top: 28px;
+      padding: 18px;
+      border-left: 3px solid var(--gold);
+      background: rgba(217, 173, 85, 0.05);
+      color: #c9c9c9;
+      font-size: 12px;
+    }
+
+    .enquiry-form {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: #111111;
+    }
+
+    .enquiry-form h3 {
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: #e3e3e3;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      display: block;
+      width: 100%;
+      min-height: 47px;
+      padding: 12px 13px;
+      color: var(--white);
+      border: 1px solid #303030;
+      border-radius: 4px;
+      background: #090909;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #777;
+    }
+
+    .form-group select option {
+      background: #111;
+      color: #fff;
+    }
+
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 18px 0 22px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .consent-row input {
+      margin-top: 5px;
+      accent-color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .form-status {
+      margin-top: 15px;
+      font-size: 12px;
+      color: var(--gold);
+    }
+
+    .form-status:empty {
+      display: none;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
       overflow: hidden;
     }
 
-    .time-box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--red), var(--gold));
-    }
+    /* FOOTER */
 
-    .time-number {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(25px, 5vw, 43px);
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .time-unit {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .launch-date {
-      margin-top: 18px;
-      color: #858585;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-
-    .launch-date strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 48px auto 0;
-      max-width: 850px;
-      text-align: left;
-    }
-
-    .feature {
-      padding: 22px 19px;
-      background: rgba(255,255,255,.025);
-      border: 1px solid var(--border);
-    }
-
-    .feature-number {
-      color: var(--red);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 11px;
-      margin-bottom: 13px;
-    }
-
-    .feature h3 {
-      font-size: 13px;
-      margin-bottom: 9px;
-    }
-
-    .feature p {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .button {
-      min-height: 47px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 24px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: .2s ease;
-    }
-
-    .button-primary {
-      background: var(--red);
-      color: white;
-      border: 1px solid var(--red);
-    }
-
-    .button-primary:hover {
-      background: #b90811;
-      transform: translateY(-2px);
-    }
-
-    .button-secondary {
-      border: 1px solid rgba(217,173,85,.5);
-      color: var(--gold);
-      background: transparent;
-    }
-
-    .button-secondary:hover {
-      background: rgba(217,173,85,.08);
-    }
-
-    .notice {
-      margin-top: 22px;
-      color: #747474;
-      font-size: 10px;
-      line-height: 1.8;
-    }
-
-    footer {
+    .footer {
+      padding: 55px 0 25px;
+      background: #050505;
       border-top: 1px solid var(--border);
-      padding: 27px 0;
     }
 
-    .footer-inner {
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand p {
+      max-width: 370px;
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-column h4 {
+      color: var(--gold);
+      font-family: "Orbitron", sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .footer-column a {
+      display: block;
+      width: fit-content;
+      margin: 9px 0;
+      color: #a9a9a9;
+      font-size: 12px;
+      transition: color 0.2s ease;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold);
+    }
+
+    .disclaimer {
+      padding: 23px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: #888;
+      font-size: 10px;
+      line-height: 1.9;
+    }
+
+    .disclaimer strong {
+      color: #bdbdbd;
+    }
+
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .copyright {
-      font-size: 10px;
+      gap: 12px;
+      padding-top: 22px;
       color: #777;
-      line-height: 1.8;
-    }
-
-    .footer-brand {
       font-size: 10px;
-      letter-spacing: 2px;
+    }
+
+    .footer-bottom span {
       color: var(--gold);
-      font-weight: 700;
     }
 
-    .error-message {
-      color: #ff6b6b;
-      font-size: 12px;
-      margin-top: 18px;
-      display: none;
+    /* SCROLL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    @media (max-width: 600px) {
-      header { min-height: 75px; }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-      .brand-mark {
-        width: 40px;
-        height: 40px;
+    /* RESPONSIVE */
+
+    @media (max-width: 1100px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links > a:not(.btn) {
+        font-size: 10px;
       }
 
       .brand-name {
         font-size: 10px;
-        letter-spacing: 1px;
       }
 
-      .brand-sub {
-        font-size: 8px;
-        letter-spacing: 1px;
+      .nav-actions .btn {
+        padding: 9px 10px;
+        font-size: 9px;
       }
 
-      .status {
-        font-size: 8px;
-        letter-spacing: 1px;
+      .about-grid {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
       }
 
-      main { padding: 65px 0; }
-
-      .eyebrow {
-        font-size: 8px;
-        letter-spacing: 2px;
+      .nav-inner {
+        min-height: 72px;
       }
 
-      h1 {
-        letter-spacing: -1px;
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        max-height: calc(100dvh - 72px);
+        overflow-y: auto;
+        padding: 22px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(7, 7, 7, 0.99);
+        border-bottom: 1px solid var(--gold-border);
       }
 
-      .hero-description {
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links > a:not(.btn) {
+        padding: 13px 5px;
+        border-bottom: 1px solid var(--border);
         font-size: 13px;
+      }
+
+      .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 17px;
+      }
+
+      .nav-actions .btn {
+        min-height: 46px;
+        font-size: 11px;
+      }
+
+      .about-grid,
+      .community-panel,
+      .registration-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        min-height: 350px;
+      }
+
+      .learning-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, var(--max-width));
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .announcement {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+        gap: 7px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand-symbol {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+      }
+
+      .brand-name {
+        font-size: 9px;
+        letter-spacing: 0.3px;
+      }
+
+      .brand-subtitle {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 80px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 12vw, 58px);
+        letter-spacing: -2px;
+      }
+
+      .hero-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-footnote {
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .intro-strip-inner {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+      .intro-point {
+        justify-content: flex-start;
+      }
+
+      .section-heading {
+        margin-bottom: 35px;
+      }
+
+      .section-heading h2 {
+        letter-spacing: -0.7px;
+      }
+
+      .learning-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .learning-card {
+        min-height: auto;
+      }
+
+      .countdown-section {
+        padding: 72px 0;
       }
 
       .countdown {
         gap: 7px;
       }
 
-      .time-box {
-        padding: 20px 3px 15px;
+      .countdown-item {
+        padding: 18px 5px;
       }
 
-      .time-unit {
+      .countdown-value {
+        font-size: 25px;
+      }
+
+      .countdown-label {
         font-size: 8px;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
       }
 
-      .features {
+      .community-panel {
+        padding: 25px 18px;
+        gap: 25px;
+      }
+
+      .enquiry-form {
+        padding: 23px 17px;
+      }
+
+      .footer-top {
         grid-template-columns: 1fr;
-        gap: 10px;
-        margin-top: 35px;
+        gap: 27px;
       }
 
-      .feature {
-        padding: 18px;
+      .footer-brand {
+        grid-column: auto;
       }
 
-      .footer-inner {
-        justify-content: center;
-        text-align: center;
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="top-line"></div>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#" aria-label="Forex Wealth Empire home">
-        <div class="brand-mark">FWE</div>
-        <div>
-          <div class="brand-name">FOREX WEALTH EMPIRE</div>
-          <div class="brand-sub">EDUCATION • DISCIPLINE • GROWTH</div>
+  <!-- LOADING SCREEN -->
+
+  <div id="loader" aria-label="Loading university homepage">
+    <div class="loader-content">
+      <div class="loader-mark"></div>
+      <div class="loader-title">LIQUIDITY DISPLACEMENT</div>
+      <div class="loader-subtitle">University™</div>
+    </div>
+  </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+
+  <div class="announcement">
+    <span class="announcement-dot"></span>
+    <span class="announcement-label">LIQUIDITY DISPLACEMENT UNIVERSITY™</span>
+    <span>THE NEXT CHAPTER OF TRADING EDUCATION</span>
+    <span class="announcement-dot"></span>
+    <span>POWERED BY FOREX WEALTH EMPIRE</span>
+  </div>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="#home" class="brand" aria-label="Liquidity Displacement University home">
+        <div class="brand-symbol">LDU</div>
+        <div class="brand-name">
+          LIQUIDITY DISPLACEMENT
+          <span class="brand-subtitle">UNIVERSITY™</span>
         </div>
       </a>
 
-      <div class="status">
-        <span class="status-dot"></span>
-        Coming Soon
-      </div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#learning">Learning</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#community">Community</a>
+        <a href="#countdown">Countdown</a>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="login.html">Student Login</a>
+          <a class="btn btn-primary" href="register.html">Student Registration ↗</a>
+        </div>
+      </nav>
+
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <section class="hero">
 
-        <div class="eyebrow">
-          The Next Chapter of Trading Education
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="hero-label">
+            <span></span>
+            A NEW STANDARD IN TRADING EDUCATION
+          </div>
+
+          <h1>
+            THE FUTURE OF
+            <span class="accent">TRADING EDUCATION.</span>
+            <span class="gold-line">REIMAGINED.</span>
+          </h1>
+
+          <p class="hero-description">
+            Welcome to Liquidity Displacement University™ — an educational
+            initiative by Forex Wealth Empire built around structured market
+            analysis, repeating price patterns, disciplined decision-making
+            and responsible execution.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="register.html">
+              Begin Student Registration ↗
+            </a>
+
+            <a class="btn btn-outline" href="login.html">
+              Existing Student Login
+            </a>
+
+            <a class="btn btn-dark" href="#about">
+              Discover The University ↓
+            </a>
+          </div>
+
+          <div class="hero-footnote">
+            <span>Structured Education</span>
+            <span>Market Understanding</span>
+            <span>Discipline &amp; Execution</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+
+    <section class="intro-strip" aria-label="University principles">
+      <div class="container intro-strip-inner">
+
+        <div class="intro-point">
+          <div class="intro-icon">⌁</div>
+          <div>
+            <strong>UNDERSTAND THE MARKET</strong>
+            <small>Study repeating price behaviour</small>
+          </div>
         </div>
 
-        <h1>
-          Liquidity Displacement
-          <span>University<sup class="trademark">™</sup></span>
-        </h1>
-
-        <p class="hero-description">
-          A dedicated learning environment built around structured
-          market education, repeating price patterns, disciplined
-          execution and professional development.
-          A new chapter from Forex Wealth Empire is coming.
-        </p>
-
-        <div class="divider"></div>
-
-        <div class="countdown-label">The Official Launch Countdown</div>
-
-        <div class="countdown" role="timer"
-             aria-label="Time remaining until launch">
-          <div class="time-box">
-            <div class="time-number" id="days">00</div>
-            <div class="time-unit">Days</div>
-          </div>
-
-          <div class="time-box">
-            <div class="time-number" id="hours">00</div>
-            <div class="time-unit">Hours</div>
-          </div>
-
-          <div class="time-box">
-            <div class="time-number" id="minutes">00</div>
-            <div class="time-unit">Minutes</div>
-          </div>
-
-          <div class="time-box">
-            <div class="time-number" id="seconds">00</div>
-            <div class="time-unit">Seconds</div>
+        <div class="intro-point">
+          <div class="intro-icon">◎</div>
+          <div>
+            <strong>BUILD YOUR DISCIPLINE</strong>
+            <small>Develop a structured process</small>
           </div>
         </div>
 
-        <p class="launch-date">
-          TARGET LAUNCH:
-          <strong>31 DECEMBER 2026 • 18:00 SAST</strong>
-        </p>
+        <div class="intro-point">
+          <div class="intro-icon">↗</div>
+          <div>
+            <strong>REFINE YOUR EXECUTION</strong>
+            <small>Learn responsible decision-making</small>
+          </div>
+        </div>
 
-        <p class="error-message" id="countdown-message">
-          The countdown has reached its target date.
-        </p>
+      </div>
+    </section>
 
-        <div class="features">
-          <article class="feature">
-            <div class="feature-number">01 / LEARN</div>
-            <h3>Structured Education</h3>
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-copy reveal">
+          <div class="eyebrow">Inside The University</div>
+
+          <h2>
+            MORE THAN TRADING.
+            <span class="gold">A WAY OF UNDERSTANDING THE MARKET.</span>
+          </h2>
+
+          <p>
+            Liquidity Displacement University™ is built to provide a structured
+            learning environment for traders who want to improve their
+            understanding of market behaviour, decision-making and execution.
+          </p>
+
+          <p>
+            The educational philosophy centres on recognising repeating
+            patterns, studying how price develops and learning to approach
+            trading with a consistent process rather than impulsive decisions.
+          </p>
+
+          <div class="about-highlight">
+            The objective is not to promise profits. It is to build knowledge,
+            discipline, patience and a more structured approach to the markets.
+          </div>
+
+          <a class="btn btn-outline" href="register.html">
+            Student Registration ↗
+          </a>
+        </div>
+
+        <div class="about-visual reveal">
+          <div class="about-visual-content">
+            <div class="about-monogram">LDU</div>
+
+            <h3>
+              LIQUIDITY DISPLACEMENT
+              <span class="gold">UNIVERSITY™</span>
+            </h3>
+
             <p>
-              A guided learning experience designed to develop
-              market understanding and trading knowledge.
+              A Forex Wealth Empire educational initiative focused on
+              structured market understanding and trading discipline.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LEARNING AREAS -->
+
+    <section class="section learning-section" id="learning">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="eyebrow">The Learning Environment</div>
+
+          <h2>
+            A STRUCTURED PATH TO
+            <span class="gold">MARKET UNDERSTANDING.</span>
+          </h2>
+
+          <p>
+            Explore the key areas that shape the university's educational
+            philosophy. Course materials and lessons are intended for enrolled
+            students through the student learning area.
+          </p>
+
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="learning-grid">
+
+          <article class="learning-card reveal">
+            <span class="learning-number">AREA 01 / FOUNDATIONS</span>
+            <h3>Market Foundations</h3>
+            <p>
+              Develop an understanding of market behaviour, price movement,
+              trading terminology and the importance of having a defined process.
+            </p>
+            <span class="learning-tag">CORE LEARNING</span>
+          </article>
+
+          <article class="learning-card reveal">
+            <span class="learning-number">AREA 02 / PATTERNS</span>
+            <h3>Repeating Market Patterns</h3>
+            <p>
+              Study the concept of recurring price behaviour and learn to
+              observe market development with patience and consistency.
+            </p>
+            <span class="learning-tag">MARKET STUDY</span>
+          </article>
+
+          <article class="learning-card reveal">
+            <span class="learning-number">AREA 03 / ANALYSIS</span>
+            <h3>Structured Analysis</h3>
+            <p>
+              Learn to organise observations, establish context and build a
+              repeatable analytical process before considering a trade.
+            </p>
+            <span class="learning-tag">ANALYTICAL PROCESS</span>
+          </article>
+
+          <article class="learning-card reveal">
+            <span class="learning-number">AREA 04 / EXECUTION</span>
+            <h3>Execution &amp; Risk</h3>
+            <p>
+              Understand the importance of position sizing, risk awareness,
+              trade planning and following predefined rules.
+            </p>
+            <span class="learning-tag">RISK AWARENESS</span>
+          </article>
+
+          <article class="learning-card reveal">
+            <span class="learning-number">AREA 05 / PSYCHOLOGY</span>
+            <h3>Trading Psychology</h3>
+            <p>
+              Explore patience, emotional control, consistency and the
+              behavioural habits that influence trading decisions.
+            </p>
+            <span class="learning-tag">DISCIPLINE</span>
+          </article>
+
+          <article class="learning-card reveal">
+            <span class="learning-number">AREA 06 / DEVELOPMENT</span>
+            <h3>Continuous Development</h3>
+            <p>
+              Build a habit of reviewing decisions, learning from mistakes
+              and improving through structured practice and reflection.
+            </p>
+            <span class="learning-tag">ONGOING LEARNING</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+
+    <section class="section" id="approach">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="eyebrow">Our Philosophy</div>
+
+          <h2>
+            KNOWLEDGE.
+            <span class="gold">DISCIPLINE.</span>
+            EXECUTION.
+          </h2>
+
+          <p>
+            A learning environment built around developing a process,
+            understanding uncertainty and making informed decisions.
+          </p>
+
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="approach-grid">
+
+          <article class="approach-card reveal">
+            <div class="approach-symbol">01</div>
+            <h3>Observe</h3>
+            <p>
+              Learn to observe price behaviour carefully instead of rushing
+              into decisions based on emotion or impulse.
             </p>
           </article>
 
-          <article class="feature">
-            <div class="feature-number">02 / DEVELOP</div>
-            <h3>Trading Discipline</h3>
+          <article class="approach-card reveal">
+            <div class="approach-symbol">02</div>
+            <h3>Understand</h3>
             <p>
-              Build consistency through preparation, patience,
-              risk awareness and a structured learning process.
+              Develop market context and learn to distinguish a considered
+              analysis from an unsupported assumption.
             </p>
           </article>
 
-          <article class="feature">
-            <div class="feature-number">03 / CONNECT</div>
-            <h3>Student Community</h3>
+          <article class="approach-card reveal">
+            <div class="approach-symbol">03</div>
+            <h3>Plan</h3>
             <p>
-              A dedicated educational community for discussion,
-              development and sharing market perspectives.
+              Approach trading with predefined conditions, risk limits and
+              a clear understanding of what would invalidate a decision.
             </p>
           </article>
+
+          <article class="approach-card reveal">
+            <div class="approach-symbol">04</div>
+            <h3>Review</h3>
+            <p>
+              Reflect on execution, document observations and focus on
+              learning rather than expecting every trade to succeed.
+            </p>
+          </article>
+
         </div>
+      </div>
+    </section>
 
-        <div class="actions">
-          <a class="button button-primary"
-             href="https://www.instagram.com/the.ldm_/"
-             target="_blank" rel="noopener noreferrer">
-            Follow the Journey
+    <!-- COUNTDOWN -->
+
+    <section class="countdown-section" id="countdown">
+      <div class="container">
+        <div class="countdown-content reveal">
+
+          <div class="eyebrow">The Next Chapter</div>
+
+          <h2>
+            YOUR NEXT CHAPTER
+            <span class="gold">STARTS HERE.</span>
+          </h2>
+
+          <p>
+            Follow the countdown to the university's scheduled milestone.
+            Student registration and login are available through their
+            dedicated pages; course access depends on the actual status of
+            each student's account and membership.
+          </p>
+
+          <div class="countdown" aria-label="Countdown to December 31, 2026">
+
+            <div class="countdown-item">
+              <span class="countdown-value" id="days">00</span>
+              <span class="countdown-label">Days</span>
+            </div>
+
+            <div class="countdown-item">
+              <span class="countdown-value" id="hours">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+
+            <div class="countdown-item">
+              <span class="countdown-value" id="minutes">00</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+
+            <div class="countdown-item">
+              <span class="countdown-value" id="seconds">00</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+
+          </div>
+
+          <div class="countdown-status" id="countdownStatus">
+            COUNTDOWN TO 31 DECEMBER 2026
+          </div>
+
+          <a class="btn btn-primary" href="register.html">
+            Student Registration ↗
           </a>
 
-          <a class="button button-secondary"
-             href="https://www.youtube.com/@liquidity_displacement"
-             target="_blank" rel="noopener noreferrer">
-            Watch on YouTube
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+
+    <section class="section" id="community">
+      <div class="container">
+
+        <div class="community-panel reveal">
+
+          <div>
+            <div class="eyebrow">The Community</div>
+
+            <h2>
+              LEARN. CONNECT.
+              <span class="gold">GROW WITH PURPOSE.</span>
+            </h2>
+
+            <p>
+              Connect with Forex Wealth Empire through its community and
+              public channels. Use the student registration and login pages
+              for the university's student learning area.
+            </p>
+
+            <a class="btn btn-primary" href="register.html">
+              Join The University ↗
+            </a>
+          </div>
+
+          <div class="community-links">
+
+            <a class="community-link"
+               href="https://discord.gg/cYzeXPTPj"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="community-link-icon">D</span>
+              <span>
+                <strong>Discord Community</strong>
+                <small>Connect with the community</small>
+              </span>
+            </a>
+
+            <a class="community-link"
+               href="https://www.instagram.com/the.ldm_/"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="community-link-icon">IG</span>
+              <span>
+                <strong>Instagram</strong>
+                <small>@the.ldm_</small>
+              </span>
+            </a>
+
+            <a class="community-link"
+               href="https://www.youtube.com/@liquidity_displacement"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="community-link-icon">▶</span>
+              <span>
+                <strong>YouTube</strong>
+                <small>Liquidity Displacement</small>
+              </span>
+            </a>
+
+            <a class="community-link"
+               href="mailto:Naswealthempire@gmail.com">
+              <span class="community-link-icon">@</span>
+              <span>
+                <strong>Email</strong>
+                <small>Naswealthempire@gmail.com</small>
+              </span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GENERAL ENQUIRY FORM -->
+
+    <section class="section registration-section" id="ldu-registration">
+      <div class="container registration-grid">
+
+        <div class="registration-copy reveal">
+          <div class="eyebrow">Contact The University</div>
+
+          <h2>
+            HAVE A QUESTION?
+            <span class="gold">LET'S CONNECT.</span>
+          </h2>
+
+          <p>
+            Use this form for general enquiries about Liquidity Displacement
+            University™ and Forex Wealth Empire.
+          </p>
+
+          <p>
+            To create a student account, use the separate Student Registration
+            page. If you already have an account, use Student Login.
+          </p>
+
+          <a class="btn btn-outline" href="register.html">
+            Student Registration ↗
           </a>
+
+          <div class="registration-note">
+            <strong class="gold">Student access:</strong>
+            Creating an account does not, by itself, activate paid course
+            access. Membership status and course permissions must be verified
+            through the university's student system.
+          </div>
         </div>
 
-        <p class="notice">
-          Official updates will be announced through our social channels.
-          The countdown indicates the planned launch date.
-        </p>
+        <form
+          class="enquiry-form reveal"
+          id="enquiryForm"
+          action="https://formspree.io/f/mgaoyqyo"
+          method="POST">
 
-      </section>
-    </div>
+          <h3>General Enquiry</h3>
+
+          <p class="form-intro">
+            Complete the form and submit your enquiry.
+          </p>
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="Full Name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number (Optional)</label>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="WhatsApp"
+              placeholder="Enter your contact number"
+              autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="enquiryType">Enquiry Type</label>
+            <select id="enquiryType" name="Enquiry Type" required>
+              <option value="">Select an enquiry type</option>
+              <option value="University Information">University Information</option>
+              <option value="Student Account Support">Student Account Support</option>
+              <option value="Course Information">Course Information</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="Message"
+              placeholder="How can we help you?"
+              required></textarea>
+          </div>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="consent-row">
+            <input type="checkbox" id="consent" name="Consent" value="Agreed" required>
+            <label for="consent">
+              I agree that my submitted details may be used to respond to
+              this enquiry.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submitEnquiry">
+            Submit Enquiry ↗
+          </button>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div class="copyright">
-        © <span id="year">2026</span> Forex Wealth Empire (Pty) Ltd.
-        <br>All rights reserved.
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="#home" class="brand">
+            <div class="brand-symbol">LDU</div>
+            <div class="brand-name">
+              LIQUIDITY DISPLACEMENT
+              <span class="brand-subtitle">UNIVERSITY™</span>
+            </div>
+          </a>
+
+          <p>
+            An educational initiative by Forex Wealth Empire focused on
+            structured market learning, trading discipline and responsible
+            decision-making.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>EXPLORE</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About The University</a>
+          <a href="#learning">Learning Areas</a>
+          <a href="#approach">Our Approach</a>
+          <a href="#community">Community</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>STUDENT ACCESS</h4>
+          <a href="register.html">Student Registration</a>
+          <a href="login.html">Student Login</a>
+          <a href="mailto:Naswealthempire@gmail.com">Contact Support</a>
+          <a href="https://www.instagram.com/the.ldm_/"
+             target="_blank"
+             rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@liquidity_displacement"
+             target="_blank"
+             rel="noopener noreferrer">YouTube</a>
+        </div>
+
       </div>
 
-      <div class="footer-brand">
-        LIQUIDITY DISPLACEMENT UNIVERSITY™
+      <div class="disclaimer">
+        <strong>Risk Disclaimer:</strong>
+        Trading foreign exchange, contracts for difference and other financial
+        instruments involves significant risk and may not be suitable for every
+        person. You may lose some or all of your invested capital. Educational
+        material on this website is provided for informational and educational
+        purposes only and is not personalised financial, investment or trading
+        advice. No profit or performance outcome is guaranteed. Past performance
+        does not guarantee future results. Always understand the risks and
+        consider your financial circumstances before trading.
       </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="currentYear"></span>
+          <span>Forex Wealth Empire</span>. All rights reserved.
+        </div>
+
+        <div>
+          Liquidity Displacement University™
+        </div>
+      </div>
+
     </div>
   </footer>
+
+  <!-- PAGE JAVASCRIPT -->
 
   <script>
     (() => {
       "use strict";
 
-      // Official target time: 31 December 2026, 18:00 South African time.
+      /* LOADER */
+
+      const loader = document.getElementById("loader");
+
+      function hideLoader() {
+        if (loader) {
+          loader.classList.add("hidden");
+        }
+      }
+
+      window.addEventListener("load", hideLoader);
+
+      // Prevent the loading screen from remaining if a resource is slow.
+      window.setTimeout(hideLoader, 2500);
+
+
+      /* MOBILE NAVIGATION */
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = navLinks.classList.toggle("open");
+
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+          );
+          menuToggle.textContent = isOpen ? "×" : "☰";
+          document.body.classList.toggle("menu-open", isOpen);
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+            menuToggle.textContent = "☰";
+            document.body.classList.remove("menu-open");
+          });
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 900) {
+            navLinks.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.textContent = "☰";
+            document.body.classList.remove("menu-open");
+          }
+        });
+      }
+
+
+      /* COUNTDOWN */
+
+      // South African time: 31 December 2026 at 18:00.
       const LAUNCH_DATE = "2026-12-31T18:00:00+02:00";
-      const target = new Date(LAUNCH_DATE).getTime();
 
-      const elements = {
-        days: document.getElementById("days"),
-        hours: document.getElementById("hours"),
-        minutes: document.getElementById("minutes"),
-        seconds: document.getElementById("seconds"),
-        message: document.getElementById("countdown-message"),
-        year: document.getElementById("year")
-      };
+      const daysElement = document.getElementById("days");
+      const hoursElement = document.getElementById("hours");
+      const minutesElement = document.getElementById("minutes");
+      const secondsElement = document.getElementById("seconds");
+      const countdownStatus = document.getElementById("countdownStatus");
 
-      const pad = number => String(number).padStart(2, "0");
+      const targetTime = new Date(LAUNCH_DATE).getTime();
 
       function updateCountdown() {
-        const remaining = target - Date.now();
+        const now = Date.now();
+        const distance = targetTime - now;
 
-        if (remaining <= 0) {
-          elements.days.textContent = "00";
-          elements.hours.textContent = "00";
-          elements.minutes.textContent = "00";
-          elements.seconds.textContent = "00";
-          elements.message.style.display = "block";
+        if (distance <= 0) {
+          if (daysElement) daysElement.textContent = "00";
+          if (hoursElement) hoursElement.textContent = "00";
+          if (minutesElement) minutesElement.textContent = "00";
+          if (secondsElement) secondsElement.textContent = "00";
+
+          if (countdownStatus) {
+            countdownStatus.textContent = "THE SCHEDULED DATE HAS ARRIVED";
+          }
+
           return;
         }
 
-        const totalSeconds = Math.floor(remaining / 1000);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
 
-        elements.days.textContent =
-          pad(Math.floor(totalSeconds / 86400));
-
-        elements.hours.textContent =
-          pad(Math.floor((totalSeconds % 86400) / 3600));
-
-        elements.minutes.textContent =
-          pad(Math.floor((totalSeconds % 3600) / 60));
-
-        elements.seconds.textContent =
-          pad(totalSeconds % 60);
-      }
-
-      elements.year.textContent = new Date().getFullYear();
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
-  </script>
-</body>
-</html>
+        if (daysElement) daysElement.textContent = String(days).padStart(2, "0");
+        if (hoursElement) hoursElement.textContent = String(hours).padStart(2, "0");
+        if (minutesElement) minutesElement.textContent = String(minutes
