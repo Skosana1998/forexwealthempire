@@ -1,1 +1,153 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LDU Student Login</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: #080808;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      padding: 30px;
+      background: #121212;
+      border: 1px solid #333;
+      border-radius: 16px;
+    }
+    h1 { color: #e50914; margin-bottom: 8px; }
+    p { color: #aaa; line-height: 1.5; }
+    label { display: block; margin-top: 18px; }
+    input {
+      width: 100%;
+      padding: 13px;
+      margin-top: 8px;
+      background: #080808;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 7px;
+    }
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 14px;
+      border: 0;
+      border-radius: 7px;
+      background: #e50914;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:disabled { opacity: .6; }
+    #login { background: #292929; }
+    #message { overflow-wrap: anywhere; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>LDU Student Login</h1>
+    <p>Register or log in to your student account.</p>
+
+    <form id="auth-form">
+      <label for="email">Email address</label>
+      <input id="email" type="email" autocomplete="email" required>
+
+      <label for="password">Password</label>
+      <input id="password" type="password"
+        autocomplete="current-password" minlength="8" required>
+
+      <button id="register" type="button">Create student account</button>
+      <button id="login" type="submit">Log in</button>
+    </form>
+
+    <p id="message" role="status">Loading secure login...</p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const client = window.supabase.createClient(
+      "https://oordibcpeyvmlybmorhm.supabase.co",
+      "sb_publishable_95GwON_auW2nW4hDUaQj2A_5Xi6NB60"
+    );
+
+    const message = document.getElementById("message");
+    const register = document.getElementById("register");
+    const login = document.getElementById("login");
+
+    register.addEventListener("click", async () => {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (!email || password.length < 8) {
+        message.textContent = "Enter a valid email and a password of at least 8 characters.";
+        return;
+      }
+
+      register.disabled = true;
+      message.textContent = "Creating your account...";
+
+      try {
+        const { data, error } = await client.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: window.location.origin +
+              window.location.pathname.replace(/login\.html$/, "rcm.html")
+          }
+        });
+
+        if (error) throw error;
+
+        message.textContent = data.session
+          ? "Account created. You are logged in."
+          : "Check your email for the confirmation link. If email sending is rate-limited, wait before trying again.";
+      } catch (error) {
+        message.textContent = error.message;
+      } finally {
+        register.disabled = false;
+      }
+    });
+
+    document.getElementById("auth-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      login.disabled = true;
+      message.textContent = "Logging in...";
+
+      try {
+        const { error } = await client.auth.signInWithPassword({
+          email, password
+        });
+
+        if (error) throw error;
+
+        window.location.href = "rcm.html";
+      } catch (error) {
+        message.textContent = error.message;
+      } finally {
+        login.disabled = false;
+      }
+    });
+
+    client.auth.getSession().then(({ data }) => {
+      message.textContent = data.session
+        ? "You are already logged in. Open your student portal."
+        : "Enter your email and password to continue.";
+    });
+  </script>
+</body>
+</html>
+
