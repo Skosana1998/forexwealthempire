@@ -1,1 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>Student Registration | Liquidity Displacement University™</title>
+  <meta name="description" content="Register for Liquidity Displacement University™.">
 
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at top, rgba(135, 0, 0, .2), transparent 55%),
+        #080808;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+      padding: 32px;
+      background: #111;
+      border: 1px solid #383030;
+      border-top: 3px solid #d71920;
+      border-radius: 14px;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, .5);
+    }
+
+    .brand {
+      color: #e0b45a;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 14px 0 8px;
+      text-align: center;
+      font-size: 29px;
+    }
+
+    .intro {
+      color: #aaa;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field { margin-bottom: 16px; }
+    .full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      color: #ddd;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 47px;
+      padding: 12px;
+      background: #090909;
+      color: #fff;
+      border: 1px solid #393939;
+      border-radius: 7px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: #d71920;
+    }
+
+    select:invalid { color: #999; }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #bbb;
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 6px 0 20px;
+    }
+
+    .consent input {
+      width: 16px;
+      min-height: 16px;
+      margin-top: 3px;
+      accent-color: #d71920;
+    }
+
+    button {
+      width: 100%;
+      min-height: 49px;
+      background: #c9151c;
+      color: white;
+      border: 0;
+      border-radius: 7px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #e02027; }
+    button:disabled { opacity: .6; cursor: wait; }
+
+    .message {
+      padding: 12px;
+      margin: 16px 0;
+      border-radius: 7px;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    .error { background: #351416; color: #ffb8b8; }
+    .success { background: #142d1c; color: #b9f5c9; }
+
+    .links {
+      margin-top: 22px;
+      text-align: center;
+      color: #aaa;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    a { color: #e0b45a; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .container { padding: 23px 18px; }
+      .grid { grid-template-columns: 1fr; gap: 0; }
+      .full { grid-column: auto; }
+      h1 { font-size: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <div class="brand">LIQUIDITY DISPLACEMENT UNIVERSITY™</div>
+    <h1>Student Registration</h1>
+    <p class="intro">
+      Create your student account to begin your learning journey.
+      Complete all required fields below.
+    </p>
+
+    <form id="registerForm">
+      <div class="grid">
+        <div class="field">
+          <label for="firstName">Name *</label>
+          <input id="firstName" name="firstName" autocomplete="given-name"
+                 required maxlength="80" placeholder="Your first name">
+        </div>
+
+        <div class="field">
+          <label for="surname">Surname *</label>
+          <input id="surname" name="surname" autocomplete="family-name"
+                 required maxlength="80" placeholder="Your surname">
+        </div>
+
+        <div class="field full">
+          <label for="email">Email Address *</label>
+          <input id="email" name="email" type="email" autocomplete="email"
+                 required maxlength="254" placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+          <label for="country">Country *</label>
+          <select id="country" name="country" autocomplete="country-name" required>
+            <option value="" disabled selected>Select country</option>
+            <option>South Africa</option>
+            <option>Nigeria</option>
+            <option>Ghana</option>
+            <option>Kenya</option>
+            <option>Zimbabwe</option>
+            <option>Botswana</option>
+            <option>Namibia</option>
+            <option>Zambia</option>
+            <option>Uganda</option>
+            <option>Tanzania</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>Australia</option>
+            <option>India</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel"
+                 required maxlength="25" placeholder="+27 00 000 0000">
+        </div>
+
+        <div class="field full">
+          <label for="gender">Gender *</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="prefer_not_to_say">Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="password">Password *</label>
+          <input id="password" name="password" type="password"
+                 autocomplete="new-password" required minlength="8"
+                 placeholder="At least 8 characters">
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm Password *</label>
+          <input id="confirmPassword" name="confirmPassword" type="password"
+                 autocomplete="new-password" required minlength="8"
+                 placeholder="Repeat password">
+        </div>
+      </div>
+
+      <label class="consent">
+        <input id="disclaimer" type="checkbox" required>
+        <span>
+          I understand that Liquidity Displacement University™ provides
+          trading education, not guaranteed profits or financial advice.
+          I confirm that the information I provided is accurate.
+        </span>
+      </label>
+
+      <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+
+      <button id="submitButton" type="submit">CREATE STUDENT ACCOUNT</button>
+    </form>
+
+    <div class="links">
+      Already registered? <a href="login.html">Log in here</a><br>
+      <a href="index.html">← Return to homepage</a>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-config.js"></script>
+  <script src="auth-shared.js"></script>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const messageBox = document.getElementById("message");
+    const submitButton = document.getElementById("submitButton");
+
+    function showMessage(text, type) {
+      messageBox.textContent = text;
+      messageBox.className = "message " + type;
+      messageBox.hidden = false;
+    }
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      messageBox.hidden = true;
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const surname = document.getElementById("surname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const country = document.getElementById("country").value;
+      const phone = document.getElementById("phone").value.trim();
+      const gender = document.getElementById("gender").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        showMessage("Your passwords do not match.", "error");
+        return;
+      }
+
+      if (password.length < 8) {
+        showMessage("Your password must contain at least 8 characters.", "error");
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = "CREATING ACCOUNT...";
+
+      try {
+        const supabaseClient = window.LDUAuth.client();
+
+        const { data, error } = await supabaseClient.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: new URL("login.html", window.location.href).href,
+            data: {
+              first_name: firstName,
+              surname,
+              full_name: firstName + " " + surname,
+              country,
+              phone,
+              gender
+            }
+          }
+        });
+
+        if (error) throw error;
+
+        showMessage(
+          data.user && data.user.identities && data.user.identities.length === 0
+            ? "An account may already exist for this email. Try logging in or resetting your password."
+            : "Registration request submitted. If email confirmation is enabled, check your inbox to verify your email before logging in. Your student membership may need administrator approval.",
+          "success"
+        );
+
+        form.reset();
+      } catch (error) {
+        let text = error.message || "Registration could not be completed.";
+
+        if (/rate limit|email rate exceeded|too many requests/i.test(text)) {
+          text = "Email sending is temporarily rate-limited by Supabase. Please wait before trying again, or configure custom SMTP in Supabase.";
+        }
+
+        showMessage(text, "error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "CREATE STUDENT ACCOUNT";
+      }
+    });
+  </script>
+</body>
+</html>
