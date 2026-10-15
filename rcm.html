@@ -1,847 +1,750 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090a0f">
+<title>Student Portal | Liquidity Displacement University™</title>
+<meta name="description" content="Liquidity Displacement University student learning dashboard.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 :root{
-  --bg:#08090d;
-  --panel:rgba(255,255,255,.055);
-  --panel-solid:#111319;
-  --red:#ff394b;
+  color-scheme:dark;
+  --bg:#090a0f;
+  --panel:rgba(255,255,255,.065);
+  --panel2:rgba(255,255,255,.035);
+  --border:rgba(255,255,255,.12);
+  --white:#f7f7fa;
+  --muted:#a2a4b2;
+  --red:#f04455;
   --gold:#dfbd78;
-  --white:#f5f5f7;
-  --muted:#a1a1ac;
-  --border:rgba(255,255,255,.105);
-  --glass:rgba(255,255,255,.045);
-  --shadow:0 24px 70px rgba(0,0,0,.30);
-  --radius:23px;
+  --radius:22px;
 }
-
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-  background:var(--bg);
-}
-
+html{scroll-behavior:smooth}
 body{
   margin:0;
   min-height:100vh;
+  background:
+    radial-gradient(ellipse at 5% 0%,rgba(240,68,85,.12),transparent 35%),
+    radial-gradient(ellipse at 95% 20%,rgba(223,189,120,.07),transparent 30%),
+    var(--bg);
   color:var(--white);
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:
-    radial-gradient(ellipse at 8% 0%,rgba(255,57,75,.105),transparent 34%),
-    radial-gradient(ellipse at 95% 25%,rgba(223,189,120,.065),transparent 32%),
-    linear-gradient(145deg,#08090d,#0b0c11 55%,#08090d);
   -webkit-font-smoothing:antialiased;
 }
-
-button,a,input{font:inherit}
-button{cursor:pointer}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
 a{color:inherit;text-decoration:none}
+button{cursor:pointer}
 button:focus-visible,a:focus-visible,input:focus-visible{
   outline:2px solid var(--gold);
-  outline-offset:4px;
+  outline-offset:3px;
 }
-::selection{background:rgba(255,57,75,.3);color:white}
-
-/* APP SHELL */
-.layout{
-  display:flex;
-  min-height:100vh;
-}
-
-/* GLASS SIDEBAR */
+.layout{display:flex;min-height:100vh}
 .sidebar{
-  width:265px;
-  flex-shrink:0;
-  padding:25px 17px;
-  display:flex;
-  flex-direction:column;
-  gap:30px;
-  background:rgba(13,14,19,.76);
+  width:255px;flex-shrink:0;padding:25px 17px;
+  display:flex;flex-direction:column;gap:28px;
+  background:rgba(14,15,21,.84);
   border-right:1px solid var(--border);
-  backdrop-filter:blur(30px);
-  -webkit-backdrop-filter:blur(30px);
+  backdrop-filter:blur(25px);
 }
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:0 5px;
-}
-
+.brand{display:flex;align-items:center;gap:12px;padding:0 5px}
 .brand-mark{
-  width:45px;
-  height:45px;
-  flex-shrink:0;
-  display:grid;
-  place-items:center;
-  border-radius:15px;
-  color:white;
-  font-size:21px;
-  font-weight:900;
-  background:linear-gradient(145deg,#ff5968,#cf142a);
-  box-shadow:0 8px 27px rgba(255,57,75,.22);
+  width:45px;height:45px;display:grid;place-items:center;
+  border-radius:15px;background:linear-gradient(140deg,#ff6573,#cf1730);
+  font-weight:900;font-size:20px;
+  box-shadow:0 8px 25px #f044552a;
 }
-
-.brand h2{
-  font-size:15px;
-  font-weight:800;
-  letter-spacing:-.5px;
-  margin:0;
-}
-
-.brand small{
-  display:block;
-  margin-top:5px;
-  color:var(--gold);
-  font-size:9px;
-  letter-spacing:1.3px;
-}
-
-.nav-label{
-  margin:5px 11px 13px;
-  color:#777985;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:2px;
-}
-
-.nav{
-  display:grid;
-  gap:6px;
-}
-
+.brand h2{font-size:14px;margin:0;letter-spacing:-.4px}
+.brand small{display:block;color:var(--gold);font-size:9px;margin-top:5px;letter-spacing:1.3px}
+.nav-label{margin:5px 11px 12px;color:#777986;font-size:9px;font-weight:800;letter-spacing:2px}
+.nav{display:grid;gap:6px}
 .nav button{
-  position:relative;
-  width:100%;
-  min-height:45px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px 13px;
-  border:1px solid transparent;
-  border-radius:13px;
-  background:transparent;
-  color:#a8a9b4;
-  text-align:left;
-  font-size:12px;
-  font-weight:600;
-  transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease;
+  width:100%;display:flex;align-items:center;gap:12px;
+  padding:13px;border:1px solid transparent;border-radius:13px;
+  background:transparent;color:#b2b3bf;text-align:left;font-size:12px;font-weight:600;
 }
-
-.nav button:hover{
-  color:white;
-  background:rgba(255,255,255,.055);
-  transform:translateX(2px);
+.nav button:hover,.nav button.active{
+  color:white;background:linear-gradient(100deg,#f0445523,#ffffff08);
+  border-color:#f0445535;
 }
-
-.nav button.active{
-  color:white;
-  background:linear-gradient(100deg,rgba(255,57,75,.15),rgba(255,255,255,.035));
-  border-color:rgba(255,57,75,.2);
-  box-shadow:inset 3px 0 0 var(--red);
-}
-
-.nav button.active .ico{color:#ff6977}
-
-.ico{
-  width:22px;
-  text-align:center;
-  font-size:18px;
-}
-
+.nav button.active{box-shadow:inset 3px 0 var(--red)}
+.nav .ico{width:22px;text-align:center;font-size:17px}
 .side-bottom{margin-top:auto}
-
-.plan-mini,
-.card,
-.stat{
-  min-width:0;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.022));
-  box-shadow:0 12px 35px rgba(0,0,0,.12);
+.side-note{
+  padding:17px;border:1px solid var(--border);border-radius:18px;
+  background:var(--panel2);color:var(--muted);font-size:11px;line-height:1.8;
 }
-
-.plan-mini{
-  padding:20px;
-}
-
-.plan-mini strong{
-  display:block;
-  margin:12px 0 8px;
-  color:var(--gold);
-  font-size:23px;
-  letter-spacing:-.8px;
-}
-
-.plan-mini p{
-  color:var(--muted);
-  font-size:11px;
-  line-height:1.8;
-}
-
-/* MAIN CONTENT */
-.main{
-  flex:1;
-  min-width:0;
-}
-
+.side-note strong{display:block;color:var(--gold);font-size:16px;margin:9px 0}
+.main{flex:1;min-width:0}
 .topbar{
-  position:sticky;
-  top:0;
-  z-index:8;
-  min-height:77px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  padding:14px 30px;
-  border-bottom:1px solid var(--border);
-  background:rgba(8,9,13,.75);
-  backdrop-filter:blur(28px);
-  -webkit-backdrop-filter:blur(28px);
+  position:sticky;top:0;z-index:5;min-height:72px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:13px 28px;border-bottom:1px solid var(--border);
+  background:rgba(9,10,15,.83);backdrop-filter:blur(22px);
 }
-
-.topbar-label{
-  color:#9697a3;
-  font-size:10px;
-  letter-spacing:1.3px;
-}
-
-.topbar-label strong{
-  display:block;
-  margin-top:5px;
-  color:white;
-  font-size:15px;
-  letter-spacing:-.35px;
-}
-
+.topbar-label{font-size:9px;color:var(--muted);letter-spacing:1.3px}
+.topbar-label strong{display:block;color:white;font-size:14px;letter-spacing:0;margin-top:5px}
+.top-actions{display:flex;align-items:center;gap:10px}
 .avatar{
-  width:39px;
-  height:39px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  color:var(--gold);
-  font-size:14px;
-  font-weight:800;
-  background:linear-gradient(145deg,rgba(255,57,75,.2),rgba(255,255,255,.05));
-  border:1px solid rgba(255,255,255,.16);
+  width:37px;height:37px;display:grid;place-items:center;border-radius:50%;
+  background:#f0445525;border:1px solid var(--border);color:var(--gold);font-weight:800;
 }
-
-.mobile-menu{display:none}
-
-.content{
-  width:100%;
-  max-width:1450px;
-  margin:0 auto;
-  padding:32px;
-}
-
-.eyebrow{
-  color:var(--gold);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2px;
-}
-
-h1,h2,h3,p{margin-top:0}
-
-h1{
-  margin:12px 0;
-  font-size:clamp(29px,4vw,43px);
-  font-weight:800;
-  letter-spacing:-1.9px;
-  line-height:1.13;
-}
-
-h2{
-  font-size:20px;
-  font-weight:750;
-  letter-spacing:-.65px;
-}
-
-h3{
-  font-size:15px;
-  font-weight:700;
-  letter-spacing:-.25px;
-}
-
+.mobile-menu{display:none!important}
+.content{max-width:1450px;margin:auto;padding:30px}
+.eyebrow{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:2px}
+h1{font-size:clamp(29px,4vw,43px);line-height:1.14;letter-spacing:-1.6px;margin:12px 0}
+h2{font-size:20px;letter-spacing:-.6px}
+h3{font-size:14px}
 p{line-height:1.75}
 .muted{color:var(--muted)}
-.small{font-size:12px}
+.small{font-size:11px}
 .gold{color:var(--gold)}
 .red{color:var(--red)}
-
-/* GLASS HERO */
 .hero{
-  position:relative;
-  overflow:hidden;
-  padding:36px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:30px;
+  position:relative;overflow:hidden;padding:34px;
+  border:1px solid var(--border);border-radius:28px;
   background:
-    radial-gradient(ellipse at 95% 0%,rgba(255,57,75,.18),transparent 43%),
-    radial-gradient(ellipse at 0% 100%,rgba(223,189,120,.055),transparent 45%),
-    linear-gradient(135deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
+    radial-gradient(ellipse at 100% 0%,#f0445527,transparent 45%),
+    linear-gradient(135deg,#ffffff0e,#ffffff04);
+  box-shadow:0 20px 65px #0003;
+  backdrop-filter:blur(20px);
 }
-
-.hero:after{
-  content:"LDU";
-  position:absolute;
-  right:8px;
-  bottom:-60px;
-  pointer-events:none;
-  color:rgba(255,255,255,.025);
-  font-size:clamp(100px,17vw,200px);
-  font-weight:900;
-  letter-spacing:-15px;
-}
-
-.hero h1{
-  position:relative;
-  z-index:1;
-}
-
-.hero p{
-  position:relative;
-  z-index:1;
-  max-width:680px;
-  color:#b6b7c1;
-  font-size:14px;
-}
-
-.hero-actions{
-  position:relative;
-  z-index:1;
-  display:flex;
-  flex-wrap:wrap;
-  gap:11px;
-  margin-top:25px;
-}
-
-/* BUTTONS */
+.hero p{max-width:680px;color:#c0c1cb;font-size:13px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .btn{
-  min-height:42px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:11px 16px;
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:13px;
-  background:rgba(255,255,255,.055);
-  color:white;
-  font-size:11px;
-  font-weight:750;
-  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+  min-height:41px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 15px;border:1px solid var(--border);border-radius:12px;
+  background:#ffffff0a;color:white;font-size:11px;font-weight:750;
 }
-
-.btn:hover{
-  transform:translateY(-2px);
-  background:rgba(255,255,255,.1);
-  border-color:rgba(255,255,255,.24);
+.btn:hover{background:#ffffff16}
+.btn-red{background:linear-gradient(135deg,#ff5969,#d91e36);border-color:#f0445580}
+.btn-red:hover{background:linear-gradient(135deg,#ff6b79,#ec2940)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.grid{display:grid;gap:15px}
+.stats{grid-template-columns:repeat(3,minmax(0,1fr));margin:20px 0}
+.stat,.card,.course-card,.price-card{
+  min-width:0;border:1px solid var(--border);border-radius:var(--radius);
+  background:linear-gradient(145deg,#ffffff0b,#ffffff04);
+  box-shadow:0 12px 35px #0002;
 }
-
-.btn-red{
-  color:white;
-  border-color:rgba(255,57,75,.65);
-  background:linear-gradient(135deg,#ff5261,#df1831);
-  box-shadow:0 8px 26px rgba(255,57,75,.17);
-}
-
-.btn-red:hover{
-  background:linear-gradient(135deg,#ff6572,#ed2540);
-  box-shadow:0 10px 30px rgba(255,57,75,.24);
-}
-
-.btn-outline{
-  background:rgba(255,255,255,.025);
-  border-color:rgba(255,255,255,.16);
-}
-
-.btn:disabled{
-  opacity:.48;
-  cursor:not-allowed;
-  transform:none;
-  box-shadow:none;
-}
-
-/* GRIDS AND STAT CARDS */
-.grid{
-  display:grid;
-  gap:17px;
-}
-
-.stats{
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  margin:23px 0;
-}
-
-.stat{
-  padding:22px;
-  transition:transform .22s ease,border-color .22s ease;
-}
-
-.stat:hover{
-  transform:translateY(-3px);
-  border-color:rgba(255,255,255,.2);
-}
-
-.stat-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  color:var(--muted);
-  font-size:11px;
-}
-
-.stat-icon{
-  color:var(--gold);
-  font-size:20px;
-}
-
-.stat-value{
-  margin:19px 0 7px;
-  font-size:clamp(22px,3vw,30px);
-  font-weight:800;
-  letter-spacing:-1.1px;
-  overflow-wrap:anywhere;
-}
-
-.stat-note{
-  color:var(--muted);
-  font-size:10px;
-  line-height:1.6;
-}
-
-.section-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin:29px 0 15px;
-}
-
+.stat{padding:20px}
+.stat-top{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:11px}
+.stat-icon{font-size:19px;color:var(--gold)}
+.stat-value{font-size:27px;font-weight:800;letter-spacing:-1px;margin:17px 0 7px;overflow-wrap:anywhere}
+.stat-note{font-size:10px;color:var(--muted);line-height:1.6}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 14px}
 .section-head h2{margin:0}
-
-.columns{
-  grid-template-columns:minmax(0,1.55fr) minmax(260px,1fr);
+.columns{grid-template-columns:minmax(0,1.4fr) minmax(230px,1fr)}
+.card{padding:21px}
+.community,.notice{
+  padding:17px;border:1px solid #dfbd7838;border-radius:17px;
+  background:linear-gradient(140deg,#dfbd7810,#ffffff04);
+  color:#d8ccb4;font-size:12px;line-height:1.8;
 }
-
-.card{
-  padding:22px;
-}
-
-.community,
-.notice{
-  margin-top:16px;
-  padding:19px;
-  border:1px solid rgba(223,189,120,.18);
-  border-radius:19px;
-  background:linear-gradient(145deg,rgba(223,189,120,.075),rgba(255,255,255,.025));
-  color:#d4c8b0;
-  font-size:12px;
-  line-height:1.8;
-}
-
-.community p{
-  margin:8px 0 15px;
-  color:#aaaab5;
-  font-size:12px;
-}
-
+.community p{color:var(--muted);font-size:12px}
 .pill{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  max-width:100%;
-  padding:6px 10px;
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:999px;
-  background:rgba(255,255,255,.045);
-  color:#c9cad2;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.35px;
-  overflow-wrap:anywhere;
+  display:inline-flex;padding:6px 10px;border:1px solid var(--border);
+  border-radius:999px;background:#ffffff08;color:#d4d4dc;font-size:9px;font-weight:700;
 }
-
-/* PAGE SWITCHING */
 .page{display:none}
-.page.active{
-  display:block;
-  animation:pageAppear .35s ease both;
-}
-
-@keyframes pageAppear{
-  from{opacity:0;transform:translateY(7px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* COURSE CARDS */
-.course-grid{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  margin-top:23px;
-}
-
-.course-card{
-  display:flex;
-  flex-direction:column;
-  gap:13px;
-  min-width:0;
-  padding:19px;
-  border:1px solid var(--border);
-  border-radius:23px;
-  background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018));
-  box-shadow:0 14px 35px rgba(0,0,0,.14);
-  transition:transform .23s ease,border-color .23s ease;
-}
-
-.course-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,255,255,.22);
-}
-
+.page.active{display:block;animation:appear .25s ease}
+@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.course-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px}
+.course-card{display:flex;flex-direction:column;gap:12px;padding:18px}
 .course-art{
-  min-height:120px;
-  display:grid;
-  place-items:center;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:17px;
-  background:
-    radial-gradient(ellipse at 50% 20%,rgba(255,57,75,.22),transparent 65%),
-    linear-gradient(145deg,#17151a,#0b0c10);
-  color:var(--gold);
-  font-size:24px;
-  font-weight:800;
-  letter-spacing:4px;
+  min-height:105px;display:grid;place-items:center;border:1px solid var(--border);
+  border-radius:16px;background:radial-gradient(ellipse at center,#f0445525,transparent 70%),#111218;
+  color:var(--gold);font-size:22px;font-weight:800;letter-spacing:3px;
 }
-
 .course-card h3{margin:0}
-.course-card p{
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.8;
-}
-
-/* LESSONS AND PROGRESS */
-.lesson-list{
-  display:grid;
-  gap:11px;
-}
-
+.course-card p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+.course-card .btn{margin-top:auto}
+.lesson-list{display:grid;gap:10px}
 .lesson{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  min-width:0;
-  padding:15px;
-  border:1px solid var(--border);
-  border-radius:18px;
-  background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.018));
-  transition:background .2s ease,border-color .2s ease;
+  display:flex;align-items:center;gap:12px;padding:14px;
+  border:1px solid var(--border);border-radius:16px;background:#ffffff06;
 }
-
-.lesson:hover{
-  background:rgba(255,255,255,.065);
-  border-color:rgba(255,255,255,.18);
-}
-
 .lesson-icon{
-  width:44px;
-  height:44px;
-  flex-shrink:0;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(255,57,75,.16);
-  border-radius:15px;
-  background:rgba(255,57,75,.09);
-  color:#ff7783;
-  font-size:18px;
+  width:41px;height:41px;flex-shrink:0;display:grid;place-items:center;
+  border-radius:13px;background:#f0445517;color:#ff7785;font-size:17px;
 }
-
-.lesson-info{
-  flex:1;
-  min-width:0;
-}
-
-.lesson-info h3{
-  margin:0 0 6px;
-  font-size:12px;
-  line-height:1.6;
-  overflow-wrap:anywhere;
-}
-
-.lesson-info p{
-  margin:0;
-  color:var(--muted);
-  font-size:10px;
-  line-height:1.6;
-  overflow-wrap:anywhere;
-}
-
-/* PROGRAMME FEES */
-.price-grid{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  margin-top:22px;
-}
-
-.price-card{
-  min-width:0;
-  padding:25px;
-  border:1px solid var(--border);
-  border-radius:24px;
-  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-  box-shadow:0 15px 45px rgba(0,0,0,.17);
-}
-
-.price-card.featured{
-  border-color:rgba(223,189,120,.45);
-  background:
-    radial-gradient(ellipse at 100% 0%,rgba(223,189,120,.1),transparent 55%),
-    linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018));
-}
-
-.price{
-  margin:18px 0 12px;
-  color:var(--gold);
-  font-size:clamp(25px,3vw,34px);
-  font-weight:800;
-  letter-spacing:-1.1px;
-  overflow-wrap:anywhere;
-}
-
-.price small{
-  color:#aaaab4;
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:0;
-}
-
-.price-card p{line-height:1.8}
-
-/* FORM FIELDS */
-.field{
-  display:grid;
-  gap:8px;
-  margin:16px 0;
-}
-
-.field label{
-  color:#c5c6cf;
-  font-size:11px;
-  font-weight:650;
-}
-
+.lesson-info{flex:1;min-width:0}
+.lesson-info h3{font-size:12px;margin:0 0 5px;overflow-wrap:anywhere}
+.lesson-info p{font-size:10px;color:var(--muted);margin:0}
+.price-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:20px}
+.price-card{padding:23px}
+.price-card.featured{border-color:#dfbd7870;background:linear-gradient(145deg,#dfbd7814,#ffffff04)}
+.price{font-size:clamp(25px,3vw,34px);font-weight:800;color:var(--gold);margin:17px 0 10px;letter-spacing:-1px}
+.price small{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:0}
+.price-card li{font-size:12px;color:#c1c1ca;line-height:2}
+.field{display:grid;gap:8px;margin:15px 0}
+.field label{font-size:11px;color:#c5c6cf;font-weight:650}
 .field input{
-  width:100%;
-  min-width:0;
-  padding:13px 14px;
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:13px;
-  background:rgba(0,0,0,.22);
-  color:white;
-  font-size:13px;
-  outline:none;
-  transition:border-color .2s ease,background .2s ease;
+  width:100%;padding:13px;border:1px solid var(--border);border-radius:12px;
+  background:#0004;color:white;font-size:13px;
 }
-
-.field input:focus{
-  border-color:rgba(255,57,75,.7);
-  background:rgba(0,0,0,.34);
+.status{margin:12px 0;color:var(--gold);font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+.status.error{color:#ff7884}
+.empty{padding:20px;border:1px solid var(--border);border-radius:15px;color:var(--muted);font-size:12px;line-height:1.8}
+.footer{padding:23px;border-top:1px solid var(--border);text-align:center;color:#81828d;font-size:10px;line-height:1.8}
+.progress-track{height:7px;background:#ffffff12;border-radius:99px;overflow:hidden;margin:12px 0}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#f04455,#dfbd78);border-radius:99px}
+@media(max-width:1000px){
+  .sidebar{width:225px}.content{padding:22px}
+  .columns{grid-template-columns:1fr}
 }
-
-.field input[readonly]{
-  color:#aaaab5;
-  cursor:default;
-}
-
-/* STATUS MESSAGES */
-.status{
-  margin:13px 0;
-  color:var(--gold);
-  font-size:12px;
-  line-height:1.8;
-  overflow-wrap:anywhere;
-}
-
-.empty{
-  padding:22px;
-  border:1px solid var(--border);
-  border-radius:17px;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.8;
-  background:rgba(255,255,255,.025);
-}
-
-/* FOOTER */
-.footer{
-  padding:24px 30px;
-  border-top:1px solid var(--border);
-  background:rgba(0,0,0,.12);
-  color:#81828d;
-  font-size:10px;
-  line-height:1.8;
-  text-align:center;
-}
-
-/* TABLET */
-@media(max-width:1050px){
-  .sidebar{width:235px}
-  .content{padding:25px}
-  .columns{grid-template-columns:minmax(0,1.2fr) minmax(230px,1fr)}
-  .stats{gap:12px}
-  .stat{padding:18px}
-}
-
-/* MOBILE */
 @media(max-width:760px){
   .layout{display:block}
-
   .sidebar{
-    display:none;
-    position:fixed;
-    z-index:30;
-    top:0;
-    bottom:0;
-    left:0;
-    width:min(290px,86vw);
-    overflow-y:auto;
-    padding:23px 17px;
-    background:rgba(12,13,18,.96);
-    border-right:1px solid rgba(255,255,255,.13);
-    box-shadow:25px 0 70px rgba(0,0,0,.5);
-    backdrop-filter:blur(35px);
-    -webkit-backdrop-filter:blur(35px);
+    display:none;position:fixed;z-index:20;inset:0 auto 0 0;
+    width:min(285px,87vw);overflow-y:auto;background:#101117f5;
   }
-
-  .sidebar.open{
-    display:flex;
-    animation:sidebarAppear .22s ease both;
-  }
-
-  @keyframes sidebarAppear{
-    from{opacity:0;transform:translateX(-12px)}
-    to{opacity:1;transform:translateX(0)}
-  }
-
-  .mobile-menu{display:inline-flex}
-
-  .topbar{
-    min-height:70px;
-    padding:12px 15px;
-    gap:10px;
-  }
-
-  .topbar-label{
-    max-width:55vw;
-    font-size:8px;
-    letter-spacing:.8px;
-  }
-
-  .topbar-label strong{
-    font-size:13px;
-    letter-spacing:-.2px;
-  }
-
-  .topbar .btn{
-    padding:9px 11px;
-    min-height:37px;
-    font-size:10px;
-  }
-
-  .avatar{
-    width:34px;
-    height:34px;
-    flex-shrink:0;
-  }
-
-  .content{padding:21px 15px}
-
-  .hero{
-    padding:27px 22px;
-    border-radius:25px;
-  }
-
-  .stats{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:11px;
-  }
-
-  .stat{padding:16px}
-  .stat-value{font-size:24px}
-
-  .columns{grid-template-columns:minmax(0,1fr)}
-  .course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer{padding:21px 15px}
-}
-
-/* SMALL PHONES */
-@media(max-width:480px){
-  .content{padding:17px 12px}
-  .topbar{padding:11px 12px}
-  .topbar-label{max-width:43vw}
+  .sidebar.open{display:flex}
+  .mobile-menu{display:inline-flex!important}
+  .topbar{padding:12px 14px;min-height:66px}
+  .topbar-label{font-size:8px;max-width:52vw}
   .topbar-label strong{font-size:12px}
-  .topbar .btn{padding:8px 9px;font-size:9px}
-  .topbar .mobile-menu{padding:8px 10px}
-  .topbar>div:last-child{gap:7px}
-
-  h1{
-    font-size:30px;
-    letter-spacing:-1.2px;
-  }
-
-  h2{font-size:18px}
-
-  .hero{
-    padding:24px 18px;
-    border-radius:22px;
-  }
-
-  .hero p{font-size:12px}
-  .hero-actions{gap:8px}
-  .hero-actions .btn{flex:1;padding:11px 10px}
-
-  .stats{gap:9px}
-  .stat{padding:13px;border-radius:18px}
-  .stat-top{font-size:9px}
-  .stat-value{font-size:21px;letter-spacing:-.7px}
-  .stat-note{font-size:9px}
-
-  .card,.plan-mini{padding:18px}
-  .section-head{margin-top:24px}
-
-  .course-grid,.price-grid{grid-template-columns:minmax(0,1fr)}
-  .course-art{min-height:105px}
-  .course-card{padding:16px}
-
-  .price-card{padding:21px}
-  .price{font-size:31px}
-
-  .lesson{padding:12px;gap:11px}
-  .lesson-icon{width:39px;height:39px;border-radius:12px}
-  .community,.notice{padding:16px}
-
-  .pill{font-size:8px}
-  .footer{font-size:9px}
+  .content{padding:19px 14px}
+  .hero{padding:25px 20px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .stat{padding:15px}.stat-value{font-size:22px}
+  .course-grid,.price-grid{grid-template-columns:1fr}
+  .footer{padding:20px 12px}
 }
-
-/* REDUCED MOTION ACCESSIBILITY */
+@media(max-width:380px){
+  .topbar .btn{padding:9px;font-size:9px}
+  .top-actions{gap:6px}
+  .stat{padding:12px}
+}
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    scroll-behavior:auto!important;
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-  }
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
+</head>
+
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">FWE</div>
+      <div>
+        <h2>LIQUIDITY DISPLACEMENT</h2>
+        <small>UNIVERSITY™</small>
+      </div>
+    </div>
+
+    <div>
+      <div class="nav-label">STUDENT SPACE</div>
+      <nav class="nav">
+        <button class="active" data-page="overview"><span class="ico">⌂</span> Overview</button>
+        <button data-page="courses"><span class="ico">▤</span> My Courses</button>
+        <button data-page="progress"><span class="ico">◷</span> My Progress</button>
+        <button data-page="fees"><span class="ico">◇</span> Programme Fees</button>
+        <button data-page="account"><span class="ico">◎</span> My Account</button>
+      </nav>
+    </div>
+
+    <div class="side-bottom">
+      <div class="side-note">
+        YOUR LEARNING JOURNEY
+        <strong>12 Months</strong>
+        Structured trading education. Discipline. Development.
+      </div>
+      <button class="btn" id="logoutButton" style="width:100%;margin-top:12px">↗ Log Out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="btn mobile-menu" id="menuButton" aria-label="Open menu">☰</button>
+        <div class="topbar-label">
+          STUDENT LEARNING ENVIRONMENT
+          <strong id="topName">Loading your portal…</strong>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span class="pill" id="membershipPill">Checking access</span>
+        <div class="avatar" id="avatar">L</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div id="globalStatus" class="status" role="status" aria-live="polite">Connecting to your student account…</div>
+
+      <section class="page active" id="page-overview">
+        <div class="hero">
+          <div class="eyebrow">LIQUIDITY DISPLACEMENT UNIVERSITY™</div>
+          <h1>Welcome back,<br><span class="gold" id="welcomeName">Student</span>.</h1>
+          <p>Your learning environment for structured market education, trading discipline and professional development. Your course access depends on your membership status.</p>
+          <div class="hero-actions">
+            <button class="btn btn-red" data-goto="courses">Explore My Courses →</button>
+            <a class="btn" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Join Student Community ↗</a>
+          </div>
+        </div>
+
+        <div class="grid stats">
+          <div class="stat">
+            <div class="stat-top">Membership <span class="stat-icon">◇</span></div>
+            <div class="stat-value" id="membershipValue">Checking</div>
+            <div class="stat-note" id="membershipNote">Checking your account access.</div>
+          </div>
+          <div class="stat">
+            <div class="stat-top">Available Courses <span class="stat-icon">▤</span></div>
+            <div class="stat-value" id="courseCount">—</div>
+            <div class="stat-note">Courses listed in the student database.</div>
+          </div>
+          <div class="stat">
+            <div class="stat-top">Learning Progress <span class="stat-icon">◷</span></div>
+            <div class="stat-value" id="progressValue">—</div>
+            <div class="stat-note">Based on recorded lesson progress.</div>
+          </div>
+        </div>
+
+        <div class="section-head"><h2>Your Learning Space</h2><span class="pill">STUDENT PORTAL</span></div>
+        <div class="grid columns">
+          <div class="card">
+            <div class="eyebrow">CONTINUE YOUR JOURNEY</div>
+            <h2>My Courses</h2>
+            <p class="muted small">Your available programme content will appear here when it is published in the course database.</p>
+            <div id="overviewCourses" class="lesson-list">
+              <div class="empty">Loading courses…</div>
+            </div>
+            <button class="btn" data-goto="courses" style="margin-top:15px">View All Courses →</button>
+          </div>
+          <div class="card">
+            <div class="eyebrow">STUDENT COMMUNITY</div>
+            <h2>Learn Together</h2>
+            <p class="muted small">Connect with the community and keep up with student discussions and announcements.</p>
+            <div class="community">
+              <strong>Forex Wealth Empire Community</strong>
+              <p>Join the Discord community for discussions and learning support.</p>
+              <a class="btn btn-red" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Open Discord ↗</a>
+            </div>
+            <div class="notice">Important: course access is controlled by your membership status. Payment checkout is not yet connected to this page.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-courses">
+        <div class="eyebrow">YOUR EDUCATION</div>
+        <h1>My Courses</h1>
+        <p class="muted">Your enrolled learning content and course availability.</p>
+        <div id="courseAccessNotice" class="notice" style="margin:18px 0">Checking your membership access…</div>
+        <div class="grid course-grid" id="courseGrid">
+          <div class="empty">Loading courses…</div>
+        </div>
+      </section>
+
+      <section class="page" id="page-progress">
+        <div class="eyebrow">YOUR DEVELOPMENT</div>
+        <h1>My Progress</h1>
+        <p class="muted">Your learning progress recorded in the student database.</p>
+        <div class="card" style="margin-top:20px">
+          <div class="section-head" style="margin-top:0">
+            <h2>Learning Summary</h2>
+            <span class="pill" id="progressPill">In progress</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+          <p class="muted small" id="progressDescription">Loading recorded progress…</p>
+          <div class="lesson-list" id="progressList"></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-fees">
+        <div class="eyebrow">PROGRAMME ENROLMENT</div>
+        <h1>Programme Fees</h1>
+        <p class="muted">Liquidity Displacement University™ — 12-month course programme.</p>
+        <div class="grid price-grid">
+          <div class="price-card">
+            <span class="pill">MONTHLY OPTION</span>
+            <div class="price">R1,500 <small>/ month</small></div>
+            <p class="muted small">Monthly instalments for the 12-month programme.</p>
+            <ul>
+              <li>12-month course duration</li>
+              <li>Monthly payment plan</li>
+              <li>Membership access subject to verification</li>
+            </ul>
+            <button class="btn" disabled>PayFast setup pending</button>
+          </div>
+          <div class="price-card featured">
+            <span class="pill">ONCE-OFF OPTION</span>
+            <div class="price">R18,000 <small>once-off</small></div>
+            <p class="muted small">One payment for the 12-month programme.</p>
+            <ul>
+              <li>12-month course duration</li>
+              <li>Once-off programme fee</li>
+              <li>Membership access subject to verification</li>
+            </ul>
+            <button class="btn" disabled>PayFast setup pending</button>
+          </div>
+        </div>
+        <div class="notice">These buttons are intentionally disabled until PayFast checkout and payment verification are configured. Do not send payment to an unverified link.</div>
+      </section>
+
+      <section class="page" id="page-account">
+        <div class="eyebrow">PERSONAL DETAILS</div>
+        <h1>My Account</h1>
+        <p class="muted">Your signed-in account information.</p>
+        <div class="card" style="max-width:700px;margin-top:20px">
+          <div class="field"><label for="accountName">Full name</label><input id="accountName" readonly value="Loading…"></div>
+          <div class="field"><label for="accountEmail">Email address</label><input id="accountEmail" readonly value="Loading…"></div>
+          <div class="field"><label for="accountMembership">Membership status</label><input id="accountMembership" readonly value="Checking…"></div>
+          <p class="muted small">For changes to your account details or membership, contact your programme administrator.</p>
+          <button class="btn" id="accountLogout">Log Out</button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <strong>LIQUIDITY DISPLACEMENT UNIVERSITY™</strong><br>
+      By Forex Wealth Empire (Pty) Ltd.<br>
+      Educational content is provided for learning purposes. Trading involves risk.
+    </footer>
+  </main>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const SUPABASE_URL = "https://oordibcpeyvmlybmorhm.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_95GwON_auW2nW4hDUaQj2A_5Xi6NB60";
+
+  const $ = (id) => document.getElementById(id);
+  const state = {
+    supabase: null,
+    user: null,
+    profile: null,
+    membership: null,
+    courses: [],
+    progress: [],
+    membershipActive: false
+  };
+
+  function setStatus(message, isError = false) {
+    const el = $("globalStatus");
+    if (!el) return;
+    el.textContent = message || "";
+    el.classList.toggle("error", Boolean(isError));
+  }
+
+  function safeText(value, fallback = "") {
+    if (value === null || value === undefined || value === "") return fallback;
+    return String(value);
+  }
+
+  function firstValue(obj, keys, fallback = "") {
+    if (!obj) return fallback;
+    for (const key of keys) {
+      if (obj[key] !== null && obj[key] !== undefined && obj[key] !== "") {
+        return obj[key];
+      }
+    }
+    return fallback;
+  }
+
+  function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, ch => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[ch]));
+  }
+
+  function displayName() {
+    return safeText(firstValue(state.profile, ["full_name", "name", "display_name"]),
+      state.user?.email?.split("@")[0] || "Student");
+  }
+
+  function membershipIsActive(row) {
+    if (!row) return false;
+
+    const status = String(firstValue(row, ["status", "membership_status"], "")).toLowerCase();
+    const accepted = ["active", "approved", "paid", "current"];
+    if (!accepted.includes(status)) return false;
+
+    const now = new Date();
+    const start = firstValue(row, ["start_date", "starts_at", "start_at"]);
+    const end = firstValue(row, ["end_date", "expires_at", "end_at"]);
+
+    if (start && !Number.isNaN(Date.parse(start)) && new Date(start) > now) return false;
+    if (end && !Number.isNaN(Date.parse(end)) && new Date(end) < now) return false;
+
+    return true;
+  }
+
+  function pageName(name) {
+    return name === "overview" || name === "courses" ||
+      name === "progress" || name === "fees" || name === "account";
+  }
+
+  function showPage(name) {
+    if (!pageName(name)) return;
+
+    document.querySelectorAll(".page").forEach(el => {
+      el.classList.toggle("active", el.id === "page-" + name);
+    });
+
+    document.querySelectorAll(".nav button[data-page]").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.page === name);
+    });
+
+    $("sidebar").classList.remove("open");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderIdentity() {
+    const name = displayName();
+    $("topName").textContent = name;
+    $("welcomeName").textContent = name;
+    $("avatar").textContent = name.trim().charAt(0).toUpperCase() || "S";
+    $("accountName").value = name;
+    $("accountEmail").value = state.user?.email || "";
+    $("accountMembership").value = state.membershipActive ? "Active" : "Inactive / Not verified";
+  }
+
+  function renderMembership() {
+    const active = state.membershipActive;
+    $("membershipPill").textContent = active ? "Membership active" : "Access not active";
+    $("membershipValue").textContent = active ? "Active" : "Inactive";
+    $("membershipNote").textContent = active
+      ? "Your membership is currently verified."
+      : "Check your programme enrolment or payment status.";
+    $("courseAccessNotice").textContent = active
+      ? "Your membership is active. Courses published in the database can be displayed below."
+      : "Your membership is not currently verified as active. Course access is locked until your membership is activated by the programme administrator.";
+  }
+
+  function courseTitle(course) {
+    return safeText(firstValue(course, ["title", "name", "course_name"]), "Untitled course");
+  }
+
+  function courseDescription(course) {
+    return safeText(firstValue(course, ["description", "summary", "details"]),
+      "Course information will be added by the programme administrator.");
+  }
+
+  function renderCourses() {
+    $("courseCount").textContent = String(state.courses.length);
+    const grid = $("courseGrid");
+    const overview = $("overviewCourses");
+
+    if (!state.courses.length) {
+      const message = '<div class="empty">No courses are currently published in the course database. Please check back later.</div>';
+      grid.innerHTML = message;
+      overview.innerHTML = message;
+      return;
+    }
+
+    grid.innerHTML = state.courses.map((course, index) => {
+      const title = escapeHTML(courseTitle(course));
+      const description = escapeHTML(courseDescription(course));
+      const locked = !state.membershipActive;
+      return `
+        <article class="course-card">
+          <div class="course-art">LDU · ${String(index + 1).padStart(2, "0")}</div>
+          <span class="pill">${locked ? "MEMBERSHIP REQUIRED" : "COURSE AVAILABLE"}</span>
+          <h3>${title}</h3>
+          <p>${description}</p>
+          <button class="btn ${locked ? "" : "btn-red"}" ${locked ? "disabled" : ""}
+            data-course-id="${escapeHTML(course.id ?? "")}">
+            ${locked ? "Access locked" : "Course details"}
+          </button>
+        </article>`;
+    }).join("");
+
+    const available = state.courses.slice(0, 3);
+    overview.innerHTML = available.map((course, index) => `
+      <div class="lesson">
+        <div class="lesson-icon">▤</div>
+        <div class="lesson-info">
+          <h3>${escapeHTML(courseTitle(course))}</h3>
+          <p>${state.membershipActive ? "Membership verified" : "Membership activation required"}</p>
+        </div>
+        <span class="pill">${String(index + 1).padStart(2, "0")}</span>
+      </div>`).join("");
+  }
+
+  function isCompleted(row) {
+    const status = String(firstValue(row, ["status", "state"], "")).toLowerCase();
+    return row.completed === true || row.is_completed === true ||
+      ["completed", "complete", "done"].includes(status);
+  }
+
+  function renderProgress() {
+    const total = state.progress.length;
+    const completed = state.progress.filter(isCompleted).length;
+    const percent = total ? Math.round(completed / total * 100) : 0;
+
+    $("progressValue").textContent = total ? percent + "%" : "0%";
+    $("progressBar").style.width = percent + "%";
+    $("progressPill").textContent = completed + " of " + total + " recorded";
+    $("progressDescription").textContent = total
+      ? completed + " completed item(s) out of " + total + " recorded progress item(s)."
+      : "No lesson progress has been recorded for your account yet.";
+
+    const list = $("progressList");
+    if (!total) {
+      list.innerHTML = '<div class="empty">Your recorded lesson progress will appear here once it is available.</div>';
+      return;
+    }
+
+    list.innerHTML = state.progress.map((row, index) => {
+      const title = firstValue(row, ["lesson_title", "title", "lesson_name", "course_title"], "Learning item " + (index + 1));
+      return `<div class="lesson">
+        <div class="lesson-icon">${isCompleted(row) ? "✓" : "◷"}</div>
+        <div class="lesson-info">
+          <h3>${escapeHTML(title)}</h3>
+          <p>${isCompleted(row) ? "Completed" : "In progress / not completed"}</p>
+        </div>
+        <span class="pill">${isCompleted(row) ? "DONE" : "PENDING"}</span>
+      </div>`;
+    }).join("");
+  }
+
+  async function loadStudentData() {
+    const client = state.supabase;
+    const user = state.user;
+
+    const profileResult = await client.from("profiles")
+      .select("*").eq("id", user.id).maybeSingle();
+
+    if (profileResult.error) {
+      console.warn("Profile lookup:", profileResult.error.message);
+    } else {
+      state.profile = profileResult.data;
+    }
+
+    const membershipResult = await client.from("memberships")
+      .select("*").eq("user_id", user.id);
+
+    if (membershipResult.error) {
+      console.error("Membership lookup:", membershipResult.error.message);
+      state.membership = null;
+      state.membershipActive = false;
+    } else {
+      const rows = membershipResult.data || [];
+      state.membership = rows.find(membershipIsActive) || rows[0] || null;
+      state.membershipActive = rows.some(membershipIsActive);
+    }
+
+    renderIdentity();
+    renderMembership();
+
+    const courseResult = await client.from("courses").select("*");
+
+    if (courseResult.error) {
+      console.error("Courses lookup:", courseResult.error.message);
+      $("courseGrid").innerHTML =
+        '<div class="empty">Courses could not be loaded. Check that the courses table exists and its Row Level Security policies allow the intended student access.</div>';
+      $("overviewCourses").innerHTML =
+        '<div class="empty">Course data is currently unavailable.</div>';
+      $("courseCount").textContent = "—";
+    } else {
+      state.courses = courseResult.data || [];
+      renderCourses();
+    }
+
+    const progressResult = await client.from("student_progress")
+      .select("*").eq("user_id", user.id);
+
+    if (progressResult.error) {
+      console.error("Progress lookup:", progressResult.error.message);
+      $("progressDescription").textContent =
+        "Progress could not be loaded. Check the student_progress table and its Row Level Security policies.";
+      $("progressList").innerHTML = '<div class="empty">Progress data is currently unavailable.</div>';
+    } else {
+      state.progress = progressResult.data || [];
+      renderProgress();
+    }
+
+    setStatus("");
+  }
+
+  async function logout() {
+    $("logoutButton").disabled = true;
+    $("accountLogout").disabled = true;
+    setStatus("Signing you out…");
+
+    try {
+      if (state.supabase) {
+        const { error } = await state.supabase.auth.signOut();
+        if (error) throw error;
+      }
+      window.location.href = "login.html";
+    } catch (error) {
+      setStatus("Could not sign out: " + (error.message || "Please try again."), true);
+      $("logoutButton").disabled = false;
+      $("accountLogout").disabled = false;
+    }
+  }
+
+  function setupNavigation() {
+    document.querySelectorAll(".nav button[data-page]").forEach(btn => {
+      btn.addEventListener("click", () => showPage(btn.dataset.page));
+    });
+
+    document.querySelectorAll("[data-goto]").forEach(btn => {
+      btn.addEventListener("click", () => showPage(btn.dataset.goto));
+    });
+
+    $("menuButton").addEventListener("click", () => {
+      $("sidebar").classList.toggle("open");
+    });
+
+    $("logoutButton").addEventListener("click", logout);
+    $("accountLogout").addEventListener("click", logout);
+  }
+
+  async function start() {
+    setupNavigation();
+
+    if (!window.supabase || !window.supabase.createClient) {
+      setStatus("Supabase could not load. Check your internet connection and refresh the page.", true);
+      return;
+    }
+
+    try {
+      state.supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+      const { data, error } = await state.supabase.auth.getUser();
+
+      if (error || !data?.user) {
+        setStatus("You are not signed in. Opening the student login page…");
+        setTimeout(() => {
+          window.location.replace("login.html");
+        }, 900);
+        return;
+      }
+
+      state.user = data.user;
+      await loadStudentData();
+
+      state.supabase.auth.onAuthStateChange((event, session) => {
+        if (event === "SIGNED_OUT" || !session?.user) {
+          window.location.replace("login.html");
+        }
+      });
+    } catch (error) {
+      console.error("Student portal error:", error);
+      setStatus("The portal could not finish loading: " + (error.message || "Unknown error") +
+        ". Check the Supabase configuration and browser connection, then refresh.", true);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+</script>
+</body>
+</html>
