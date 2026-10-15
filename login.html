@@ -4,74 +4,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
   <title>LDU Student Login</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      color-scheme: dark;
+      --red: #e50914;
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --glass: rgba(255, 255, 255, 0.065);
+      --glass-border: rgba(255, 255, 255, 0.13);
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      background: #080808;
-      color: white;
-      font-family: Arial, sans-serif;
+      padding: 24px;
+      overflow-x: hidden;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 15% 15%,
+          rgba(229, 9, 20, 0.16), transparent 42%),
+        radial-gradient(ellipse at 85% 85%,
+          rgba(100, 100, 130, 0.12), transparent 45%),
+        #080808;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont,
+        "SF Pro Display", "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 340px;
+      height: 340px;
+      top: -160px;
+      right: -100px;
+      border-radius: 50%;
+      background: rgba(229, 9, 20, 0.12);
+      filter: blur(90px);
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      bottom: -170px;
+      left: -100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      filter: blur(90px);
+      pointer-events: none;
+    }
+
     .card {
       width: 100%;
-      max-width: 420px;
-      padding: 30px;
-      background: #121212;
-      border: 1px solid #333;
-      border-radius: 16px;
+      max-width: 430px;
+      position: relative;
+      z-index: 1;
+      padding: 38px 32px 30px;
+      overflow: hidden;
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.105),
+        rgba(255, 255, 255, 0.035)
+      );
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09);
+      -webkit-backdrop-filter: blur(28px);
+      backdrop-filter: blur(28px);
     }
-    h1 { color: #e50914; margin-bottom: 8px; }
-    p { color: #aaa; line-height: 1.5; }
-    label { display: block; margin-top: 18px; }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.45),
+        transparent
+      );
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      border: 1px solid rgba(229, 9, 20, 0.38);
+      border-radius: 17px;
+      background: linear-gradient(
+        145deg,
+        rgba(229, 9, 20, 0.2),
+        rgba(229, 9, 20, 0.045)
+      );
+      box-shadow: 0 8px 28px rgba(229, 9, 20, 0.1);
+      color: #ff3540;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: clamp(27px, 6vw, 33px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .intro {
+      margin: 0 0 28px;
+    }
+
+    label {
+      display: block;
+      margin-top: 19px;
+      margin-bottom: 9px;
+      color: #e4e4e7;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
     input {
       width: 100%;
-      padding: 13px;
-      margin-top: 8px;
-      background: #080808;
+      min-height: 50px;
+      padding: 14px 15px;
+      outline: none;
+      background: rgba(0, 0, 0, 0.24);
       color: white;
-      border: 1px solid #444;
-      border-radius: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 13px;
+      font-family: inherit;
+      font-size: 15px;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
     }
+
+    input::placeholder {
+      color: #73737c;
+    }
+
+    input:focus {
+      border-color: rgba(229, 9, 20, 0.85);
+      background: rgba(0, 0, 0, 0.38);
+      box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.1);
+    }
+
     button {
       width: 100%;
-      padding: 13px;
-      margin-top: 14px;
-      border: 0;
-      border-radius: 7px;
-      background: #e50914;
+      min-height: 49px;
+      padding: 14px 16px;
+      margin-top: 15px;
+      border: 1px solid transparent;
+      border-radius: 13px;
       color: white;
-      font-weight: bold;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 650;
       cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
     }
-    button:disabled { opacity: .6; }
-    #login { background: #292929; }
-    #message { overflow-wrap: anywhere; font-size: 14px; }
+
+    button:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    button:active:not(:disabled) {
+      transform: scale(0.99);
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: wait;
+    }
+
+    #register {
+      margin-top: 25px;
+      background: linear-gradient(135deg, #f01825, #bd0710);
+      box-shadow: 0 8px 24px rgba(229, 9, 20, 0.2);
+    }
+
+    #register:hover:not(:disabled) {
+      background: linear-gradient(135deg, #ff2935, #d20b16);
+    }
+
+    #login {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.14);
+      color: #f5f5f7;
+    }
+
+    #login:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.23);
+    }
+
+    #message {
+      overflow-wrap: anywhere;
+      min-height: 22px;
+      margin: 20px 0 0;
+      padding: 12px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.17);
+      color: #bfc0c8;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin: 21px 0 0;
+      text-align: center;
+      color: #777780;
+      font-size: 11px;
+      letter-spacing: 0.35px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px;
+      }
+
+      .card {
+        padding: 30px 23px 24px;
+        border-radius: 23px;
+      }
+
+      .brand-mark {
+        width: 47px;
+        height: 47px;
+        margin-bottom: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="card">
-    <h1>LDU Student Login</h1>
-    <p>Register or log in to your student account.</p>
+    <div class="brand-mark" aria-hidden="true">LDU</div>
+
+    <h1>LDU Student <span>Login</span></h1>
+    <p class="intro">Register or log in to your student account.</p>
 
     <form id="auth-form">
       <label for="email">Email address</label>
-      <input id="email" type="email" autocomplete="email" required>
+      <input
+        id="email"
+        type="email"
+        autocomplete="email"
+        placeholder="you@example.com"
+        required
+      >
 
       <label for="password">Password</label>
-      <input id="password" type="password"
-        autocomplete="current-password" minlength="8" required>
+      <input
+        id="password"
+        type="password"
+        autocomplete="current-password"
+        minlength="8"
+        placeholder="Enter your password"
+        required
+      >
 
       <button id="register" type="button">Create student account</button>
       <button id="login" type="submit">Log in</button>
     </form>
 
-    <p id="message" role="status">Loading secure login...</p>
+    <p id="message" role="status" aria-live="polite">
+      Loading secure login...
+    </p>
+
+    <p class="footer">LIQUIDITY DISPLACEMENT UNIVERSITY™</p>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -146,8 +393,9 @@
       message.textContent = data.session
         ? "You are already logged in. Open your student portal."
         : "Enter your email and password to continue.";
+    }).catch(() => {
+      message.textContent = "Unable to check your session. Please refresh the page and try again.";
     });
   </script>
 </body>
 </html>
-
