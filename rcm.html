@@ -658,5 +658,112 @@ document.getElementById("saveProfile").addEventListener("click", () => {
 updateDashboard();
 </script>
  "<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>"
+<div id="student-auth" style="max-width:420px;margin:30px auto;padding:24px;background:#101010;color:white;border:1px solid #292929;border-radius:14px;font-family:Arial,sans-serif">
+  <h2 style="color:#e50914">LDU Student Login</h2>
+  <p style="color:#aaa">Register or log in to your learning portal.</p>
+
+  <label for="auth-email">Email address</label>
+  <input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" style="display:block;width:100%;box-sizing:border-box;margin:8px 0 16px;padding:12px;background:#070707;color:white;border:1px solid #444;border-radius:7px">
+
+  <label for="auth-password">Password</label>
+  <input id="auth-password" type="password" autocomplete="current-password" placeholder="At least 8 characters" style="display:block;width:100%;box-sizing:border-box;margin:8px 0 16px;padding:12px;background:#070707;color:white;border:1px solid #444;border-radius:7px">
+
+  <button id="auth-register" type="button" style="width:100%;padding:12px;background:#e50914;color:white;border:0;border-radius:7px;margin-bottom:10px">Create student account</button>
+  <button id="auth-login" type="button" style="width:100%;padding:12px;background:#222;color:white;border:1px solid #444;border-radius:7px">Log in</button>
+  <button id="auth-logout" type="button" style="display:none;width:100%;padding:12px;background:#222;color:white;border:1px solid #444;border-radius:7px;margin-top:10px">Log out</button>
+
+  <p id="auth-message" role="status" style="color:#d9ad55;font-size:13px;line-height:1.5"></p>
+</div>
+
+<script>
+(() => {
+  const SUPABASE_URL = "https://oordibcpeyvmlybmorhm.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_95GwON_auW2nW4hDUaQj2A_5Xi6NB60";
+  const message = document.getElementById("auth-message");
+  const register = document.getElementById("auth-register");
+  const login = document.getElementById("auth-login");
+  const logout = document.getElementById("auth-logout");
+
+  if (!window.supabase) {
+    message.textContent = "Connection library failed to load. Refresh and try again.";
+    return;
+  }
+
+  const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  function showMessage(text) {
+    message.textContent = text;
+  }
+
+  async function refreshSession() {
+    const { data, error } = await client.auth.getSession();
+    if (error) {
+      showMessage("Unable to check login status. Please refresh.");
+      return;
+    }
+    const loggedIn = !!data.session;
+    register.style.display = loggedIn ? "none" : "block";
+    login.style.display = loggedIn ? "none" : "block";
+    logout.style.display = loggedIn ? "block" : "none";
+    showMessage(loggedIn
+      ? "Logged in as " + data.session.user.email + ". Membership access is checked separately."
+      : "You are not logged in.");
+  }
+
+  register.addEventListener("click", async () => {
+    const email = document.getElementById("auth-email").value.trim();
+    const password = document.getElementById("auth-password").value;
+    if (!email || password.length < 8) {
+      showMessage("Enter your email and a password of at least 8 characters.");
+      return;
+    }
+    register.disabled = true;
+    showMessage("Creating your account...");
+    const { data, error } = await client.auth.signUp({ email, password });
+    register.disabled = false;
+    if (error) {
+      showMessage(error.message);
+      return;
+    }
+    showMessage(data.session
+      ? "Account created. You are now logged in."
+      : "Registration started. Check your email for the confirmation link.");
+    await refreshSession();
+  });
+
+  login.addEventListener("click", async () => {
+    const email = document.getElementById("auth-email").value.trim();
+    const password = document.getElementById("auth-password").value;
+    if (!email || !password) {
+      showMessage("Enter your email and password.");
+      return;
+    }
+    login.disabled = true;
+    showMessage("Logging in...");
+    const { error } = await client.auth.signInWithPassword({ email, password });
+    login.disabled = false;
+    if (error) {
+      showMessage(error.message);
+      return;
+    }
+    await refreshSession();
+  });
+
+  logout.addEventListener("click", async () => {
+    const { error } = await client.auth.signOut();
+    if (error) {
+      showMessage(error.message);
+      return;
+    }
+    await refreshSession();
+  });
+
+  client.auth.onAuthStateChange(() => {
+    refreshSession();
+  });
+
+  refreshSession();
+})();
+</script>
 </body>
 </html>
