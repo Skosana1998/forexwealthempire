@@ -31,5 +31,4 @@
     element.hidden = false;
   }
 
-  window.LDUAuth = { client, message };
-})();
+  window.LDU_SUPABASE_URL = "https://oordibcpeyvmlybmorhm.supabase.co";
