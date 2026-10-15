@@ -3,465 +3,653 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080808">
-  <meta name="description" content="Liquidity Displacement University™ — structured trading education by Forex Wealth Empire.">
-  <title>Liquidity Displacement University™ | Forex Wealth Empire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070707">
+  <meta name="description" content="Liquidity Displacement University™ by Forex Wealth Empire. Structured trading education, market understanding and professional development.">
+
+  <title>Liquidity Displacement University™ | Coming Soon</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg:#080808;
-      --panel:#111;
-      --red:#e53945;
-      --gold:#d8ae54;
-      --white:#f6f6f6;
-      --muted:#aaa;
-      --border:#292929;
+      --bg: #070707;
+      --panel: #101010;
+      --red: #e50914;
+      --gold: #d9ad55;
+      --white: #ffffff;
+      --muted: #a5a5a5;
+      --border: rgba(255,255,255,.10);
     }
 
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background:var(--bg);
-      color:var(--white);
-      font-family:Inter,Arial,sans-serif;
-      line-height:1.7;
+      min-height: 100vh;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 50% 25%, rgba(229,9,20,.12), transparent 48%),
+        var(--bg);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
-    a { color:inherit; text-decoration:none; }
-    button,a { -webkit-tap-highlight-color:transparent; }
-    .container { width:min(1160px,92%); margin:auto; }
-    .gold { color:var(--gold); }
-    .red { color:var(--red); }
 
-    .announcement {
-      text-align:center;
-      background:#171010;
-      border-bottom:1px solid #352020;
-      padding:9px 12px;
-      font-size:11px;
-      letter-spacing:2px;
-      color:#eee;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-line {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
     }
 
     header {
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(8,8,8,.96);
-      border-bottom:1px solid var(--border);
-      backdrop-filter:blur(15px);
+      min-height: 88px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
     }
+
     .nav {
-      min-height:76px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
     }
+
     .brand {
-      font-family:Orbitron,sans-serif;
-      font-size:15px;
-      font-weight:800;
-      letter-spacing:1px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .brand span { color:var(--red); }
-    .nav-links {
-      display:flex;
-      align-items:center;
-      gap:23px;
-      font-size:12px;
-      color:#ddd;
+
+    .brand-mark {
+      width: 47px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--red);
+      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      background: rgba(229,9,20,.08);
+      box-shadow: 0 0 20px rgba(229,9,20,.12);
     }
-    .nav-links a:hover { color:var(--gold); }
-    .nav-cta,.btn {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 19px;
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.5px;
-      border:1px solid var(--red);
-      background:var(--red);
-      color:white;
-      transition:.2s;
-      cursor:pointer;
+
+    .brand-name {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 800;
     }
-    .nav-cta:hover,.btn:hover {
-      background:#b9212d;
-      transform:translateY(-2px);
+
+    .brand-sub {
+      margin-top: 5px;
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 2px;
     }
-    .btn-outline {
-      background:transparent;
-      border-color:#555;
+
+    .status {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 9px;
     }
-    .btn-outline:hover {
-      border-color:var(--gold);
-      background:#19150c;
+
+    .status-dot {
+      height: 7px;
+      width: 7px;
+      background: var(--red);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--red);
+      animation: pulse 1.8s infinite;
     }
-    .menu {
-      display:none;
-      background:transparent;
-      color:white;
-      border:1px solid var(--border);
-      padding:8px 12px;
-      font-size:20px;
+
+    @keyframes pulse {
+      50% { opacity: .35; }
+    }
+
+    main {
+      min-height: 76vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 85px 0 90px;
     }
 
     .hero {
-      min-height:660px;
-      display:flex;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
-      background:
-        radial-gradient(ellipse at 80% 35%,rgba(229,57,69,.12),transparent 42%),
-        radial-gradient(ellipse at 15% 90%,rgba(216,174,84,.06),transparent 35%);
-      border-bottom:1px solid var(--border);
+      max-width: 900px;
+      margin: auto;
     }
-    .hero-content { max-width:850px; padding:95px 0; }
+
     .eyebrow {
-      color:var(--gold);
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:3px;
-      margin-bottom:24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(217,173,85,.35);
+      padding: 10px 15px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      background: rgba(217,173,85,.04);
     }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 18px;
+      height: 1px;
+      background: var(--gold);
+    }
+
     h1 {
-      font-family:Orbitron,sans-serif;
-      font-size:clamp(36px,6.5vw,76px);
-      line-height:1.12;
-      letter-spacing:-2px;
-      margin-bottom:24px;
-    }
-    h1 span { color:var(--red); }
-    .hero p {
-      max-width:650px;
-      color:#bcbcbc;
-      font-size:16px;
-      margin-bottom:30px;
-    }
-    .actions { display:flex; gap:12px; flex-wrap:wrap; }
-    .trust-line {
-      margin-top:35px;
-      font-size:10px;
-      letter-spacing:2px;
-      color:#888;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(34px, 6.4vw, 75px);
+      line-height: 1.13;
+      letter-spacing: -2px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
-    section { padding:90px 0; border-bottom:1px solid var(--border); }
-    .section-label {
-      color:var(--red);
-      font-size:10px;
-      font-weight:800;
-      letter-spacing:3px;
-      margin-bottom:12px;
-    }
-    h2 {
-      font-family:Orbitron,sans-serif;
-      font-size:clamp(25px,4vw,42px);
-      line-height:1.25;
-      margin-bottom:18px;
-    }
-    .section-intro {
-      color:var(--muted);
-      max-width:720px;
-      margin-bottom:36px;
-    }
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-    }
-    .card {
-      background:linear-gradient(145deg,#141414,#0d0d0d);
-      border:1px solid var(--border);
-      padding:27px;
-      min-height:190px;
-    }
-    .card .number {
-      color:var(--gold);
-      font-family:Orbitron,sans-serif;
-      font-size:12px;
-      margin-bottom:22px;
-    }
-    .card h3 { font-size:17px; margin-bottom:12px; }
-    .card p { color:var(--muted); font-size:13px; }
-
-    .approach {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      align-items:center;
-    }
-    .feature-list { list-style:none; }
-    .feature-list li {
-      border-bottom:1px solid var(--border);
-      padding:16px 0;
-      color:#ccc;
-      font-size:14px;
-    }
-    .feature-list li::before {
-      content:"◆";
-      color:var(--red);
-      margin-right:12px;
-      font-size:10px;
+    h1 span {
+      display: block;
+      color: var(--red);
+      margin-top: 10px;
+      text-shadow: 0 0 35px rgba(229,9,20,.20);
     }
 
-    .portal-panel {
-      text-align:center;
-      padding:48px 25px;
-      background:linear-gradient(140deg,#181010,#101010 65%,#17130b);
-      border:1px solid #49252a;
-    }
-    .portal-panel p {
-      max-width:650px;
-      color:var(--muted);
-      margin:0 auto 26px;
-    }
-    .community-links {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:12px;
+    .trademark {
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      vertical-align: top;
+      letter-spacing: 0;
     }
 
-    footer { padding:35px 0; color:#888; font-size:11px; }
+    .hero-description {
+      max-width: 650px;
+      margin: 27px auto 0;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #b8b8b8;
+    }
+
+    .divider {
+      width: 65px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+      margin: 30px auto;
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 23px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .time-box {
+      padding: 24px 8px 20px;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, #141414, #0b0b0b);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .time-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+
+    .time-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(25px, 5vw, 43px);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .time-unit {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .launch-date {
+      margin-top: 18px;
+      color: #858585;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .launch-date strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 48px auto 0;
+      max-width: 850px;
+      text-align: left;
+    }
+
+    .feature {
+      padding: 22px 19px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+    }
+
+    .feature-number {
+      color: var(--red);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      margin-bottom: 13px;
+    }
+
+    .feature h3 {
+      font-size: 13px;
+      margin-bottom: 9px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      min-height: 47px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 24px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .button-primary {
+      background: var(--red);
+      color: white;
+      border: 1px solid var(--red);
+    }
+
+    .button-primary:hover {
+      background: #b90811;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(217,173,85,.5);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .button-secondary:hover {
+      background: rgba(217,173,85,.08);
+    }
+
+    .notice {
+      margin-top: 22px;
+      color: #747474;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 27px 0;
+    }
+
     .footer-inner {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
     }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; }
-    .footer-links a:hover { color:var(--gold); }
 
-    @media(max-width:850px) {
-      .menu { display:block; }
-      .nav-links {
-        display:none;
-        position:absolute;
-        top:76px;
-        left:0;
-        right:0;
-        background:#0b0b0b;
-        padding:22px 5%;
-        border-bottom:1px solid var(--border);
-        flex-direction:column;
-        align-items:stretch;
-        gap:17px;
+    .copyright {
+      font-size: 10px;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    .footer-brand {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .error-message {
+      color: #ff6b6b;
+      font-size: 12px;
+      margin-top: 18px;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      header { min-height: 75px; }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
       }
-      .nav-links.open { display:flex; }
-      .nav-links .nav-cta { text-align:center; }
-      .grid { grid-template-columns:1fr; }
-      .approach { grid-template-columns:1fr; }
-      .hero { min-height:560px; }
-      section { padding:65px 0; }
+
+      .brand-name {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      .brand-sub {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .status {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      main { padding: 65px 0; }
+
+      .eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .countdown {
+        gap: 7px;
+      }
+
+      .time-box {
+        padding: 20px 3px 15px;
+      }
+
+      .time-unit {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 35px;
+      }
+
+      .feature {
+        padding: 18px;
+      }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="announcement">
-    LIQUIDITY DISPLACEMENT UNIVERSITY™ &nbsp; | &nbsp; A NEW STANDARD IN TRADING EDUCATION
-  </div>
+  <div class="top-line"></div>
 
   <header>
     <div class="container nav">
-      <a class="brand" href="index.html">
-        LDU<span>™</span> <span>|</span> <span>FWE</span>
+      <a class="brand" href="#" aria-label="Forex Wealth Empire home">
+        <div class="brand-mark">FWE</div>
+        <div>
+          <div class="brand-name">FOREX WEALTH EMPIRE</div>
+          <div class="brand-sub">EDUCATION • DISCIPLINE • GROWTH</div>
+        </div>
       </a>
 
-      <button class="menu" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#learning">Learning</a>
-        <a href="#approach">Our Approach</a>
-        <a href="#community">Community</a>
-        <a class="nav-cta" href="register.html">Student Registration ↗</a>
-        <a href="login.html">Student Login</a>
-      </nav>
+      <div class="status">
+        <span class="status-dot"></span>
+        Coming Soon
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">FOREX WEALTH EMPIRE PRESENTS</div>
+    <div class="container">
+      <section class="hero">
 
-          <h1>
-            THE FUTURE OF<br>
-            TRADING EDUCATION.<br>
-            <span>REIMAGINED.</span>
-          </h1>
-
-          <p>
-            Welcome to Liquidity Displacement University™ — a dedicated learning
-            environment for traders focused on market behaviour, repeating
-            patterns, discipline and structured execution.
-          </p>
-
-          <div class="actions">
-            <a class="btn" href="register.html">CREATE STUDENT ACCOUNT ↗</a>
-            <a class="btn btn-outline" href="login.html">STUDENT LOGIN</a>
-          </div>
-
-          <div class="trust-line">
-            STRUCTURE &nbsp; • &nbsp; DISCIPLINE &nbsp; • &nbsp; EXECUTION
-          </div>
+        <div class="eyebrow">
+          The Next Chapter of Trading Education
         </div>
-      </div>
-    </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-label">01 / THE UNIVERSITY</div>
-        <h2>Education built around <span class="gold">market behaviour.</span></h2>
-        <p class="section-intro">
-          Liquidity Displacement University™ is designed to help students
-          develop a more structured understanding of the financial markets.
-          The goal is to study repeating price patterns, strengthen decision
-          making and approach trading with discipline.
+        <h1>
+          Liquidity Displacement
+          <span>University<sup class="trademark">™</sup></span>
+        </h1>
+
+        <p class="hero-description">
+          A dedicated learning environment built around structured
+          market education, repeating price patterns, disciplined
+          execution and professional development.
+          A new chapter from Forex Wealth Empire is coming.
         </p>
 
-        <div class="grid">
-          <article class="card">
-            <div class="number">01 — UNDERSTAND</div>
-            <h3>Read the Market</h3>
-            <p>Study market movement, recurring behaviour and changes in price action.</p>
-          </article>
-          <article class="card">
-            <div class="number">02 — DEVELOP</div>
-            <h3>Build Discipline</h3>
-            <p>Learn to follow a defined process, manage risk and avoid impulsive decisions.</p>
-          </article>
-          <article class="card">
-            <div class="number">03 — APPLY</div>
-            <h3>Practise Execution</h3>
-            <p>Develop a repeatable analysis and review process through deliberate practice.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <div class="divider"></div>
 
-    <section id="learning">
-      <div class="container">
-        <div class="section-label">02 / LEARNING ENVIRONMENT</div>
-        <h2>Your journey starts <span class="gold">here.</span></h2>
-        <p class="section-intro">
-          A learning environment designed to support your development as a
-          trader. Available lessons and resources depend on your membership.
+        <div class="countdown-label">The Official Launch Countdown</div>
+
+        <div class="countdown" role="timer"
+             aria-label="Time remaining until launch">
+          <div class="time-box">
+            <div class="time-number" id="days">00</div>
+            <div class="time-unit">Days</div>
+          </div>
+
+          <div class="time-box">
+            <div class="time-number" id="hours">00</div>
+            <div class="time-unit">Hours</div>
+          </div>
+
+          <div class="time-box">
+            <div class="time-number" id="minutes">00</div>
+            <div class="time-unit">Minutes</div>
+          </div>
+
+          <div class="time-box">
+            <div class="time-number" id="seconds">00</div>
+            <div class="time-unit">Seconds</div>
+          </div>
+        </div>
+
+        <p class="launch-date">
+          TARGET LAUNCH:
+          <strong>31 DECEMBER 2026 • 18:00 SAST</strong>
         </p>
 
-        <div class="grid">
-          <article class="card">
-            <div class="number">LEARNING / 01</div>
-            <h3>Market Education</h3>
-            <p>Develop your understanding of price behaviour and market structure.</p>
+        <p class="error-message" id="countdown-message">
+          The countdown has reached its target date.
+        </p>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-number">01 / LEARN</div>
+            <h3>Structured Education</h3>
+            <p>
+              A guided learning experience designed to develop
+              market understanding and trading knowledge.
+            </p>
           </article>
-          <article class="card">
-            <div class="number">LEARNING / 02</div>
-            <h3>Trade Preparation</h3>
-            <p>Learn to plan trades, identify invalidation and consider risk before entry.</p>
+
+          <article class="feature">
+            <div class="feature-number">02 / DEVELOP</div>
+            <h3>Trading Discipline</h3>
+            <p>
+              Build consistency through preparation, patience,
+              risk awareness and a structured learning process.
+            </p>
           </article>
-          <article class="card">
-            <div class="number">LEARNING / 03</div>
-            <h3>Performance Review</h3>
-            <p>Use reflection and record keeping to identify mistakes and improve consistency.</p>
+
+          <article class="feature">
+            <div class="feature-number">03 / CONNECT</div>
+            <h3>Student Community</h3>
+            <p>
+              A dedicated educational community for discussion,
+              development and sharing market perspectives.
+            </p>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section id="approach">
-      <div class="container approach">
-        <div>
-          <div class="section-label">03 / OUR APPROACH</div>
-          <h2>Less noise.<br><span class="gold">More structure.</span></h2>
-          <p class="section-intro">
-            Progress comes from education, deliberate practice, risk awareness
-            and reviewing decisions — not from promises of guaranteed profits.
-          </p>
-          <a class="btn" href="register.html">START YOUR JOURNEY ↗</a>
+        <div class="actions">
+          <a class="button button-primary"
+             href="https://www.instagram.com/the.ldm_/"
+             target="_blank" rel="noopener noreferrer">
+            Follow the Journey
+          </a>
+
+          <a class="button button-secondary"
+             href="https://www.youtube.com/@liquidity_displacement"
+             target="_blank" rel="noopener noreferrer">
+            Watch on YouTube
+          </a>
         </div>
 
-        <ul class="feature-list">
-          <li>Structured educational resources</li>
-          <li>Market pattern study</li>
-          <li>Risk management awareness</li>
-          <li>Trading discipline and patience</li>
-          <li>Continuous review and development</li>
-        </ul>
-      </div>
-    </section>
+        <p class="notice">
+          Official updates will be announced through our social channels.
+          The countdown indicates the planned launch date.
+        </p>
 
-    <section id="community">
-      <div class="container">
-        <div class="portal-panel">
-          <div class="section-label">04 / STUDENT ACCESS</div>
-          <h2>Your next chapter <span class="gold">starts now.</span></h2>
-          <p>
-            Create your student account or sign in to access the university
-            portal. Access to restricted lessons and membership features
-            depends on your authorised membership status.
-          </p>
-          <div class="actions" style="justify-content:center">
-            <a class="btn" href="register.html">REGISTER AS A STUDENT</a>
-            <a class="btn btn-outline" href="login.html">SIGN IN</a>
-          </div>
-          <div style="height:24px"></div>
-          <div class="community-links">
-            <a class="btn btn-outline" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">JOIN DISCORD ↗</a>
-            <a class="btn btn-outline" href="https://www.youtube.com/@liquidity_displacement" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a>
-            <a class="btn btn-outline" href="https://www.instagram.com/the.ldm_/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
     <div class="container footer-inner">
-      <div>
-        <strong style="color:#eee">LIQUIDITY DISPLACEMENT UNIVERSITY™</strong><br>
-        Forex Wealth Empire
+      <div class="copyright">
+        © <span id="year">2026</span> Forex Wealth Empire (Pty) Ltd.
+        <br>All rights reserved.
       </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="register.html">Registration</a>
-        <a href="login.html">Login</a>
-        <a href="https://skosana1998.github.io/forexwealthempire/" target="_blank" rel="noopener noreferrer">FWE Website ↗</a>
+
+      <div class="footer-brand">
+        LIQUIDITY DISPLACEMENT UNIVERSITY™
       </div>
-      <div>© <span id="year"></span> Forex Wealth Empire. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
+    (() => {
+      "use strict";
 
-    menuButton.addEventListener("click", () => {
-      const open = navLinks.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(open));
-      menuButton.textContent = open ? "✕" : "☰";
-    });
+      // Official target time: 31 December 2026, 18:00 South African time.
+      const LAUNCH_DATE = "2026-12-31T18:00:00+02:00";
+      const target = new Date(LAUNCH_DATE).getTime();
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.textContent = "☰";
-      });
-    });
+      const elements = {
+        days: document.getElementById("days"),
+        hours: document.getElementById("hours"),
+        minutes: document.getElementById("minutes"),
+        seconds: document.getElementById("seconds"),
+        message: document.getElementById("countdown-message"),
+        year: document.getElementById("year")
+      };
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+      const pad = number => String(number).padStart(2, "0");
+
+      function updateCountdown() {
+        const remaining = target - Date.now();
+
+        if (remaining <= 0) {
+          elements.days.textContent = "00";
+          elements.hours.textContent = "00";
+          elements.minutes.textContent = "00";
+          elements.seconds.textContent = "00";
+          elements.message.style.display = "block";
+          return;
+        }
+
+        const totalSeconds = Math.floor(remaining / 1000);
+
+        elements.days.textContent =
+          pad(Math.floor(totalSeconds / 86400));
+
+        elements.hours.textContent =
+          pad(Math.floor((totalSeconds % 86400) / 3600));
+
+        elements.minutes.textContent =
+          pad(Math.floor((totalSeconds % 3600) / 60));
+
+        elements.seconds.textContent =
+          pad(totalSeconds % 60);
+      }
+
+      elements.year.textContent = new Date().getFullYear();
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
   </script>
 </body>
 </html>
