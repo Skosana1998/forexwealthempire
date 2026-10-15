@@ -1,1134 +1,847 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070707">
-  <title>Student Portal | Liquidity Displacement University™</title>
-  <meta name="description" content="Liquidity Displacement University student portal.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-    const SUPABASE_URL = "https://oordibcpeyvmlybmorhm.supabase.co";
-    const SUPABASE_KEY = "sb_publishable_95GwON_auW2nW4hDUaQj2A_5Xi6NB60";
-
-    window.lduClient = window.supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_KEY
-    );
-
-    document.documentElement.style.visibility = "hidden";
-
-    window.lduAuthReady = window.lduClient.auth.getSession()
-      .then(({ data, error }) => {
-        if (error || !data.session) {
-          window.location.replace("login.html");
-          return null;
-        }
-
-        document.documentElement.style.visibility = "visible";
-        return data.session;
-      })
-      .catch(() => {
-        window.location.replace("login.html");
-        return null;
-      });
-  </script>
-
-  <style>
-    :root {
-      --bg: #070707;
-      --panel: #101010;
-      --red: #e50914;
-      --gold: #d9ad55;
-      --white: #f5f5f5;
-      --muted: #999;
-      --border: #292929;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--white);
-      font-family: Inter, Arial, sans-serif;
-      min-height: 100vh;
-    }
-
-    button, a {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .layout {
-      display: flex;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      width: 255px;
-      flex-shrink: 0;
-      background: #0b0b0b;
-      border-right: 1px solid var(--border);
-      padding: 24px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 0 5px;
-    }
-
-    .brand-mark {
-      width: 45px;
-      height: 45px;
-      background: var(--red);
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      font-size: 23px;
-      font-weight: 900;
-    }
-
-    .brand h2 {
-      font: 700 16px Orbitron, sans-serif;
-      margin: 0;
-    }
-
-    .brand small {
-      display: block;
-      color: var(--gold);
-      font-size: 9px;
-      margin-top: 5px;
-      letter-spacing: 1px;
-    }
-
-    .nav-label {
-      font-size: 10px;
-      color: #777;
-      letter-spacing: 2px;
-      margin: 5px 10px 12px;
-    }
-
-    .nav {
-      display: grid;
-      gap: 7px;
-    }
-
-    .nav button {
-      width: 100%;
-      border: 1px solid transparent;
-      background: transparent;
-      color: #aaa;
-      text-align: left;
-      padding: 13px 12px;
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 13px;
-    }
-
-    .nav button:hover,
-    .nav button.active {
-      background: #241010;
-      color: white;
-      border-color: #542023;
-    }
-
-    .nav button.active .ico {
-      color: var(--red);
-    }
-
-    .ico {
-      font-size: 18px;
-      width: 22px;
-      text-align: center;
-    }
-
-    .side-bottom {
-      margin-top: auto;
-    }
-
-    .plan-mini,
-    .card,
-    .stat {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      padding: 19px;
-      min-width: 0;
-    }
-
-    .plan-mini strong {
-      color: var(--gold);
-      font-size: 20px;
-      display: block;
-      margin: 8px 0;
-    }
-
-    .plan-mini p {
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .main {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .topbar {
-      min-height: 74px;
-      border-bottom: 1px solid var(--border);
-      padding: 15px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-    }
-
-    .topbar-label {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .topbar-label strong {
-      display: block;
-      color: white;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-
-    .avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: #281010;
-      border: 1px solid #5b2929;
-      color: var(--gold);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-    }
-
-    .mobile-menu {
-      display: none;
-    }
-
-    .content {
-      padding: 30px;
-      max-width: 1400px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: clamp(27px, 4vw, 39px);
-      line-height: 1.15;
-      margin: 10px 0;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-
-    h3 {
-      font-size: 15px;
-    }
-
-    p {
-      line-height: 1.65;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .small {
-      font-size: 12px;
-    }
-
-    .hero {
-      padding: 30px;
-      border-radius: 17px;
-      border: 1px solid #392020;
-      background:
-        radial-gradient(ellipse at 95% 5%, #351010 0%, transparent 45%),
-        #111;
-    }
-
-    .hero p {
-      max-width: 650px;
-      color: #b7b7b7;
-      font-size: 14px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 23px;
-    }
-
-    .btn {
-      border: 1px solid var(--border);
-      background: #1a1a1a;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .btn:hover {
-      filter: brightness(1.15);
-    }
-
-    .btn-red {
-      background: var(--red);
-      border-color: var(--red);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border-color: #555;
-    }
-
-    .btn:disabled {
-      opacity: .55;
-      cursor: not-allowed;
-    }
-
-    .grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .stats {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin: 22px 0;
-    }
-
-    .stat-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .stat-icon {
-      color: var(--gold);
-      font-size: 20px;
-    }
-
-    .stat-value {
-      font-size: 25px;
-      font-weight: 800;
-      margin: 17px 0 6px;
-    }
-
-    .stat-note {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin: 28px 0 14px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-    }
-
-    .columns {
-      grid-template-columns: minmax(0, 1.55fr) minmax(260px, 1fr);
-    }
-
-    .community,
-    .notice {
-      padding: 16px 18px;
-      background: #15120d;
-      border: 1px solid #49391c;
-      color: #c8bda8;
-      border-radius: 10px;
-      font-size: 12px;
-      line-height: 1.7;
-      margin-top: 16px;
-    }
-
-    .community p {
-      font-size: 12px;
-      color: #aaa;
-    }
-
-    .pill {
-      display: inline-block;
-      border: 1px solid #444;
-      border-radius: 99px;
-      padding: 5px 9px;
-      font-size: 10px;
-      color: #bbb;
-    }
-
-    .gold {
-      color: var(--gold);
-    }
-
-    .red {
-      color: var(--red);
-    }
-
-    .page {
-      display: none;
-    }
-
-    .page.active {
-      display: block;
-    }
-
-    .course-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .course-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .course-art {
-      min-height: 90px;
-      border-radius: 9px;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(ellipse at center, #421010, #151010 70%);
-      font: 700 22px Orbitron, sans-serif;
-      color: var(--gold);
-    }
-
-    .course-card p {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .lesson-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .lesson {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      background: #121212;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 13px;
-    }
-
-    .lesson-icon {
-      width: 43px;
-      height: 43px;
-      flex-shrink: 0;
-      border-radius: 9px;
-      background: #291010;
-      color: var(--red);
-      display: grid;
-      place-items: center;
-      font-size: 19px;
-    }
-
-    .lesson-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .lesson-info h3 {
-      font-size: 12px;
-      margin: 0 0 6px;
-      line-height: 1.5;
-    }
-
-    .lesson-info p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    .price-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .price-card {
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      padding: 22px;
-      background: #111;
-    }
-
-    .price-card.featured {
-      border-color: #85652e;
-    }
-
-    .price {
-      font-size: 31px;
-      font-weight: 800;
-      color: var(--gold);
-      margin: 12px 0;
-    }
-
-    .price small {
-      font-size: 12px;
-      color: #aaa;
-      font-weight: 400;
-    }
-
-    .field {
-      display: grid;
-      gap: 7px;
-      margin: 15px 0;
-    }
-
-    .field label {
-      font-size: 12px;
-      color: #bbb;
-    }
-
-    .field input {
-      background: #090909;
-      border: 1px solid #393939;
-      border-radius: 8px;
-      padding: 12px;
-      color: white;
-      width: 100%;
-    }
-
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 22px 30px;
-      color: #777;
-      font-size: 10px;
-      text-align: center;
-    }
-
-    .status {
-      margin: 12px 0;
-      color: var(--gold);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .empty {
-      padding: 20px;
-      color: #999;
-      font-size: 13px;
-    }
-
-    @media (max-width: 1000px) {
-      .sidebar {
-        width: 220px;
-      }
-
-      .content {
-        padding: 22px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .columns {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .layout {
-        display: block;
-      }
-
-      .sidebar {
-        display: none;
-        position: fixed;
-        z-index: 10;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 270px;
-        overflow: auto;
-        box-shadow: 15px 0 40px #0009;
-      }
-
-      .sidebar.open {
-        display: flex;
-      }
-
-      .mobile-menu {
-        display: inline-flex;
-      }
-
-      .topbar {
-        padding: 13px 16px;
-      }
-
-      .content {
-        padding: 18px 14px;
-      }
-
-      .hero {
-        padding: 22px 18px;
-      }
-
-      .stats {
-        gap: 10px;
-      }
-
-      .stat {
-        padding: 14px;
-      }
-
-      .stat-value {
-        font-size: 22px;
-      }
-
-      .course-grid,
-      .price-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        align-items: flex-start;
-      }
-
-      .footer {
-        padding: 20px 14px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="layout">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-mark">L</div>
-        <div>
-          <h2>LDU <span class="red">RCM</span></h2>
-          <small>STUDENT COMMAND CENTRE</small>
-        </div>
-      </div>
-
-      <div>
-        <div class="nav-label">LEARNING SPACE</div>
-        <nav class="nav" aria-label="Main navigation">
-          <button class="active" data-page="overview"><span class="ico">⌂</span>Overview</button>
-          <button data-page="courses"><span class="ico">▤</span>My Courses</button>
-          <button data-page="progress"><span class="ico">◷</span>My Progress</button>
-          <button data-page="certificates"><span class="ico">♙</span>Certificates</button>
-          <button data-page="community"><span class="ico">◎</span>Community</button>
-          <button data-page="payments"><span class="ico">◇</span>Programme Fees</button>
-          <button data-page="account"><span class="ico">○</span>My Account</button>
-        </nav>
-      </div>
-
-      <div class="side-bottom">
-        <div class="plan-mini">
-          <span class="eyebrow">YOUR PROGRAMME</span>
-          <strong>12 Months</strong>
-          <p>Course access is based on your verified membership status.</p>
-          <button class="btn btn-outline" style="width:100%" data-go="courses">Open courses</button>
-        </div>
-      </div>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <div style="display:flex;align-items:center;gap:12px">
-          <button class="btn mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button>
-          <div class="topbar-label">
-            LIQUIDITY DISPLACEMENT UNIVERSITY™
-            <strong id="pageHeading">Student Overview</strong>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-          <span class="pill" id="membershipBadge">CHECKING</span>
-          <div class="avatar" id="avatar">S</div>
-          <button class="btn btn-outline" id="logoutBtn">Log out</button>
-        </div>
-      </header>
-
-      <div class="content">
-        <section class="page active" id="page-overview">
-          <div class="hero">
-            <div class="eyebrow">YOUR LEARNING SPACE</div>
-            <h1>Master the Pattern.</h1>
-            <p>Welcome to Liquidity Displacement University™. Your published courses and saved progress are loaded from the student database.</p>
-            <div class="hero-actions">
-              <button class="btn btn-red" data-go="courses">Open My Courses →</button>
-              <button class="btn btn-outline" data-go="progress">View My Progress</button>
-            </div>
-          </div>
-
-          <div class="grid stats">
-            <div class="stat">
-              <div class="stat-top"><span>Membership</span><span class="stat-icon">◇</span></div>
-              <div class="stat-value" id="membershipStatus">Checking…</div>
-              <div class="stat-note" id="membershipExpiry">Checking membership</div>
-            </div>
-
-            <div class="stat">
-              <div class="stat-top"><span>Published courses</span><span class="stat-icon">▤</span></div>
-              <div class="stat-value" id="courseCount">—</div>
-              <div class="stat-note">Courses available to your account</div>
-            </div>
-
-            <div class="stat">
-              <div class="stat-top"><span>Completed lessons</span><span class="stat-icon">✓</span></div>
-              <div class="stat-value" id="completedCount">—</div>
-              <div class="stat-note">Progress recorded to your account</div>
-            </div>
-          </div>
-
-          <p class="status" id="dashboardMessage" role="status"></p>
-
-          <div class="grid columns">
-            <div>
-              <div class="section-head"><h2>Continue Learning</h2></div>
-              <div class="lesson-list" id="recentCourses">
-                <p class="muted small">Loading courses…</p>
-              </div>
-            </div>
-
-            <div>
-              <div class="section-head"><h2>Your Account</h2></div>
-              <div class="card">
-                <div class="eyebrow">SIGNED-IN STUDENT</div>
-                <h3 id="studentName">Loading…</h3>
-                <p class="muted small" id="studentEmail">Loading account…</p>
-                <span class="pill" id="accountRole">Role: student</span>
-              </div>
-
-              <div class="community">
-                <strong>Student Community</strong>
-                <p>Connect with the community for updates and learning support.</p>
-                <a class="btn btn-outline" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Open Discord ↗</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="page" id="page-courses">
-          <div class="eyebrow">YOUR CURRICULUM</div>
-          <h1>My Courses</h1>
-          <p class="muted">Courses published by your programme administrator appear here.</p>
-          <div class="grid course-grid" id="courseGrid">
-            <p class="muted">Loading courses…</p>
-          </div>
-        </section>
-
-        <section class="page" id="page-progress">
-          <div class="eyebrow">YOUR LEARNING ACTIVITY</div>
-          <h1>My Progress</h1>
-          <div class="card">
-            <h3>Completed lessons</h3>
-            <div class="stat-value" id="progressCount">—</div>
-            <p class="muted small">Completion records saved to your student account.</p>
-          </div>
-          <div class="section-head"><h2>Lesson progress</h2></div>
-          <div class="lesson-list" id="progressList">
-            <p class="muted">Loading progress…</p>
-          </div>
-          <p class="status" id="progressMessage" role="status"></p>
-        </section>
-
-        <section class="page" id="page-certificates">
-          <div class="eyebrow">PROGRAMME COMPLETION</div>
-          <h1>Certificates</h1>
-          <div class="card">
-            <h3>Certificate eligibility</h3>
-            <p class="muted">Certificates must be issued only after course completion and assessment have been verified.</p>
-            <p class="status">Certificate issuing is not yet connected to an assessment and verification process.</p>
-          </div>
-        </section>
-
-        <section class="page" id="page-community">
-          <div class="eyebrow">LEARN TOGETHER</div>
-          <h1>Student Community</h1>
-          <div class="card">
-            <h2>Discord Education Hub</h2>
-            <p class="muted">Join the community for discussions, live education sessions and announcements.</p>
-            <a href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer" class="btn btn-red">Join Discord ↗</a>
-          </div>
-        </section>
-
-        <section class="page" id="page-payments">
-          <div class="eyebrow">TUITION & MEMBERSHIP</div>
-          <h1>Programme Fees</h1>
-          <p class="muted">Programme fees: R1,500 monthly for 12 months or R18,000 once-off.</p>
-
-          <div class="grid price-grid">
-            <div class="price-card">
-              <span class="pill">MONTHLY OPTION</span>
-              <div class="price">R1,500 <small>/ month</small></div>
-              <p class="muted small">12 monthly payments over the programme period.</p>
-              <button class="btn btn-outline" style="width:100%" disabled>Checkout setup required</button>
-            </div>
-
-            <div class="price-card featured">
-              <span class="pill gold">ONCE-OFF OPTION</span>
-              <div class="price">R18,000 <small>once-off</small></div>
-              <p class="muted small">One upfront payment for the 12-month programme.</p>
-              <button class="btn btn-outline" style="width:100%" disabled>Checkout setup required</button>
-            </div>
-          </div>
-
-          <p class="status">Online payments and server-verified membership activation have not been connected. No payment is taken here.</p>
-        </section>
-
-        <section class="page" id="page-account">
-          <div class="eyebrow">STUDENT PROFILE</div>
-          <h1>My Account</h1>
-          <div class="card">
-            <h2>Account details</h2>
-            <div class="field">
-              <label for="profileName">Full name</label>
-              <input id="profileName" readonly>
-            </div>
-            <div class="field">
-              <label for="profileEmail">Email address</label>
-              <input id="profileEmail" type="email" readonly>
-            </div>
-            <p class="muted small">Contact an administrator to correct account details.</p>
-            <button class="btn btn-red" id="logoutBtnAccount">Log out</button>
-          </div>
-        </section>
-      </div>
-
-      <footer class="footer">
-        LIQUIDITY DISPLACEMENT UNIVERSITY™ · POWERED BY FOREX WEALTH EMPIRE
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    (async function () {
-      const client = window.lduClient;
-
-      const setText = (id, text) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = text;
-      };
-
-      const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;"
-      }[c]));
-
-      const session = await window.lduAuthReady;
-      if (!session) return;
-
-      const user = session.user;
-      const email = user.email || "";
-
-      setText("studentEmail", email);
-      setText("profileEmail", email);
-      setText("studentName", email || "Student");
-      setText("profileName", email || "Student");
-      setText("avatar", (email.trim()[0] || "S").toUpperCase());
-
-      async function logout() {
-        const { error } = await client.auth.signOut();
-
-        if (error) {
-          setText("dashboardMessage", "Could not log out. Please try again.");
-          return;
-        }
-
-        window.location.replace("login.html");
-      }
-
-      document.getElementById("logoutBtn").addEventListener("click", logout);
-      document.getElementById("logoutBtnAccount").addEventListener("click", logout);
-
-      client.auth.onAuthStateChange((event, newSession) => {
-        if (!newSession) {
-          window.location.replace("login.html");
-        }
-      });
-
-      const [profileRes, membershipRes] = await Promise.all([
-        client.from("profiles")
-          .select("full_name, role")
-          .eq("id", user.id)
-          .maybeSingle(),
-
-        client.from("memberships")
-          .select("status, starts_at, expires_at, plan")
-          .eq("user_id", user.id)
-          .limit(1)
-          .maybeSingle()
-      ]);
-
-      let admin = false;
-
-      if (profileRes.error) {
-        setText("dashboardMessage", "Profile lookup failed. Check the profiles table and its RLS policies.");
-      } else if (profileRes.data) {
-        const profile = profileRes.data;
-        admin = profile.role === "admin";
-
-        setText("accountRole", "Role: " + (profile.role || "student"));
-
-        if (profile.full_name) {
-          setText("studentName", profile.full_name);
-          setText("profileName", profile.full_name);
-          setText("avatar", profile.full_name.trim()[0]?.toUpperCase() || "S");
-        }
-      }
-
-      const membership = membershipRes.data;
-      const now = Date.now();
-      const starts = membership?.starts_at ? Date.parse(membership.starts_at) : null;
-      const expires = membership?.expires_at ? Date.parse(membership.expires_at) : null;
-
-      const active = !!membership &&
-        membership.status === "active" &&
-        (!starts || starts <= now) &&
-        (!expires || expires > now);
-
-      setText(
-        "membershipBadge",
-        admin ? "ADMIN" : active ? "ACTIVE MEMBERSHIP" : "MEMBERSHIP INACTIVE"
-      );
-
-      setText(
-        "membershipStatus",
-        admin ? "Admin" : active ? "Active" : (membership?.status || "Not active")
-      );
-
-      setText(
-        "membershipExpiry",
-        expires
-          ? "Expires " + new Date(expires).toLocaleDateString()
-          : active
-            ? "No expiry date set"
-            : "Contact administrator"
-      );
-
-      if (membershipRes.error) {
-        setText("dashboardMessage", "Membership lookup failed. Check the memberships table and its RLS policies.");
-      }
-
-      if (!admin && !active) {
-        setText(
-          "dashboardMessage",
-          "Your login is valid, but an active membership is required for course access. Contact the administrator if you believe this is an error."
-        );
-
-        setText("courseCount", "0");
-        setText("completedCount", "0");
-        setText("progressCount", "0");
-
-        document.getElementById("recentCourses").innerHTML =
-          '<p class="muted small">Course access is available after membership activation.</p>';
-
-        document.getElementById("courseGrid").innerHTML =
-          '<div class="card"><h3>Membership required</h3><p class="muted small">Your account is signed in, but course access is not active.</p></div>';
-
-        document.getElementById("progressList").innerHTML =
-          '<p class="muted small">Progress will appear after access is activated.</p>';
-
-        return;
-      }
-
-      // Database security policies must also protect course and lesson data.
-      const coursesRes = await client.from("courses").select("*");
-
-      if (coursesRes.error) {
-        setText("dashboardMessage", "Could not load courses. Check the courses table schema and its RLS policies.");
-
-        document.getElementById("recentCourses").innerHTML =
-          '<p class="muted small">Courses could not be loaded.</p>';
-
-        document.getElementById("courseGrid").innerHTML =
-          '<p class="muted small">Courses could not be loaded.</p>';
-
-        return;
-      }
-
-      const courses = (coursesRes.data || []).filter(course =>
-        course.published === true ||
-        course.is_published === true ||
-        course.status === "published"
-      );
-
-      setText("courseCount", String(courses.length));
-
-      const title = course => course.title || course.name || "Course";
-      const description = course =>
-        course.description || "Course details will be provided by the administrator.";
-
-      const courseCard = course => `
-        <article class="course-card">
-          <div class="course-art">LDU</div>
-          <span class="pill">${esc(course.category || "Course")}</span>
-          <h3>${esc(title(course))}</h3>
-          <p>${esc(description(course))}</p>
-        </article>
-      `;
-
-      document.getElementById("courseGrid").innerHTML = courses.length
-        ? courses.map(courseCard).join("")
-        : '<p class="empty">No published courses found. An administrator must publish courses in the database.</p>';
-
-      document.getElementById("recentCourses").innerHTML = courses.length
-        ? courses.slice(0, 3).map(course => `
-            <article class="lesson">
-              <div class="lesson-icon">▤</div>
-              <div class="lesson-info">
-                <h3>${esc(title(course))}</h3>
-                <p>${esc(description(course))}</p>
-              </div>
-            </article>
-          `).join("")
-        : '<p class="muted small">No published courses found.</p>';
-
-      const progressRes = await client.from("student_progress")
-        .select("lesson_id, completed, updated_at")
-        .eq("user_id", user.id);
-
-      if (progressRes.error) {
-        setText("progressMessage", "Progress lookup failed. Check student_progress columns and RLS policies.");
-        setText("completedCount", "—");
-        setText("progressCount", "—");
-
-        document.getElementById("progressList").innerHTML =
-          '<p class="muted small">Progress could not be loaded.</p>';
-      } else {
-        const rows = progressRes.data || [];
-        const completed = rows.filter(row => row.completed === true).length;
-
-        setText("completedCount", String(completed));
-        setText("progressCount", String(completed));
-
-        document.getElementById("progressList").innerHTML = rows.length
-          ? rows.map(row => `
-              <article class="lesson">
-                <div class="lesson-icon">${row.completed ? "✓" : "◷"}</div>
-                <div class="lesson-info">
-                  <h3>Lesson ${esc(row.lesson_id)}</h3>
-                  <p>
-                    ${row.completed ? "Completed" : "Not completed"}
-                    ${row.updated_at
-                      ? " · Updated " + esc(new Date(row.updated_at).toLocaleDateString())
-                      : ""}
-                  </p>
-                </div>
-              </article>
-            `).join("")
-          : '<p class="muted small">No progress records have been saved yet.</p>';
-      }
-    })().catch(error => {
-      console.error(error);
-
-      document.documentElement.style.visibility = "visible";
-
-      const message = document.getElementById("dashboardMessage");
-
-      if (message) {
-        message.textContent = "The portal could not load its records. Check the browser console, database columns and RLS policies.";
-      }
-    });
-
-    function showPage(name) {
-      const page = document.getElementById("page-" + name);
-      if (!page) return;
-
-      document.querySelectorAll(".page").forEach(section => {
-        section.classList.remove("active");
-      });
-
-      page.classList.add("active");
-
-      document.querySelectorAll("[data-page]").forEach(button => {
-        button.classList.toggle("active", button.dataset.page === name);
-      });
-
-      const labels = {
-        overview: "Student Overview",
-        courses: "My Courses",
-        progress: "My Progress",
-        certificates: "Certificates",
-        community: "Student Community",
-        payments: "Programme Fees",
-        account: "My Account"
-      };
-
-      document.getElementById("pageHeading").textContent =
-        labels[name] || "Student Portal";
-
-      document.getElementById("sidebar").classList.remove("open");
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    document.addEventListener("click", event => {
-      const nav = event.target.closest("[data-page]");
-      if (nav) showPage(nav.dataset.page);
-
-      const go = event.target.closest("[data-go]");
-      if (go) showPage(go.dataset.go);
-    });
-
-    document.getElementById("menuBtn").addEventListener("click", () => {
-      document.getElementById("sidebar").classList.toggle("open");
-    });
-  </script>
-</body>
-</html>
+<style>
+:root{
+  --bg:#08090d;
+  --panel:rgba(255,255,255,.055);
+  --panel-solid:#111319;
+  --red:#ff394b;
+  --gold:#dfbd78;
+  --white:#f5f5f7;
+  --muted:#a1a1ac;
+  --border:rgba(255,255,255,.105);
+  --glass:rgba(255,255,255,.045);
+  --shadow:0 24px 70px rgba(0,0,0,.30);
+  --radius:23px;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--bg);
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--white);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(ellipse at 8% 0%,rgba(255,57,75,.105),transparent 34%),
+    radial-gradient(ellipse at 95% 25%,rgba(223,189,120,.065),transparent 32%),
+    linear-gradient(145deg,#08090d,#0b0c11 55%,#08090d);
+  -webkit-font-smoothing:antialiased;
+}
+
+button,a,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible,input:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:4px;
+}
+::selection{background:rgba(255,57,75,.3);color:white}
+
+/* APP SHELL */
+.layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* GLASS SIDEBAR */
+.sidebar{
+  width:265px;
+  flex-shrink:0;
+  padding:25px 17px;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  background:rgba(13,14,19,.76);
+  border-right:1px solid var(--border);
+  backdrop-filter:blur(30px);
+  -webkit-backdrop-filter:blur(30px);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 5px;
+}
+
+.brand-mark{
+  width:45px;
+  height:45px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  color:white;
+  font-size:21px;
+  font-weight:900;
+  background:linear-gradient(145deg,#ff5968,#cf142a);
+  box-shadow:0 8px 27px rgba(255,57,75,.22);
+}
+
+.brand h2{
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:-.5px;
+  margin:0;
+}
+
+.brand small{
+  display:block;
+  margin-top:5px;
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:1.3px;
+}
+
+.nav-label{
+  margin:5px 11px 13px;
+  color:#777985;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.nav{
+  display:grid;
+  gap:6px;
+}
+
+.nav button{
+  position:relative;
+  width:100%;
+  min-height:45px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 13px;
+  border:1px solid transparent;
+  border-radius:13px;
+  background:transparent;
+  color:#a8a9b4;
+  text-align:left;
+  font-size:12px;
+  font-weight:600;
+  transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease;
+}
+
+.nav button:hover{
+  color:white;
+  background:rgba(255,255,255,.055);
+  transform:translateX(2px);
+}
+
+.nav button.active{
+  color:white;
+  background:linear-gradient(100deg,rgba(255,57,75,.15),rgba(255,255,255,.035));
+  border-color:rgba(255,57,75,.2);
+  box-shadow:inset 3px 0 0 var(--red);
+}
+
+.nav button.active .ico{color:#ff6977}
+
+.ico{
+  width:22px;
+  text-align:center;
+  font-size:18px;
+}
+
+.side-bottom{margin-top:auto}
+
+.plan-mini,
+.card,
+.stat{
+  min-width:0;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.022));
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.plan-mini{
+  padding:20px;
+}
+
+.plan-mini strong{
+  display:block;
+  margin:12px 0 8px;
+  color:var(--gold);
+  font-size:23px;
+  letter-spacing:-.8px;
+}
+
+.plan-mini p{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.8;
+}
+
+/* MAIN CONTENT */
+.main{
+  flex:1;
+  min-width:0;
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:8;
+  min-height:77px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:14px 30px;
+  border-bottom:1px solid var(--border);
+  background:rgba(8,9,13,.75);
+  backdrop-filter:blur(28px);
+  -webkit-backdrop-filter:blur(28px);
+}
+
+.topbar-label{
+  color:#9697a3;
+  font-size:10px;
+  letter-spacing:1.3px;
+}
+
+.topbar-label strong{
+  display:block;
+  margin-top:5px;
+  color:white;
+  font-size:15px;
+  letter-spacing:-.35px;
+}
+
+.avatar{
+  width:39px;
+  height:39px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:var(--gold);
+  font-size:14px;
+  font-weight:800;
+  background:linear-gradient(145deg,rgba(255,57,75,.2),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.mobile-menu{display:none}
+
+.content{
+  width:100%;
+  max-width:1450px;
+  margin:0 auto;
+  padding:32px;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+h1,h2,h3,p{margin-top:0}
+
+h1{
+  margin:12px 0;
+  font-size:clamp(29px,4vw,43px);
+  font-weight:800;
+  letter-spacing:-1.9px;
+  line-height:1.13;
+}
+
+h2{
+  font-size:20px;
+  font-weight:750;
+  letter-spacing:-.65px;
+}
+
+h3{
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:-.25px;
+}
+
+p{line-height:1.75}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.gold{color:var(--gold)}
+.red{color:var(--red)}
+
+/* GLASS HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:36px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:30px;
+  background:
+    radial-gradient(ellipse at 95% 0%,rgba(255,57,75,.18),transparent 43%),
+    radial-gradient(ellipse at 0% 100%,rgba(223,189,120,.055),transparent 45%),
+    linear-gradient(135deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+}
+
+.hero:after{
+  content:"LDU";
+  position:absolute;
+  right:8px;
+  bottom:-60px;
+  pointer-events:none;
+  color:rgba(255,255,255,.025);
+  font-size:clamp(100px,17vw,200px);
+  font-weight:900;
+  letter-spacing:-15px;
+}
+
+.hero h1{
+  position:relative;
+  z-index:1;
+}
+
+.hero p{
+  position:relative;
+  z-index:1;
+  max-width:680px;
+  color:#b6b7c1;
+  font-size:14px;
+}
+
+.hero-actions{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+  margin-top:25px;
+}
+
+/* BUTTONS */
+.btn{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:11px 16px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:13px;
+  background:rgba(255,255,255,.055);
+  color:white;
+  font-size:11px;
+  font-weight:750;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.24);
+}
+
+.btn-red{
+  color:white;
+  border-color:rgba(255,57,75,.65);
+  background:linear-gradient(135deg,#ff5261,#df1831);
+  box-shadow:0 8px 26px rgba(255,57,75,.17);
+}
+
+.btn-red:hover{
+  background:linear-gradient(135deg,#ff6572,#ed2540);
+  box-shadow:0 10px 30px rgba(255,57,75,.24);
+}
+
+.btn-outline{
+  background:rgba(255,255,255,.025);
+  border-color:rgba(255,255,255,.16);
+}
+
+.btn:disabled{
+  opacity:.48;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}
+
+/* GRIDS AND STAT CARDS */
+.grid{
+  display:grid;
+  gap:17px;
+}
+
+.stats{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin:23px 0;
+}
+
+.stat{
+  padding:22px;
+  transition:transform .22s ease,border-color .22s ease;
+}
+
+.stat:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,.2);
+}
+
+.stat-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.stat-icon{
+  color:var(--gold);
+  font-size:20px;
+}
+
+.stat-value{
+  margin:19px 0 7px;
+  font-size:clamp(22px,3vw,30px);
+  font-weight:800;
+  letter-spacing:-1.1px;
+  overflow-wrap:anywhere;
+}
+
+.stat-note{
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.6;
+}
+
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:29px 0 15px;
+}
+
+.section-head h2{margin:0}
+
+.columns{
+  grid-template-columns:minmax(0,1.55fr) minmax(260px,1fr);
+}
+
+.card{
+  padding:22px;
+}
+
+.community,
+.notice{
+  margin-top:16px;
+  padding:19px;
+  border:1px solid rgba(223,189,120,.18);
+  border-radius:19px;
+  background:linear-gradient(145deg,rgba(223,189,120,.075),rgba(255,255,255,.025));
+  color:#d4c8b0;
+  font-size:12px;
+  line-height:1.8;
+}
+
+.community p{
+  margin:8px 0 15px;
+  color:#aaaab5;
+  font-size:12px;
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  max-width:100%;
+  padding:6px 10px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:#c9cad2;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.35px;
+  overflow-wrap:anywhere;
+}
+
+/* PAGE SWITCHING */
+.page{display:none}
+.page.active{
+  display:block;
+  animation:pageAppear .35s ease both;
+}
+
+@keyframes pageAppear{
+  from{opacity:0;transform:translateY(7px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* COURSE CARDS */
+.course-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  margin-top:23px;
+}
+
+.course-card{
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+  min-width:0;
+  padding:19px;
+  border:1px solid var(--border);
+  border-radius:23px;
+  background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018));
+  box-shadow:0 14px 35px rgba(0,0,0,.14);
+  transition:transform .23s ease,border-color .23s ease;
+}
+
+.course-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.22);
+}
+
+.course-art{
+  min-height:120px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:17px;
+  background:
+    radial-gradient(ellipse at 50% 20%,rgba(255,57,75,.22),transparent 65%),
+    linear-gradient(145deg,#17151a,#0b0c10);
+  color:var(--gold);
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:4px;
+}
+
+.course-card h3{margin:0}
+.course-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+}
+
+/* LESSONS AND PROGRESS */
+.lesson-list{
+  display:grid;
+  gap:11px;
+}
+
+.lesson{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.018));
+  transition:background .2s ease,border-color .2s ease;
+}
+
+.lesson:hover{
+  background:rgba(255,255,255,.065);
+  border-color:rgba(255,255,255,.18);
+}
+
+.lesson-icon{
+  width:44px;
+  height:44px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,57,75,.16);
+  border-radius:15px;
+  background:rgba(255,57,75,.09);
+  color:#ff7783;
+  font-size:18px;
+}
+
+.lesson-info{
+  flex:1;
+  min-width:0;
+}
+
+.lesson-info h3{
+  margin:0 0 6px;
+  font-size:12px;
+  line-height:1.6;
+  overflow-wrap:anywhere;
+}
+
+.lesson-info p{
+  margin:0;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.6;
+  overflow-wrap:anywhere;
+}
+
+/* PROGRAMME FEES */
+.price-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  margin-top:22px;
+}
+
+.price-card{
+  min-width:0;
+  padding:25px;
+  border:1px solid var(--border);
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  box-shadow:0 15px 45px rgba(0,0,0,.17);
+}
+
+.price-card.featured{
+  border-color:rgba(223,189,120,.45);
+  background:
+    radial-gradient(ellipse at 100% 0%,rgba(223,189,120,.1),transparent 55%),
+    linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018));
+}
+
+.price{
+  margin:18px 0 12px;
+  color:var(--gold);
+  font-size:clamp(25px,3vw,34px);
+  font-weight:800;
+  letter-spacing:-1.1px;
+  overflow-wrap:anywhere;
+}
+
+.price small{
+  color:#aaaab4;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0;
+}
+
+.price-card p{line-height:1.8}
+
+/* FORM FIELDS */
+.field{
+  display:grid;
+  gap:8px;
+  margin:16px 0;
+}
+
+.field label{
+  color:#c5c6cf;
+  font-size:11px;
+  font-weight:650;
+}
+
+.field input{
+  width:100%;
+  min-width:0;
+  padding:13px 14px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:13px;
+  background:rgba(0,0,0,.22);
+  color:white;
+  font-size:13px;
+  outline:none;
+  transition:border-color .2s ease,background .2s ease;
+}
+
+.field input:focus{
+  border-color:rgba(255,57,75,.7);
+  background:rgba(0,0,0,.34);
+}
+
+.field input[readonly]{
+  color:#aaaab5;
+  cursor:default;
+}
+
+/* STATUS MESSAGES */
+.status{
+  margin:13px 0;
+  color:var(--gold);
+  font-size:12px;
+  line-height:1.8;
+  overflow-wrap:anywhere;
+}
+
+.empty{
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+  background:rgba(255,255,255,.025);
+}
+
+/* FOOTER */
+.footer{
+  padding:24px 30px;
+  border-top:1px solid var(--border);
+  background:rgba(0,0,0,.12);
+  color:#81828d;
+  font-size:10px;
+  line-height:1.8;
+  text-align:center;
+}
+
+/* TABLET */
+@media(max-width:1050px){
+  .sidebar{width:235px}
+  .content{padding:25px}
+  .columns{grid-template-columns:minmax(0,1.2fr) minmax(230px,1fr)}
+  .stats{gap:12px}
+  .stat{padding:18px}
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  .layout{display:block}
+
+  .sidebar{
+    display:none;
+    position:fixed;
+    z-index:30;
+    top:0;
+    bottom:0;
+    left:0;
+    width:min(290px,86vw);
+    overflow-y:auto;
+    padding:23px 17px;
+    background:rgba(12,13,18,.96);
+    border-right:1px solid rgba(255,255,255,.13);
+    box-shadow:25px 0 70px rgba(0,0,0,.5);
+    backdrop-filter:blur(35px);
+    -webkit-backdrop-filter:blur(35px);
+  }
+
+  .sidebar.open{
+    display:flex;
+    animation:sidebarAppear .22s ease both;
+  }
+
+  @keyframes sidebarAppear{
+    from{opacity:0;transform:translateX(-12px)}
+    to{opacity:1;transform:translateX(0)}
+  }
+
+  .mobile-menu{display:inline-flex}
+
+  .topbar{
+    min-height:70px;
+    padding:12px 15px;
+    gap:10px;
+  }
+
+  .topbar-label{
+    max-width:55vw;
+    font-size:8px;
+    letter-spacing:.8px;
+  }
+
+  .topbar-label strong{
+    font-size:13px;
+    letter-spacing:-.2px;
+  }
+
+  .topbar .btn{
+    padding:9px 11px;
+    min-height:37px;
+    font-size:10px;
+  }
+
+  .avatar{
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+  }
+
+  .content{padding:21px 15px}
+
+  .hero{
+    padding:27px 22px;
+    border-radius:25px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:11px;
+  }
+
+  .stat{padding:16px}
+  .stat-value{font-size:24px}
+
+  .columns{grid-template-columns:minmax(0,1fr)}
+  .course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer{padding:21px 15px}
+}
+
+/* SMALL PHONES */
+@media(max-width:480px){
+  .content{padding:17px 12px}
+  .topbar{padding:11px 12px}
+  .topbar-label{max-width:43vw}
+  .topbar-label strong{font-size:12px}
+  .topbar .btn{padding:8px 9px;font-size:9px}
+  .topbar .mobile-menu{padding:8px 10px}
+  .topbar>div:last-child{gap:7px}
+
+  h1{
+    font-size:30px;
+    letter-spacing:-1.2px;
+  }
+
+  h2{font-size:18px}
+
+  .hero{
+    padding:24px 18px;
+    border-radius:22px;
+  }
+
+  .hero p{font-size:12px}
+  .hero-actions{gap:8px}
+  .hero-actions .btn{flex:1;padding:11px 10px}
+
+  .stats{gap:9px}
+  .stat{padding:13px;border-radius:18px}
+  .stat-top{font-size:9px}
+  .stat-value{font-size:21px;letter-spacing:-.7px}
+  .stat-note{font-size:9px}
+
+  .card,.plan-mini{padding:18px}
+  .section-head{margin-top:24px}
+
+  .course-grid,.price-grid{grid-template-columns:minmax(0,1fr)}
+  .course-art{min-height:105px}
+  .course-card{padding:16px}
+
+  .price-card{padding:21px}
+  .price{font-size:31px}
+
+  .lesson{padding:12px;gap:11px}
+  .lesson-icon{width:39px;height:39px;border-radius:12px}
+  .community,.notice{padding:16px}
+
+  .pill{font-size:8px}
+  .footer{font-size:9px}
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
