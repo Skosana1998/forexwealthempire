@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Refund, cancellation and digital access policy for Liquidity Displacement University.">
+  <title>Refund Policy | Liquidity Displacement University™</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #09090b;
+      --surface: rgba(255,255,255,.045);
+      --border: rgba(255,255,255,.11);
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --red: #ed2638;
+      --red-light: #ff5362;
+      --max: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 0%, rgba(237,38,56,.13), transparent 38%),
+        radial-gradient(ellipse at 90% 40%, rgba(110,20,30,.10), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--red-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 17px 6%;
+      background: rgba(9,9,11,.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: white;
+      font-weight: 800;
+      font-size: .92rem;
+      letter-spacing: -.4px;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 37px;
+      height: 37px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--red-light), #a80d20);
+      box-shadow: 0 5px 22px rgba(237,38,56,.25);
+      font-size: 1.05rem;
+    }
+
+    .nav-link {
+      font-size: .85rem;
+      font-weight: 600;
+      color: #e4e4e7;
+    }
+
+    .container {
+      width: min(var(--max), 88%);
+      margin: auto;
+    }
+
+    .hero {
+      padding: 76px 0 43px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid rgba(237,38,56,.32);
+      border-radius: 999px;
+      background: rgba(237,38,56,.08);
+      color: #ff9aa4;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: .69rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 23px auto 16px;
+      font-size: clamp(2.1rem, 6vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      max-width: 760px;
+    }
+
+    h1 span {
+      color: var(--red-light);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 630px;
+      margin: auto;
+      font-size: .98rem;
+    }
+
+    .effective {
+      display: inline-block;
+      margin-top: 23px;
+      color: #d4d4d8;
+      font-size: .8rem;
+      border: 1px solid var(--border);
+      padding: 7px 13px;
+      border-radius: 9px;
+    }
+
+    .policy {
+      margin: 15px auto 70px;
+      padding: clamp(22px, 5vw, 48px);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      box-shadow: 0 24px 90px rgba(0,0,0,.22);
+    }
+
+    .notice {
+      padding: 17px 19px;
+      margin-bottom: 32px;
+      border-left: 3px solid var(--red);
+      background: rgba(237,38,56,.075);
+      border-radius: 0 12px 12px 0;
+      color: #e4e4e7;
+      font-size: .9rem;
+    }
+
+    .section {
+      padding: 23px 0;
+      border-bottom: 1px solid rgba(255,255,255,.075);
+    }
+
+    .section:first-of-type {
+      padding-top: 0;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.12rem;
+      line-height: 1.4;
+      margin-bottom: 11px;
+      letter-spacing: -.3px;
+    }
+
+    h2 .number {
+      display: inline-grid;
+      place-items: center;
+      width: 29px;
+      height: 29px;
+      margin-right: 8px;
+      border-radius: 9px;
+      background: rgba(237,38,56,.12);
+      color: var(--red-light);
+      font-size: .77rem;
+      vertical-align: middle;
+    }
+
+    .section p {
+      color: #bdbdc5;
+      font-size: .91rem;
+      margin-bottom: 10px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section ul {
+      padding-left: 21px;
+      margin: 12px 0;
+      color: #bdbdc5;
+      font-size: .91rem;
+    }
+
+    .section li {
+      padding: 3px 0;
+    }
+
+    .contact-card {
+      margin-top: 34px;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid rgba(237,38,56,.22);
+      border-radius: 18px;
+      background: rgba(237,38,56,.055);
+    }
+
+    .contact-card h2 {
+      font-size: 1.25rem;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 8px 0 18px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--red-light), #bf1025);
+      border-radius: 11px;
+      font-weight: 700;
+      font-size: .88rem;
+      box-shadow: 0 8px 25px rgba(237,38,56,.18);
+      transition: transform .2s ease;
+    }
+
+    .button:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 28px 6% 35px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 14px 0;
+    }
+
+    .footer-links a {
+      color: #d4d4d8;
+    }
+
+    .footer-links a:hover {
+      color: var(--red-light);
+    }
+
+    .disclaimer {
+      max-width: 650px;
+      margin: 15px auto 0;
+      color: #777780;
+      font-size: .72rem;
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        padding: 13px 5%;
+      }
+
+      .brand {
+        font-size: .78rem;
+      }
+
+      .brand-mark {
+        width: 33px;
+        height: 33px;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      h1 {
+        letter-spacing: -1.2px;
+      }
+
+      .policy {
+        width: 92%;
+        padding: 22px 19px;
+        border-radius: 19px;
+      }
+
+      .section {
+        padding: 20px 0;
+      }
+
+      .contact-card {
+        padding: 20px 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Liquidity Displacement University home">
+      <span class="brand-mark">L</span>
+      <span>LIQUIDITY DISPLACEMENT<br>UNIVERSITY™</span>
+    </a>
+
+    <a class="nav-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="eyebrow">Student Support &amp; Policies</span>
+      <h1>Refund <span>&amp; Cancellation</span> Policy</h1>
+      <p>
+        Clear information about digital course purchases, payment issues,
+        cancellations and student access at Liquidity Displacement University™.
+      </p>
+      <span class="effective">Effective date: 24 October 2026</span>
+    </section>
+
+    <article class="policy container">
+
+      <div class="notice">
+        <strong>Please read before purchasing.</strong>
+        This policy explains how refund and cancellation requests are handled.
+        It does not remove consumer rights that apply under the law.
+      </div>
+
+      <section class="section">
+        <h2><span class="number">01</span>About This Policy</h2>
+        <p>
+          This policy applies to educational products and services offered by
+          Liquidity Displacement University™ ("LDU"), including online courses,
+          recorded lessons, downloadable PDFs, mentorship and membership access.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">02</span>Digital Products and Course Access</h2>
+        <p>
+          LDU may provide digital learning materials through a student dashboard,
+          including videos, PDFs, educational resources and online community access.
+        </p>
+        <p>
+          Once digital content has been delivered or access has been activated,
+          a refund may depend on the circumstances, the purchase terms and
+          applicable consumer protection laws. Digital delivery does not, by
+          itself, cancel rights that the law gives a customer.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">03</span>How to Request a Refund</h2>
+        <p>
+          If you wish to request a refund, contact LDU through the official
+          support channel published on the website. Please provide:
+        </p>
+        <ul>
+          <li>Your registered name and email address.</li>
+          <li>Your payment reference or transaction ID.</li>
+          <li>The course or service purchased.</li>
+          <li>A short explanation of your request.</li>
+        </ul>
+        <p>
+          Each request will be reviewed individually. LDU will communicate its
+          decision and any next steps within a reasonable period.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">04</span>Monthly Payment Plans</h2>
+        <p>
+          If a programme is purchased through a monthly payment plan, the
+          payment schedule, duration and cancellation conditions should be
+          presented before checkout.
+        </p>
+        <p>
+          Cancelling a payment plan does not necessarily remove amounts already
+          lawfully due. Any cancellation fees, future payment obligations or
+          refunds must be consistent with the purchase agreement and applicable law.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">05</span>Duplicate or Incorrect Payments</h2>
+        <p>
+          If you are charged twice, charged the wrong amount, or money is
+          deducted without your order being confirmed, contact support with
+          your transaction reference.
+        </p>
+        <p>
+          LDU will investigate verified payment errors and arrange an appropriate
+          correction or refund where required.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">06</span>Paid but Cannot Access the Course</h2>
+        <p>
+          If you have paid but cannot access your student dashboard or course
+          materials, contact support so the payment and account can be checked.
+        </p>
+        <p>
+          LDU will make reasonable efforts to restore the access purchased.
+          If the problem cannot be resolved, any available remedies will be
+          considered under the purchase terms and applicable law.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">07</span>Account Misuse and Termination</h2>
+        <p>
+          Unauthorised sharing of login credentials, distribution of protected
+          course materials, fraud or other serious violations may lead to
+          account restrictions under the programme terms.
+        </p>
+        <p>
+          Any action affecting a student's access or refund rights remains
+          subject to applicable law.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">08</span>Consumer Protection Rights</h2>
+        <p>
+          Nothing in this policy is intended to exclude, restrict or waive any
+          rights that cannot legally be excluded or waived. Where applicable,
+          South African consumer protection legislation and other relevant
+          laws will apply.
+        </p>
+        <p>
+          If a term in this policy conflicts with a mandatory legal requirement,
+          the legal requirement takes precedence.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">09</span>Trading Risk Disclaimer</h2>
+        <p>
+          LDU provides trading education. Financial markets involve risk, and
+          losses are possible. Course participation does not guarantee profits,
+          trading success, funded accounts or employment.
+        </p>
+        <p>
+          Trading losses alone do not determine whether a customer is legally
+          entitled to a refund for an educational service.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="number">10</span>Contact and Support</h2>
+        <p>
+          For refund requests, billing questions or access problems, use the
+          official support contact published on the LDU website.
+        </p>
+        <p>
+          Please keep your payment confirmation and transaction reference
+          available so your request can be reviewed efficiently.
+        </p>
+      </section>
+
+      <div class="contact-card">
+        <h2>Need help with a payment?</h2>
+        <p>
+          Contact LDU through the support channel listed on our official website.
+        </p>
+        <a href="index.html#contact" class="button">Visit Website Support</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <strong>LIQUIDITY DISPLACEMENT UNIVERSITY™</strong>
+
+    <nav class="footer-links" aria-label="Legal links">
+      <a href="index.html">Home</a>
+      <a href="login.html">Student Login</a>
+      <a href="register.html">Register</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </nav>
+
+    <p>© <span id="year"></span> Liquidity Displacement University™. All rights reserved.</p>
+
+    <p class="disclaimer">
+      Educational content only. Trading involves risk and may not be suitable
+      for everyone. Nothing on this website guarantees financial returns.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
