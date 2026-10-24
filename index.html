@@ -1,367 +1,750 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111114">
-<meta name="description" content="Discover Liquidity Displacement University™, the education identity growing from Forex Wealth Empire, with proprietary patterns and trader development.">
-<title>Liquidity Displacement University™ | The Next Chapter</title>
+<meta name="theme-color" content="#09090c">
+<meta name="description" content="Liquidity Displacement University™ — premium trading education focused on repeating market patterns, structured learning, disciplined execution and trader development.">
+<meta name="robots" content="index,follow">
+<title>Liquidity Displacement University™ | See Beyond the Chart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f7f7f5;--white:#fff;--ink:#151619;--muted:#686b72;--line:#e5e5e2;--red:#d92736;--red-dark:#a91624;--soft:#fff0f1;--green:#147d51;--radius:22px;--max:1180px}
+:root{
+  --bg:#09090c;--bg2:#101014;--panel:rgba(255,255,255,.055);
+  --panel2:rgba(255,255,255,.085);--line:rgba(255,255,255,.12);
+  --white:#f7f7fa;--muted:#a2a2b0;--red:#ff3448;
+  --red2:#c9142b;--pink:#ff7480;--green:#79e5b1;
+  --radius:25px;--max:1220px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-.announcement{background:var(--ink);color:#fff;text-align:center;padding:9px 14px;font-size:.76rem;letter-spacing:.07em;font-weight:700}
-header{position:sticky;top:0;z-index:20;background:rgba(247,247,245,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em}
-.brand-mark{height:42px;width:42px;display:grid;place-items:center;background:var(--red);color:white;border-radius:13px;font-size:.82rem}
-.brand small{display:block;color:var(--muted);font-size:.64rem;letter-spacing:.1em;margin-top:2px}
-.navlinks{display:flex;align-items:center;gap:24px;font-size:.88rem;color:#4c4e53}
-.navlinks a:hover{color:var(--red)}
-.navright{display:flex;gap:9px;align-items:center}
-.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:12px 19px;font-size:.88rem;font-weight:800;transition:.2s}
-.btn:hover{transform:translateY(-1px)}
-.primary{background:var(--red);color:white}.primary:hover{background:var(--red-dark)}
-.secondary{border-color:var(--line);background:white}
-.small{padding:9px 14px;font-size:.8rem}
-.menu{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px}
-.hero{padding:78px 0 66px;background:radial-gradient(ellipse at 85% 10%,rgba(217,39,54,.11),transparent 38%),linear-gradient(135deg,#faf9f7 0%,#f2f1ef 100%);position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(217,39,54,.13);border-radius:50%;right:-130px;top:-160px;box-shadow:0 0 0 35px rgba(217,39,54,.025),0 0 0 75px rgba(217,39,54,.02);pointer-events:none}.hero-grid{position:relative;z-index:1}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-size:.73rem;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--red);margin-bottom:19px}
-.kicker:before{content:"";height:2px;width:22px;background:var(--red)}
-h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.055em;line-height:1.12}
-h1{font-size:clamp(2.8rem,6vw,5.3rem);max-width:720px}
-h1 em{font-style:normal;color:var(--red)}
-.hero p{font-size:1.05rem;color:var(--muted);max-width:570px;margin:22px 0 27px;line-height:1.85}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--white);line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 8% 5%,rgba(255,52,72,.13),transparent 32%),radial-gradient(ellipse at 94% 32%,rgba(92,78,255,.10),transparent 30%),radial-gradient(ellipse at 50% 100%,rgba(255,52,72,.055),transparent 38%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
+.container{width:min(var(--max),calc(100% - 44px));margin:auto}
+.announcement{padding:9px 15px;text-align:center;background:linear-gradient(90deg,#421019,#171016,#421019);border-bottom:1px solid rgba(255,52,72,.25);font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#ffd9dd}
+.announcement span{color:var(--pink)}
+header{position:sticky;top:0;z-index:50;background:rgba(9,9,12,.76);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--line)}
+.nav{height:79px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{width:44px;height:44px;flex-shrink:0;display:grid;place-items:center;border-radius:15px;background:linear-gradient(145deg,#ff5869,#c51129);box-shadow:0 0 30px rgba(255,52,72,.22);font:800 .85rem Manrope,sans-serif}
+.brand-name{font:800 .78rem/1.3 Manrope,sans-serif;letter-spacing:.035em}
+.brand-name small{display:block;color:#a9a9b7;font-size:.63rem;letter-spacing:.22em;margin-top:4px}
+.navlinks{display:flex;align-items:center;gap:25px;color:#c1c1cc;font-size:.84rem}
+.navlinks a{transition:color .2s}
+.navlinks a:hover{color:var(--pink)}
+.navright{display:flex;align-items:center;gap:9px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:999px;padding:12px 19px;font-weight:800;font-size:.84rem;transition:transform .22s,border-color .22s,background .22s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#ff4a5d,#d71931);color:#fff;box-shadow:0 8px 28px rgba(255,52,72,.17)}
+.primary:hover{background:linear-gradient(135deg,#ff6574,#e01b35)}
+.glass-btn{background:rgba(255,255,255,.055);border-color:var(--line);color:#fff}
+.glass-btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+.small{padding:10px 15px;font-size:.78rem}
+.menu{display:none;width:43px;height:43px;border-radius:13px;border:1px solid var(--line);background:var(--panel);color:white;font-size:1.25rem}
+.mobile-nav{display:none;padding:8px 0 20px}
+.mobile-nav.open{display:grid;gap:7px}
+.mobile-nav a{padding:12px 15px;border:1px solid var(--line);border-radius:12px;color:#dddde7;background:rgba(255,255,255,.035)}
+.hero{padding:100px 0 80px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:60px}
+.kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,80,98,.27);background:rgba(255,52,72,.075);border-radius:999px;padding:8px 13px;color:#ff9ba5;font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:23px}
+.kicker-dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red)}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;letter-spacing:-.055em;line-height:1.13}
+h1{font-size:clamp(3.1rem,6.7vw,6.2rem);font-weight:800;max-width:730px}
+.gradient-text{background:linear-gradient(105deg,#fff 5%,#ff9ba5 45%,#ff3448 80%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-copy{font-size:1.02rem;color:#b5b5c2;max-width:590px;line-height:1.95;margin:25px 0 29px}
 .actions{display:flex;gap:11px;flex-wrap:wrap}
-.hero-note{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
-.tag{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;font-size:.76rem;color:#55585e}
-.hero-panel{background:var(--ink);color:#fff;border-radius:30px;padding:28px;min-height:380px;position:relative;overflow:hidden}
-.hero-panel:after{content:"LDU";position:absolute;font-family:Manrope,sans-serif;font-size:10rem;font-weight:800;color:rgba(255,255,255,.045);right:-8px;bottom:-48px;letter-spacing:-.1em}
-.panel-top{display:flex;justify-content:space-between;gap:15px;align-items:center}
-.panel-label{font-size:.74rem;color:#b9bbc1}
-.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#72dfac;margin-right:7px}
-.mini-chart{width:100%;height:190px;margin:24px 0 20px;background:linear-gradient(180deg,#202126,#18191d);border:1px solid #33343a;border-radius:18px}
-.panel-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.panel-stat{border:1px solid #37383d;border-radius:15px;padding:14px}
-.panel-stat small{display:block;color:#a9abb2;font-size:.7rem;margin-bottom:5px}.panel-stat strong{font-size:.95rem}
-.section{padding:78px 0}
-.section-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:29px}
-.section-head h2{font-size:clamp(2rem,4vw,3.1rem);max-width:680px}
-.section-head p{max-width:490px;color:var(--muted);font-size:.94rem}
-.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--red);font-weight:800;margin-bottom:12px}
-.featured{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.product{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;display:flex;flex-direction:column;min-height:285px;position:relative}
-.product.recommended{border:1.5px solid var(--red);box-shadow:0 10px 32px rgba(217,39,54,.08)}
-.recommend{align-self:flex-start;background:var(--soft);color:var(--red-dark);font-size:.68rem;letter-spacing:.07em;font-weight:900;text-transform:uppercase;border-radius:999px;padding:6px 10px;margin-bottom:16px}
-.product h3{font-size:1.35rem;margin-bottom:11px}
-.product p{color:var(--muted);font-size:.88rem;line-height:1.75}
-.price{font-family:Manrope,sans-serif;font-weight:800;font-size:1.7rem;letter-spacing:-.04em;margin:20px 0 16px}
-.price small{font-family:"DM Sans",sans-serif;font-size:.75rem;color:var(--muted);font-weight:500;letter-spacing:0}
-.product .btn{width:100%;margin-top:auto}
-.product-link{color:var(--red);font-size:.83rem;font-weight:800;margin-top:12px}
-.store-layout{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
-.selector-panel,.checkout-panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px}
-.selector-panel h3,.checkout-panel h3{font-size:1.35rem;margin-bottom:7px}
-.subtext{color:var(--muted);font-size:.85rem;margin-bottom:20px}
-.choice{display:flex;gap:9px;align-items:center;padding:12px 13px;border:1px solid var(--line);border-radius:14px;background:#fff;min-width:0;transition:.18s}.choice:has(input:checked){border-color:var(--red);background:#fff6f6;box-shadow:0 5px 18px rgba(217,39,54,.07)}
-.choice:last-child{border-bottom:0}
-.choice input{accent-color:var(--red);width:18px;height:18px;margin-top:4px;flex-shrink:0}
-.choice-copy{flex:1}
-.choice-copy strong{display:block;font-size:.9rem}
-.choice-copy small{display:block;color:var(--muted);font-size:.72rem;margin-top:2px}.choice-copy{min-width:0}.choice-copy strong{font-size:.83rem;line-height:1.35}.choice-price{font-size:.78rem}
-.choice-price{font-weight:800;font-size:.88rem;white-space:nowrap}
-.qty-note{font-size:.75rem;color:var(--muted)}
-.checkout-panel{position:relative;top:auto;background:linear-gradient(135deg,#17181d,#25262d);color:#fff;border-color:#303139;box-shadow:0 18px 45px rgba(21,22,25,.12)}
-.checkout-panel .subtext{color:#b7b9c0}
-.checkout-items{display:grid;gap:10px;margin:17px 0}
-.checkout-line{display:flex;justify-content:space-between;gap:12px;font-size:.85rem;color:#dedfe3}
-.checkout-line span:last-child{white-space:nowrap}
-.total-line{border-top:1px solid #393a40;padding-top:15px;margin-top:15px;display:flex;justify-content:space-between;gap:12px;align-items:center}
-.total-line strong{font-size:1.6rem;font-family:Manrope,sans-serif}
-.discount{color:#83e2b2;font-size:.83rem;margin-top:8px}
-.checkout-panel .btn{width:100%;margin-top:19px}.selector-panel{background:linear-gradient(180deg,#fff,#fbfaf9)}#choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.checkout-items{max-height:220px;overflow:auto}.product{box-shadow:0 12px 30px rgba(20,20,24,.035);transition:transform .2s,box-shadow .2s}.product:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(20,20,24,.09)}.rebrand-section{background:#141519;color:#fff;position:relative;overflow:hidden}.rebrand-section:before{content:"LDU";position:absolute;right:-20px;top:-85px;font:900 clamp(10rem,25vw,22rem)/1 Manrope,sans-serif;letter-spacing:-.1em;color:rgba(255,255,255,.035);pointer-events:none}.rebrand-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}.rebrand-copy p{color:#c3c4ca;margin:18px 0;max-width:650px}.rebrand-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rebrand-point{border:1px solid #34353c;border-radius:18px;padding:20px;background:linear-gradient(145deg,#202126,#17181c)}.rebrand-point b{display:block;font-size:1rem;margin-bottom:8px}.rebrand-point p{font-size:.82rem;color:#b4b6bd;margin:0}.rebrand-label{color:#ff6873;font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.signal-highlight{border:1px solid #f0c4c8;background:linear-gradient(135deg,#fff,#fff1f2)}.free-tag{display:inline-flex;background:#e3f6eb;color:#146b43;border-radius:999px;padding:5px 9px;font-size:.68rem;font-weight:900;margin-bottom:12px}
-.secure-note{font-size:.72rem;color:#aeb0b8;text-align:center;margin-top:12px}
-.form-label{font-size:.78rem;font-weight:800;display:block;margin:15px 0 6px}
-.checkout-panel input,.checkout-panel select{width:100%;padding:12px 13px;border-radius:11px;border:1px solid #42434a;background:#222329;color:white}
-.ad-banner{background:var(--soft);border:1px solid #f1c8cc;border-radius:var(--radius);padding:26px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.ad-banner h3{font-size:1.45rem;margin-bottom:7px}.ad-banner p{color:#6d4a4d;font-size:.88rem}
-.ad-label{font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;color:var(--red-dark);font-weight:900;margin-bottom:10px}
-.pattern-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.pattern{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;display:flex;flex-direction:column;justify-content:space-between;min-height:112px}
-.pattern h3{font-size:.95rem;line-height:1.3;margin:0 0 12px}.pattern .btn{width:100%;padding:10px 12px;font-size:.8rem}.pattern-badge{display:inline-flex;align-self:flex-start;border-radius:999px;padding:5px 8px;font-size:.62rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:9px;background:#fff0f1;color:#a71928}.pattern-badge.recommended{background:#fff3d8;color:#875500}.promo-modal{position:fixed;inset:0;background:rgba(12,13,16,.76);z-index:120;display:none;align-items:center;justify-content:center;padding:16px}.promo-modal.open{display:flex}.promo-dialog{position:relative;width:min(100%,520px);max-height:88vh;overflow:auto;border-radius:24px;padding:clamp(22px,5vw,34px);background:linear-gradient(145deg,#fff,#fff5f5);box-shadow:0 30px 100px #0006;border:1px solid #f2c5ca}.promo-kicker{display:inline-block;background:#17181d;color:#fff;border-radius:999px;padding:7px 11px;font-size:.66rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.promo-dialog h3{font-size:clamp(1.55rem,5vw,2.2rem);line-height:1.1;margin:16px 0 12px}.promo-dialog p{color:#62636a;font-size:.9rem;line-height:1.7}.promo-offers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.promo-offer{border:1px solid #e5d7d8;border-radius:16px;background:#fff;padding:14px}.promo-offer strong{display:block;font-size:.88rem;line-height:1.4}.promo-offer small{display:block;color:#777;font-size:.74rem;margin-top:6px}.promo-dialog .close-modal{position:absolute;right:13px;top:13px;border:0;background:#eee;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer}.promo-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.promo-actions .btn{width:100%;padding:12px 8px;font-size:.82rem}@media(max-width:420px){.promo-offers{grid-template-columns:1fr}.promo-actions{grid-template-columns:1fr}}
-.pattern-modal{position:fixed;inset:0;background:rgba(12,13,16,.68);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
-.pattern-modal.open{display:flex}.pattern-dialog{background:#fff;border-radius:22px;padding:25px;width:min(100%,480px);max-height:85vh;overflow:auto;box-shadow:0 25px 80px #0005;position:relative}
-.pattern-dialog h3{font-size:1.45rem;margin:6px 0 12px}.pattern-dialog p{color:var(--muted);font-size:.92rem}.pattern-dialog .detail-price{font-size:1.35rem;font-weight:900;margin:18px 0 12px}.pattern-dialog .close-modal{position:absolute;right:14px;top:12px;border:0;background:#f2f2f0;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer}
-@media(max-width:560px){.pattern-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pattern{padding:11px;min-height:96px;border-radius:13px}.pattern h3{font-size:.82rem;margin-bottom:8px}.pattern .btn{font-size:.72rem;padding:9px 6px}.pattern-dialog{padding:22px}}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px}
-.step-num{color:var(--red);font-weight:900;font-size:.76rem;letter-spacing:.1em}
-.step h3{font-size:1.1rem;margin:13px 0 9px}.step p{font-size:.86rem;color:var(--muted)}
-.faq{max-width:850px;display:grid;gap:10px}
-details{background:#fff;border:1px solid var(--line);border-radius:15px;padding:0 18px}
-summary{cursor:pointer;list-style:none;font-weight:800;padding:18px 25px 18px 0;position:relative}
-summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:0;color:var(--red);font-size:1.25rem}details[open] summary:after{content:"−"}
-details p{color:var(--muted);font-size:.87rem;padding:0 0 18px}
-footer{background:#151619;color:#fff;padding:45px 0 25px}
-.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-footer p,footer a{color:#b8bac1;font-size:.82rem}footer .brand{color:white}footer .brand small{color:#aaa}
-.footer-links{display:flex;gap:18px;flex-wrap:wrap}
-.disclaimer{border-top:1px solid #393a40;margin-top:30px;padding-top:20px;font-size:.72rem;line-height:1.8;color:#888b93}
-.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#151619;color:#fff;padding:12px 17px;border-radius:12px;z-index:50;display:none;max-width:calc(100% - 28px);font-size:.85rem;box-shadow:0 8px 30px #0002}
-@media(max-width:900px){.navlinks{display:none}.menu{display:block}.hero-grid,.store-layout,.rebrand-grid{grid-template-columns:1fr}.checkout-panel{position:static}.product-grid{grid-template-columns:repeat(2,1fr)}.pattern-list{grid-template-columns:repeat(3,minmax(0,1fr))}.section-head{display:block}.section-head p{margin-top:12px}.hero{padding-top:55px}}
-@media(max-width:560px){.container{width:calc(100% - 28px)}#choices{grid-template-columns:1fr}.choice{padding:11px}.choice-price{font-size:.75rem}.rebrand-points{grid-template-columns:1fr}.hero-grid{gap:28px}.nav{height:68px}.brand{font-size:.83rem}.brand small{font-size:.56rem}.navright .secondary{display:none}.hero{padding:45px 0}.hero-panel{padding:20px;min-height:0}.product-grid,.steps{grid-template-columns:1fr}.product{min-height:0}.pattern-list{grid-template-columns:repeat(2,minmax(0,1fr))}.ad-banner{display:block}.ad-banner .btn{margin-top:16px;width:100%}.section{padding:58px 0}.section-head{margin-bottom:22px}.selector-panel,.checkout-panel{padding:19px}.choice-price{font-size:.8rem}}
+.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
+.chip{border:1px solid var(--line);background:rgba(255,255,255,.035);padding:7px 11px;border-radius:999px;font-size:.72rem;color:#c6c6d0}
+.hero-visual{position:relative;min-width:0}
+.visual-glow{position:absolute;inset:10% 3%;background:var(--red);filter:blur(95px);opacity:.15;pointer-events:none}
+.terminal{position:relative;background:linear-gradient(145deg,rgba(30,30,39,.94),rgba(12,12,17,.94));border:1px solid rgba(255,255,255,.16);border-radius:29px;padding:24px;box-shadow:0 30px 100px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.08);overflow:hidden}
+.terminal:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.055),transparent 40%);pointer-events:none}
+.terminal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.terminal-title{font:800 .88rem Manrope,sans-serif}
+.terminal-sub{font-size:.72rem;color:var(--muted);margin-top:5px}
+.window-dots{display:flex;gap:5px}
+.window-dots i{display:block;width:7px;height:7px;border-radius:50%;background:#555560}
+.window-dots i:first-child{background:#ff5c69}
+.chart{width:100%;height:auto;display:block;margin:22px 0 16px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(0,0,0,.19)}
+.terminal-bottom{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.terminal-stat{padding:14px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.035)}
+.terminal-stat small{display:block;color:#9696a5;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.terminal-stat strong{font-size:.82rem}
+.visual-caption{font-size:.68rem;color:#858592;text-align:center;margin-top:13px}
+.section{padding:94px 0}
+.section-alt{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.012));border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:37px}
+.eyebrow{font-size:.69rem;letter-spacing:.19em;text-transform:uppercase;font-weight:800;color:#ff7480;margin-bottom:13px}
+.section-head h2,.section-title{font-size:clamp(2.1rem,4.5vw,3.8rem);max-width:720px}
+.section-head p{max-width:480px;color:var(--muted);font-size:.9rem;line-height:1.85}
+.section-intro{color:var(--muted);max-width:720px;margin-top:16px;line-height:1.9}
+.glass-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border-radius:var(--radius);box-shadow:inset 0 1px rgba(255,255,255,.035);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.mission-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:19px}
+.mission-card{padding:34px;position:relative;overflow:hidden}
+.mission-card h3{font-size:1.55rem;margin-bottom:13px}
+.mission-card p{color:#b1b1be;font-size:.9rem;line-height:1.9}
+.mission-symbol{font-size:2rem;color:var(--pink);margin-bottom:18px}
+.mission-side{display:grid;gap:15px}
+.mini-feature{padding:23px;display:flex;gap:17px;align-items:flex-start}
+.feature-icon{width:43px;height:43px;display:grid;place-items:center;flex-shrink:0;border-radius:14px;background:rgba(255,52,72,.12);border:1px solid rgba(255,52,72,.23);color:#ff8791;font-size:1.1rem}
+.mini-feature h3{font-size:1rem;margin-bottom:6px;letter-spacing:-.025em}
+.mini-feature p{color:var(--muted);font-size:.82rem;line-height:1.8}
+.pattern-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pattern-card{padding:25px;position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:345px;transition:transform .25s,border-color .25s,background .25s}
+.pattern-card:hover{transform:translateY(-5px);border-color:rgba(255,91,108,.5);background:linear-gradient(145deg,rgba(255,52,72,.09),rgba(255,255,255,.035))}
+.pattern-card.featured-pattern{border-color:rgba(255,52,72,.42);background:linear-gradient(145deg,rgba(255,52,72,.11),rgba(255,255,255,.035))}
+.pattern-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:21px}
+.pattern-index{font:800 .7rem Manrope,sans-serif;color:#ff8490;letter-spacing:.14em}
+.pattern-tag{font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800;padding:6px 9px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:#d7d7e0;background:rgba(255,255,255,.04)}
+.pattern-tag.featured-tag{color:#ff9ca5;background:rgba(255,52,72,.1);border-color:rgba(255,52,72,.24)}
+.pattern-card h3{font-size:1.32rem;margin-bottom:13px;letter-spacing:-.04em}
+.pattern-card p{font-size:.83rem;color:#b0b0bd;line-height:1.85;margin-bottom:18px}
+.pattern-focus{border-top:1px solid var(--line);padding-top:15px;margin-top:auto}
+.pattern-focus small{display:block;font-size:.64rem;text-transform:uppercase;letter-spacing:.12em;color:#ff8792;font-weight:800;margin-bottom:5px}
+.pattern-focus span{font-size:.77rem;color:#d0d0d9}
+.pattern-card .btn{width:100%;margin-top:18px}
+.section-footnote{font-size:.74rem;color:#888896;line-height:1.8;margin-top:20px}
+.dark-feature{position:relative;overflow:hidden}
+.dark-feature:after{content:"LDU";position:absolute;right:-25px;top:-70px;font:800 clamp(9rem,22vw,19rem)/1 Manrope,sans-serif;letter-spacing:-.12em;color:rgba(255,255,255,.025);pointer-events:none}
+.dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;position:relative;z-index:1}
+.dark-copy{padding:18px 0}
+.dark-copy h2{font-size:clamp(2.2rem,4.5vw,3.8rem);margin-bottom:20px}
+.dark-copy p{color:#b0b0be;line-height:1.95;font-size:.92rem;margin-bottom:15px}
+.dark-points{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dark-point{padding:20px;border-radius:18px;border:1px solid #303039;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018))}
+.dark-point strong{display:block;font-size:.9rem;margin-bottom:8px}
+.dark-point p{font-size:.78rem;color:#aaaab7;line-height:1.8}
+.curriculum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.learn-card{padding:25px}
+.learn-number{font:800 .75rem Manrope,sans-serif;color:#ff7480;letter-spacing:.12em}
+.learn-card h3{font-size:1.13rem;margin:14px 0 10px}
+.learn-card p{font-size:.83rem;color:var(--muted);line-height:1.85}
+.learn-card ul{padding-left:18px;margin-top:14px;color:#b9b9c5;font-size:.79rem}
+.learn-card li{margin:7px 0}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.path-card{padding:25px}
+.path-number{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;background:rgba(255,52,72,.12);color:#ff8b95;font-weight:800;font-size:.78rem}
+.path-card h3{font-size:1.12rem;margin:16px 0 8px}
+.path-card p{font-size:.83rem;color:var(--muted);line-height:1.85}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.benefit{padding:22px}
+.benefit .feature-icon{margin-bottom:15px}
+.benefit h3{font-size:.98rem;margin-bottom:8px;letter-spacing:-.025em}
+.benefit p{font-size:.78rem;color:var(--muted);line-height:1.8}
+.founder-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center}
+.founder-art{min-height:400px;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.13);background:radial-gradient(circle at 50% 35%,rgba(255,52,72,.25),transparent 43%),linear-gradient(145deg,#19191f,#0c0c10)}
+.founder-art:before,.founder-art:after{content:"";position:absolute;border:1px solid rgba(255,99,116,.24);border-radius:50%;width:280px;height:280px}
+.founder-art:after{width:360px;height:360px;border-color:rgba(255,255,255,.07)}
+.founder-monogram{position:relative;z-index:1;font:800 clamp(4rem,10vw,7rem)/1 Manrope,sans-serif;letter-spacing:-.1em;color:#fff;text-shadow:0 0 50px rgba(255,52,72,.3)}
+.founder-caption{position:absolute;bottom:24px;left:24px;right:24px;text-align:center;color:#c4c4cf;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.founder-copy h2{font-size:clamp(2.2rem,4vw,3.5rem);margin-bottom:16px}
+.founder-copy p{color:#b0b0bd;font-size:.9rem;line-height:1.95;margin-bottom:15px}
+.founder-label{display:inline-flex;border:1px solid rgba(255,52,72,.28);background:rgba(255,52,72,.08);border-radius:999px;padding:7px 11px;color:#ff9aa4;font-size:.68rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;margin-bottom:17px}
+.story-panel{padding:28px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:20px;margin-top:22px}
+.story-panel h3{font-size:1.05rem;margin-bottom:9px}
+.story-panel p{font-size:.82rem;color:var(--muted);line-height:1.85;margin:0}
+.review-panel{padding:28px;display:flex;gap:17px;align-items:flex-start}
+.review-icon{font-size:1.4rem;color:#ff8590}
+.review-panel h3{font-size:1.05rem;margin-bottom:8px}
+.review-panel p{font-size:.84rem;color:var(--muted);line-height:1.85}
+.faq{display:grid;gap:10px;max-width:900px}
+details{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:16px;padding:0 20px}
+summary{list-style:none;cursor:pointer;position:relative;padding:19px 30px 19px 0;font-size:.89rem;font-weight:800}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:0;top:16px;color:#ff7480;font-size:1.3rem}
+details[open] summary:after{content:"−"}
+details p{font-size:.83rem;color:var(--muted);line-height:1.9;padding:0 0 20px}
+.cta-section{padding:35px 0 95px}
+.cta-panel{padding:clamp(30px,6vw,62px);text-align:center;position:relative;overflow:hidden;border:1px solid rgba(255,52,72,.26);background:radial-gradient(ellipse at 50% 120%,rgba(255,52,72,.19),transparent 65%),linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));border-radius:30px}
+.cta-panel h2{font-size:clamp(2.2rem,5vw,4rem);max-width:800px;margin:0 auto 17px}
+.cta-panel p{max-width:650px;margin:0 auto 26px;color:#b7b7c4;font-size:.91rem;line-height:1.9}
+.cta-panel .actions{justify-content:center}
+footer{border-top:1px solid var(--line);background:rgba(0,0,0,.23);padding:44px 0 25px}
+.footer-top{display:flex;justify-content:space-between;gap:28px;align-items:flex-start;flex-wrap:wrap}
+.footer-description{max-width:390px;color:#9696a4;font-size:.79rem;line-height:1.9;margin-top:15px}
+.footer-col h3{font-size:.77rem;letter-spacing:.05em;margin-bottom:13px}
+.footer-links{display:grid;gap:9px}
+.footer-links a{font-size:.78rem;color:#a6a6b3}
+.footer-links a:hover{color:var(--pink)}
+.footer-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#7f7f8d;font-size:.7rem}
+.disclaimer{max-width:900px;line-height:1.85}
+.modal-backdrop{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);display:none;align-items:center;justify-content:center;padding:18px}
+.modal-backdrop.open{display:flex}
+.modal{position:relative;width:min(100%,590px);max-height:88vh;overflow:auto;border:1px solid rgba(255,255,255,.17);border-radius:25px;padding:30px;background:linear-gradient(145deg,#1c1c25,#0d0d12);box-shadow:0 30px 100px rgba(0,0,0,.6)}
+.modal-close{position:absolute;right:14px;top:14px;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.07);color:white;font-size:1.2rem}
+.modal-kicker{font-size:.68rem;color:#ff8490;font-weight:800;text-transform:uppercase;letter-spacing:.14em}
+.modal h2{font-size:clamp(1.7rem,5vw,2.4rem);margin:13px 40px 15px 0}
+.modal p{font-size:.88rem;line-height:1.9;color:#b7b7c4;margin-bottom:13px}
+.modal-note{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:15px;padding:16px;margin:20px 0;font-size:.78rem;color:#c1c1cc;line-height:1.8}
+.modal .actions{margin-top:18px}
+.promo-card{border-color:rgba(255,52,72,.32);background:radial-gradient(ellipse at 90% 0,rgba(255,52,72,.16),transparent 45%),linear-gradient(145deg,#1c1c24,#0c0c11)}
+.promo-label{display:inline-block;background:rgba(255,52,72,.13);border:1px solid rgba(255,52,72,.25);color:#ff9aa4;border-radius:999px;padding:7px 10px;font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:150;display:none;max-width:calc(100% - 30px);padding:12px 17px;border-radius:13px;background:#24242c;border:1px solid var(--line);color:white;font-size:.82rem;box-shadow:0 10px 40px #0007}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media(max-width:1000px){
+ .navlinks{gap:14px}.navright .member-button{display:none}
+ .hero-grid{gap:35px}.hero{padding-top:75px}
+ .pattern-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .benefit-grid{grid-template-columns:repeat(2,1fr)}
+ .mission-grid,.dark-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .container{width:calc(100% - 32px)}
+ .nav{height:70px}.navlinks{display:none}.menu{display:block}
+ .navright .glass-btn{display:none}
+ .hero{padding:62px 0 55px}
+ .hero-grid{grid-template-columns:1fr;gap:35px}
+ h1{font-size:clamp(3rem,12vw,5rem)}
+ .hero-copy{font-size:.94rem}
+ .terminal{padding:18px}
+ .section{padding:70px 0}
+ .section-head{display:block}
+ .section-head p{margin-top:14px}
+ .mission-grid,.dark-grid,.founder-grid{grid-template-columns:1fr}
+ .mission-card{padding:25px}
+ .curriculum-grid,.path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .founder-art{min-height:310px}
+ .footer-top{display:grid;grid-template-columns:1fr 1fr}
+ .footer-brand{grid-column:1/-1}
+}
+@media(max-width:480px){
+ .container{width:calc(100% - 26px)}
+ .announcement{font-size:.58rem;letter-spacing:.09em}
+ .brand-mark{width:39px;height:39px;border-radius:12px}
+ .brand-name{font-size:.66rem}.brand-name small{font-size:.53rem}
+ .navright{gap:6px}.navright .primary{padding:10px 12px;font-size:.7rem}
+ .hero{padding-top:48px}
+ .kicker{font-size:.59rem;letter-spacing:.08em}
+ .actions .btn{width:100%}
+ .hero-meta{gap:7px}.chip{font-size:.65rem}
+ .terminal-bottom{grid-template-columns:1fr 1fr}
+ .terminal-stat{padding:11px}.terminal-stat strong{font-size:.73rem}
+ .section{padding:58px 0}
+ .section-head h2,.section-title{font-size:2.25rem}
+ .pattern-grid,.curriculum-grid,.path-grid{grid-template-columns:1fr}
+ .pattern-card{min-height:0;padding:22px}
+ .pattern-card h3{font-size:1.3rem}
+ .pattern-card .btn{width:100%}
+ .dark-points{grid-template-columns:1fr}
+ .benefit-grid{grid-template-columns:1fr 1fr}
+ .benefit{padding:17px}
+ .benefit h3{font-size:.88rem}
+ .benefit p{font-size:.75rem}
+ .mini-feature{padding:17px}
+ .footer-top{grid-template-columns:1fr 1fr;gap:25px 15px}
+ .footer-brand{grid-column:1/-1}
+ .footer-bottom{display:block}
+ .footer-bottom p+p{margin-top:10px}
+ .modal{padding:24px 20px}
+ .promo-card .actions .btn{width:100%}
+}
 </style>
 </head>
+
 <body>
-<div class="announcement">TRADING EDUCATION • PROPRIETARY PATTERNS • CHOOSE YOUR LEARNING PATH</div>
+<div class="announcement">
+  <span>LIQUIDITY DISPLACEMENT UNIVERSITY™</span> &nbsp;·&nbsp; A NEW STANDARD FOR PATTERN-FOCUSED LEARNING
+</div>
+
 <header>
   <div class="container nav">
-    <a class="brand" href="#home" aria-label="LDU homepage"><span class="brand-mark">LDU</span><span>LIQUIDITY DISPLACEMENT<small>UNIVERSITY™</small></span></a>
+    <a class="brand" href="#home" aria-label="Liquidity Displacement University homepage">
+      <span class="brand-mark">LDU</span>
+      <span class="brand-name">LIQUIDITY DISPLACEMENT<small>UNIVERSITY™</small></span>
+    </a>
+
     <nav class="navlinks" aria-label="Main navigation">
-      <a href="#patterns">Patterns</a><a href="#mentorship">Mentorship</a><a href="#checkout">Build your package</a>
+      <a href="#patterns">Patterns</a>
+      <a href="#university">University</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#founder">Founder</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <div class="navright"><a class="btn secondary small" href="login.html">Student login</a><a class="btn primary small" href="#checkout">Build your package ↗</a><button class="menu" id="menuBtn" aria-label="Show navigation">☰</button></div>
+
+    <div class="navright">
+      <a class="btn glass-btn small" href="login.html">Student login</a>
+      <a class="btn primary small member-button" href="register.html">Join LDU ↗</a>
+      <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation">☰</button>
+    </div>
   </div>
+
+  <nav class="container mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#patterns">Explore patterns</a>
+    <a href="#university">About the university</a>
+    <a href="#curriculum">Learning curriculum</a>
+    <a href="#benefits">Student experience</a>
+    <a href="#founder">Meet the founder</a>
+    <a href="#faq">Frequently asked questions</a>
+    <a href="login.html">Student login</a>
+    <a href="register.html">Student registration</a>
+  </nav>
 </header>
+
 <main id="home">
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="kicker">The next chapter of Forex Wealth Empire</div>
-      <h1>Read the pattern.<br><em>Build your edge.</em></h1>
-      <p>Welcome to Liquidity Displacement University™ — a focused trading education brand built around repeating market behaviour, pattern recognition, disciplined execution and continuous development. Explore our proprietary patterns and choose the learning path that fits you.</p>
-      <div class="actions"><a class="btn primary" href="#patterns">Explore the patterns ↗</a><a class="btn secondary" href="#rebrand">Discover the rebrand ↓</a></div>
-      <div class="hero-note"><span class="tag">Proprietary pattern education</span><span class="tag">Pattern-focused learning</span><span class="tag">Trader community</span></div>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="kicker"><span class="kicker-dot"></span> Beyond indicators. Beyond noise.</div>
+        <h1>See the market.<br><span class="gradient-text">Understand the pattern.</span></h1>
+        <p class="hero-copy">
+          Welcome to Liquidity Displacement University™ — a trading education experience built around repeating market behaviour, proprietary pattern frameworks, structured learning and disciplined decision-making.
+          Learn to study the chart with purpose instead of chasing every movement.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="#patterns">Explore the patterns <span>↗</span></a>
+          <a class="btn glass-btn" href="register.html">Enter the university <span>→</span></a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="chip">Proprietary frameworks</span>
+          <span class="chip">Structured education</span>
+          <span class="chip">Risk-aware learning</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="visual-glow"></div>
+        <div class="terminal">
+          <div class="terminal-head">
+            <div>
+              <div class="terminal-title">LDU · Pattern Intelligence</div>
+              <div class="terminal-sub">Observe · Understand · Review</div>
+            </div>
+            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+
+          <svg class="chart" viewBox="0 0 520 300" role="img" aria-label="Decorative illustration of market movement, not a live trading chart">
+            <defs>
+              <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ff3448" stop-opacity=".28"/>
+                <stop offset="100%" stop-color="#ff3448" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ff8792"/>
+                <stop offset="100%" stop-color="#ff3448"/>
+              </linearGradient>
+            </defs>
+            <g stroke="#ffffff" stroke-opacity=".075" stroke-width="1">
+              <path d="M0 50H520M0 100H520M0 150H520M0 200H520M0 250H520"/>
+              <path d="M65 0V300M130 0V300M195 0V300M260 0V300M325 0V300M390 0V300M455 0V300"/>
+            </g>
+            <path d="M0 230 L30 215 L53 229 L78 185 L100 202 L124 167 L147 179 L169 141 L195 158 L218 115 L240 132 L261 169 L285 148 L307 159 L330 109 L350 121 L372 86 L394 101 L417 66 L440 82 L462 42 L486 59 L520 24 L520 300 L0 300Z" fill="url(#areaFill)"/>
+            <path d="M0 230 L30 215 L53 229 L78 185 L100 202 L124 167 L147 179 L169 141 L195 158 L218 115 L240 132 L261 169 L285 148 L307 159 L330 109 L350 121 L372 86 L394 101 L417 66 L440 82 L462 42 L486 59 L520 24" fill="none" stroke="url(#lineGlow)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="330" cy="109" r="5" fill="#ff3448"/>
+            <circle cx="330" cy="109" r="12" fill="none" stroke="#ff3448" stroke-opacity=".55"/>
+            <path d="M330 109 L330 57 L410 57" stroke="#ff8792" stroke-opacity=".7" stroke-dasharray="4 5" fill="none"/>
+            <text x="417" y="61" fill="#ffb5bc" font-size="11" font-family="DM Sans">Observe</text>
+            <text x="17" y="24" fill="#9e9eac" font-size="10" font-family="DM Sans" letter-spacing="1.5">ILLUSTRATIVE MARKET MOVEMENT</text>
+            <text x="17" y="283" fill="#747482" font-size="10" font-family="DM Sans">Concept artwork · Not live market data</text>
+          </svg>
+
+          <div class="terminal-bottom">
+            <div class="terminal-stat"><small>THE FOUNDATION</small><strong>Pattern recognition</strong></div>
+            <div class="terminal-stat"><small>THE STANDARD</small><strong>Disciplined execution</strong></div>
+          </div>
+        </div>
+        <div class="visual-caption">A learning environment designed around observation, context and process.</div>
+      </div>
     </div>
-    <div class="hero-panel">
-      <div class="panel-top"><div><strong>Liquidity Displacement University™</strong><div class="panel-label">Pattern learning · Mentorship</div></div><span class="panel-label"><span class="live-dot"></span>ONLINE</span></div>
-      <svg class="mini-chart" viewBox="0 0 500 200" role="img" aria-label="Decorative illustration of price movement">
-        <g stroke="#34353b" stroke-width="1"><path d="M0 40H500M0 80H500M0 120H500M0 160H500"/><path d="M70 0V200M140 0V200M210 0V200M280 0V200M350 0V200M420 0V200"/></g>
-        <path d="M0 155 L28 145 L50 160 L80 110 L105 126 L132 90 L155 106 L184 72 L208 92 L238 48 L265 68 L290 90 L315 62 L345 78 L374 40 L400 55 L428 30 L455 42 L500 15" fill="none" stroke="#ff5663" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M0 155 L28 145 L50 160 L80 110 L105 126 L132 90 L155 106 L184 72 L208 92 L238 48 L265 68 L290 90 L315 62 L345 78 L374 40 L400 55 L428 30 L455 42 L500 15 L500 200 L0 200Z" fill="#d92736" opacity=".12"/>
-        <text x="16" y="23" fill="#aeb0b8" font-size="10">ILLUSTRATIVE MARKET MOVEMENT</text>
-      </svg>
-      <div class="panel-bottom"><div class="panel-stat"><small>START WITH</small><strong>Pattern recognition</strong></div><div class="panel-stat"><small>BUILD WITH</small><strong>Discipline &amp; review</strong></div></div>
+  </section>
+
+  <section class="section section-alt" id="university">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">The university philosophy</div><h2>Education built around how markets repeat.</h2></div>
+        <p>Not a promise of instant success. A place to study price behaviour, understand a framework and develop a more deliberate approach to trading.</p>
+      </div>
+
+      <div class="mission-grid">
+        <article class="glass-card mission-card reveal">
+          <div class="mission-symbol" aria-hidden="true">◈</div>
+          <h3>Our mission</h3>
+          <p>
+            To provide structured trading education that helps learners recognise recurring market behaviour, understand the logic of a chosen framework, practise with discipline and review their decisions responsibly.
+          </p>
+          <p style="margin-top:14px">
+            Our approach puts the learning process first: observe the market, identify the relevant pattern, wait for the required conditions, manage risk and review the outcome.
+          </p>
+        </article>
+
+        <div class="mission-side">
+          <article class="glass-card mini-feature reveal">
+            <div class="feature-icon" aria-hidden="true">⌁</div>
+            <div><h3>Pattern-first thinking</h3><p>Study recurring behaviour and market context instead of treating every candle as a trading opportunity.</p></div>
+          </article>
+          <article class="glass-card mini-feature reveal">
+            <div class="feature-icon" aria-hidden="true">◎</div>
+            <div><h3>Process over impulse</h3><p>Learn to document decisions, recognise uncertainty and practise consistent risk awareness.</p></div>
+          </article>
+          <article class="glass-card mini-feature reveal">
+            <div class="feature-icon" aria-hidden="true">↗</div>
+            <div><h3>Continuous development</h3><p>Use educational material and review habits to refine your understanding over time.</p></div>
+          </article>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section rebrand-section" id="rebrand">
-<div class="container rebrand-grid">
-  <div class="rebrand-copy">
-    <div class="rebrand-label">A brand evolution · Built on a bigger vision</div>
-    <h2 style="font-size:clamp(2.2rem,4.5vw,3.6rem);margin-top:14px">Forex Wealth Empire is evolving into <span style="color:#ff6873">Liquidity Displacement University™.</span></h2>
-    <p>This is more than a new name or a fresh website. Liquidity Displacement University™ is the education-focused next chapter of the Forex Wealth Empire journey — a dedicated home for structured learning, proprietary pattern frameworks and trader development.</p>
-    <p>Our teaching philosophy centres on recognising repeating market behaviour, understanding context, waiting for confirmation and building disciplined execution habits. We want students to learn a process they can review and practise, rather than chase random entries or promises of guaranteed profits.</p>
-    <div class="actions"><a class="btn primary" href="#patterns">Explore learning products ↗</a><a class="btn secondary" style="background:transparent;color:#fff;border-color:#484950" href="register.html">Join the student portal</a></div>
-  </div>
-  <div class="rebrand-points">
-    <article class="rebrand-point"><b>01 · Pattern-first education</b><p>Dedicated learning around LDM and selected proprietary market-pattern frameworks.</p></article>
-    <article class="rebrand-point"><b>02 · A clearer learning path</b><p>Organised learning resources, student access and future course delivery through Whop where configured.</p></article>
-    <article class="rebrand-point"><b>03 · A focused learning path</b><p>Explore each pattern and choose the framework that fits your learning goals.</p></article>
-    <article class="rebrand-point"><b>04 · Community & accountability</b><p>A developing education community focused on process, review, discipline and responsible risk awareness.</p></article>
-  </div>
-</div>
-</section>
+  <section class="section" id="patterns">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">The LDU pattern library</div><h2>Five frameworks. Different ways to study the market.</h2></div>
+        <p>Explore the purpose of each framework before choosing what you want to study. These are educational introductions, not complete entry rules or promises of results.</p>
+      </div>
 
-<section class="section featured" id="patterns">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Explore the frameworks</div><h2>Choose a pattern.</h2></div><p>All available patterns are shown together. Tap any pattern to see how it works and view its offer details.</p></div>
-  <div class="pattern-list">
-    <article class="pattern"><span class="pattern-badge">★ Best Buy</span><h3>Liquidity Displacement Methodology™</h3><button class="btn primary pattern-open" data-pattern="ldm">Explore Best Buy ↗</button></article>
-    <article class="pattern"><span class="pattern-badge recommended">Recommended</span><h3>Smart Money Withdraw Pattern</h3><button class="btn primary pattern-open" data-pattern="withdraw">View Recommendation ↗</button></article>
-    <article class="pattern"><h3>Origin 4 Pattern</h3><button class="btn secondary pattern-open" data-pattern="origin">Explore pattern ↗</button></article>
-    <article class="pattern"><h3>Rejection Architecture Pattern</h3><button class="btn secondary pattern-open" data-pattern="rejection">Explore pattern ↗</button></article>
-    <article class="pattern"><h3>Daily Reload Pattern</h3><button class="btn secondary pattern-open" data-pattern="reload">Explore pattern ↗</button></article>
-  </div>
-  <div id="mentorship" style="margin-top:16px;padding:13px 16px;border:1px solid #cde9d8;background:#f3fbf6;border-radius:14px;font-size:.85rem"><strong>Complimentary mentorship:</strong> included with an eligible pattern purchase.</div>
-</div>
-</section>
+      <div class="pattern-grid">
+        <article class="glass-card pattern-card featured-pattern reveal">
+          <div class="pattern-top"><span class="pattern-index">FRAMEWORK 01</span><span class="pattern-tag featured-tag">Core framework</span></div>
+          <h3>Liquidity Displacement Methodology™</h3>
+          <p>A proprietary framework centred on repeating price behaviour, market context, displacement and confirmation. It encourages learners to recognise a pattern before considering execution.</p>
+          <div class="pattern-focus"><small>Learning focus</small><span>Context · Displacement · Confirmation</span></div>
+          <button class="btn primary pattern-open" data-pattern="ldm">Discover this framework ↗</button>
+        </article>
 
-<section class="section" style="background:#efefec">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Your journey</div><h2>From learning to execution.</h2></div><p>A deliberate learning experience: understand the pattern, practise the process, and keep risk management at the centre of every decision.</p></div>
-  <div class="steps"><article class="step"><div class="step-num">STEP 01</div><h3>Choose what you need</h3><p>Select the pattern or patterns you want to study.</p></article><article class="step"><div class="step-num">STEP 02</div><h3>Review your total</h3><p>Review the selected products and the total before you continue.</p></article><article class="step"><div class="step-num">STEP 03</div><h3>Pay and access</h3><p>After payment-provider verification, access should be granted only to the products the customer purchased.</p></article></div>
-</div>
-</section>
+        <article class="glass-card pattern-card reveal">
+          <div class="pattern-top"><span class="pattern-index">FRAMEWORK 02</span><span class="pattern-tag">Pattern study</span></div>
+          <h3>Smart Money Withdraw Pattern</h3>
+          <p>A dedicated study of liquidity movement, range behaviour and the relationship between a sweep and a reclaim. Learners explore how a market transition may be identified and reviewed.</p>
+          <div class="pattern-focus"><small>Learning focus</small><span>Liquidity movement · Range behaviour</span></div>
+          <button class="btn glass-btn pattern-open" data-pattern="withdraw">Discover this framework ↗</button>
+        </article>
 
-<section class="section" id="checkout">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Pattern checkout</div><h2>Choose your pattern.</h2></div><p>Choose one pattern at a time. Complimentary mentorship is included with an eligible pattern purchase.</p></div>
-  <div class="store-layout">
-    <div class="selector-panel">
-      <h3>01 / Your pattern</h3><p class="subtext">Select one pattern. Your order total will update automatically. You can change your selection before continuing.</p>
-      <div id="choices"></div>
-      <p class="qty-note">Mentorship is complimentary only when at least one pattern is included in your order.</p>
+        <article class="glass-card pattern-card reveal">
+          <div class="pattern-top"><span class="pattern-index">FRAMEWORK 03</span><span class="pattern-tag">Pattern study</span></div>
+          <h3>Origin 4 Pattern</h3>
+          <p>A specialised framework for studying the Origin 4 pattern, its defining visual characteristics and the context in which learners are taught to recognise it.</p>
+          <div class="pattern-focus"><small>Learning focus</small><span>Pattern identification · Context</span></div>
+          <button class="btn glass-btn pattern-open" data-pattern="origin">Discover this framework ↗</button>
+        </article>
+
+        <article class="glass-card pattern-card reveal">
+          <div class="pattern-top"><span class="pattern-index">FRAMEWORK 04</span><span class="pattern-tag">Pattern study</span></div>
+          <h3>Rejection Architecture Pattern</h3>
+          <p>A framework for examining rejection behaviour and the way a price response is assessed within a wider market context, with attention to confirmation and risk.</p>
+          <div class="pattern-focus"><small>Learning focus</small><span>Rejection · Context · Risk awareness</span></div>
+          <button class="btn glass-btn pattern-open" data-pattern="rejection">Discover this framework ↗</button>
+        </article>
+
+        <article class="glass-card pattern-card reveal">
+          <div class="pattern-top"><span class="pattern-index">FRAMEWORK 05</span><span class="pattern-tag">Daily study</span></div>
+          <h3>Daily Reload Pattern</h3>
+          <p>A daily-timeframe approach to studying compression, a break from a prior range, a potential reload area and confirmation. The framework emphasises patience and a defined process.</p>
+          <div class="pattern-focus"><small>Learning focus</small><span>Compression · Break · Reload · Review</span></div>
+          <button class="btn glass-btn pattern-open" data-pattern="reload">Discover this framework ↗</button>
+        </article>
+
+        <article class="glass-card pattern-card reveal" style="background:radial-gradient(ellipse at 90% 0,rgba(255,52,72,.13),transparent 50%),rgba(255,255,255,.025)">
+          <div class="pattern-top"><span class="pattern-index">YOUR NEXT STEP</span><span class="pattern-tag">Student portal</span></div>
+          <h3>Find your learning path.</h3>
+          <p>Explore the university, create your student account and review the learning options available to you after signing in.</p>
+          <div class="pattern-focus"><small>Start here</small><span>Registration · Learning options · Access</span></div>
+          <a class="btn primary" href="register.html">Join the university ↗</a>
+        </article>
+      </div>
+
+      <p class="section-footnote">
+        Framework descriptions are introductory summaries. Full lessons, exact rules, examples and course materials should be provided through the relevant authorised student learning area. No pattern guarantees a profitable trade.
+      </p>
     </div>
-    <aside class="checkout-panel">
-      <h3>02 / Order summary</h3><p class="subtext">Review your selected pattern and complimentary mentorship before continuing.</p>
-      <div class="checkout-items" id="orderItems"><p style="color:#aeb0b8;font-size:.85rem">Your selected products will appear here.</p></div>
-      <div class="total-line"><span>Subtotal</span><span id="subtotal">R0</span></div>
-      <div class="discount" id="discountNote">Select products to see your total.</div>
-      <div class="total-line"><span>Total</span><strong id="grandTotal">R0</strong></div>
-      <label class="form-label" for="customerName">Full name</label><input id="customerName" autocomplete="name" placeholder="Your full name">
-      <label class="form-label" for="customerEmail">Email address</label><input id="customerEmail" type="email" autocomplete="email" placeholder="you@example.com">
-      <button class="btn primary" id="checkoutBtn">Continue to secure checkout ↗</button>
-      <p class="secure-note">Checkout preview only. Live payment and automatic access require payment-provider and product-access integration.</p>
-    </aside>
-  </div>
-</div>
-</section>
+  </section>
 
-<section class="section">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Video learning</div><h2>Learn through Whop. Discover through our website.</h2></div><p>This storefront introduces the LDU learning experience. Course videos can be delivered through Whop, with student access tied to verified purchases once the payment and access systems are connected.</p></div>
-  <div class="ad-banner"><div><div class="ad-label">Student access</div><h3>Already have an account?</h3><p>Keep the existing student login and registration pages while the new storefront is integrated.</p></div><div class="actions"><a class="btn secondary" href="login.html">Student login</a><a class="btn primary" href="register.html">Register ↗</a></div></div>
-</div>
-</section>
+  <section class="section section-alt dark-feature">
+    <div class="container dark-grid">
+      <div class="dark-copy reveal">
+        <div class="eyebrow">A different learning philosophy</div>
+        <h2>Stop collecting noise.<br><span class="gradient-text">Start building understanding.</span></h2>
+        <p>
+          The goal is not to make every chart look like a setup. The goal is to learn what your chosen framework is looking for, recognise when its conditions are absent and accept that some situations call for no trade.
+        </p>
+        <p>
+          LDU places emphasis on study, practice, risk awareness and review. Education can support decision-making, but it cannot remove uncertainty from financial markets.
+        </p>
+        <div class="actions" style="margin-top:24px">
+          <a class="btn primary" href="#curriculum">Explore the curriculum ↗</a>
+          <a class="btn glass-btn" href="login.html">Student login</a>
+        </div>
+      </div>
+      <div class="dark-points reveal">
+        <article class="dark-point"><strong>01 · Observe</strong><p>Learn to slow down, read the broader context and identify the behaviour relevant to your framework.</p></article>
+        <article class="dark-point"><strong>02 · Understand</strong><p>Study the logic, terminology and conditions taught within the selected pattern.</p></article>
+        <article class="dark-point"><strong>03 · Confirm</strong><p>Learn why confirmation matters and why an incomplete setup should not be forced.</p></article>
+        <article class="dark-point"><strong>04 · Review</strong><p>Record decisions, evaluate execution and use mistakes as opportunities to learn.</p></article>
+      </div>
+    </div>
+  </section>
 
-<section class="section">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Common questions</div><h2>Before you purchase.</h2></div></div>
-  <div class="faq">
-    <details><summary>Can I choose only one pattern?</summary><p>Yes. Choose only the pattern or products you want. Mentorship is complimentary when you purchase any eligible pattern.</p></details>
-    <details><summary>Where are the course videos hosted?</summary><p>The planned setup uses Whop to host and deliver course videos. Product access must be connected to verified purchases before launch.</p></details>
-    <details><summary>Does trading education guarantee profits?</summary><p>No. Trading involves risk and losses are possible. Educational content does not guarantee profits or any particular financial result.</p></details>
-  </div>
-</div>
-</section>
+  <section class="section" id="curriculum">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">Inside the learning journey</div><h2>Learn more than a pattern's name.</h2></div>
+        <p>The programme can organise learning around the framework, its context, practical chart study and the habits that support responsible decision-making.</p>
+      </div>
+
+      <div class="curriculum-grid">
+        <article class="glass-card learn-card reveal">
+          <div class="learn-number">MODULE 01</div>
+          <h3>Market observation</h3>
+          <p>Build a foundation for observing price behaviour and describing what is happening without rushing into a decision.</p>
+          <ul><li>Reading market context</li><li>Identifying recurring behaviour</li><li>Distinguishing observation from assumption</li></ul>
+        </article>
+        <article class="glass-card learn-card reveal">
+          <div class="learn-number">MODULE 02</div>
+          <h3>Pattern recognition</h3>
+          <p>Study the selected framework and learn to recognise the characteristics described in its course material.</p>
+          <ul><li>Framework terminology</li><li>Pattern identification</li><li>Understanding when conditions are incomplete</li></ul>
+        </article>
+        <article class="glass-card learn-card reveal">
+          <div class="learn-number">MODULE 03</div>
+          <h3>Confirmation and planning</h3>
+          <p>Understand why a trading idea needs a defined process and why waiting can be part of a disciplined approach.</p>
+          <ul><li>Confirmation concepts</li><li>Trade planning principles</li><li>Recognising invalidation and uncertainty</li></ul>
+        </article>
+        <article class="glass-card learn-card reveal">
+          <div class="learn-number">MODULE 04</div>
+          <h3>Risk awareness</h3>
+          <p>Understand that every trade carries risk and that position sizing and loss limits are important parts of a plan.</p>
+          <ul><li>Risk and reward concepts</li><li>Planning potential losses</li><li>Avoiding impulsive decisions</li></ul>
+        </article>
+        <article class="glass-card learn-card reveal">
+          <div class="learn-number">MODULE 05</div>
+          <h3>Chart study and review</h3>
+          <p>Develop a repeatable habit of studying examples, documenting decisions and reviewing what happened.</p>
+          <ul><li>Chart-marking practice</li><li>Trade journals</li><li>Learning from mistakes and missed setups</li></ul>
+        </article>
+        <article class="glass-card learn-card reveal">
+          <div class="learn-number">MODULE 06</div>
+          <h3>Consistency and discipline</h3>
+          <p>Build routines that encourage patience, responsible risk-taking and continuous improvement.</p>
+          <ul><li>Following a written process</li><li>Emotional discipline</li><li>Ongoing learning and review</li></ul>
+        </article>
+      </div>
+
+      <p class="section-footnote">This is a high-level curriculum overview, not a claim that every module or resource is already published. The actual course contents should match the lessons made available to enrolled students.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="benefits">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">The student experience</div><h2>A home for your trading education.</h2></div>
+        <p>Use the student portal to begin the enrolment process. Access to protected learning materials must be granted according to your verified membership.</p>
+      </div>
+
+      <div class="benefit-grid">
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">▤</div><h3>Structured lessons</h3><p>Organised learning material that explains the relevant framework and its concepts.</p></article>
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">▷</div><h3>Video learning</h3><p>Course videos can be provided through the configured learning platform once available.</p></article>
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">▧</div><h3>PDF resources</h3><p>Downloadable guides and study resources where included in the enrolled course.</p></article>
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">◎</div><h3>Student community</h3><p>Community learning and discussion where the relevant service is configured and available.</p></article>
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">⌁</div><h3>Chart practice</h3><p>Study market examples and build your ability to explain the pattern you observe.</p></article>
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">✓</div><h3>Progress and review</h3><p>Use a structured routine to track study activity and reflect on what you learn.</p></article>
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">↗</div><h3>Learning support</h3><p>Contact the university when you need help with account access or course enquiries.</p></article>
+        <article class="glass-card benefit reveal"><div class="feature-icon" aria-hidden="true">⌑</div><h3>Responsible practice</h3><p>Keep risk management, uncertainty and personal responsibility central to trading.</p></article>
+      </div>
+
+      <div class="story-panel reveal">
+        <h3>How access works</h3>
+        <p>Public visitors can explore the university and its frameworks. Sign in to review member options. Protected course content should only become available after the system verifies the relevant membership or payment. The website must not rely on a hidden button alone to protect paid material.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="founder">
+    <div class="container founder-grid">
+      <div class="founder-art reveal" role="img" aria-label="LDU founder monogram artwork, not a photograph">
+        <div class="founder-monogram">TN</div>
+        <div class="founder-caption">Founder vision · LDU</div>
+      </div>
+      <div class="founder-copy reveal">
+        <div class="founder-label">The vision behind LDU</div>
+        <h2>Built from a belief in patterns, process and discipline.</h2>
+        <p>
+          Liquidity Displacement University™ represents an education-focused chapter built around the study of repeating market behaviour and proprietary pattern frameworks.
+        </p>
+        <p>
+          The aim is to give learners a structured environment to study, practise, question their decisions and develop their understanding of trading over time.
+        </p>
+        <p>
+          Discover the founder's story, background and vision on the dedicated founder page.
+        </p>
+        <div class="actions" style="margin-top:23px">
+          <a class="btn primary" href="founder.html">Meet the founder ↗</a>
+          <a class="btn glass-btn" href="register.html">Join LDU</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">Trust and transparency</div><h2>Real learning. Honest expectations.</h2></div>
+        <p>Trust should be earned through clear course information, transparent access terms and genuine feedback—not fabricated reviews or promises of trading results.</p>
+      </div>
+      <article class="glass-card review-panel reveal">
+        <div class="review-icon" aria-hidden="true">✳</div>
+        <div>
+          <h3>Student feedback will be shared honestly.</h3>
+          <p>Only genuine student feedback, shared with appropriate permission, should be published here. No invented testimonials, fabricated earnings or unsupported success rates are presented on this homepage.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="enrolment">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">Your next move</div><h2>Getting started is straightforward.</h2></div>
+        <p>Explore first, review the available learning options, then complete the enrolment process when you're ready.</p>
+      </div>
+
+      <div class="path-grid">
+        <article class="glass-card path-card reveal"><div class="path-number">01</div><h3>Create your account</h3><p>Register with your details and use your account to access the student portal.</p></article>
+        <article class="glass-card path-card reveal"><div class="path-number">02</div><h3>Review member options</h3><p>Sign in to view the membership information and learning options available through the configured student system.</p></article>
+        <article class="glass-card path-card reveal"><div class="path-number">03</div><h3>Pay and get verified</h3><p>Complete payment through the configured provider. Course access should be granted only after a trusted server verifies payment and membership.</p></article>
+      </div>
+
+      <div class="story-panel reveal">
+        <h3>Already a student?</h3>
+        <p>Return to your account to continue. If you experience login or payment-access issues, contact support rather than sharing your password or payment details in public.</p>
+        <div class="actions" style="margin-top:18px">
+          <a class="btn primary" href="login.html">Student login ↗</a>
+          <a class="btn glass-btn" href="register.html">Create account</a>
+          <a class="btn glass-btn" href="mailto:Naswealthempire@gmail.com">Contact support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">Questions, answered</div><h2>Know what you're joining.</h2></div>
+        <p>Clear information helps you make an informed decision about trading education.</p>
+      </div>
+
+      <div class="faq reveal">
+        <details><summary>What is Liquidity Displacement University™?</summary><p>LDU is a trading education brand focused on proprietary pattern frameworks, repeating market behaviour, structured learning and disciplined decision-making.</p></details>
+        <details><summary>Which patterns can I explore?</summary><p>The public homepage introduces the Liquidity Displacement Methodology™, Smart Money Withdraw Pattern, Origin 4 Pattern, Rejection Architecture Pattern and Daily Reload Pattern.</p></details>
+        <details><summary>Where can I see membership pricing?</summary><p>Pricing is intended for logged-in visitors. The login page must connect to the actual member-pricing experience. Prices and paid resources must also be protected by appropriate backend permissions, not just hidden in the page design.</p></details>
+        <details><summary>Does registration automatically give me paid course access?</summary><p>No. Creating an account and purchasing a course are different steps. Paid access should be granted only after the relevant payment and membership have been verified.</p></details>
+        <details><summary>How will payments be handled?</summary><p>The website can direct students into the configured payment process. Live payment acceptance, payment notifications and automatic course access require a properly integrated provider and secure server-side verification.</p></details>
+        <details><summary>Are the course videos and PDFs available now?</summary><p>Resources should only be described as available when they have actually been published and connected to the student portal. This homepage describes the intended learning experience without claiming that unconfigured features are live.</p></details>
+        <details><summary>Does LDU guarantee profits or funded-account success?</summary><p>No. Trading carries a risk of loss. Education cannot guarantee profits, funded-account approval, payouts or any particular result. Results depend on many factors, and losses are possible.</p></details>
+        <details><summary>Can beginners join?</summary><p>People should review the programme information and prerequisites provided for the particular course before enrolling. Trading involves risk, and beginners should understand the risks before trading with real money.</p></details>
+        <details><summary>How do I get help with my account?</summary><p>Contact <a href="mailto:Naswealthempire@gmail.com" style="color:#ff8b95;text-decoration:underline">Naswealthempire@gmail.com</a> for enquiries. Never send your password or full payment credentials by email.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div class="eyebrow">Your learning journey starts here</div>
+        <h2>Think clearly.<br><span class="gradient-text">Study the pattern.</span></h2>
+        <p>Explore the frameworks, understand the learning approach and take your next step when you're ready. No hype. No guaranteed outcomes. A focus on education and process.</p>
+        <div class="actions">
+          <a class="btn primary" href="register.html">Enter the university ↗</a>
+          <a class="btn glass-btn" href="#patterns">Explore frameworks</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer>
-<div class="container">
-  <div class="footer-top"><a class="brand" href="#home"><span class="brand-mark">LDU</span><span>LIQUIDITY DISPLACEMENT<small>UNIVERSITY™</small></span></a><div class="footer-links"><a href="#patterns">Patterns</a><a href="#mentorship">Mentorship</a><a href="login.html">Student login</a><a href="mailto:Naswealthempire@gmail.com">Contact</a></div></div>
-  <p class="disclaimer">Trading forex, CFDs and other financial products involves substantial risk and may not be suitable for everyone. You may lose some or all of your capital. Educational materials are not personalised financial advice and do not guarantee profits. Past performance does not guarantee future results.</p>
-  <p style="margin-top:18px">© <span id="year"></span> Liquidity Displacement University™. All rights reserved.</p>
-</div>
-</footer>
-<div class="pattern-modal" id="patternModal" role="dialog" aria-modal="true" aria-labelledby="patternModalTitle">
-  <div class="pattern-dialog"><button class="close-modal" id="closePatternModal" aria-label="Close">×</button><div class="eyebrow">Pattern overview</div><h3 id="patternModalTitle">Pattern</h3><p id="patternModalDescription"></p><div class="detail-price" id="patternModalPrice"></div><p style="font-size:.75rem">Offer details are shown here when you choose to open a pattern.</p><button class="btn primary" id="addPatternFromModal" style="width:100%">Choose this pattern +</button></div>
-</div>
-<div class="promo-modal" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
-  <div class="promo-dialog">
-    <button class="close-modal" id="closePromo" aria-label="Close promotion">×</button>
-    <span class="promo-kicker">LDU featured picks</span>
-    <h3 id="promoTitle">Not sure where to start?</h3>
-    <p>Explore two featured frameworks from Liquidity Displacement University™. Open a pattern to see its full overview and offer details before deciding. No trading outcome is guaranteed.</p>
-    <div class="promo-offers">
-      <div class="promo-offer"><strong>★ Best Buy</strong><strong>Liquidity Displacement Methodology™</strong><small>Core pattern framework · structured market reading</small></div>
-      <div class="promo-offer"><strong>Recommended</strong><strong>Smart Money Withdraw Pattern</strong><small>Study liquidity movement, range behaviour and reclaim transitions</small></div>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <span class="brand-mark">LDU</span>
+          <span class="brand-name">LIQUIDITY DISPLACEMENT<small>UNIVERSITY™</small></span>
+        </a>
+        <p class="footer-description">A trading education experience focused on repeating market behaviour, proprietary pattern frameworks, structured learning and responsible decision-making.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <div class="footer-links">
+          <a href="#patterns">Trading patterns</a>
+          <a href="#curriculum">Curriculum</a>
+          <a href="#founder">Founder</a>
+          <a href="#benefits">Student experience</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Student access</h3>
+        <div class="footer-links">
+          <a href="login.html">Student login</a>
+          <a href="register.html">Register</a>
+          <a href="#enrolment">How enrolment works</a>
+          <a href="mailto:Naswealthempire@gmail.com">Contact support</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Information</h3>
+        <div class="footer-links">
+          <a href="#faq">Frequently asked questions</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms and conditions</a>
+          <a href="refund-policy.html">Refund policy</a>
+        </div>
+      </div>
     </div>
-    <div class="promo-actions"><button class="btn primary" id="promoLdm">Explore Best Buy ↗</button><button class="btn secondary" id="promoWithdraw">Explore Recommended ↗</button></div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Liquidity Displacement University™. All rights reserved.</p>
+      <p class="disclaimer">Trading forex, CFDs and other financial products involves substantial risk and may not be suitable for everyone. You may lose some or all of your capital. Educational material is not personalised financial advice and does not guarantee profits or any specific outcome. Past performance does not guarantee future results.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Pattern descriptions: educational overviews, not price or checkout data. -->
+<div class="modal-backdrop" id="patternModal" role="dialog" aria-modal="true" aria-labelledby="patternModalTitle" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" id="closePatternModal" aria-label="Close pattern overview">×</button>
+    <div class="modal-kicker" id="patternModalKicker">LDU framework</div>
+    <h2 id="patternModalTitle">Pattern overview</h2>
+    <p id="patternModalDescription"></p>
+    <div class="modal-note" id="patternModalNote"></div>
+    <div class="actions">
+      <a class="btn primary" href="register.html">Join the university ↗</a>
+      <a class="btn glass-btn" href="login.html">Student login</a>
+    </div>
   </div>
 </div>
+
+<!-- One-time introductory promotion. It does not contain prices or a fake checkout. -->
+<div class="modal-backdrop" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle" aria-hidden="true">
+  <div class="modal promo-card">
+    <button class="modal-close" id="closePromo" aria-label="Close promotion">×</button>
+    <span class="promo-label">Welcome to LDU</span>
+    <h2 id="promoTitle">Your next chapter starts with understanding.</h2>
+    <p>Discover our proprietary pattern frameworks and explore a more structured approach to trading education.</p>
+    <div class="modal-note">Start by exploring the Liquidity Displacement Methodology™ or browse all five frameworks. No trading outcome is guaranteed.</div>
+    <div class="actions">
+      <a class="btn primary" id="promoExplore" href="#patterns">Explore the patterns ↗</a>
+      <button class="btn glass-btn" id="promoLater" type="button">Maybe later</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>
-(function(){
-  const products = {
-    ldm:{name:"Liquidity Displacement Methodology™",price:5000},
-    withdraw:{name:"Smart Money Withdraw Pattern",price:4500},
-    origin:{name:"Origin 4 Pattern",price:2500},
-    rejection:{name:"Rejection Architecture Pattern",price:2500},
-    reload:{name:"Daily Reload Pattern",price:2500},
-    mentorship:{name:"Pattern Buyer Mentorship",price:0}
-  };
-  const patternDetails = {
-    ldm:{name:"Liquidity Displacement Methodology™",price:5000,description:"A proprietary pattern framework focused on reading repeating market behaviour, recognising displacement, and building a structured approach to execution."},
-    withdraw:{name:"Smart Money Withdraw Pattern",price:4500,description:"A dedicated pattern framework designed to help students study liquidity movement, range behaviour and the transition from a sweep into a reclaim."},
-    origin:{name:"Origin 4 Pattern",price:2500,description:"A focused learning framework for studying the Origin 4 pattern, its defining market behaviour and how to recognise its appearance on charts."},
-    rejection:{name:"Rejection Architecture Pattern",price:2500,description:"A pattern-based framework for studying rejection behaviour and learning how to assess a setup with structure, confirmation and risk awareness."},
-    reload:{name:"Daily Reload Pattern",price:2500,description:"A daily-timeframe framework focused on compression, a break of a prior range, a reload area and confirmation before execution."}
-  };
-  const selected = new Set();
-  const money = n => "R" + n.toLocaleString("en-ZA",{maximumFractionDigits:2});
-  const choices = document.getElementById("choices");
-  const toast = document.getElementById("toast");
-  let toastTimer;
-  function showToast(message){toast.textContent=message;toast.style.display="block";clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.style.display="none",3500)}
-  function renderChoices(){
-    choices.innerHTML="";
-    Object.entries(products).forEach(([id,p])=>{
-      const label=document.createElement("label");label.className="choice";
-      const checkbox=document.createElement("input");checkbox.type="checkbox";checkbox.checked=selected.has(id);checkbox.addEventListener("change",()=>{const patternIds=["ldm","withdraw","origin","rejection","reload"];if(checkbox.checked&&patternIds.includes(id)){patternIds.forEach(pid=>selected.delete(pid));selected.add(id);selected.add("mentorship");}else if(checkbox.checked){selected.add(id)}else{selected.delete(id)}renderChoices();renderOrder()});
-      const copy=document.createElement("span");copy.className="choice-copy";
-      const title=document.createElement("strong");title.textContent=p.name;copy.appendChild(title);
-      const note=document.createElement("small");note.textContent=id==="mentorship"?"Free with any pattern purchase":p.price===0?"Complimentary bonus":"One-time purchase";copy.appendChild(note);
-      const price=document.createElement("span");price.className="choice-price";price.textContent=id==="mentorship"?"FREE":money(p.price);
-      label.append(checkbox,copy,price);choices.appendChild(label);
-    });
-  }
-  function renderOrder(){
-    const list=document.getElementById("orderItems");list.innerHTML="";
-    const ids=[...selected];
-    if(!ids.length){list.innerHTML='<p style="color:#aeb0b8;font-size:.85rem">Your selected products will appear here.</p>'}
-    let subtotal=0, unknown=[];
-    ids.forEach(id=>{
-      const p=products[id];const row=document.createElement("div");row.className="checkout-line";
-      const name=document.createElement("span");name.textContent=p.name;
-      const price=document.createElement("span");price.textContent=id==="mentorship"?"FREE with pattern":money(p.price);
-      row.append(name,price);list.appendChild(row);
-      if(p.price===null)unknown.push(p.name);else subtotal+=p.price;
-    });
-    const patterns=["ldm","withdraw","origin","rejection","reload"];
-    const hasPattern=ids.some(id=>patterns.includes(id));
-    const mentorshipInvalid=selected.has("mentorship")&&!hasPattern;
-    document.getElementById("subtotal").textContent=money(subtotal);
-    document.getElementById("grandTotal").textContent=money(subtotal);
-    document.getElementById("discountNote").textContent=mentorshipInvalid?"Add at least one pattern to unlock free mentorship.":unknown.length?"Price required for: "+unknown.join(", ")+". Total is incomplete.":selected.has("mentorship")?"Free mentorship unlocked with your pattern purchase.":"Mentorship becomes free when you add any pattern.";
-    document.getElementById("checkoutBtn").disabled=!ids.length||unknown.length>0||mentorshipInvalid;
-    document.getElementById("checkoutBtn").style.opacity=(!ids.length||unknown.length>0||mentorshipInvalid)?".55":"1";
-  }
-  let activePattern = null;
-  const patternModal = document.getElementById("patternModal");
-  document.querySelectorAll(".pattern-open").forEach(btn=>btn.addEventListener("click",()=>{
-    activePattern=btn.dataset.pattern;const item=patternDetails[activePattern];
-    document.getElementById("patternModalTitle").textContent=item.name;
-    document.getElementById("patternModalDescription").textContent=item.description;
-    document.getElementById("patternModalPrice").textContent=money(item.price)+" · once-off";
-    patternModal.classList.add("open");
-  }));
-  function closePatternModal(){patternModal.classList.remove("open")}
-  document.getElementById("closePatternModal").addEventListener("click",closePatternModal);
-  patternModal.addEventListener("click",e=>{if(e.target===patternModal)closePatternModal()});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape"){closePatternModal();closePromoModal()}});
-  const promoModal=document.getElementById("promoModal");
-  let promoTimer=null;
-  function closePromoModal(){promoModal.classList.remove("open");}
-  function openPatternById(id){activePattern=id;const item=patternDetails[id];document.getElementById("patternModalTitle").textContent=item.name;document.getElementById("patternModalDescription").textContent=item.description;document.getElementById("patternModalPrice").textContent=money(item.price)+" · once-off";promoModal.classList.remove("open");patternModal.classList.add("open");}
-  document.getElementById("closePromo").addEventListener("click",closePromoModal);
-  promoModal.addEventListener("click",e=>{if(e.target===promoModal)closePromoModal()});
-  document.getElementById("promoLdm").addEventListener("click",()=>openPatternById("ldm"));
-  document.getElementById("promoWithdraw").addEventListener("click",()=>openPatternById("withdraw"));
-  function schedulePromo(){promoTimer=setTimeout(()=>{if(!patternModal.classList.contains("open")){promoModal.classList.add("open")}schedulePromo()},20000)}
-  schedulePromo();
-  document.getElementById("addPatternFromModal").addEventListener("click",()=>{
-    if(!activePattern)return;["ldm","withdraw","origin","rejection","reload"].forEach(id=>selected.delete(id));selected.add(activePattern);selected.add("mentorship");renderChoices();renderOrder();closePatternModal();
-    showToast("Pattern selected. Complimentary mentorship has been added.");
-    document.getElementById("checkout").scrollIntoView({behavior:"smooth"});
-  });
-  document.querySelectorAll(".add-product").forEach(btn=>btn.addEventListener("click",()=>{
-    const id=btn.dataset.product;selected.add(id);renderChoices();renderOrder();document.getElementById("checkout").scrollIntoView({behavior:"smooth"});showToast(id==="mentorship"&&!([...selected].some(x=>["ldm","withdraw","origin","rejection","reload"].includes(x)))?"Mentorship is free with a pattern purchase. Add a pattern to unlock it.":"Added to your package.");
-  }));
-  document.getElementById("checkoutBtn").addEventListener("click",()=>{
-    if(!selected.size){showToast("Please select at least one product.");return}
-    const name=document.getElementById("customerName").value.trim();
-    const email=document.getElementById("customerEmail").value.trim();
-    if(!name||!email){showToast("Enter your name and email to continue.");return}
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showToast("Enter a valid email address.");return}
-    const patterns=["ldm","withdraw","origin","rejection","reload"];
-    if(selected.has("mentorship")&&!([...selected].some(id=>patterns.includes(id)))){showToast("Add at least one pattern to receive free mentorship.");return}
-    showToast("Your order is calculated. Live payment checkout still needs to be connected before accepting payments.");
-  });
-  document.getElementById("menuBtn").addEventListener("click",()=>{const nav=document.querySelector(".navlinks");nav.style.display=nav.style.display==="flex"?"none":"flex";nav.style.position="absolute";nav.style.top="68px";nav.style.left="14px";nav.style.right="14px";nav.style.padding="18px";nav.style.background="#fff";nav.style.border="1px solid #e5e5e2";nav.style.borderRadius="16px";nav.style.flexDirection="column";nav.style.alignItems="flex-start";nav.style.boxShadow="0 15px 40px #0001"});
-  document.querySelectorAll(".navlinks a").forEach(a=>a.addEventListener("click",()=>{if(innerWidth<=900)document.querySelector(".navlinks").style.display="none"}));
-  document.getElementById("year").textContent=new Date().getFullYear();
-  renderChoices();renderOrder();
-})();
-</script>
-<!-- Existing LiveChat integration supplied in the original website -->
+
+<!-- Existing LiveChat integration preserved -->
 <script>
 window.__lc = window.__lc || {};
 window.__lc.license = 19960069;
@@ -374,5 +757,167 @@ window.__lc.product_name = "livechat";
 })(window,document,[].slice);
 </script>
 <noscript><a href="https://www.livechat.com/chat-with/19960069/" rel="nofollow">Chat with us</a></noscript>
+
+<script>
+(function(){
+  "use strict";
+
+  const patterns = {
+    ldm:{
+      title:"Liquidity Displacement Methodology™",
+      kicker:"Framework 01 · Core methodology",
+      description:"A proprietary framework centred on repeating price behaviour, market context, displacement and confirmation. The learning approach encourages students to identify a pattern, understand its context and follow the conditions taught in the course.",
+      note:"Explore the full authorised course for the methodology's detailed terminology, rules and examples. This public introduction is educational and is not a trading signal."
+    },
+    withdraw:{
+      title:"Smart Money Withdraw Pattern",
+      kicker:"Framework 02 · Pattern study",
+      description:"A framework for studying liquidity movement, range behaviour and the relationship between a sweep and a reclaim. Students explore how a potential market transition can be identified and reviewed in context.",
+      note:"This is a high-level description. Consult the relevant course material for the framework's specific conditions and examples."
+    },
+    origin:{
+      title:"Origin 4 Pattern",
+      kicker:"Framework 03 · Pattern study",
+      description:"A specialised learning framework focused on the Origin 4 pattern, its defining characteristics and the context used to recognise it on a chart.",
+      note:"The exact identification rules and examples should come from the official course lessons. This overview does not provide a complete trading system."
+    },
+    rejection:{
+      title:"Rejection Architecture Pattern",
+      kicker:"Framework 04 · Pattern study",
+      description:"A framework for examining rejection behaviour within the wider market context. Learning focuses on understanding the observed response, considering confirmation and keeping risk awareness central to decisions.",
+      note:"Use the official learning material for the exact rules and examples. No pattern guarantees a profitable outcome."
+    },
+    reload:{
+      title:"Daily Reload Pattern",
+      kicker:"Framework 05 · Daily study",
+      description:"A daily-timeframe framework focused on studying compression, a break from a prior range, a potential reload area and confirmation. The educational focus is on patience, context and a defined review process.",
+      note:"This is an introduction, not a complete entry or exit rule set. Trading decisions require independent risk management."
+    }
+  };
+
+  const $ = id => document.getElementById(id);
+  const patternModal = $("patternModal");
+  const promoModal = $("promoModal");
+  const menuBtn = $("menuBtn");
+  const mobileNav = $("mobileNav");
+  let previousFocus = null;
+  let promoTimer = null;
+  let toastTimer = null;
+
+  $("year").textContent = new Date().getFullYear();
+
+  function showToast(message){
+    const toast = $("toast");
+    toast.textContent = message;
+    toast.style.display = "block";
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>toast.style.display="none",3200);
+  }
+
+  function openModal(modal){
+    previousFocus = document.activeElement;
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    const close = modal.querySelector(".modal-close");
+    if(close) close.focus();
+  }
+
+  function closeModal(modal){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    if(!patternModal.classList.contains("open") && !promoModal.classList.contains("open")){
+      document.body.style.overflow = "";
+    }
+    if(previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
+  }
+
+  function openPattern(id){
+    const item = patterns[id];
+    if(!item) return;
+    $("patternModalKicker").textContent = item.kicker;
+    $("patternModalTitle").textContent = item.title;
+    $("patternModalDescription").textContent = item.description;
+    $("patternModalNote").textContent = item.note;
+    closeModal(promoModal);
+    openModal(patternModal);
+  }
+
+  document.querySelectorAll(".pattern-open").forEach(button=>{
+    button.addEventListener("click",()=>openPattern(button.dataset.pattern));
+  });
+
+  $("closePatternModal").addEventListener("click",()=>closeModal(patternModal));
+  $("closePromo").addEventListener("click",()=>closeModal(promoModal));
+  $("promoLater").addEventListener("click",()=>closeModal(promoModal));
+
+  patternModal.addEventListener("click",event=>{
+    if(event.target === patternModal) closeModal(patternModal);
+  });
+  promoModal.addEventListener("click",event=>{
+    if(event.target === promoModal) closeModal(promoModal);
+  });
+
+  document.addEventListener("keydown",event=>{
+    if(event.key === "Escape"){
+      if(patternModal.classList.contains("open")) closeModal(patternModal);
+      if(promoModal.classList.contains("open")) closeModal(promoModal);
+    }
+  });
+
+  menuBtn.addEventListener("click",()=>{
+    const isOpen = mobileNav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded",String(isOpen));
+    menuBtn.setAttribute("aria-label",isOpen?"Close navigation":"Open navigation");
+    menuBtn.textContent = isOpen ? "×" : "☰";
+  });
+
+  mobileNav.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click",()=>{
+      mobileNav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded","false");
+      menuBtn.setAttribute("aria-label","Open navigation");
+      menuBtn.textContent = "☰";
+    });
+  });
+
+  $("promoExplore").addEventListener("click",()=>{
+    closeModal(promoModal);
+    try{sessionStorage.setItem("ldu_promo_seen_session","1")}catch(e){}
+  });
+
+  /* The introductory promotion appears at most once per browser when storage is available. */
+  function scheduleIntro(){
+    let alreadySeen = false;
+    try{alreadySeen = localStorage.getItem("ldu_intro_seen_v2") === "1"}catch(e){}
+    if(alreadySeen) return;
+
+    promoTimer = setTimeout(()=>{
+      if(patternModal.classList.contains("open")) return;
+      try{localStorage.setItem("ldu_intro_seen_v2","1")}catch(e){}
+      openModal(promoModal);
+    },9000);
+  }
+  scheduleIntro();
+
+  /* Reveal effects, with a graceful fallback for browsers without IntersectionObserver. */
+  const revealItems = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.10});
+    revealItems.forEach(item=>observer.observe(item));
+  }else{
+    revealItems.forEach(item=>item.classList.add("visible"));
+  }
+
+  /* Do not invent a checkout action: this homepage deliberately routes visitors to account pages. */
+})();
+</script>
 </body>
-  </html>
+</html>
