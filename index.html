@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#111114">
-<meta name="description" content="Discover Liquidity Displacement University™, the education identity growing from Forex Wealth Empire, with proprietary patterns and trader development.">
+<meta name="description" content="Discover Liquidity Displacement University™, with proprietary patterns and trader development.">
 <title>Liquidity Displacement University™ | The Next Chapter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,9 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
 .container{width:min(var(--max),calc(100% - 40px));margin:auto}
 .announcement{background:var(--ink);color:#fff;text-align:center;padding:9px 14px;font-size:.76rem;letter-spacing:.07em;font-weight:700}
 header{position:sticky;top:0;z-index:20;background:rgba(247,247,245,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
@@ -26,12 +28,14 @@ header{position:sticky;top:0;z-index:20;background:rgba(247,247,245,.92);backdro
 .navright{display:flex;gap:9px;align-items:center}
 .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:12px 19px;font-size:.88rem;font-weight:800;transition:.2s}
 .btn:hover{transform:translateY(-1px)}
-.primary{background:var(--red);color:white}.primary:hover{background:var(--red-dark)}
+.primary{background:var(--red);color:white}
+.primary:hover{background:var(--red-dark)}
 .secondary{border-color:var(--line);background:white}
 .small{padding:9px 14px;font-size:.8rem}
 .menu{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px}
-.hero{padding:78px 0 66px;background:radial-gradient(ellipse at 85% 10%,rgba(217,39,54,.11),transparent 38%),linear-gradient(135deg,#faf9f7 0%,#f2f1ef 100%);position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(217,39,54,.13);border-radius:50%;right:-130px;top:-160px;box-shadow:0 0 0 35px rgba(217,39,54,.025),0 0 0 75px rgba(217,39,54,.02);pointer-events:none}.hero-grid{position:relative;z-index:1}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero{padding:78px 0 66px;background:radial-gradient(ellipse at 85% 10%,rgba(217,39,54,.11),transparent 38%),linear-gradient(135deg,#faf9f7 0%,#f2f1ef 100%);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(217,39,54,.13);border-radius:50%;right:-130px;top:-160px;box-shadow:0 0 0 35px rgba(217,39,54,.025),0 0 0 75px rgba(217,39,54,.02);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
 .kicker{display:inline-flex;align-items:center;gap:8px;font-size:.73rem;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--red);margin-bottom:19px}
 .kicker:before{content:"";height:2px;width:22px;background:var(--red)}
 h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-.055em;line-height:1.12}
@@ -49,7 +53,8 @@ h1 em{font-style:normal;color:var(--red)}
 .mini-chart{width:100%;height:190px;margin:24px 0 20px;background:linear-gradient(180deg,#202126,#18191d);border:1px solid #33343a;border-radius:18px}
 .panel-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .panel-stat{border:1px solid #37383d;border-radius:15px;padding:14px}
-.panel-stat small{display:block;color:#a9abb2;font-size:.7rem;margin-bottom:5px}.panel-stat strong{font-size:.95rem}
+.panel-stat small{display:block;color:#a9abb2;font-size:.7rem;margin-bottom:5px}
+.panel-stat strong{font-size:.95rem}
 .section{padding:78px 0}
 .section-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:29px}
 .section-head h2{font-size:clamp(2rem,4vw,3.1rem);max-width:680px}
@@ -70,49 +75,90 @@ h1 em{font-style:normal;color:var(--red)}
 .selector-panel,.checkout-panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px}
 .selector-panel h3,.checkout-panel h3{font-size:1.35rem;margin-bottom:7px}
 .subtext{color:var(--muted);font-size:.85rem;margin-bottom:20px}
-.choice{display:flex;gap:9px;align-items:center;padding:12px 13px;border:1px solid var(--line);border-radius:14px;background:#fff;min-width:0;transition:.18s}.choice:has(input:checked){border-color:var(--red);background:#fff6f6;box-shadow:0 5px 18px rgba(217,39,54,.07)}
+.choice{display:flex;gap:9px;align-items:center;padding:12px 13px;border:1px solid var(--line);border-radius:14px;background:#fff;min-width:0;transition:.18s}
+.choice:has(input:checked){border-color:var(--red);background:#fff6f6;box-shadow:0 5px 18px rgba(217,39,54,.07)}
 .choice:last-child{border-bottom:0}
 .choice input{accent-color:var(--red);width:18px;height:18px;margin-top:4px;flex-shrink:0}
-.choice-copy{flex:1}
-.choice-copy strong{display:block;font-size:.9rem}
-.choice-copy small{display:block;color:var(--muted);font-size:.72rem;margin-top:2px}.choice-copy{min-width:0}.choice-copy strong{font-size:.83rem;line-height:1.35}.choice-price{font-size:.78rem}
+.choice-copy{flex:1;min-width:0}
+.choice-copy strong{display:block;font-size:.83rem;line-height:1.35}
+.choice-copy small{display:block;color:var(--muted);font-size:.72rem;margin-top:2px}
 .choice-price{font-weight:800;font-size:.88rem;white-space:nowrap}
-.signal-select{width:100%;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px;margin:7px 0 12px;color:var(--ink)}
 .qty-note{font-size:.75rem;color:var(--muted)}
 .checkout-panel{position:relative;top:auto;background:linear-gradient(135deg,#17181d,#25262d);color:#fff;border-color:#303139;box-shadow:0 18px 45px rgba(21,22,25,.12)}
 .checkout-panel .subtext{color:#b7b9c0}
-.checkout-items{display:grid;gap:10px;margin:17px 0}
+.checkout-items{display:grid;gap:10px;margin:17px 0;max-height:220px;overflow:auto}
 .checkout-line{display:flex;justify-content:space-between;gap:12px;font-size:.85rem;color:#dedfe3}
 .checkout-line span:last-child{white-space:nowrap}
 .total-line{border-top:1px solid #393a40;padding-top:15px;margin-top:15px;display:flex;justify-content:space-between;gap:12px;align-items:center}
 .total-line strong{font-size:1.6rem;font-family:Manrope,sans-serif}
 .discount{color:#83e2b2;font-size:.83rem;margin-top:8px}
-.checkout-panel .btn{width:100%;margin-top:19px}.selector-panel{background:linear-gradient(180deg,#fff,#fbfaf9)}#choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.checkout-items{max-height:220px;overflow:auto}.product{box-shadow:0 12px 30px rgba(20,20,24,.035);transition:transform .2s,box-shadow .2s}.product:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(20,20,24,.09)}.rebrand-section{background:#141519;color:#fff;position:relative;overflow:hidden}.rebrand-section:before{content:"LDU";position:absolute;right:-20px;top:-85px;font:900 clamp(10rem,25vw,22rem)/1 Manrope,sans-serif;letter-spacing:-.1em;color:rgba(255,255,255,.035);pointer-events:none}.rebrand-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}.rebrand-copy p{color:#c3c4ca;margin:18px 0;max-width:650px}.rebrand-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rebrand-point{border:1px solid #34353c;border-radius:18px;padding:20px;background:linear-gradient(145deg,#202126,#17181c)}.rebrand-point b{display:block;font-size:1rem;margin-bottom:8px}.rebrand-point p{font-size:.82rem;color:#b4b6bd;margin:0}.rebrand-label{color:#ff6873;font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.signal-highlight{border:1px solid #f0c4c8;background:linear-gradient(135deg,#fff,#fff1f2)}.free-tag{display:inline-flex;background:#e3f6eb;color:#146b43;border-radius:999px;padding:5px 9px;font-size:.68rem;font-weight:900;margin-bottom:12px}
+.checkout-panel .btn{width:100%;margin-top:19px}
+.selector-panel{background:linear-gradient(180deg,#fff,#fbfaf9)}
+#choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.product{box-shadow:0 12px 30px rgba(20,20,24,.035);transition:transform .2s,box-shadow .2s}
+.product:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(20,20,24,.09)}
+.rebrand-section{background:#141519;color:#fff;position:relative;overflow:hidden}
+.rebrand-section:before{content:"LDU";position:absolute;right:-20px;top:-85px;font:900 clamp(10rem,25vw,22rem)/1 Manrope,sans-serif;letter-spacing:-.1em;color:rgba(255,255,255,.035);pointer-events:none}
+.rebrand-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}
+.rebrand-copy p{color:#c3c4ca;margin:18px 0;max-width:650px}
+.rebrand-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.rebrand-point{border:1px solid #34353c;border-radius:18px;padding:20px;background:linear-gradient(145deg,#202126,#17181c)}
+.rebrand-point b{display:block;font-size:1rem;margin-bottom:8px}
+.rebrand-point p{font-size:.82rem;color:#b4b6bd;margin:0}
+.rebrand-label{color:#ff6873;font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.free-tag{display:inline-flex;background:#e3f6eb;color:#146b43;border-radius:999px;padding:5px 9px;font-size:.68rem;font-weight:900;margin-bottom:12px}
 .secure-note{font-size:.72rem;color:#aeb0b8;text-align:center;margin-top:12px}
 .form-label{font-size:.78rem;font-weight:800;display:block;margin:15px 0 6px}
 .checkout-panel input,.checkout-panel select{width:100%;padding:12px 13px;border-radius:11px;border:1px solid #42434a;background:#222329;color:white}
 .ad-banner{background:var(--soft);border:1px solid #f1c8cc;border-radius:var(--radius);padding:26px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.ad-banner h3{font-size:1.45rem;margin-bottom:7px}.ad-banner p{color:#6d4a4d;font-size:.88rem}
+.ad-banner h3{font-size:1.45rem;margin-bottom:7px}
+.ad-banner p{color:#6d4a4d;font-size:.88rem}
 .ad-label{font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;color:var(--red-dark);font-weight:900;margin-bottom:10px}
 .pattern-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .pattern{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;display:flex;flex-direction:column;justify-content:space-between;min-height:112px}
-.pattern h3{font-size:.95rem;line-height:1.3;margin:0 0 12px}.pattern .btn{width:100%;padding:10px 12px;font-size:.8rem}
+.pattern h3{font-size:.95rem;line-height:1.3;margin:0 0 12px}
+.pattern .btn{width:100%;padding:10px 12px;font-size:.8rem}
+.pattern-badge{display:inline-flex;align-self:flex-start;border-radius:999px;padding:5px 8px;font-size:.62rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:9px;background:#fff0f1;color:#a71928}
+.pattern-badge.recommended{background:#fff3d8;color:#875500}
+.promo-modal{position:fixed;inset:0;background:rgba(12,13,16,.76);z-index:120;display:none;align-items:center;justify-content:center;padding:16px}
+.promo-modal.open{display:flex}
+.promo-dialog{position:relative;width:min(100%,520px);max-height:88vh;overflow:auto;border-radius:24px;padding:clamp(22px,5vw,34px);background:linear-gradient(145deg,#fff,#fff5f5);box-shadow:0 30px 100px #0006;border:1px solid #f2c5ca}
+.promo-kicker{display:inline-block;background:#17181d;color:#fff;border-radius:999px;padding:7px 11px;font-size:.66rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.promo-dialog h3{font-size:clamp(1.55rem,5vw,2.2rem);line-height:1.1;margin:16px 0 12px}
+.promo-dialog p{color:#62636a;font-size:.9rem;line-height:1.7}
+.promo-offers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.promo-offer{border:1px solid #e5d7d8;border-radius:16px;background:#fff;padding:14px}
+.promo-offer strong{display:block;font-size:.88rem;line-height:1.4}
+.promo-offer small{display:block;color:#777;font-size:.74rem;margin-top:6px}
+.promo-dialog .close-modal{position:absolute;right:13px;top:13px;border:0;background:#eee;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer}
+.promo-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.promo-actions .btn{width:100%;padding:12px 8px;font-size:.82rem}
+@media(max-width:420px){.promo-offers,.promo-actions{grid-template-columns:1fr}}
 .pattern-modal{position:fixed;inset:0;background:rgba(12,13,16,.68);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
-.pattern-modal.open{display:flex}.pattern-dialog{background:#fff;border-radius:22px;padding:25px;width:min(100%,480px);max-height:85vh;overflow:auto;box-shadow:0 25px 80px #0005;position:relative}
-.pattern-dialog h3{font-size:1.45rem;margin:6px 0 12px}.pattern-dialog p{color:var(--muted);font-size:.92rem}.pattern-dialog .detail-price{font-size:1.35rem;font-weight:900;margin:18px 0 12px}.pattern-dialog .close-modal{position:absolute;right:14px;top:12px;border:0;background:#f2f2f0;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer}
+.pattern-modal.open{display:flex}
+.pattern-dialog{background:#fff;border-radius:22px;padding:25px;width:min(100%,480px);max-height:85vh;overflow:auto;box-shadow:0 25px 80px #0005;position:relative}
+.pattern-dialog h3{font-size:1.45rem;margin:6px 0 12px}
+.pattern-dialog p{color:var(--muted);font-size:.92rem}
+.pattern-dialog .detail-price{font-size:1.35rem;font-weight:900;margin:18px 0 12px}
+.pattern-dialog .close-modal{position:absolute;right:14px;top:12px;border:0;background:#f2f2f0;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer}
 @media(max-width:560px){.pattern-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pattern{padding:11px;min-height:96px;border-radius:13px}.pattern h3{font-size:.82rem;margin-bottom:8px}.pattern .btn{font-size:.72rem;padding:9px 6px}.pattern-dialog{padding:22px}}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px}
 .step-num{color:var(--red);font-weight:900;font-size:.76rem;letter-spacing:.1em}
-.step h3{font-size:1.1rem;margin:13px 0 9px}.step p{font-size:.86rem;color:var(--muted)}
+.step h3{font-size:1.1rem;margin:13px 0 9px}
+.step p{font-size:.86rem;color:var(--muted)}
 .faq{max-width:850px;display:grid;gap:10px}
 details{background:#fff;border:1px solid var(--line);border-radius:15px;padding:0 18px}
 summary{cursor:pointer;list-style:none;font-weight:800;padding:18px 25px 18px 0;position:relative}
-summary::-webkit-details-marker{display:none}summary:after{content:"+";position:absolute;right:0;color:var(--red);font-size:1.25rem}details[open] summary:after{content:"−"}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:0;color:var(--red);font-size:1.25rem}
+details[open] summary:after{content:"−"}
 details p{color:var(--muted);font-size:.87rem;padding:0 0 18px}
 footer{background:#151619;color:#fff;padding:45px 0 25px}
 .footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-footer p,footer a{color:#b8bac1;font-size:.82rem}footer .brand{color:white}footer .brand small{color:#aaa}
+footer p,footer a{color:#b8bac1;font-size:.82rem}
+footer .brand{color:white}
+footer .brand small{color:#aaa}
 .footer-links{display:flex;gap:18px;flex-wrap:wrap}
 .disclaimer{border-top:1px solid #393a40;margin-top:30px;padding-top:20px;font-size:.72rem;line-height:1.8;color:#888b93}
 .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#151619;color:#fff;padding:12px 17px;border-radius:12px;z-index:50;display:none;max-width:calc(100% - 28px);font-size:.85rem;box-shadow:0 8px 30px #0002}
@@ -123,236 +169,3 @@ footer p,footer a{color:#b8bac1;font-size:.82rem}footer .brand{color:white}foote
 <body>
 <div class="announcement">TRADING EDUCATION • PROPRIETARY PATTERNS • CHOOSE YOUR LEARNING PATH</div>
 <header>
-  <div class="container nav">
-    <a class="brand" href="#home" aria-label="LDU homepage"><span class="brand-mark">LDU</span><span>LIQUIDITY DISPLACEMENT<small>UNIVERSITY™</small></span></a>
-    <nav class="navlinks" aria-label="Main navigation">
-      <a href="#patterns">Patterns</a><a href="#mentorship">Mentorship</a><a href="#checkout">Build your package</a>
-    </nav>
-    <div class="navright"><a class="btn secondary small" href="login.html">Student login</a><a class="btn primary small" href="#checkout">Build your package ↗</a><button class="menu" id="menuBtn" aria-label="Show navigation">☰</button></div>
-  </div>
-</header>
-<main id="home">
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="kicker">The next chapter of Forex Wealth Empire</div>
-      <h1>Read the pattern.<br><em>Build your edge.</em></h1>
-      <p>Welcome to Liquidity Displacement University™ — a focused trading education brand built around repeating market behaviour, pattern recognition, disciplined execution and continuous development. Explore our proprietary patterns and choose the learning path that fits you.</p>
-      <div class="actions"><a class="btn primary" href="#patterns">Explore the patterns ↗</a><a class="btn secondary" href="#rebrand">Discover the rebrand ↓</a></div>
-      <div class="hero-note"><span class="tag">Proprietary pattern education</span><span class="tag">Pattern-focused learning</span><span class="tag">Trader community</span></div>
-    </div>
-    <div class="hero-panel">
-      <div class="panel-top"><div><strong>Liquidity Displacement University™</strong><div class="panel-label">Pattern learning · Mentorship</div></div><span class="panel-label"><span class="live-dot"></span>ONLINE</span></div>
-      <svg class="mini-chart" viewBox="0 0 500 200" role="img" aria-label="Decorative illustration of price movement">
-        <g stroke="#34353b" stroke-width="1"><path d="M0 40H500M0 80H500M0 120H500M0 160H500"/><path d="M70 0V200M140 0V200M210 0V200M280 0V200M350 0V200M420 0V200"/></g>
-        <path d="M0 155 L28 145 L50 160 L80 110 L105 126 L132 90 L155 106 L184 72 L208 92 L238 48 L265 68 L290 90 L315 62 L345 78 L374 40 L400 55 L428 30 L455 42 L500 15" fill="none" stroke="#ff5663" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M0 155 L28 145 L50 160 L80 110 L105 126 L132 90 L155 106 L184 72 L208 92 L238 48 L265 68 L290 90 L315 62 L345 78 L374 40 L400 55 L428 30 L455 42 L500 15 L500 200 L0 200Z" fill="#d92736" opacity=".12"/>
-        <text x="16" y="23" fill="#aeb0b8" font-size="10">ILLUSTRATIVE MARKET MOVEMENT</text>
-      </svg>
-      <div class="panel-bottom"><div class="panel-stat"><small>START WITH</small><strong>Pattern recognition</strong></div><div class="panel-stat"><small>BUILD WITH</small><strong>Discipline &amp; review</strong></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section rebrand-section" id="rebrand">
-<div class="container rebrand-grid">
-  <div class="rebrand-copy">
-    <div class="rebrand-label">A brand evolution · Built on a bigger vision</div>
-    <h2 style="font-size:clamp(2.2rem,4.5vw,3.6rem);margin-top:14px">Forex Wealth Empire is evolving into <span style="color:#ff6873">Liquidity Displacement University™.</span></h2>
-    <p>This is more than a new name or a fresh website. Liquidity Displacement University™ is the education-focused next chapter of the Forex Wealth Empire journey — a dedicated home for structured learning, proprietary pattern frameworks and trader development.</p>
-    <p>Our teaching philosophy centres on recognising repeating market behaviour, understanding context, waiting for confirmation and building disciplined execution habits. We want students to learn a process they can review and practise, rather than chase random entries or promises of guaranteed profits.</p>
-    <div class="actions"><a class="btn primary" href="#patterns">Explore learning products ↗</a><a class="btn secondary" style="background:transparent;color:#fff;border-color:#484950" href="register.html">Join the student portal</a></div>
-  </div>
-  <div class="rebrand-points">
-    <article class="rebrand-point"><b>01 · Pattern-first education</b><p>Dedicated learning around LDM and selected proprietary market-pattern frameworks.</p></article>
-    <article class="rebrand-point"><b>02 · A clearer learning path</b><p>Organised learning resources, student access and future course delivery through Whop where configured.</p></article>
-    <article class="rebrand-point"><b>03 · A focused learning path</b><p>Explore each pattern and choose the framework that fits your learning goals.</p></article>
-    <article class="rebrand-point"><b>04 · Community & accountability</b><p>A developing education community focused on process, review, discipline and responsible risk awareness.</p></article>
-  </div>
-</div>
-</section>
-
-<section class="section featured" id="patterns">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Explore the frameworks</div><h2>Choose a pattern.</h2></div><p>All available patterns are shown together. Tap any pattern to see how it works and view its offer details.</p></div>
-  <div class="pattern-list">
-    <article class="pattern"><h3>Liquidity Displacement Methodology™</h3><button class="btn primary pattern-open" data-pattern="ldm">Explore pattern ↗</button></article>
-    <article class="pattern"><h3>Smart Money Withdraw Pattern</h3><button class="btn primary pattern-open" data-pattern="withdraw">Explore pattern ↗</button></article>
-    <article class="pattern"><h3>Origin 4 Pattern</h3><button class="btn secondary pattern-open" data-pattern="origin">Explore pattern ↗</button></article>
-    <article class="pattern"><h3>Rejection Architecture Pattern</h3><button class="btn secondary pattern-open" data-pattern="rejection">Explore pattern ↗</button></article>
-    <article class="pattern"><h3>Daily Reload Pattern</h3><button class="btn secondary pattern-open" data-pattern="reload">Explore pattern ↗</button></article>
-  </div>
-  <div id="mentorship" style="margin-top:16px;padding:13px 16px;border:1px solid #cde9d8;background:#f3fbf6;border-radius:14px;font-size:.85rem"><strong>Complimentary mentorship:</strong> included with an eligible pattern purchase.</div>
-</div>
-</section>
-
-
-
-<section class="section" style="background:#efefec">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Your journey</div><h2>From learning to execution.</h2></div><p>A deliberate learning experience: understand the pattern, practise the process, and keep risk management at the centre of every decision.</p></div>
-  <div class="steps"><article class="step"><div class="step-num">STEP 01</div><h3>Choose what you need</h3><p>Select the pattern or patterns you want to study.</p></article><article class="step"><div class="step-num">STEP 02</div><h3>Review your total</h3><p>Review the selected products and the total before you continue.</p></article><article class="step"><div class="step-num">STEP 03</div><h3>Pay and access</h3><p>After payment-provider verification, access should be granted only to the products the customer purchased.</p></article></div>
-</div>
-</section>
-
-<section class="section" id="checkout">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Custom checkout</div><h2>Build your own package.</h2></div><p>Choose the pattern or patterns you want. You can remove selections at any time.</p></div>
-  <div class="store-layout">
-    <div class="selector-panel">
-      <h3>01 / Build your package</h3><p class="subtext">Tap any product card below to select or remove it. The choices are compact and arranged to keep your package builder easy to scan.</p>
-      <div id="choices"></div>
-      <p class="qty-note">Mentorship is complimentary only when at least one pattern is included in your order.</p>
-    </div>
-    <aside class="checkout-panel">
-      <h3>02 / Your order</h3><p class="subtext">Your selected products and total update as you build.</p>
-      <div class="checkout-items" id="orderItems"><p style="color:#aeb0b8;font-size:.85rem">Your selected products will appear here.</p></div>
-      <div class="total-line"><span>Subtotal</span><span id="subtotal">R0</span></div>
-      <div class="discount" id="discountNote">Select products to see your total.</div>
-      <div class="total-line"><span>Total</span><strong id="grandTotal">R0</strong></div>
-      <label class="form-label" for="customerName">Full name</label><input id="customerName" autocomplete="name" placeholder="Your full name">
-      <label class="form-label" for="customerEmail">Email address</label><input id="customerEmail" type="email" autocomplete="email" placeholder="you@example.com">
-      <button class="btn primary" id="checkoutBtn">Continue to secure checkout ↗</button>
-      <p class="secure-note">Checkout preview only. Live payment and automatic access require payment-provider and product-access integration.</p>
-    </aside>
-  </div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Video learning</div><h2>Learn through Whop. Discover through our website.</h2></div><p>This storefront introduces the LDU learning experience. Course videos can be delivered through Whop, with student access tied to verified purchases once the payment and access systems are connected.</p></div>
-  <div class="ad-banner"><div><div class="ad-label">Student access</div><h3>Already have an account?</h3><p>Keep the existing student login and registration pages while the new storefront is integrated.</p></div><div class="actions"><a class="btn secondary" href="login.html">Student login</a><a class="btn primary" href="register.html">Register ↗</a></div></div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-  <div class="section-head"><div><div class="eyebrow">Common questions</div><h2>Before you purchase.</h2></div></div>
-  <div class="faq">
-    <details><summary>Can I choose only one pattern?</summary><p>Yes. Choose only the pattern or products you want. Mentorship is complimentary when you purchase any eligible pattern.</p></details>
-    <details><summary>Where are the course videos hosted?</summary><p>The planned setup uses Whop to host and deliver course videos. Product access must be connected to verified purchases before launch.</p></details>
-    <details><summary>Does trading education guarantee profits?</summary><p>No. Trading involves risk and losses are possible. Educational content does not guarantee profits or any particular financial result.</p></details>
-  </div>
-</div>
-</section>
-</main>
-<footer>
-<div class="container">
-  <div class="footer-top"><a class="brand" href="#home"><span class="brand-mark">LDU</span><span>LIQUIDITY DISPLACEMENT<small>UNIVERSITY™</small></span></a><div class="footer-links"><a href="#patterns">Patterns</a><a href="#mentorship">Mentorship</a><a href="login.html">Student login</a><a href="mailto:Naswealthempire@gmail.com">Contact</a></div></div>
-  <p class="disclaimer">Trading forex, CFDs and other financial products involves substantial risk and may not be suitable for everyone. You may lose some or all of your capital. Educational materials are not personalised financial advice and do not guarantee profits. Past performance does not guarantee future results.</p>
-  <p style="margin-top:18px">© <span id="year"></span> Liquidity Displacement University™. All rights reserved.</p>
-</div>
-</footer>
-<div class="pattern-modal" id="patternModal" role="dialog" aria-modal="true" aria-labelledby="patternModalTitle">
-  <div class="pattern-dialog"><button class="close-modal" id="closePatternModal" aria-label="Close">×</button><div class="eyebrow">Pattern overview</div><h3 id="patternModalTitle">Pattern</h3><p id="patternModalDescription"></p><div class="detail-price" id="patternModalPrice"></div><p style="font-size:.75rem">Offer details are shown here when you choose to open a pattern.</p><button class="btn primary" id="addPatternFromModal" style="width:100%">Choose this pattern +</button></div>
-</div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>
-(function(){
-  const products = {
-    ldm:{name:"Liquidity Displacement Methodology™",price:5000},
-    withdraw:{name:"Smart Money Withdraw Pattern",price:4500},
-    origin:{name:"Origin 4 Pattern",price:2500},
-    rejection:{name:"Rejection Architecture Pattern",price:2500},
-    reload:{name:"Daily Reload Pattern",price:2500},
-    mentorship:{name:"Pattern Buyer Mentorship",price:0}
-  };
-  const patternDetails = {
-    ldm:{name:"Liquidity Displacement Methodology™",price:5000,description:"A proprietary pattern framework focused on reading repeating market behaviour, recognising displacement, and building a structured approach to execution."},
-    withdraw:{name:"Smart Money Withdraw Pattern",price:4500,description:"A dedicated pattern framework designed to help students study liquidity movement, range behaviour and the transition from a sweep into a reclaim."},
-    origin:{name:"Origin 4 Pattern",price:2500,description:"A focused learning framework for studying the Origin 4 pattern, its defining market behaviour and how to recognise its appearance on charts."},
-    rejection:{name:"Rejection Architecture Pattern",price:2500,description:"A pattern-based framework for studying rejection behaviour and learning how to assess a setup with structure, confirmation and risk awareness."},
-    reload:{name:"Daily Reload Pattern",price:2500,description:"A daily-timeframe framework focused on compression, a break of a prior range, a reload area and confirmation before execution."}
-  };
-  const selected = new Set();
-  const money = n => "R" + n.toLocaleString("en-ZA",{maximumFractionDigits:2});
-  const choices = document.getElementById("choices");
-  const toast = document.getElementById("toast");
-  let toastTimer;
-  function showToast(message){toast.textContent=message;toast.style.display="block";clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.style.display="none",3500)}
-  function renderChoices(){
-    choices.innerHTML="";
-    Object.entries(products).forEach(([id,p])=>{
-      const label=document.createElement("label");label.className="choice";
-      const checkbox=document.createElement("input");checkbox.type="checkbox";checkbox.checked=selected.has(id);checkbox.addEventListener("change",()=>{checkbox.checked?selected.add(id):selected.delete(id);renderChoices();renderOrder()});
-      const copy=document.createElement("span");copy.className="choice-copy";
-      const title=document.createElement("strong");title.textContent=p.name;copy.appendChild(title);
-      const note=document.createElement("small");note.textContent=id==="mentorship"?"Free with any pattern purchase":p.price===0?"Complimentary bonus":"One-time purchase";copy.appendChild(note);
-      const price=document.createElement("span");price.className="choice-price";price.textContent=id==="mentorship"?"FREE":money(p.price);
-      label.append(checkbox,copy,price);choices.appendChild(label);
-    });
-  }
-  function renderOrder(){
-    const list=document.getElementById("orderItems");list.innerHTML="";
-    const ids=[...selected];
-    if(!ids.length){list.innerHTML='<p style="color:#aeb0b8;font-size:.85rem">Your selected products will appear here.</p>'}
-    let subtotal=0, unknown=[];
-    ids.forEach(id=>{
-      const p=products[id];const row=document.createElement("div");row.className="checkout-line";
-      const name=document.createElement("span");name.textContent=p.name;
-      const price=document.createElement("span");price.textContent=id==="mentorship"?"FREE with pattern":money(p.price);
-      row.append(name,price);list.appendChild(row);
-      if(p.price===null)unknown.push(p.name);else subtotal+=p.price;
-    });
-    const patterns=["ldm","withdraw","origin","rejection","reload"];
-    const hasPattern=ids.some(id=>patterns.includes(id));
-    const mentorshipInvalid=selected.has("mentorship")&&!hasPattern;
-    document.getElementById("subtotal").textContent=money(subtotal);
-    document.getElementById("grandTotal").textContent=money(subtotal);
-    document.getElementById("discountNote").textContent=mentorshipInvalid?"Add at least one pattern to unlock free mentorship.":unknown.length?"Price required for: "+unknown.join(", ")+". Total is incomplete.":selected.has("mentorship")?"Free mentorship unlocked with your pattern purchase.":"Mentorship becomes free when you add any pattern.";
-    document.getElementById("checkoutBtn").disabled=!ids.length||unknown.length>0||mentorshipInvalid;
-    document.getElementById("checkoutBtn").style.opacity=(!ids.length||unknown.length>0||mentorshipInvalid)?".55":"1";
-  }
-  let activePattern = null;
-  const patternModal = document.getElementById("patternModal");
-  document.querySelectorAll(".pattern-open").forEach(btn=>btn.addEventListener("click",()=>{
-    activePattern=btn.dataset.pattern;const item=patternDetails[activePattern];
-    document.getElementById("patternModalTitle").textContent=item.name;
-    document.getElementById("patternModalDescription").textContent=item.description;
-    document.getElementById("patternModalPrice").textContent=money(item.price)+" · once-off";
-    patternModal.classList.add("open");
-  }));
-  function closePatternModal(){patternModal.classList.remove("open")}
-  document.getElementById("closePatternModal").addEventListener("click",closePatternModal);
-  patternModal.addEventListener("click",e=>{if(e.target===patternModal)closePatternModal()});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")closePatternModal()});
-  document.getElementById("addPatternFromModal").addEventListener("click",()=>{
-    if(!activePattern)return;selected.add(activePattern);selected.add("mentorship");renderChoices();renderOrder();closePatternModal();
-    showToast("Pattern selected. Complimentary mentorship has been added.");
-    document.getElementById("checkout").scrollIntoView({behavior:"smooth"});
-  });
-  document.querySelectorAll(".add-product").forEach(btn=>btn.addEventListener("click",()=>{
-    const id=btn.dataset.product;selected.add(id);renderChoices();renderOrder();document.getElementById("checkout").scrollIntoView({behavior:"smooth"});showToast(id==="mentorship"&&!([...selected].some(x=>["ldm","withdraw","origin","rejection","reload"].includes(x)))?"Mentorship is free with a pattern purchase. Add a pattern to unlock it.":"Added to your package.");
-  }));
-  document.getElementById("checkoutBtn").addEventListener("click",()=>{
-    if(!selected.size){showToast("Please select at least one product.");return}
-    const name=document.getElementById("customerName").value.trim();
-    const email=document.getElementById("customerEmail").value.trim();
-    if(!name||!email){showToast("Enter your name and email to continue.");return}
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showToast("Enter a valid email address.");return}
-    const patterns=["ldm","withdraw","origin","rejection","reload"];
-    if(selected.has("mentorship")&&!([...selected].some(id=>patterns.includes(id)))){showToast("Add at least one pattern to receive free mentorship.");return}
-    showToast("Your order is calculated. Live payment checkout still needs to be connected before accepting payments.");
-  });
-  document.getElementById("menuBtn").addEventListener("click",()=>{const nav=document.querySelector(".navlinks");nav.style.display=nav.style.display==="flex"?"none":"flex";nav.style.position="absolute";nav.style.top="68px";nav.style.left="14px";nav.style.right="14px";nav.style.padding="18px";nav.style.background="#fff";nav.style.border="1px solid #e5e5e2";nav.style.borderRadius="16px";nav.style.flexDirection="column";nav.style.alignItems="flex-start";nav.style.boxShadow="0 15px 40px #0001"});
-  document.querySelectorAll(".navlinks a").forEach(a=>a.addEventListener("click",()=>{if(innerWidth<=900)document.querySelector(".navlinks").style.display="none"}));
-  document.getElementById("year").textContent=new Date().getFullYear();
-  renderChoices();renderOrder();
-})();
-</script>
-<!-- Existing LiveChat integration supplied in the original website -->
-<script>
-window.__lc = window.__lc || {};
-window.__lc.license = 19960069;
-window.__lc.integration_name = "manual_onboarding";
-window.__lc.product_name = "livechat";
-(function(n,t,c){
-  function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
-  var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=true;n.type="text/javascript";n.src="https://cdn.livechatinc.com/tracking.js";t.head.appendChild(n)}};
-  !n.__lc.asyncInit&&e.init();n.LiveChatWidget=n.LiveChatWidget||e;
-})(window,document,[].slice);
-</script>
-<noscript><a href="https://www.livechat.com/chat-with/19960069/" rel="nofollow">Chat with us</a></noscript>
-</body>
-</html>
