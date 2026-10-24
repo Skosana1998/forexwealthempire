@@ -1,0 +1,1377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Meet TROY_NASDAQ, also known as Luvuyo Skosana, Founder and CEO of Liquidity Displacement University. Discover the vision, philosophy and mission behind LDU.">
+  <title>Meet the Founder | Liquidity Displacement University™</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #d71935;
+      --red-dark: #a90e26;
+      --black: #101014;
+      --muted: #666875;
+      --line: #e9e9ee;
+      --soft: #f7f7f9;
+      --white: #fff;
+      --radius: 22px;
+      --shadow: 0 18px 60px rgba(20, 20, 30, .07);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    button { font: inherit; }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .announcement {
+      background: var(--black);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .announcement span { color: #ff536b; }
+
+    header {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(15px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: -.4px;
+      line-height: 1.3;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--red);
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 7px 20px rgba(215,25,53,.2);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:not(.button):hover { color: var(--red); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 19px;
+      border-radius: 11px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .2s, background .2s, box-shadow .2s;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-red {
+      background: var(--red);
+      color: white;
+      box-shadow: 0 9px 22px rgba(215,25,53,.17);
+    }
+
+    .button-red:hover { background: var(--red-dark); }
+
+    .button-dark { background: var(--black); color: white; }
+
+    .button-outline {
+      border-color: #dedee5;
+      background: white;
+    }
+
+    .button-outline:hover { border-color: var(--red); }
+
+    .mobile-menu { display: none; }
+
+    .hero {
+      padding: 85px 0 90px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 90% 12%, rgba(215,25,53,.075), transparent 33%),
+        linear-gradient(180deg, #fff 0%, #fcfcfd 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 23px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    h1, h2, h3 {
+      font-family: Manrope, sans-serif;
+      line-height: 1.15;
+      letter-spacing: -1.3px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 5.3vw, 66px);
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .red-text { color: var(--red); }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 29px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 35px;
+    }
+
+    .identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .identity-dot {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #f1c9d0;
+      background: #fff3f5;
+      border-radius: 50%;
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .identity strong {
+      display: block;
+      color: var(--black);
+      font-size: 13px;
+    }
+
+    .portrait-card {
+      min-height: 510px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(215,25,53,.32), transparent 32%),
+        linear-gradient(145deg, #202027, #101014 62%, #2b1118);
+      box-shadow: 0 30px 80px rgba(15,15,20,.18);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 38px;
+    }
+
+    .portrait-card::before {
+      content: "T";
+      position: absolute;
+      top: -75px;
+      right: -5px;
+      font-family: Manrope, sans-serif;
+      font-size: 430px;
+      line-height: 1;
+      font-weight: 800;
+      color: rgba(255,255,255,.035);
+      pointer-events: none;
+    }
+
+    .portrait-orbit {
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+    }
+
+    .portrait-orbit::before,
+    .portrait-orbit::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 50%;
+    }
+
+    .portrait-orbit::before { inset: 25px; }
+    .portrait-orbit::after { inset: 55px; }
+
+    .portrait-emblem {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      width: 125px;
+      height: 125px;
+      border-radius: 32px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.25);
+      background: linear-gradient(145deg, rgba(215,25,53,.9), rgba(130,8,27,.95));
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      font-size: 39px;
+      box-shadow: 0 15px 60px rgba(215,25,53,.25);
+    }
+
+    .portrait-label {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 8px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .portrait-bottom { position: relative; z-index: 1; }
+
+    .portrait-bottom small {
+      color: #ff8596;
+      letter-spacing: 2px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .portrait-bottom h2 {
+      font-size: 30px;
+      margin: 8px 0;
+      letter-spacing: -.7px;
+    }
+
+    .portrait-bottom p {
+      font-size: 13px;
+      color: #c4c4cc;
+    }
+
+    .portrait-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin: 20px 0 0;
+    }
+
+    .metrics {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .metric {
+      padding: 30px 24px;
+      text-align: center;
+    }
+
+    .metric + .metric { border-left: 1px solid var(--line); }
+
+    .metric strong {
+      display: block;
+      font-family: Manrope, sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    section.content-section { padding: 95px 0; }
+
+    .section-heading {
+      max-width: 740px;
+      margin-bottom: 43px;
+    }
+
+    .section-heading.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-heading.center .eyebrow { justify-content: center; }
+
+    .section-heading h2 {
+      font-size: clamp(31px, 4vw, 46px);
+      margin-bottom: 17px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .story-text p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 19px;
+      line-height: 1.95;
+    }
+
+    .story-text strong { color: var(--black); }
+
+    .quote-card {
+      background: var(--black);
+      color: white;
+      padding: 36px;
+      border-radius: var(--radius);
+      position: sticky;
+      top: 110px;
+      overflow: hidden;
+    }
+
+    .quote-symbol {
+      font-family: Georgia, serif;
+      font-size: 76px;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .quote-card blockquote {
+      font-family: Manrope, sans-serif;
+      font-size: 23px;
+      line-height: 1.55;
+      font-weight: 700;
+      margin: 10px 0 25px;
+      letter-spacing: -.5px;
+    }
+
+    .quote-card small {
+      color: #b7b7c0;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .soft-section { background: var(--soft); }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pillar {
+      padding: 29px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: white;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .pillar:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #f0c4cb;
+    }
+
+    .pillar-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      background: #fff0f2;
+      border-radius: 13px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .pillar h3 {
+      font-size: 19px;
+      margin-bottom: 12px;
+      letter-spacing: -.5px;
+    }
+
+    .pillar p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 15px;
+      width: 2px;
+      background: #f0d1d6;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 53px;
+      padding-bottom: 36px;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 5px solid var(--red);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item .step {
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      font-size: 21px;
+      margin: 7px 0 9px;
+      letter-spacing: -.5px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .vision-panel {
+      padding: 40px;
+      background: linear-gradient(145deg, #17171d, #29202a);
+      border-radius: 24px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-panel::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.12);
+      right: -60px;
+      bottom: -60px;
+      box-shadow: 0 0 0 25px rgba(255,255,255,.025),
+                  0 0 0 50px rgba(255,255,255,.02);
+    }
+
+    .vision-panel .eyebrow { color: #ff8495; }
+
+    .vision-panel h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .vision-panel p {
+      color: #c6c6cf;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .vision-copy h3 {
+      font-size: 22px;
+      margin-bottom: 11px;
+      letter-spacing: -.5px;
+    }
+
+    .vision-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.95;
+      margin-bottom: 24px;
+    }
+
+    .values-list { display: grid; gap: 14px; }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .check {
+      flex: 0 0 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      background: #fff0f2;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .value-item strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .value-item span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .message {
+      background: #fff5f6;
+      border-top: 1px solid #f8dfe3;
+      border-bottom: 1px solid #f8dfe3;
+    }
+
+    .message-inner {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .message-inner h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      margin-bottom: 22px;
+    }
+
+    .message-inner p {
+      color: #555661;
+      font-size: 15px;
+      line-height: 2;
+      margin-bottom: 17px;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-family: Manrope, sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .signature span {
+      display: block;
+      margin-top: 3px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .cta {
+      padding: 80px 0;
+      background: var(--black);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      max-width: 740px;
+      margin: 0 auto 18px;
+      font-size: clamp(31px, 4.5vw, 48px);
+    }
+
+    .cta p {
+      color: #bcbcc5;
+      max-width: 630px;
+      margin: 0 auto 28px;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .cta .button { margin: 4px; }
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid #292930;
+      background: var(--black);
+      color: #b4b4bf;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer .brand { color: white; }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .copyright {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #292930;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .portrait-card { min-height: 440px; padding: 27px; }
+      .portrait-orbit { width: 220px; height: 220px; }
+      .portrait-emblem { width: 100px; height: 100px; font-size: 31px; }
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-grid { gap: 30px; }
+      .vision-grid { gap: 30px; }
+      .nav-links { gap: 14px; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(100% - 30px, 540px); }
+      header { height: 68px; }
+      .brand { font-size: 11px; }
+      .brand-mark { width: 36px; height: 36px; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: white;
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 8px 3px; }
+      .mobile-menu {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: white;
+        font-size: 20px;
+      }
+      .hero { padding: 57px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 37px; }
+      h1 { font-size: 43px; }
+      .hero-copy { font-size: 14px; }
+      .portrait-card { min-height: 400px; }
+      .portrait-orbit { top: 30px; }
+      .portrait-emblem { top: 43%; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .metric { padding: 19px; }
+      .metric + .metric {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+      .metric strong { font-size: 25px; }
+      section.content-section { padding: 65px 0; }
+      .story-grid, .vision-grid { grid-template-columns: 1fr; }
+      .quote-card { position: static; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .pillar { padding: 24px; }
+      .vision-panel { padding: 29px; }
+      .vision-panel h2 { font-size: 29px; }
+      .message-inner p { font-size: 14px; }
+      .cta { padding: 65px 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    A VISION BUILT ON <span>DISCIPLINE, LEARNING &amp; GROWTH</span>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Liquidity Displacement University home">
+        <span class="brand-mark">LDU</span>
+        <span>
+          LIQUIDITY DISPLACEMENT
+          <small>UNIVERSITY™</small>
+        </span>
+      </a>
+
+      <button class="mobile-menu" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="#journey">The Journey</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#vision">Our Vision</a>
+        <a href="index.html#programmes" class="button button-red">Explore LDU →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Leadership &amp; Vision</div>
+          <h1>Meet the mind behind <span class="red-text">the mission.</span></h1>
+          <p class="hero-copy">
+            Meet TROY_NASDAQ, also known as Luvuyo Skosana — Founder and CEO
+            of Liquidity Displacement University™. With seven years of trading
+            experience, his journey reflects a commitment to learning, market
+            observation, discipline, and building an educational community
+            focused on understanding price behaviour.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#journey" class="button button-red">Explore the Journey ↓</a>
+            <a href="#message" class="button button-outline">A Message to Students</a>
+          </div>
+
+          <div class="identity">
+            <div class="identity-dot">T</div>
+            <div>
+              <strong>TROY_NASDAQ</strong>
+              Founder &amp; CEO · Luvuyo Skosana
+            </div>
+          </div>
+        </div>
+
+        <div class="portrait-card reveal" aria-label="Founder branded profile visual">
+          <div class="portrait-label">Founder Profile · LDU</div>
+          <div class="portrait-orbit"></div>
+          <div class="portrait-emblem">TN</div>
+          <div class="portrait-bottom">
+            <small>Founder &amp; Chief Executive Officer</small>
+            <h2>TROY_NASDAQ</h2>
+            <p>Also known as Luvuyo Skosana</p>
+            <div class="portrait-rule"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Founder profile overview">
+      <div class="container metrics-grid">
+        <div class="metric">
+          <strong>7 Years</strong>
+          <span>Trading experience, as stated by the founder</span>
+        </div>
+        <div class="metric">
+          <strong>Education</strong>
+          <span>A focus on learning and structured development</span>
+        </div>
+        <div class="metric">
+          <strong>LDU™</strong>
+          <span>A university built around the learning mission</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="journey">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">The Story</div>
+          <h2>A journey shaped by <span class="red-text">the markets.</span></h2>
+          <p>
+            Every trader's journey is personal. This is the foundation of the
+            story behind TROY_NASDAQ and the educational vision of LDU.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-text reveal">
+            <p>
+              Trading demands more than the ability to identify a possible
+              entry. It calls for patience, observation, risk awareness,
+              emotional control, and the willingness to learn from both
+              favourable and unfavourable outcomes.
+            </p>
+
+            <p>
+              Across seven years of trading experience, TROY_NASDAQ has
+              continued to engage with the challenge of understanding how
+              markets move. His stated interest in recurring price behaviour
+              informs the educational direction he wants LDU to pursue.
+            </p>
+
+            <p>
+              <strong>The purpose of the journey is not to present trading as
+              an easy path.</strong> It is to encourage a more thoughtful
+              relationship with the markets — one where students learn to
+              question, observe, practise, and develop their own understanding
+              instead of blindly following predictions.
+            </p>
+
+            <p>
+              That educational perspective is central to the idea behind
+              Liquidity Displacement University™: creating a place where
+              trading concepts can be organised into a learning experience
+              that students can revisit and develop over time.
+            </p>
+          </div>
+
+          <aside class="quote-card reveal">
+            <div class="quote-symbol">“</div>
+            <blockquote>
+              The goal is not simply to watch the market move. It is to learn
+              to observe, understand, and approach decisions with discipline.
+            </blockquote>
+            <small>The educational philosophy behind LDU</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <div class="eyebrow">The Principles</div>
+          <h2>What guides the <span class="red-text">mission.</span></h2>
+          <p>
+            A serious learning environment should value the process as much
+            as the outcome. These are the principles LDU aims to encourage
+            throughout its educational experience.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar reveal">
+            <div class="pillar-number">01</div>
+            <h3>Discipline Before Impulse</h3>
+            <p>
+              Learn to follow a considered process rather than making
+              decisions out of fear, excitement, impatience, or pressure.
+            </p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-number">02</div>
+            <h3>Observation Before Assumption</h3>
+            <p>
+              Develop the habit of examining price behaviour and waiting for
+              evidence instead of forcing a trade because an opportunity
+              appears attractive.
+            </p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-number">03</div>
+            <h3>Risk Awareness</h3>
+            <p>
+              Understand that losses are possible, capital is limited, and
+              responsible risk management is an essential part of trading
+              education.
+            </p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-number">04</div>
+            <h3>Continuous Learning</h3>
+            <p>
+              Treat every lesson, review, and trading observation as an
+              opportunity to ask better questions and improve understanding.
+            </p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-number">05</div>
+            <h3>Independent Thinking</h3>
+            <p>
+              Encourage students to understand the reasoning behind a concept
+              rather than depending entirely on somebody else's decisions.
+            </p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-number">06</div>
+            <h3>Honest Expectations</h3>
+            <p>
+              Trading outcomes are uncertain. Education can support learning,
+              but no course, framework, or mentor can guarantee profits.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="philosophy">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <div class="eyebrow">The Development</div>
+          <h2>From personal learning to <span class="red-text">shared education.</span></h2>
+          <p>
+            The story behind LDU is best understood as an evolving educational
+            mission, not a promise of overnight success.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <span class="step">The Foundation</span>
+            <h3>Learning the realities of trading</h3>
+            <p>
+              Trading is a field that requires ongoing study, practice, and
+              reflection. The foundation of this journey is seven years of
+              experience in engaging with the markets, as shared by the founder.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <span class="step">The Observation</span>
+            <h3>Paying attention to repeating behaviour</h3>
+            <p>
+              The educational direction places emphasis on observing how price
+              behaves, identifying recurring situations, and understanding
+              why patience and confirmation matter when considering a trade.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <span class="step">The Educational Vision</span>
+            <h3>Making the learning process more structured</h3>
+            <p>
+              LDU is intended to bring educational material, explanations,
+              course resources, and community learning together in one place,
+              helping students follow a more organised learning journey.
+            </p>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <span class="step">The Mission Ahead</span>
+            <h3>Building a community of thoughtful learners</h3>
+            <p>
+              The long-term vision is to keep developing an environment where
+              learners can study market behaviour, ask questions, practise
+              responsibly, and continue improving their understanding.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section" id="vision">
+      <div class="container vision-grid">
+        <div class="vision-panel reveal">
+          <div class="eyebrow">The Vision</div>
+          <h2>Education that goes beyond the entry.</h2>
+          <p>
+            LDU aims to put the learning process at the centre of trading
+            education: understanding concepts, developing discipline, and
+            making decisions with an awareness of uncertainty and risk.
+          </p>
+        </div>
+
+        <div class="vision-copy reveal">
+          <h3>Why Liquidity Displacement University™?</h3>
+          <p>
+            The university is designed around the idea that learning should
+            be more than chasing trade calls. Students should have access
+            to educational material that helps them build understanding
+            over time, with a focus on process rather than unrealistic
+            promises about financial outcomes.
+          </p>
+
+          <div class="values-list">
+            <div class="value-item">
+              <div class="check">✓</div>
+              <div>
+                <strong>A structured learning experience</strong>
+                <span>Organised course material designed to support a learning journey.</span>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="check">✓</div>
+              <div>
+                <strong>Market behaviour education</strong>
+                <span>Explore recurring price behaviour and the importance of confirmation.</span>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="check">✓</div>
+              <div>
+                <strong>Discipline and risk awareness</strong>
+                <span>Build a stronger understanding of uncertainty and responsible decision-making.</span>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="check">✓</div>
+              <div>
+                <strong>A community for continued learning</strong>
+                <span>Support an environment where questions and ongoing development matter.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="leadership">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Leadership</div>
+          <h2>Building with <span class="red-text">purpose.</span></h2>
+          <p>
+            Leadership in education means setting a direction, communicating
+            expectations, and continuing to develop the environment in which
+            students learn.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-text reveal">
+            <p>
+              As Founder and CEO, TROY_NASDAQ represents the vision behind
+              Liquidity Displacement University™. The role is about more than
+              a title: it involves shaping the educational direction, the
+              student experience, and the standards the university aims to
+              uphold.
+            </p>
+
+            <p>
+              The intention is to create a platform where students can find
+              educational resources, understand what they are enrolling in,
+              and approach their development with realistic expectations.
+            </p>
+
+            <p>
+              A learning community grows through consistency, clear
+              communication, useful material, and a willingness to keep
+              improving. Those are the foundations LDU aims to build upon.
+            </p>
+          </div>
+
+          <div class="story-text reveal">
+            <p><strong>The mission is centred on three commitments:</strong></p>
+
+            <p>
+              <strong>Clarity:</strong> explain what students can expect from
+              the programme and make learning resources easy to navigate.
+            </p>
+
+            <p>
+              <strong>Responsibility:</strong> communicate that financial
+              markets carry risk and that education does not guarantee a
+              profitable result.
+            </p>
+
+            <p>
+              <strong>Development:</strong> keep improving the educational
+              experience as the university and its community grow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section message" id="message">
+      <div class="container">
+        <div class="message-inner reveal">
+          <div class="eyebrow">A Personal Message</div>
+          <h2>To every student beginning the journey.</h2>
+
+          <p>
+            Welcome to Liquidity Displacement University™.
+          </p>
+
+          <p>
+            If you are beginning your trading journey, remember that you do
+            not need to understand everything in one day. Give yourself time
+            to learn, ask questions, practise, review your decisions, and
+            understand the risks involved.
+          </p>
+
+          <p>
+            Do not measure your progress only by a winning trade. Focus on
+            whether you are learning, whether you are following your process,
+            and whether you are becoming more thoughtful about the decisions
+            you make.
+          </p>
+
+          <p>
+            This university is intended to support your education, not to
+            promise you a shortcut. Take the lessons seriously, remain
+            curious, and remember that responsible trading begins with
+            understanding what you are doing and what you could lose.
+          </p>
+
+          <p>
+            Thank you for being part of the vision. The journey of learning
+            continues, and your development is your own responsibility.
+          </p>
+
+          <div class="signature">
+            TROY_NASDAQ
+            <span>FOUNDER &amp; CEO · LIQUIDITY DISPLACEMENT UNIVERSITY™</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container reveal">
+        <div class="eyebrow">Your Next Chapter</div>
+        <h2>Build your understanding. <span class="red-text">Keep learning.</span></h2>
+        <p>
+          Explore the educational programmes offered by Liquidity Displacement
+          University™ and decide whether the learning experience fits your goals.
+          Review the course details and terms before enrolling.
+        </p>
+        <a href="index.html#programmes" class="button button-red">
+          Explore Programmes →
+        </a>
+        <a href="index.html" class="button button-outline">
+          Return Home
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">LDU</span>
+          <span>
+            LIQUIDITY DISPLACEMENT
+            <small>UNIVERSITY™</small>
+          </span>
+        </a>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#programmes">Programmes</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#login">Student Login</a>
+        </nav>
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> Liquidity Displacement University™.
+        All rights reserved.<br>
+        Educational content only. Trading financial instruments involves
+        substantial risk and may not be suitable for everyone. No educational
+        programme guarantees profits or financial success. Nothing on this
+        page should be understood as individual financial advice.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+      menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach(function (item) {
+        observer.observe(item);
+      });
+    } else {
+      revealItems.forEach(function (item) {
+        item.classList.add("visible");
+      });
+    }
+  </script>
+</body>
+</html>
