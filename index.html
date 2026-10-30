@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#09090c;--bg2:#101014;--panel:rgba(255,255,255,.055);
@@ -711,7 +713,7 @@ footer{border-top:1px solid var(--line);background:rgba(0,0,0,.23);padding:44px 
   </div>
 </footer>
 
-<!-- Pattern descriptions: educational overviews, not price or checkout data. -->
+<!-- Pattern descriptions -->
 <div class="modal-backdrop" id="patternModal" role="dialog" aria-modal="true" aria-labelledby="patternModalTitle" aria-hidden="true">
   <div class="modal">
     <button class="modal-close" id="closePatternModal" aria-label="Close pattern overview">×</button>
@@ -726,7 +728,7 @@ footer{border-top:1px solid var(--line);background:rgba(0,0,0,.23);padding:44px 
   </div>
 </div>
 
-<!-- One-time introductory promotion. It does not contain prices or a fake checkout. -->
+<!-- Welcome promotion -->
 <div class="modal-backdrop" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle" aria-hidden="true">
   <div class="modal promo-card">
     <button class="modal-close" id="closePromo" aria-label="Close promotion">×</button>
@@ -743,19 +745,9 @@ footer{border-top:1px solid var(--line);background:rgba(0,0,0,.23);padding:44px 
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- Existing LiveChat integration preserved -->
-<script>
-window.__lc = window.__lc || {};
-window.__lc.license = 19960069;
-window.__lc.integration_name = "manual_onboarding";
-window.__lc.product_name = "livechat";
-(function(n,t,c){
-  function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
-  var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=true;n.type="text/javascript";n.src="https://cdn.livechatinc.com/tracking.js";t.head.appendChild(n)}};
-  !n.__lc.asyncInit&&e.init();n.LiveChatWidget=n.LiveChatWidget||e;
-})(window,document,[].slice);
-</script>
-<noscript><a href="https://www.livechat.com/chat-with/19960069/" rel="nofollow">Chat with us</a></noscript>
+<!-- BOTPRESS AI CHATBOT -->
+<script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/10/30/11/20261030113351-E9CCUMUE.js" defer></script>
 
 <script>
 (function(){
@@ -800,7 +792,6 @@ window.__lc.product_name = "livechat";
   const menuBtn = $("menuBtn");
   const mobileNav = $("mobileNav");
   let previousFocus = null;
-  let promoTimer = null;
   let toastTimer = null;
 
   $("year").textContent = new Date().getFullYear();
@@ -885,13 +876,13 @@ window.__lc.product_name = "livechat";
     try{sessionStorage.setItem("ldu_promo_seen_session","1")}catch(e){}
   });
 
-  /* The introductory promotion appears at most once per browser when storage is available. */
+  /* Show the introductory promotion once per browser when storage is available. */
   function scheduleIntro(){
     let alreadySeen = false;
     try{alreadySeen = localStorage.getItem("ldu_intro_seen_v2") === "1"}catch(e){}
     if(alreadySeen) return;
 
-    promoTimer = setTimeout(()=>{
+    setTimeout(()=>{
       if(patternModal.classList.contains("open")) return;
       try{localStorage.setItem("ldu_intro_seen_v2","1")}catch(e){}
       openModal(promoModal);
@@ -899,7 +890,7 @@ window.__lc.product_name = "livechat";
   }
   scheduleIntro();
 
-  /* Reveal effects, with a graceful fallback for browsers without IntersectionObserver. */
+  /* Reveal effects */
   const revealItems = document.querySelectorAll(".reveal");
   if("IntersectionObserver" in window){
     const observer = new IntersectionObserver(entries=>{
@@ -915,8 +906,7 @@ window.__lc.product_name = "livechat";
     revealItems.forEach(item=>item.classList.add("visible"));
   }
 
-  /* Do not invent a checkout action: this homepage deliberately routes visitors to account pages. */
 })();
 </script>
 </body>
-  </html>
+</html>
