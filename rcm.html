@@ -3,682 +3,788 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090a0f">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
 <title>Student Portal | Liquidity Displacement University™</title>
-<meta name="description" content="Liquidity Displacement University student learning dashboard.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-:root{color-scheme:dark;--bg:#090a0f;--panel:rgba(255,255,255,.065);--border:rgba(255,255,255,.12);--white:#f7f7fa;--muted:#a2a4b2;--red:#f04455;--gold:#dfbd78;--radius:22px}
+:root {
+  --bg:#080808;
+  --panel:#111;
+  --panel2:#171717;
+  --line:#292929;
+  --red:#e32636;
+  --gold:#d6b46a;
+  --white:#f5f5f5;
+  --muted:#929292;
+  --green:#48c78e;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 5% 0%,#f044551f,transparent 35%),radial-gradient(ellipse at 95% 20%,#dfbd7812,transparent 30%),var(--bg);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-button,input,textarea,select{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-a{color:inherit;text-decoration:none}
+body{
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+}
+button,input,textarea{font:inherit}
 button{cursor:pointer}
-button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.layout{display:flex;min-height:100vh}
-.sidebar{width:255px;flex-shrink:0;padding:25px 17px;display:flex;flex-direction:column;gap:28px;background:#0e0f15e8;border-right:1px solid var(--border);backdrop-filter:blur(25px)}
-.brand{display:flex;align-items:center;gap:12px;padding:0 5px}
-.brand-mark{width:45px;height:45px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(140deg,#ff6573,#cf1730);font-weight:900;font-size:20px}
-.brand h2{font-size:14px;margin:0;letter-spacing:-.4px}
-.brand small{display:block;color:var(--gold);font-size:9px;margin-top:5px;letter-spacing:1.3px}
-.nav-label{margin:5px 11px 12px;color:#777986;font-size:9px;font-weight:800;letter-spacing:2px}
-.nav{display:grid;gap:6px}
-.nav button{width:100%;display:flex;align-items:center;gap:12px;padding:13px;border:1px solid transparent;border-radius:13px;background:transparent;color:#b2b3bf;text-align:left;font-size:12px;font-weight:600}
-.nav button:hover,.nav button.active{color:white;background:linear-gradient(100deg,#f0445523,#ffffff08);border-color:#f0445535}
-.nav button.active{box-shadow:inset 3px 0 var(--red)}
-.nav .ico{width:22px;text-align:center;font-size:17px}
-.side-bottom{margin-top:auto}
-.side-note{padding:17px;border:1px solid var(--border);border-radius:18px;background:#ffffff08;color:var(--muted);font-size:11px;line-height:1.8}
-.side-note strong{display:block;color:var(--gold);font-size:16px;margin:9px 0}
-.main{flex:1;min-width:0}
-.topbar{position:sticky;top:0;z-index:5;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 28px;border-bottom:1px solid var(--border);background:#090a0fd9;backdrop-filter:blur(22px)}
-.topbar-label{font-size:9px;color:var(--muted);letter-spacing:1.3px}
-.topbar-label strong{display:block;color:white;font-size:14px;letter-spacing:0;margin-top:5px}
-.top-actions{display:flex;align-items:center;gap:10px}
-.avatar{width:37px;height:37px;display:grid;place-items:center;border-radius:50%;background:#f0445525;border:1px solid var(--border);color:var(--gold);font-weight:800}
-.mobile-menu{display:none!important}
-.content{max-width:1450px;margin:auto;padding:30px}
-.eyebrow{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:2px}
-h1{font-size:clamp(29px,4vw,43px);line-height:1.14;letter-spacing:-1.6px;margin:12px 0}
-h2{font-size:20px;letter-spacing:-.6px}
-h3{font-size:14px}
-p{line-height:1.75}
-.muted{color:var(--muted)}
-.small{font-size:11px}
-.gold{color:var(--gold)}
-.red{color:var(--red)}
-.hero{position:relative;overflow:hidden;padding:34px;border:1px solid var(--border);border-radius:28px;background:radial-gradient(ellipse at 100% 0%,#f0445527,transparent 45%),linear-gradient(135deg,#ffffff0e,#ffffff04);box-shadow:0 20px 65px #0003;backdrop-filter:blur(20px)}
-.hero p{max-width:680px;color:#c0c1cb;font-size:13px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.btn{min-height:41px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 15px;border:1px solid var(--border);border-radius:12px;background:#ffffff0a;color:white;font-size:11px;font-weight:750}
-.btn:hover{background:#ffffff16}
-.btn-red{background:linear-gradient(135deg,#ff5969,#d91e36);border-color:#f0445580}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.grid{display:grid;gap:15px}
-.stats{grid-template-columns:repeat(3,minmax(0,1fr));margin:20px 0}
-.stat,.card,.course-card,.price-card{min-width:0;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(145deg,#ffffff0b,#ffffff04);box-shadow:0 12px 35px #0002}
-.stat{padding:20px}
-.stat-top{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:11px}
-.stat-icon{font-size:19px;color:var(--gold)}
-.stat-value{font-size:27px;font-weight:800;letter-spacing:-1px;margin:17px 0 7px;overflow-wrap:anywhere}
-.stat-note{font-size:10px;color:var(--muted);line-height:1.6}
-.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 14px}
-.section-head h2{margin:0}
-.columns{grid-template-columns:minmax(0,1.4fr) minmax(230px,1fr)}
-.card{padding:21px}
-.community,.notice{padding:17px;border:1px solid #dfbd7838;border-radius:17px;background:linear-gradient(140deg,#dfbd7810,#ffffff04);color:#d8ccb4;font-size:12px;line-height:1.8}
-.community p{color:var(--muted);font-size:12px}
-.pill{display:inline-flex;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#ffffff08;color:#d4d4dc;font-size:9px;font-weight:700}
-.free-pill{color:#c6f6d5;border-color:#4bca8a66;background:#4bca8a12}
+.app{display:flex;min-height:100vh}
+.sidebar{
+  width:250px;background:#0d0d0d;border-right:1px solid var(--line);
+  padding:25px 17px;position:fixed;inset:0 auto 0 0;z-index:5;
+  display:flex;flex-direction:column;
+}
+.brand{padding:8px 10px 28px}
+.brand strong{font-size:17px;letter-spacing:1px}
+.brand span{display:block;color:var(--gold);font-size:10px;margin-top:7px;letter-spacing:2px}
+.nav-label{font-size:10px;color:#777;letter-spacing:2px;padding:12px}
+.nav button{
+  width:100%;border:0;background:transparent;color:#aaa;text-align:left;
+  padding:13px 12px;border-radius:9px;margin:3px 0;font-size:13px;
+}
+.nav button.active,.nav button:hover{background:#211113;color:#fff}
+.nav button.active{border-left:3px solid var(--red)}
+.sidebar-bottom{margin-top:auto}
+.main{margin-left:250px;width:calc(100% - 250px);padding:30px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:30px}
+.topbar h1{font-size:24px;margin:0}
+.topbar p{color:var(--muted);font-size:12px;margin:7px 0 0}
+.user-pill{border:1px solid var(--line);padding:10px 14px;border-radius:30px;font-size:12px}
 .page{display:none}
-.page.active{display:block;animation:appear .25s ease}
-@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-.course-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px}
-.course-card{display:flex;flex-direction:column;gap:12px;padding:18px}
-.course-card.free-course{border-color:#dfbd7870;background:radial-gradient(ellipse at 100% 0%,#dfbd7816,transparent 50%),linear-gradient(145deg,#ffffff0b,#ffffff04)}
-.course-art{min-height:105px;display:grid;place-items:center;border:1px solid var(--border);border-radius:16px;background:radial-gradient(ellipse at center,#f0445525,transparent 70%),#111218;color:var(--gold);font-size:22px;font-weight:800;letter-spacing:3px}
-.course-card h3{margin:0;line-height:1.6}
-.course-card p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
-.course-card .btn{margin-top:auto}
-.lesson-list{display:grid;gap:10px}
-.lesson{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--border);border-radius:16px;background:#ffffff06}
-.lesson-icon{width:41px;height:41px;flex-shrink:0;display:grid;place-items:center;border-radius:13px;background:#f0445517;color:#ff7785;font-size:17px}
-.lesson-info{flex:1;min-width:0}
-.lesson-info h3{font-size:12px;margin:0 0 5px;overflow-wrap:anywhere}
-.lesson-info p{font-size:10px;color:var(--muted);margin:0}
-.price-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:20px}
-.price-card{padding:23px}
-.price-card.featured{border-color:#dfbd7870;background:linear-gradient(145deg,#dfbd7814,#ffffff04)}
-.price{font-size:clamp(25px,3vw,34px);font-weight:800;color:var(--gold);margin:17px 0 10px;letter-spacing:-1px}
-.price small{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:0}
-.price-card li{font-size:12px;color:#c1c1ca;line-height:2}
-.field{display:grid;gap:8px;margin:15px 0}
-.field label{font-size:11px;color:#c5c6cf;font-weight:650}
-.field input,.field textarea,.field select{width:100%;padding:13px;border:1px solid var(--border);border-radius:12px;background:#101117;color:white;font-size:13px}
-.field textarea{min-height:100px;resize:vertical}
-.field input[type=file]{padding:10px}
-.status{margin:12px 0;color:var(--gold);font-size:12px;line-height:1.8;overflow-wrap:anywhere}
-.status.error{color:#ff7884}
-.empty{padding:20px;border:1px solid var(--border);border-radius:15px;color:var(--muted);font-size:12px;line-height:1.8}
-.footer{padding:23px;border-top:1px solid var(--border);text-align:center;color:#81828d;font-size:10px;line-height:1.8}
-.progress-track{height:7px;background:#ffffff12;border-radius:99px;overflow:hidden;margin:12px 0}
-.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#f04455,#dfbd78);border-radius:99px}
-.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 15px}
-.file-note{font-size:10px;color:var(--muted);line-height:1.7}
-.certificate-card{padding:19px;border:1px solid #dfbd7850;border-radius:18px;background:linear-gradient(140deg,#dfbd7810,#ffffff04)}
-.certificate-icon{font-size:27px;color:var(--gold)}
-.divider{border:0;border-top:1px solid var(--border);margin:22px 0}
-@media(max-width:1000px){.sidebar{width:225px}.content{padding:22px}.columns{grid-template-columns:1fr}}
-@media(max-width:760px){.layout{display:block}.sidebar{display:none;position:fixed;z-index:20;inset:0 auto 0 0;width:min(285px,87vw);overflow-y:auto;background:#101117f5}.sidebar.open{display:flex}.mobile-menu{display:inline-flex!important}.topbar{padding:12px 14px;min-height:66px}.topbar-label{font-size:8px;max-width:52vw}.topbar-label strong{font-size:12px}.content{padding:19px 14px}.hero{padding:25px 20px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:15px}.stat-value{font-size:22px}.course-grid,.price-grid,.form-grid{grid-template-columns:1fr}.footer{padding:20px 12px}}
-@media(max-width:380px){.topbar .btn{padding:9px;font-size:9px}.top-actions{gap:6px}.stat{padding:12px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+.page.active{display:block}
+.hero{
+  background:linear-gradient(120deg,#211012,#111 65%);
+  border:1px solid #422126;border-radius:17px;padding:30px;margin-bottom:22px;
+}
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+.hero h2{font-size:30px;margin:12px 0}
+.hero p{color:#bbb;max-width:650px;line-height:1.7;font-size:13px}
+.btn{
+  border:0;border-radius:8px;padding:12px 17px;font-weight:700;
+  background:var(--red);color:white;font-size:12px;
+}
+.btn.secondary{background:#252525;border:1px solid #383838}
+.btn.gold{background:var(--gold);color:#111}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:22px}
+.card{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:13px;padding:20px;margin-bottom:16px;
+}
+.stat small{color:var(--muted);font-size:11px}
+.stat h3{font-size:25px;margin:12px 0 5px}
+.stat p{font-size:11px;color:var(--muted);margin:0}
+.section-title{font-size:17px;margin:25px 0 15px}
+.course{
+  display:flex;justify-content:space-between;align-items:center;gap:15px;
+  border:1px solid var(--line);background:#111;border-radius:12px;
+  padding:17px;margin-bottom:10px;
+}
+.course h3{font-size:14px;margin:0 0 7px}
+.course p{font-size:11px;color:var(--muted);margin:0}
+.tag{font-size:10px;color:var(--gold);border:1px solid #55472b;padding:6px 9px;border-radius:20px}
+.locked{opacity:.65}
+.progress-track{height:7px;background:#292929;border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;background:var(--red);width:0%}
+label{display:block;color:#aaa;font-size:11px;margin:14px 0 7px}
+input,textarea{
+  width:100%;background:#0b0b0b;border:1px solid #333;color:white;
+  border-radius:8px;padding:12px;outline:none;
+}
+input:focus,textarea:focus{border-color:var(--red)}
+textarea{min-height:110px;resize:vertical}
+.status{font-size:11px;padding:6px 9px;border-radius:20px;background:#242424;color:#ccc}
+.status.active{color:var(--green);background:#10251b}
+.status.pending{color:var(--gold);background:#282214}
+.muted{color:var(--muted);font-size:12px;line-height:1.7}
+.notice{border:1px solid #44371e;background:#1c1810;color:#d9c38c;padding:14px;border-radius:9px;font-size:12px;line-height:1.6}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.hidden{display:none!important}
+#loginScreen{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+}
+.login-card{width:100%;max-width:420px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px}
+.login-card h1{font-size:23px}
+.login-card p{color:var(--muted);font-size:12px;line-height:1.6}
+#message{font-size:12px;margin-top:12px;color:var(--gold)}
+footer{color:#666;font-size:10px;padding:20px 0}
+@media(max-width:800px){
+  .sidebar{width:100%;height:auto;position:fixed;inset:auto 0 0 0;padding:8px;background:#0b0b0b;border-top:1px solid var(--line);border-right:0}
+  .brand,.nav-label,.sidebar-bottom{display:none}
+  .nav{display:flex;overflow-x:auto;gap:3px}
+  .nav button{white-space:nowrap;width:auto;font-size:10px;padding:12px 10px}
+  .main{margin:0;width:100%;padding:20px 14px 90px}
+  .grid{grid-template-columns:1fr 1fr}
+  .topbar h1{font-size:19px}
+  .hero{padding:22px}
+  .hero h2{font-size:24px}
+}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.course{align-items:flex-start}}
 </style>
 </head>
 
 <body>
-<div class="layout">
-<aside class="sidebar" id="sidebar">
-  <div class="brand"><div class="brand-mark">LDU</div><div><h2>LIQUIDITY DISPLACEMENT</h2><small>UNIVERSITY™</small></div></div>
-  <div>
-    <div class="nav-label">STUDENT SPACE</div>
-    <nav class="nav">
-      <button class="active" data-page="overview"><span class="ico">⌂</span> Overview</button>
-      <button data-page="courses"><span class="ico">▤</span> My Courses</button>
-      <button data-page="progress"><span class="ico">◷</span> My Progress</button>
-      <button data-page="certificates"><span class="ico">♜</span> Certificates</button>
-      <button data-page="fees"><span class="ico">◇</span> Programme Fees</button>
-      <button data-page="account"><span class="ico">◎</span> My Account</button>
-    </nav>
+
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="eyebrow">Liquidity Displacement University™</div>
+    <h1>Student Portal</h1>
+    <p>Sign in to access your learning dashboard, courses and student account.</p>
+    <form id="loginForm">
+      <label>Email address</label>
+      <input id="email" type="email" required placeholder="Your registered email">
+      <label>Password</label>
+      <input id="password" type="password" required placeholder="Your password">
+      <button class="btn" style="width:100%;margin-top:18px" type="submit">Sign In</button>
+    </form>
+    <div id="message"></div>
+    <p>Not registered yet? Use the student registration page.</p>
   </div>
-  <div class="side-bottom">
-    <div class="side-note">YOUR LEARNING JOURNEY<strong>12 Months</strong>Structured trading education. Discipline. Development.</div>
-    <button class="btn" id="logoutButton" style="width:100%;margin-top:12px">↗ Log Out</button>
+</div>
+
+<div id="portal" class="app hidden">
+
+<aside class="sidebar">
+  <div class="brand">
+    <strong>LDU <span style="display:inline;color:var(--red)">●</span></strong>
+    <span>STUDENT COMMAND CENTRE</span>
+  </div>
+
+  <div class="nav-label">STUDENT MENU</div>
+  <nav class="nav">
+    <button class="active" data-page="overview">⌂ Overview</button>
+    <button data-page="courses">▤ My Courses</button>
+    <button data-page="progress">◴ My Progress</button>
+    <button data-page="certificates">♧ Certificates</button>
+    <button data-page="fees">◇ Programme Fees</button>
+    <button data-page="submissions">↑ Submissions</button>
+    <button data-page="account">⚙ My Account</button>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <button class="btn secondary" style="width:100%" id="logoutBtn">Sign Out</button>
   </div>
 </aside>
 
 <main class="main">
-<header class="topbar">
-  <div style="display:flex;align-items:center;gap:10px">
-    <button class="btn mobile-menu" id="menuButton" aria-label="Open menu">☰</button>
-    <div class="topbar-label">STUDENT LEARNING ENVIRONMENT<strong id="topName">Loading your portal…</strong></div>
-  </div>
-  <div class="top-actions"><span class="pill" id="membershipPill">Checking access</span><div class="avatar" id="avatar">L</div></div>
-</header>
-
-<div class="content">
-<div id="globalStatus" class="status" role="status" aria-live="polite">Connecting to your student account…</div>
-
-<section class="page active" id="page-overview">
-  <div class="hero">
-    <div class="eyebrow">LIQUIDITY DISPLACEMENT UNIVERSITY™</div>
-    <h1>Welcome back,<br><span class="gold" id="welcomeName">Student</span>.</h1>
-    <p>Your learning environment for structured market education, trading discipline and professional development. Start with our free introduction to the language of forex.</p>
-    <div class="hero-actions">
-      <button class="btn btn-red" data-goto="courses">Explore My Courses →</button>
-      <a class="btn" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Contact Student Support ↗</a>
+  <header class="topbar">
+    <div>
+      <h1 id="pageHeading">Overview</h1>
+      <p>Liquidity Displacement University™ | Student portal</p>
     </div>
-  </div>
-  <div class="grid stats">
-    <div class="stat"><div class="stat-top">Membership <span class="stat-icon">◇</span></div><div class="stat-value" id="membershipValue">Checking</div><div class="stat-note" id="membershipNote">Checking your account access.</div></div>
-    <div class="stat"><div class="stat-top">Available Courses <span class="stat-icon">▤</span></div><div class="stat-value" id="courseCount">—</div><div class="stat-note">Published courses, including free learning.</div></div>
-    <div class="stat"><div class="stat-top">Learning Progress <span class="stat-icon">◷</span></div><div class="stat-value" id="progressValue">—</div><div class="stat-note">Based on recorded lesson progress.</div></div>
-  </div>
-  <div class="section-head"><h2>Your Learning Space</h2><span class="pill">STUDENT PORTAL</span></div>
-  <div class="grid columns">
-    <div class="card">
-      <div class="eyebrow">CONTINUE YOUR JOURNEY</div><h2>My Courses</h2>
-      <p class="muted small">Begin with your free introduction, then explore the full programme.</p>
-      <div id="overviewCourses" class="lesson-list"><div class="empty">Loading courses…</div></div>
-      <button class="btn" data-goto="courses" style="margin-top:15px">View All Courses →</button>
+    <div class="user-pill" id="userEmail">Student account</div>
+  </header>
+
+  <section class="page active" id="page-overview">
+    <div class="hero">
+      <div class="eyebrow">Welcome to LDU</div>
+      <h2>Learn the language of the market.</h2>
+      <p>Your education journey starts here. Access your programme, follow your learning progress, submit your work and track your certificate status.</p>
+      <button class="btn" onclick="showPage('courses')">Explore My Courses</button>
     </div>
-    <div class="card">
-      <div class="eyebrow">STUDENT COMMUNITY</div><h2>Learn Together</h2>
-      <p class="muted small">Connect with the community for discussions and learning support.</p>
-      <div class="community"><strong>Student Community</strong><p>Contact student support through the community link.</p><a class="btn btn-red" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Open Support ↗</a></div>
-      <div class="notice" style="margin-top:14px">Free introductory learning is available without a paid membership. Paid programme access remains subject to membership verification.</div>
-    </div>
-  </div>
-</section>
 
-<section class="page" id="page-courses">
-  <div class="eyebrow">YOUR EDUCATION</div><h1>My Courses</h1>
-  <p class="muted">Start with the free introduction to the language of forex.</p>
-  <div id="courseAccessNotice" class="notice" style="margin:18px 0">Loading your course access…</div>
-  <div class="grid course-grid" id="courseGrid"><div class="empty">Loading courses…</div></div>
-</section>
-
-<section class="page" id="page-progress">
-  <div class="eyebrow">YOUR DEVELOPMENT</div><h1>My Progress</h1>
-  <p class="muted">Your learning progress recorded in the student database.</p>
-  <div class="card" style="margin-top:20px">
-    <div class="section-head" style="margin-top:0"><h2>Learning Summary</h2><span class="pill" id="progressPill">In progress</span></div>
-    <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
-    <p class="muted small" id="progressDescription">Loading recorded progress…</p>
-    <div class="lesson-list" id="progressList"></div>
-  </div>
-</section>
-
-<section class="page" id="page-certificates">
-  <div class="eyebrow">YOUR ACHIEVEMENTS</div><h1>Certificates</h1>
-  <p class="muted">Track certificate reviews and view certificates issued by the LDU team.</p>
-  <div class="notice">Certificates are issued only after the programme team reviews and approves your submission. Submitting trading results does not guarantee a certificate.</div>
-  <div class="section-head"><h2>My Certificates</h2><button class="btn" id="refreshCertificates">Refresh</button></div>
-  <div class="grid" id="certificateList"><div class="empty">Loading your certificates…</div></div>
-</section>
-
-<section class="page" id="page-submission">
-  <div class="eyebrow">TRADING PERFORMANCE REVIEW</div><h1>Submit Trading Results</h1>
-  <p class="muted">Submit your results for review by the LDU team. Upload screenshots of completed trades, including wins and losses.</p>
-  <div class="notice"><strong>Submission requirements</strong><br>• Report the three months before your course and the three months after it.<br>• Upload up to 50 screenshots of completed trades.<br>• Do not upload passwords, private keys, bank details or other sensitive information.<br>• Your submission remains pending until reviewed by the programme team.</div>
-  <div class="card" style="margin-top:18px">
-    <form id="submissionForm">
-      <input type="hidden" id="submissionCourseId">
-      <div class="field"><label for="submissionCourseTitle">Course</label><input id="submissionCourseTitle" readonly></div>
-      <div class="form-grid">
-        <div class="field"><label for="beforeStart">Before-course period — start</label><input type="date" id="beforeStart" required></div>
-        <div class="field"><label for="beforeEnd">Before-course period — end</label><input type="date" id="beforeEnd" required></div>
-        <div class="field"><label for="afterStart">After-course period — start</label><input type="date" id="afterStart" required></div>
-        <div class="field"><label for="afterEnd">After-course period — end</label><input type="date" id="afterEnd" required></div>
+    <div class="grid">
+      <div class="card stat">
+        <small>MEMBERSHIP STATUS</small>
+        <h3 id="overviewMembership">Checking</h3>
+        <p>Your programme access</p>
       </div>
-      <div class="field"><label for="beforeResults">Trading results before the course</label><textarea id="beforeResults" required placeholder="Describe your trading performance and the evidence you are providing."></textarea></div>
-      <div class="field"><label for="afterResults">Trading results after the course</label><textarea id="afterResults" required placeholder="Describe your trading performance and the evidence you are providing."></textarea></div>
-      <div class="field"><label for="submissionNotes">Additional notes (optional)</label><textarea id="submissionNotes"></textarea></div>
-      <div class="field"><label for="tradeScreenshots">Completed-trade screenshots (maximum 50)</label><input id="tradeScreenshots" type="file" accept="image/jpeg,image/png,image/webp" multiple required><div class="file-note">JPG, PNG or WebP only. Maximum 5 MB per image. Secure Storage configuration is required.</div><div id="fileSummary" class="status" aria-live="polite"></div></div>
-      <div id="submissionStatus" class="status" role="status" aria-live="polite"></div>
-      <button class="btn btn-red" type="submit" id="submitResultsButton">Submit for Review →</button>
-      <button class="btn" type="button" data-goto="courses">Cancel</button>
-    </form>
-  </div>
-</section>
+      <div class="card stat">
+        <small>COURSES AVAILABLE</small>
+        <h3 id="courseCount">—</h3>
+        <p>Courses in your portal</p>
+      </div>
+      <div class="card stat">
+        <small>LEARNING PROGRESS</small>
+        <h3 id="overviewProgress">0%</h3>
+        <p>Completed lessons</p>
+      </div>
+    </div>
 
-<section class="page" id="page-fees">
-  <div class="eyebrow">PROGRAMME ENROLMENT</div><h1>Programme Fees</h1>
-  <p class="muted">Liquidity Displacement University™ — 12-month course programme.</p>
-  <div class="grid price-grid">
-    <div class="price-card"><span class="pill">MONTHLY OPTION</span><div class="price">R1,500 <small>/ month</small></div><p class="muted small">Monthly instalments for the 12-month programme.</p><ul><li>12-month course duration</li><li>Monthly payment plan</li><li>Membership subject to verification</li></ul><button class="btn" disabled>PayFast — Temporarily Not Available</button></div>
-    <div class="price-card featured"><span class="pill">ONCE-OFF OPTION</span><div class="price">R18,000 <small>once-off</small></div><p class="muted small">One payment for the 12-month programme.</p><ul><li>12-month course duration</li><li>Once-off programme fee</li><li>Membership subject to verification</li></ul><button class="btn" disabled>PayFast — Temporarily Not Available</button></div>
-  </div>
-  <div class="grid columns" style="margin-top:18px">
-    <div class="card"><div class="eyebrow">BANK TRANSFER</div><h2>EFT Payment</h2><p class="muted small">Contact the programme team for verified EFT payment instructions.</p><a class="btn btn-red" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Request EFT Details ↗</a></div>
-    <div class="card"><div class="eyebrow">CRYPTO PAYMENT</div><h2>USDT</h2><p class="muted small">Contact the programme team for the approved USDT network and verified wallet details.</p><a class="btn btn-red" href="https://discord.gg/bB2dDFV7P" target="_blank" rel="noopener noreferrer">Request USDT Details ↗</a></div>
-  </div>
-  <div class="notice" style="margin-top:18px">PayFast is temporarily unavailable. EFT and USDT instructions must be confirmed by the authorised programme team. Paid access should only be activated after payment has been verified.</div>
-</section>
+    <div class="card">
+      <h3 class="section-title" style="margin-top:0">Your membership</h3>
+      <p class="muted" id="membershipMessage">Checking your membership record...</p>
+      <button class="btn gold" onclick="showPage('fees')">View Programme Fee</button>
+    </div>
 
-<section class="page" id="page-account">
-  <div class="eyebrow">PERSONAL DETAILS</div><h1>My Account</h1>
-  <p class="muted">Update the name displayed on your dashboard and view your signed-in account information.</p>
-  <div class="card" style="max-width:700px;margin-top:20px">
-    <form id="profileForm"><div class="field"><label for="accountName">Dashboard display name</label><input id="accountName" maxlength="80" required placeholder="Your display name"></div><button class="btn btn-red" type="submit" id="saveProfileButton">Save Display Name</button></form>
-    <div id="profileStatus" class="status" role="status" aria-live="polite"></div><hr class="divider">
-    <div class="field"><label for="accountEmail">Email address</label><input id="accountEmail" readonly></div>
-    <div class="field"><label for="accountMembership">Membership status</label><input id="accountMembership" readonly></div>
-    <p class="muted small">Changing your display name does not change your sign-in email or membership status.</p>
-    <button class="btn" id="accountLogout" type="button">Log Out</button>
-  </div>
-</section>
-</div>
+    <div class="card">
+      <h3 class="section-title" style="margin-top:0">Continue learning</h3>
+      <div id="overviewCourses" class="muted">Loading courses...</div>
+    </div>
 
-<footer class="footer"><strong>LIQUIDITY DISPLACEMENT UNIVERSITY™</strong><br>By Forex Wealth Empire (Pty) Ltd.<br>Educational content is provided for learning purposes. Trading involves risk.</footer>
+    <div class="notice">Official LDU student support: <a href="https://discord.gg/bB2dDFV7P" target="_blank" style="color:var(--gold)">Join the student community</a>.</div>
+  </section>
+
+  <section class="page" id="page-courses">
+    <div class="hero">
+      <div class="eyebrow">Your education</div>
+      <h2>My Courses</h2>
+      <p>Access available lessons and continue developing your understanding of market patterns.</p>
+    </div>
+    <div id="courseList">Loading courses...</div>
+  </section>
+
+  <section class="page" id="page-progress">
+    <div class="card">
+      <div class="eyebrow">Learning analytics</div>
+      <h2>My Progress</h2>
+      <p class="muted">Your progress is based on lesson records saved to your student account.</p>
+      <h3 id="progressNumber">0%</h3>
+      <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+      <p class="muted" id="progressDetails">Loading your progress...</p>
+    </div>
+  </section>
+
+  <section class="page" id="page-certificates">
+    <div class="hero">
+      <div class="eyebrow">Achievement centre</div>
+      <h2>My Certificates</h2>
+      <p>Track your certificate status and view certificates released by LDU administration.</p>
+    </div>
+    <div class="notice">Certificates are reviewed and issued by LDU administration only. Students cannot approve or issue their own certificates.</div>
+    <div class="card" style="margin-top:16px" id="certificateList">Loading certificate status...</div>
+  </section>
+
+  <section class="page" id="page-fees">
+    <div class="hero">
+      <div class="eyebrow">Programme enrolment</div>
+      <h2>Invest in your education.</h2>
+      <p>One programme. One once-off payment. Access to the LDU learning experience after payment verification.</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow">LDU Programme</div>
+      <h2 style="font-size:35px;margin:12px 0">R5,000</h2>
+      <p class="muted">Once-off programme fee. No monthly payment option is displayed here.</p>
+      <ul class="muted">
+        <li>Access to paid programme lessons after verification</li>
+        <li>Student learning dashboard</li>
+        <li>Progress tracking</li>
+        <li>Student submissions</li>
+        <li>Certificate review by administration</li>
+      </ul>
+      <button class="btn gold" id="checkoutBtn" style="width:100%;margin-top:12px">Enrol Now — R5,000</button>
+      <p class="muted" style="margin-top:12px">You will be redirected to the official Whop checkout.</p>
+    </div>
+    <div class="notice">Important: Your membership will only become active after LDU verifies your payment. Returning from checkout does not automatically unlock courses.</div>
+  </section>
+
+  <section class="page" id="page-submissions">
+    <div class="hero">
+      <div class="eyebrow">Student work</div>
+      <h2>Trading Submissions</h2>
+      <p>Submit your trading performance and reflections for review.</p>
+    </div>
+    <div class="card">
+      <form id="submissionForm">
+        <label>Submission title</label>
+        <input id="submissionTitle" required placeholder="Example: Weekly trading review">
+        <label>Describe your submission</label>
+        <textarea id="submissionText" required placeholder="Explain your trade, observations or learning..."></textarea>
+        <label>Trading screenshot (optional)</label>
+        <input id="submissionFile" type="file" accept="image/*">
+        <button class="btn" type="submit" style="margin-top:16px">Submit Work</button>
+      </form>
+      <p class="muted" id="submissionMessage"></p>
+    </div>
+    <div class="card">
+      <h3>Previous submissions</h3>
+      <div id="submissionList" class="muted">Loading submissions...</div>
+    </div>
+  </section>
+
+  <section class="page" id="page-account">
+    <div class="card">
+      <div class="eyebrow">Personal details</div>
+      <h2>My Account</h2>
+      <label>Email address</label>
+      <input id="accountEmail" disabled>
+      <label>Display name</label>
+      <input id="displayName" placeholder="Your name">
+      <button class="btn" id="saveProfile" style="margin-top:16px">Save Changes</button>
+      <p class="muted" id="accountMessage"></p>
+    </div>
+  </section>
+
+  <footer>© 2026 Liquidity Displacement University™. All rights reserved.</footer>
 </main>
 </div>
 
 <script>
-(() => {
-"use strict";
+const SUPABASE_URL = "https://oordibcpeyvmlybmorhm.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_95GwON_auW2nW4hDUaQj2A_5Xi6NB60";
 
-const SUPABASE_URL="https://oordibcpeyvmlybmorhm.supabase.co";
-const SUPABASE_ANON_KEY="sb_publishable_95GwON_auW2nW4hDUaQj2A_5Xi6NB60";
-const STORAGE_BUCKET="trading-results";
-const COURSE_BUCKET="course-materials";
-const FREE_COURSE_ID="ae50fd37-06e9-4697-a1a9-a15da1f881dd";
-const SUPPORT_URL="https://discord.gg/bB2dDFV7P";
-const MAX_FILES=50;
-const MAX_FILE_SIZE=5*1024*1024;
-const $=id=>document.getElementById(id);
+const WHOP_CHECKOUT_URL = "https://whop.com/checkout/plan_Y08CNHiQN3pya";
+const FREE_COURSE_ID = "ae50fd37-06e9-4697-a1a9-a15da1f881dd";
 
-const state={
-  supabase:null,user:null,profile:null,membership:null,
-  courses:[],lessons:[],progress:[],certificates:[],membershipActive:false
-};
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
 
-function setStatus(message,isError=false){
-  const el=$("globalStatus");if(!el)return;
-  el.textContent=message||"";el.classList.toggle("error",Boolean(isError));
-}
-function setLocalStatus(id,message,isError=false){
-  const el=$(id);if(!el)return;
-  el.textContent=message||"";el.classList.toggle("error",Boolean(isError));
-}
-function safeText(value,fallback=""){
-  return value===null||value===undefined||value===""?fallback:String(value);
-}
-function firstValue(obj,keys,fallback=""){
-  if(!obj)return fallback;
-  for(const key of keys)if(obj[key]!==null&&obj[key]!==undefined&&obj[key]!=="")return obj[key];
-  return fallback;
-}
-function escapeHTML(value){
-  return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-}
-function displayName(){
-  return safeText(firstValue(state.profile,["display_name","full_name","name"]),state.user?.email?.split("@")[0]||"Student");
-}
-function isFreeCourse(course){
-  return String(course?.id||"")===FREE_COURSE_ID;
-}
-function membershipIsActive(row){
-  if(!row)return false;
-  const status=String(firstValue(row,["status","membership_status"],"")).toLowerCase();
-  if(!["active","approved","paid","current"].includes(status))return false;
-  const now=new Date();
-  const start=firstValue(row,["start_date","starts_at","start_at"]);
-  const end=firstValue(row,["end_date","expires_at","end_at"]);
-  if(start&&!Number.isNaN(Date.parse(start))&&new Date(start)>now)return false;
-  if(end&&!Number.isNaN(Date.parse(end))&&new Date(end)<now)return false;
-  return true;
-}
-function pageName(name){
-  return ["overview","courses","progress","certificates","fees","account","submission"].includes(name);
-}
-function showPage(name){
-  if(!pageName(name))return;
-  document.querySelectorAll(".page").forEach(el=>el.classList.toggle("active",el.id==="page-"+name));
-  document.querySelectorAll(".nav button[data-page]").forEach(btn=>btn.classList.toggle("active",btn.dataset.page===name));
-  $("sidebar").classList.remove("open");
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-function renderIdentity(){
-  const name=displayName();
-  $("topName").textContent=name;$("welcomeName").textContent=name;
-  $("avatar").textContent=name.trim().charAt(0).toUpperCase()||"S";
-  $("accountName").value=name;$("accountEmail").value=state.user?.email||"";
-  $("accountMembership").value=state.membershipActive?"Active":"Inactive / Not verified";
-}
-function renderMembership(){
-  const active=state.membershipActive;
-  $("membershipPill").textContent=active?"Membership active":"Free lesson available";
-  $("membershipValue").textContent=active?"Active":"Free access";
-  $("membershipNote").textContent=active?"Your paid membership is currently verified.":"You can read the free introductory course. Paid courses require an active membership.";
-  $("courseAccessNotice").textContent=active
-    ?"Your membership is active. Published courses and the free introduction are listed below."
-    :"Your paid membership is not active. You can still read the free Liquidity Displacement Methodology — Part 1 introduction.";
-}
-function courseTitle(course){
-  return safeText(firstValue(course,["title","name","course_name"]),"Untitled course");
-}
-function courseDescription(course){
-  if(isFreeCourse(course))return "The Beginning of Your Life-Changing Journey — Understanding the Language of Forex.";
-  return safeText(firstValue(course,["description","summary","details"]),"Course information will be added by the programme administrator.");
-}
-function courseLessons(course){
-  return state.lessons.filter(lesson=>String(lesson.course_id)===String(course.id));
-}
-function renderCourses(){
-  const grid=$("courseGrid"),overview=$("overviewCourses");
-  $("courseCount").textContent=String(state.courses.length);
-  if(!state.courses.length){
-    const msg='<div class="empty">No published courses were returned by the course database. Check the course publication status and access policies.</div>';
-    grid.innerHTML=msg;overview.innerHTML=msg;return;
-  }
+let currentUser = null;
+let membershipActive = false;
+let courses = [];
+let progressRecords = [];
+let profileTable = "student_profiles";
 
-  grid.innerHTML=state.courses.map((course,index)=>{
-    const free=isFreeCourse(course);
-    const locked=!free&&!state.membershipActive;
-    const lessons=courseLessons(course);
-    const courseId=escapeHTML(course.id??"");
-    return `<article class="course-card ${free?"free-course":""}">
-      <div class="course-art">${free?"LDM · FREE":"LDU · "+String(index+1).padStart(2,"0")}</div>
-      <span class="pill ${free?"free-pill":""}">${free?"FREE INTRODUCTION":locked?"MEMBERSHIP REQUIRED":"COURSE AVAILABLE"}</span>
-      <h3>${escapeHTML(courseTitle(course))}</h3>
-      <p>${escapeHTML(courseDescription(course))}</p>
-      ${free?`<p class="gold"><strong>The Beginning of Your Life-Changing Journey — Understanding the Language of Forex</strong></p>
-        <p>${lessons.length?"Your introductory story is ready to open below.":"Your free course is listed, but its lesson record or PDF path still needs to be checked."}</p>
-        <button class="btn btn-red" data-read-free="${courseId}">Read Free Lesson →</button>`
-        :`<button class="btn ${locked?"":"btn-red"}" data-open-submission="${courseId}" ${locked?"disabled":""}>${locked?"Paid access locked":"Submit trading results"}</button>`}
-    </article>`;
-  }).join("");
+const $ = id => document.getElementById(id);
 
-  const free=state.courses.find(isFreeCourse);
-  const others=state.courses.filter(c=>!isFreeCourse(c)).slice(0,2);
-  const overviewItems=free?[free,...others]:state.courses.slice(0,3);
-  overview.innerHTML=overviewItems.map((course,index)=>{
-    const isFree=isFreeCourse(course);
-    const locked=!isFree&&!state.membershipActive;
-    return `<div class="lesson">
-      <div class="lesson-icon">${isFree?"↗":"▤"}</div>
-      <div class="lesson-info"><h3>${escapeHTML(courseTitle(course))}</h3><p>${isFree?"Free introductory lesson":locked?"Paid membership required":"Membership verified"}</p></div>
-      ${isFree?`<button class="btn btn-red" data-read-free="${escapeHTML(course.id)}">Read →</button>`:`<span class="pill">${locked?"LOCKED":"AVAILABLE"}</span>`}
-    </div>`;
-  }).join("");
+function showMessage(id, message, color) {
+  const el = $(id);
+  if (!el) return;
+  el.textContent = message;
+  if (color) el.style.color = color;
+}
 
-  document.querySelectorAll("[data-read-free]").forEach(button=>{
-    button.addEventListener("click",()=>openFreeLesson(button.dataset.readFree,button));
-  });
-  document.querySelectorAll("[data-open-submission]").forEach(button=>{
-    button.addEventListener("click",()=>{
-      const course=state.courses.find(c=>String(c.id)===button.dataset.openSubmission);
-      if(course)openSubmission(course);
-    });
-  });
-}
-async function openFreeLesson(courseId,button){
-  if(String(courseId)!==FREE_COURSE_ID){
-    setStatus("This is not the configured free introductory course.",true);return;
-  }
-  const course=state.courses.find(c=>String(c.id)===FREE_COURSE_ID);
-  if(!course){setStatus("The free course could not be verified. Refresh the dashboard.",true);return;}
+function showPage(name) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".nav button").forEach(b => b.classList.remove("active"));
 
-  const lessons=courseLessons(course);
-  if(!lessons.length){
-    setStatus("The free course exists, but no lesson was returned from Supabase. Check public.lessons and its read policy.",true);return;
-  }
-  const lesson=lessons.find(item=>item.document_url)||lessons[0];
-  const path=String(lesson.document_url||"").trim();
-  if(!path){
-    setStatus("The lesson is listed, but document_url is empty. Save the exact PDF object path in public.lessons for this lesson.",true);return;
-  }
+  const page = $("page-" + name);
+  if (page) page.classList.add("active");
 
-  // Private bucket: create a short-lived signed URL rather than exposing a public URL.
-  const oldText=button?.textContent;
-  if(button){button.disabled=true;button.textContent="Opening lesson…";}
-  setStatus("Preparing your free lesson…");
-  try{
-    const result=await state.supabase.storage.from(COURSE_BUCKET).createSignedUrl(path,300);
-    if(result.error)throw result.error;
-    if(!result.data?.signedUrl)throw new Error("Supabase did not return a signed PDF link.");
-    const opened=window.open(result.data.signedUrl,"_blank","noopener,noreferrer");
-    if(!opened){
-      const link=document.createElement("a");
-      link.href=result.data.signedUrl;link.target="_blank";link.rel="noopener noreferrer";
-      link.textContent="Tap here to open your free lesson PDF";
-      link.className="btn btn-red";
-      const message=$("courseAccessNotice");
-      message.replaceChildren(document.createTextNode("Your signed lesson link is ready. "),link);
-    }
-    setStatus("Your free lesson link is ready. Signed links expire after five minutes.");
-  }catch(error){
-    console.error("Free lesson opening error:",error);
-    setStatus("Could not open the PDF. Check that document_url contains the exact object path inside the private course-materials bucket, and that Storage read policies allow signed URL creation. "+(error.message||""),true);
-  }finally{
-    if(button){button.disabled=false;button.textContent=oldText||"Read Free Lesson →";}
-  }
+  const button = document.querySelector('[data-page="' + name + '"]');
+  if (button) button.classList.add("active");
+
+  const titles = {
+    overview:"Overview",
+    courses:"My Courses",
+    progress:"My Progress",
+    certificates:"Certificates",
+    fees:"Programme Fees",
+    submissions:"Submissions",
+    account:"My Account"
+  };
+  $("pageHeading").textContent = titles[name] || "Student Portal";
 }
-function isCompleted(row){
-  const status=String(firstValue(row,["status","state"],"")).toLowerCase();
-  return row.completed===true||row.is_completed===true||["completed","complete","done"].includes(status);
-}
-function renderProgress(){
-  const total=state.progress.length,completed=state.progress.filter(isCompleted).length;
-  const percent=total?Math.round(completed/total*100):0;
-  $("progressValue").textContent=total?percent+"%":"0%";
-  $("progressBar").style.width=percent+"%";
-  $("progressPill").textContent=completed+" of "+total+" recorded";
-  $("progressDescription").textContent=total?completed+" completed item(s) out of "+total+" recorded progress item(s).":"No lesson progress has been recorded for your account yet.";
-  $("progressList").innerHTML=total?state.progress.map((row,index)=>{
-    const title=firstValue(row,["lesson_title","title","lesson_name","course_title"],"Learning item "+(index+1));
-    return `<div class="lesson"><div class="lesson-icon">${isCompleted(row)?"✓":"◷"}</div><div class="lesson-info"><h3>${escapeHTML(title)}</h3><p>${isCompleted(row)?"Completed":"In progress / not completed"}</p></div><span class="pill">${isCompleted(row)?"DONE":"PENDING"}</span></div>`;
-  }).join(""):'<div class="empty">Your recorded lesson progress will appear here once available.</div>';
-}
-function renderCertificates(){
-  const list=$("certificateList");
-  if(!state.certificates.length){
-    list.innerHTML='<div class="empty">No certificates have been issued or recorded for your account yet. Approved certificates will appear here.</div>';return;
-  }
-  list.innerHTML=state.certificates.map(cert=>{
-    const status=String(firstValue(cert,["status","review_status"],"pending")).toLowerCase();
-    const title=firstValue(cert,["course_title","title","course_name"],"LDU Programme Certificate");
-    const issued=firstValue(cert,["issued_at","created_at"],"");
-    const url=firstValue(cert,["certificate_url","public_url"],"");
-    const approved=["issued","approved","completed"].includes(status);
-    const validURL=typeof url==="string"&&/^https:\/\//i.test(url);
-    return `<article class="certificate-card"><div class="certificate-icon">♜</div><h3>${escapeHTML(title)}</h3><span class="pill">${escapeHTML(approved?"ISSUED":status.toUpperCase())}</span><p class="muted small">${issued?"Recorded: "+escapeHTML(new Date(issued).toLocaleDateString()):"Date not available"}</p>${approved&&validURL?`<a class="btn btn-red" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>`:'<p class="muted small">Your certificate will be available once approved and issued.</p>'}</article>`;
-  }).join("");
-}
-async function loadCertificates(){
-  if(!state.user)return;
-  $("certificateList").innerHTML='<div class="empty">Loading certificates…</div>';
-  const result=await state.supabase.from("certificates").select("*").eq("user_id",state.user.id);
-  if(result.error){
-    console.warn("Certificate lookup:",result.error.message);
-    $("certificateList").innerHTML='<div class="empty">Certificates are not configured yet. Ask the administrator to configure the certificates table and access policies.</div>';return;
-  }
-  state.certificates=result.data||[];renderCertificates();
-}
-function openSubmission(course){
-  if(!state.membershipActive){setStatus("An active paid membership is required before submitting course results.",true);return;}
-  $("submissionForm").reset();
-  $("submissionCourseId").value=String(course.id);
-  $("submissionCourseTitle").value=courseTitle(course);
-  setLocalStatus("submissionStatus","");$("fileSummary").textContent="";
-  showPage("submission");
-}
-function validateFiles(files){
-  if(!files.length)return "Select at least one screenshot.";
-  if(files.length>MAX_FILES)return "You can upload a maximum of 50 screenshots.";
-  for(const file of files){
-    if(!["image/jpeg","image/png","image/webp"].includes(file.type))return "Only JPG, PNG and WebP image files are accepted.";
-    if(file.size>MAX_FILE_SIZE)return file.name+" exceeds the 5 MB per-image limit.";
-  }
-  return "";
-}
-$("tradeScreenshots").addEventListener("change",()=>{
-  const files=Array.from($("tradeScreenshots").files||[]);
-  const error=validateFiles(files);
-  $("fileSummary").textContent=error||files.length+" screenshot(s) selected.";
-  $("fileSummary").classList.toggle("error",Boolean(error));
+
+document.querySelectorAll(".nav button").forEach(button => {
+  button.addEventListener("click", () => showPage(button.dataset.page));
 });
-function validatePeriods(){
-  const values=["beforeStart","beforeEnd","afterStart","afterEnd"].map(id=>$(id).value);
-  if(values.some(v=>!v))return "Complete all four reporting-period dates.";
-  const [bs,be,as,ae]=values.map(v=>new Date(v+"T00:00:00"));
-  if(bs>be||as>ae)return "Each reporting period must have a valid start and end date.";
-  if(be>=as)return "The before-course period must end before the after-course period begins.";
-  return "";
-}
-async function submitResults(event){
-  event.preventDefault();setLocalStatus("submissionStatus","");
-  if(!state.user||!state.supabase){setLocalStatus("submissionStatus","Your session is unavailable. Sign in again.",true);return;}
-  if(!state.membershipActive){setLocalStatus("submissionStatus","Your membership is not active. Contact support.",true);return;}
-  const courseId=$("submissionCourseId").value;
-  const course=state.courses.find(c=>String(c.id)===String(courseId));
-  if(!course||isFreeCourse(course)){setLocalStatus("submissionStatus","The selected paid course could not be verified.",true);return;}
-  const files=Array.from($("tradeScreenshots").files||[]);
-  const fileError=validateFiles(files);
-  if(fileError){setLocalStatus("submissionStatus",fileError,true);return;}
-  const periodError=validatePeriods();
-  if(periodError){setLocalStatus("submissionStatus",periodError,true);return;}
 
-  const button=$("submitResultsButton");button.disabled=true;button.textContent="Submitting…";
-  let submissionId=null;const uploadedPaths=[];
-  try{
-    const payload={
-      user_id:state.user.id,course_id:course.id,course_title:courseTitle(course),
-      before_period_start:$("beforeStart").value,before_period_end:$("beforeEnd").value,
-      after_period_start:$("afterStart").value,after_period_end:$("afterEnd").value,
-      before_results:$("beforeResults").value.trim(),after_results:$("afterResults").value.trim(),
-      notes:$("submissionNotes").value.trim(),status:"pending"
-    };
-    const created=await state.supabase.from("trading_submissions").insert(payload).select("id").single();
-    if(created.error)throw new Error("Could not create submission. Check the trading_submissions table and policies: "+created.error.message);
-    submissionId=created.data.id;
-    for(let i=0;i<files.length;i++){
-      const file=files[i],name=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
-      const path=state.user.id+"/"+submissionId+"/"+String(i+1).padStart(2,"0")+"-"+crypto.randomUUID()+"-"+name;
-      const upload=await state.supabase.storage.from(STORAGE_BUCKET).upload(path,file,{contentType:file.type,upsert:false});
-      if(upload.error)throw new Error("Screenshot upload failed. Check the private Storage bucket and upload policies: "+upload.error.message);
-      uploadedPaths.push(path);
-    }
-    const updated=await state.supabase.from("trading_submissions").update({screenshot_paths:uploadedPaths}).eq("id",submissionId).eq("user_id",state.user.id);
-    if(updated.error)throw new Error("Screenshots uploaded but submission could not be finalised: "+updated.error.message);
-    setLocalStatus("submissionStatus","Submission received. Your status is pending review.");
-    $("submissionForm").reset();$("submissionCourseId").value="";$("submissionCourseTitle").value="";$("fileSummary").textContent="";
-    await loadCertificates();
-  }catch(error){
-    console.error("Trading submission:",error);
-    if(uploadedPaths.length)await state.supabase.storage.from(STORAGE_BUCKET).remove(uploadedPaths);
-    if(submissionId)await state.supabase.from("trading_submissions").delete().eq("id",submissionId).eq("user_id",state.user.id);
-    setLocalStatus("submissionStatus",error.message||"The submission failed. Please try again or contact support.",true);
-  }finally{button.disabled=false;button.textContent="Submit for Review →";}
-}
-async function saveDisplayName(event){
-  event.preventDefault();
-  const name=$("accountName").value.trim();
-  if(!name||name.length>80){setLocalStatus("profileStatus","Enter a display name between 1 and 80 characters.",true);return;}
-  const button=$("saveProfileButton");button.disabled=true;setLocalStatus("profileStatus","Saving your display name…");
-  try{
-    let result=await state.supabase.from("profiles").update({display_name:name}).eq("id",state.user.id).select().maybeSingle();
-    if(result.error)result=await state.supabase.from("profiles").update({full_name:name}).eq("id",state.user.id).select().maybeSingle();
-    if(result.error)throw result.error;
-    if(!result.data)throw new Error("No profile row was updated. Check the profiles table and owner UPDATE policy.");
-    state.profile=result.data;renderIdentity();setLocalStatus("profileStatus","Display name updated successfully.");
-  }catch(error){
-    console.error("Profile update:",error);
-    setLocalStatus("profileStatus","Could not save the name. Check profiles columns and Row Level Security. "+(error.message||""),true);
-  }finally{button.disabled=false;}
-}
-async function loadStudentData(){
-  const client=state.supabase,user=state.user;
+async function loadProfile() {
+  let result = await supabaseClient
+    .from("student_profiles")
+    .select("*")
+    .eq("user_id", currentUser.id)
+    .maybeSingle();
 
-  const profile=await client.from("profiles").select("*").eq("id",user.id).maybeSingle();
-  if(profile.error)console.warn("Profile lookup:",profile.error.message);else state.profile=profile.data;
-
-  const membership=await client.from("memberships").select("*").eq("user_id",user.id);
-  if(membership.error){
-    console.error("Membership lookup:",membership.error.message);state.membership=null;state.membershipActive=false;
-  }else{
-    const rows=membership.data||[];
-    state.membership=rows.find(membershipIsActive)||rows[0]||null;
-    state.membershipActive=rows.some(membershipIsActive);
-  }
-  renderIdentity();renderMembership();
-
-  const courses=await client.from("courses").select("*");
-  if(courses.error){
-    console.error("Courses lookup:",courses.error.message);
-    $("courseGrid").innerHTML='<div class="empty">Courses could not be loaded. Check the courses table and its read policies.</div>';
-    $("overviewCourses").innerHTML='<div class="empty">Course data is currently unavailable.</div>';
-    $("courseCount").textContent="—";
-  }else{
-    // Only display published courses. The configured free course is explicitly included.
-    state.courses=(courses.data||[]).filter(course=>
-      course.is_published===true||course.published===true||String(course.status||"").toLowerCase()==="published"
-    );
-    if(!state.courses.some(isFreeCourse)){
-      console.warn("The configured free course was not returned as published. Check its course ID, is_published field, and course-table policies.");
-    }
-    const lessonResult=await client.from("lessons").select("*").eq("course_id",FREE_COURSE_ID);
-    if(lessonResult.error){
-      console.error("Free lesson lookup:",lessonResult.error.message);
-      state.lessons=[];
-      setStatus("Courses loaded, but the free lesson could not be loaded. Check public.lessons read policies.",true);
-    }else{
-      state.lessons=lessonResult.data||[];
-    }
-    renderCourses();
+  if (result.error) {
+    result = await supabaseClient
+      .from("profiles")
+      .select("*")
+      .eq("id", currentUser.id)
+      .maybeSingle();
+    if (!result.error) profileTable = "profiles";
   }
 
-  const progress=await client.from("student_progress").select("*").eq("user_id",user.id);
-  if(progress.error){
-    console.error("Progress lookup:",progress.error.message);
-    $("progressDescription").textContent="Progress could not be loaded. Check student_progress and its access policies.";
-    $("progressList").innerHTML='<div class="empty">Progress data is currently unavailable.</div>';
-  }else{state.progress=progress.data||[];renderProgress();}
+  if (result.data) {
+    $("displayName").value =
+      result.data.full_name ||
+      result.data.display_name ||
+      result.data.name || "";
+  }
+}
 
-  await loadCertificates();
-  if(!$("globalStatus").classList.contains("error"))setStatus("");
-}
-async function logout(){
-  $("logoutButton").disabled=true;$("accountLogout").disabled=true;setStatus("Signing you out…");
-  try{
-    if(state.supabase){const {error}=await state.supabase.auth.signOut();if(error)throw error;}
-    window.location.href="login.html";
-  }catch(error){
-    setStatus("Could not sign out: "+(error.message||"Please try again."),true);
-    $("logoutButton").disabled=false;$("accountLogout").disabled=false;
+async function loadMembership() {
+  const { data, error } = await supabaseClient
+    .from("memberships")
+    .select("*")
+    .eq("user_id", currentUser.id)
+    .order("created_at", { ascending:false })
+    .limit(1);
+
+  if (error) {
+    $("overviewMembership").textContent = "Unavailable";
+    $("membershipMessage").textContent =
+      "Membership information could not be loaded. Please contact LDU support.";
+    return;
   }
+
+  const record = data && data.length ? data[0] : null;
+  const validStatuses = ["active","approved","paid","current"];
+
+  membershipActive = !!record &&
+    validStatuses.includes(String(record.status || "").toLowerCase());
+
+  $("overviewMembership").textContent = membershipActive ? "Active" : "Pending";
+  $("overviewMembership").style.color = membershipActive ? "var(--green)" : "var(--gold)";
+
+  $("membershipMessage").textContent = membershipActive
+    ? "Your membership record is marked active."
+    : "Your paid programme access is not currently active. Complete the R5,000 enrolment and wait for payment verification.";
 }
-function setupNavigation(){
-  document.querySelectorAll(".nav button[data-page]").forEach(btn=>btn.addEventListener("click",()=>showPage(btn.dataset.page)));
-  document.querySelectorAll("[data-goto]").forEach(btn=>btn.addEventListener("click",()=>showPage(btn.dataset.goto)));
-  $("menuButton").addEventListener("click",()=>$("sidebar").classList.toggle("open"));
-  $("logoutButton").addEventListener("click",logout);
-  $("accountLogout").addEventListener("click",logout);
-  $("profileForm").addEventListener("submit",saveDisplayName);
-  $("submissionForm").addEventListener("submit",submitResults);
-  $("refreshCertificates").addEventListener("click",loadCertificates);
-}
-async function start(){
-  setupNavigation();
-  if(!window.supabase||!window.supabase.createClient){
-    setStatus("Supabase could not load. Check your internet connection and refresh.",true);return;
+
+async function loadCourses() {
+  const { data, error } = await supabaseClient
+    .from("courses")
+    .select("*")
+    .order("created_at", { ascending:true });
+
+  if (error) {
+    $("courseList").textContent = "Courses could not be loaded. Please contact support.";
+    $("overviewCourses").textContent = "Course information is currently unavailable.";
+    return;
   }
-  try{
-    state.supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
-    const {data,error}=await state.supabase.auth.getUser();
-    if(error||!data?.user){
-      setStatus("You are not signed in. Opening the student login page…");
-      window.setTimeout(()=>window.location.replace("login.html"),900);return;
-    }
-    state.user=data.user;
-    await loadStudentData();
-    state.supabase.auth.onAuthStateChange((event,session)=>{
-      if(event==="SIGNED_OUT"||!session?.user)window.location.replace("login.html");
+
+  courses = data || [];
+  $("courseCount").textContent = courses.length;
+
+  renderCourses();
+}
+
+function courseIsFree(course) {
+  return course.id === FREE_COURSE_ID ||
+    course.is_free === true ||
+    course.access_type === "free";
+}
+
+function renderCourses() {
+  const list = $("courseList");
+  const overview = $("overviewCourses");
+  list.innerHTML = "";
+  overview.innerHTML = "";
+
+  if (!courses.length) {
+    list.textContent = "No courses have been published yet.";
+    overview.textContent = "Your courses will appear here when published.";
+    return;
+  }
+
+  courses.forEach(course => {
+    const free = courseIsFree(course);
+    const unlocked = free || membershipActive;
+    const title = course.title || course.name || "LDU Course";
+    const description = course.description || "Explore this programme module.";
+
+    const card = document.createElement("div");
+    card.className = "course" + (!unlocked ? " locked" : "");
+
+    const info = document.createElement("div");
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+    const paragraph = document.createElement("p");
+    paragraph.textContent = description;
+    info.append(heading, paragraph);
+
+    const action = document.createElement("div");
+    action.className = "row";
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = unlocked ? (free ? "FREE ACCESS" : "UNLOCKED") : "LOCKED";
+
+    const button = document.createElement("button");
+    button.className = "btn secondary";
+    button.textContent = unlocked ? "View Lessons" : "Unlock";
+    button.addEventListener("click", () => {
+      if (!unlocked) {
+        showPage("fees");
+        return;
+      }
+      openCourse(course.id, title);
     });
-  }catch(error){
-    console.error("Student portal error:",error);
-    setStatus("The portal could not finish loading: "+(error.message||"Unknown error")+". Check Supabase configuration and connection.",true);
+
+    action.append(tag, button);
+    card.append(info, action);
+    list.append(card);
+
+    const mini = document.createElement("div");
+    mini.className = "course";
+    mini.innerHTML = "";
+    const miniText = document.createElement("div");
+    const miniTitle = document.createElement("h3");
+    miniTitle.textContent = title;
+    const miniDesc = document.createElement("p");
+    miniDesc.textContent = unlocked ? "Available in your programme" : "Programme enrolment required";
+    miniText.append(miniTitle, miniDesc);
+    mini.append(miniText);
+    overview.append(mini);
+  });
+}
+
+async function openCourse(courseId, courseTitle) {
+  if (!membershipActive && courseId !== FREE_COURSE_ID) {
+    alert("This course requires an active LDU membership.");
+    showPage("fees");
+    return;
+  }
+
+  const { data, error } = await supabaseClient
+    .from("lessons")
+    .select("*")
+    .eq("course_id", courseId)
+    .order("created_at", { ascending:true });
+
+  if (error) {
+    alert("Lessons could not be loaded.");
+    return;
+  }
+
+  const lessonLines = (data || []).map((lesson, index) =>
+    (index + 1) + ". " + (lesson.title || lesson.name || "Lesson")
+  ).join("\n");
+
+  alert(courseTitle + "\n\n" + (lessonLines || "No lessons published yet.") +
+    "\n\nContact LDU support if you need help accessing lesson material.");
+}
+
+async function loadProgress() {
+  const { data, error } = await supabaseClient
+    .from("student_progress")
+    .select("*")
+    .eq("user_id", currentUser.id);
+
+  if (error) {
+    $("progressDetails").textContent = "Progress information is unavailable.";
+    return;
+  }
+
+  progressRecords = data || [];
+  const total = courses.length;
+  const completed = progressRecords.filter(item =>
+    item.completed === true ||
+    String(item.status || "").toLowerCase() === "completed"
+  ).length;
+
+  const percent = total ? Math.min(100, Math.round(completed / total * 100)) : 0;
+
+  $("overviewProgress").textContent = percent + "%";
+  $("progressNumber").textContent = percent + "%";
+  $("progressBar").style.width = percent + "%";
+  $("progressDetails").textContent = completed + " completed records out of " + total + " courses.";
+}
+
+async function loadCertificates() {
+  const { data, error } = await supabaseClient
+    .from("certificates")
+    .select("*")
+    .eq("user_id", currentUser.id)
+    .order("created_at", { ascending:false });
+
+  const box = $("certificateList");
+  box.innerHTML = "";
+
+  if (error) {
+    box.textContent = "Certificate status is currently unavailable.";
+    return;
+  }
+
+  if (!data || !data.length) {
+    box.textContent = "No certificate has been issued to your account yet. Certificates are released by LDU administration after review.";
+    return;
+  }
+
+  data.forEach(cert => {
+    const item = document.createElement("div");
+    item.className = "course";
+
+    const info = document.createElement("div");
+    const title = document.createElement("h3");
+    title.textContent = cert.title || cert.certificate_name || "LDU Certificate";
+    const status = document.createElement("p");
+    status.textContent = "Status: " + (cert.status || "Under review");
+    info.append(title, status);
+    item.append(info);
+
+    const state = String(cert.status || "").toLowerCase();
+    if (state === "issued" || state === "approved") {
+      const link = document.createElement("a");
+      link.className = "btn gold";
+      link.textContent = "View Certificate";
+      link.href = cert.certificate_url || cert.file_url || "#";
+      link.target = "_blank";
+      item.append(link);
+    } else {
+      const tag = document.createElement("span");
+      tag.className = "status pending";
+      tag.textContent = "Awaiting release";
+      item.append(tag);
+    }
+    box.append(item);
+  });
+}
+
+async function loadSubmissions() {
+  const { data, error } = await supabaseClient
+    .from("trading_submissions")
+    .select("*")
+    .eq("user_id", currentUser.id)
+    .order("created_at", { ascending:false });
+
+  const box = $("submissionList");
+  box.innerHTML = "";
+
+  if (error) {
+    box.textContent = "Your submissions could not be loaded.";
+    return;
+  }
+
+  if (!data || !data.length) {
+    box.textContent = "You have not submitted any work yet.";
+    return;
+  }
+
+  data.forEach(record => {
+    const item = document.createElement("div");
+    item.className = "course";
+    const info = document.createElement("div");
+    const title = document.createElement("h3");
+    title.textContent = record.title || "Trading submission";
+    const desc = document.createElement("p");
+    desc.textContent = record.description || record.content || "Submitted work";
+    info.append(title, desc);
+    const tag = document.createElement("span");
+    tag.className = "status";
+    tag.textContent = record.status || "Submitted";
+    item.append(info, tag);
+    box.append(item);
+  });
+}
+
+async function saveProfile() {
+  const name = $("displayName").value.trim();
+  if (!name) {
+    showMessage("accountMessage", "Please enter your display name.");
+    return;
+  }
+
+  let result;
+  if (profileTable === "student_profiles") {
+    result = await supabaseClient
+      .from("student_profiles")
+      .update({ full_name:name })
+      .eq("user_id", currentUser.id);
+  } else {
+    result = await supabaseClient
+      .from("profiles")
+      .update({ full_name:name })
+      .eq("id", currentUser.id);
+  }
+
+  showMessage("accountMessage", result.error
+    ? "Could not save your profile. Check your profile table permissions."
+    : "Your profile has been updated.");
+}
+
+async function submitWork(event) {
+  event.preventDefault();
+
+  if (!membershipActive) {
+    showMessage("submissionMessage", "An active membership is required to submit programme work.");
+    return;
+  }
+
+  const title = $("submissionTitle").value.trim();
+  const description = $("submissionText").value.trim();
+  const file = $("submissionFile").files[0];
+  let screenshotUrl = null;
+
+  if (file) {
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const path = currentUser.id + "/" + Date.now() + "_" + safeName;
+
+    const upload = await supabaseClient.storage
+      .from("trading-results")
+      .upload(path, file);
+
+    if (upload.error) {
+      showMessage("submissionMessage", "Screenshot upload failed: " + upload.error.message);
+      return;
+    }
+    screenshotUrl = path;
+  }
+
+  const { error } = await supabaseClient
+    .from("trading_submissions")
+    .insert({
+      user_id:currentUser.id,
+      title:title,
+      description:description,
+      screenshot_url:screenshotUrl,
+      status:"submitted"
+    });
+
+  if (error) {
+    showMessage("submissionMessage", "Submission failed: " + error.message);
+    return;
+  }
+
+  $("submissionForm").reset();
+  showMessage("submissionMessage", "Your work has been submitted.");
+  loadSubmissions();
+}
+
+async function refreshPortal() {
+  $("userEmail").textContent = currentUser.email || "Student";
+  $("accountEmail").value = currentUser.email || "";
+
+  await loadProfile();
+  await loadMembership();
+  await loadCourses();
+  await loadProgress();
+  await loadCertificates();
+  await loadSubmissions();
+}
+
+async function showPortal(user) {
+  currentUser = user;
+  $("loginScreen").classList.add("hidden");
+  $("portal").classList.remove("hidden");
+  await refreshPortal();
+}
+
+async function checkSession() {
+  const { data } = await supabaseClient.auth.getSession();
+  if (data.session) {
+    await showPortal(data.session.user);
   }
 }
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start);else start();
-})();
+
+$("loginForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  showMessage("message", "Signing in...");
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email:$("email").value.trim(),
+    password:$("password").value
+  });
+
+  if (error) {
+    showMessage("message", error.message);
+    return;
+  }
+
+  await showPortal(data.user);
+});
+
+$("logoutBtn").addEventListener("click", async () => {
+  await supabaseClient.auth.signOut();
+  location.reload();
+});
+
+$("checkoutBtn").addEventListener("click", () => {
+  window.open(WHOP_CHECKOUT_URL, "_blank", "noopener,noreferrer");
+});
+
+$("saveProfile").addEventListener("click", saveProfile);
+$("submissionForm").addEventListener("submit", submitWork);
+
+supabaseClient.auth.onAuthStateChange(async (event, session) => {
+  if (event === "SIGNED_IN" && session) {
+    await showPortal(session.user);
+  }
+  if (event === "SIGNED_OUT") {
+    location.reload();
+  }
+});
+
+checkSession();
 </script>
+
+<!-- LDU AI CHATBOT - BOTPRESS -->
+<script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/10/30/11/20261030113351-E9CCUMUE.js" defer></script>
+
 </body>
 </html>
